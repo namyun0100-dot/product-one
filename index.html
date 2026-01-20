@@ -117,8 +117,8 @@
         <cosmic-oracle></cosmic-oracle>
         <p id="quote-of-the-day"></p>
     </main>
-    <script>
-        // Renaming the component to CosmicOracle to force cache invalidation
+    <script data-cfasync="false">
+        // Defeating Cloudflare Rocket Loader with data-cfasync="false"
         class CosmicOracle extends HTMLElement {
           constructor() {
             super();
