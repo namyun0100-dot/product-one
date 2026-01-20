@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Kalam:wght@300&display=swap" rel="stylesheet">
     <style>
-        /* Inlined styles to ensure Cloudflare updates */
+        /* Inlined styles to ensure Cloudflare updates. Forcing a change. */
         :root {
             --glow-rgb-dark: 240, 74, 117;
             --glow-rgb-light: 102, 126, 234;
@@ -114,12 +114,12 @@
 </head>
 <body data-theme="dark">
     <main>
-        <fortune-teller></fortune-teller>
+        <cosmic-oracle></cosmic-oracle>
         <p id="quote-of-the-day"></p>
     </main>
     <script>
-        // Inlined JS to ensure Cloudflare updates
-        class FortuneTeller extends HTMLElement {
+        // Renaming the component to CosmicOracle to force cache invalidation
+        class CosmicOracle extends HTMLElement {
           constructor() {
             super();
             this.attachShadow({ mode: 'open' });
@@ -418,7 +418,7 @@
           }
         }
 
-        customElements.define('fortune-teller', FortuneTeller);
+        customElements.define('cosmic-oracle', CosmicOracle);
 
         // New Feature: Quote of the Day
         document.addEventListener('DOMContentLoaded', () => {
