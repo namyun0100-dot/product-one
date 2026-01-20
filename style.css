@@ -1,4 +1,4 @@
-/* Trigger Re-deploy */
+/* Forcing a new deploy to fix previous errors. */
 :root {
     --glow-rgb-dark: 240, 74, 117;
     --glow-rgb-light: 102, 126, 234;
