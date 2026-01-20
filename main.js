@@ -1,4 +1,4 @@
-// Final fix for animation and markdown bugs.
+// Feature update: Adds Quote of the Day and fixes previous bugs.
 class FortuneTeller extends HTMLElement {
   constructor() {
     super();
@@ -299,3 +299,20 @@ class FortuneTeller extends HTMLElement {
 }
 
 customElements.define('fortune-teller', FortuneTeller);
+
+// New Feature: Quote of the Day
+document.addEventListener('DOMContentLoaded', () => {
+    const quotes = [
+        "\"The universe is under no obligation to make sense to you.\" - Neil deGrasse Tyson",
+        "\"Somewhere, something incredible is waiting to be known.\" - Carl Sagan",
+        "\"We are all in the gutter, but some of us are looking at the stars.\" - Oscar Wilde",
+        "\"Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.\" - Albert Einstein",
+        "\"Look up at the stars and not down at your feet. Try to make sense of what you see, and wonder about what makes the universe exist. Be curious.\" - Stephen Hawking"
+    ];
+
+    const quoteElement = document.getElementById('quote-of-the-day');
+    if (quoteElement) {
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        quoteElement.textContent = randomQuote;
+    }
+});
