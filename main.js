@@ -1,4 +1,4 @@
-
+// Final fix for animation and markdown bugs.
 class FortuneTeller extends HTMLElement {
   constructor() {
     super();
