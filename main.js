@@ -260,11 +260,11 @@ class FortuneTeller extends HTMLElement {
   }
 
   getFortuneMessage(score) {
-    if (score >= 81) return '🌟 **Cosmic alignment!** A universe of opportunities awaits!';
-    if (score >= 61) return '✨ **Starlight favor!** Good vibes are flowing your way.';
-    if (score >= 41) return '☀️ **Neutral space.** Your path is your own to forge.';
-    if (score >= 21) return '☁️ **Minor nebula.** Navigate with care and intention.';
-    return '☄️ **Asteroid field!** Keep your head up and stay positive.';
+    if (score >= 81) return '🌟 <strong>Cosmic alignment!</strong> A universe of opportunities awaits!';
+    if (score >= 61) return '✨ <strong>Starlight favor!</strong> Good vibes are flowing your way.';
+    if (score >= 41) return '☀️ <strong>Neutral space.</strong> Your path is your own to forge.';
+    if (score >= 21) return '☁️ <strong>Minor nebula.</strong> Navigate with care and intention.';
+    return '☄️ <strong>Asteroid field!</strong> Keep your head up and stay positive.';
   }
 
   checkFortuneAvailability(isAfterClick = false) {
