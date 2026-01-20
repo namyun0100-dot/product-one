@@ -1,10 +1,69 @@
 
-body {
-    font-family: sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f8f0e3; /* Soft cream/peach */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+:root {
+  --bg-color-light: #f0f2f5;
+  --text-color-light: #1a202c;
+  --card-bg-light: rgba(255, 255, 255, 0.6);
+  --primary-glow-light: #667eea;
+
+  --bg-color-dark: #1a202c;
+  --text-color-dark: #edf2f7;
+  --card-bg-dark: rgba(26, 32, 44, 0.7);
+  --primary-glow-dark: #f04a75;
+  
+  --font-main: 'Orbitron', sans-serif;
 }
 
+body {
+  font-family: var(--font-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+  transition: background-color 0.5s, color 0.5s;
+  overflow: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 70% 30%, #f04a7530, transparent 50%),
+    radial-gradient(ellipse at 30% 70%, #667eea30, transparent 50%);
+  animation: aurora 15s linear infinite;
+  z-index: 0;
+}
+
+@keyframes aurora {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+body[data-theme='light'] {
+  --bg-color: var(--bg-color-light);
+  --text-color: var(--text-color-light);
+  --card-bg: var(--card-bg-light);
+  --primary-glow: var(--primary-glow-light);
+}
+
+body[data-theme='dark'] {
+  --bg-color: var(--bg-color-dark);
+  --text-color: var(--text-color-dark);
+  --card-bg: var(--card-bg-dark);
+  --primary-glow: var(--primary-glow-dark);
+}
+
+main {
+    position: relative;
+    z-index: 1;
+}

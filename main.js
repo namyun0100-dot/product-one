@@ -2,288 +2,297 @@
 class FortuneTeller extends HTMLElement {
   constructor() {
     super();
-    const shadow = this.attachShadow({ mode: 'open' });
+    this.attachShadow({ mode: 'open' });
 
-    const wrapper = document.createElement('div');
-    wrapper.setAttribute('class', 'fortune-card');
-
-    const themeToggleContainer = document.createElement('div');
-    themeToggleContainer.setAttribute('class', 'theme-toggle-container');
-    this.themeToggle = document.createElement('input');
-    this.themeToggle.setAttribute('type', 'checkbox');
-    this.themeToggle.setAttribute('id', 'theme-toggle');
+    this._setupUI();
+    
     this.themeToggle.addEventListener('change', () => this._toggleTheme());
-    const themeToggleLabel = document.createElement('label');
-    themeToggleLabel.setAttribute('for', 'theme-toggle');
-    themeToggleLabel.textContent = 'Toggle Theme';
-    themeToggleContainer.appendChild(this.themeToggle);
-    themeToggleContainer.appendChild(themeToggleLabel);
-
-    const title = document.createElement('h1');
-    title.textContent = "Today's Fortune";
-
-    const scoresContainer = document.createElement('div');
-    scoresContainer.setAttribute('class', 'scores-container');
-
-    const financialLuckSection = document.createElement('div');
-    financialLuckSection.setAttribute('class', 'score-section');
-    const financialLuckTitle = document.createElement('h2');
-    financialLuckTitle.textContent = '금전운';
-    this.financialScoreDisplay = document.createElement('p');
-    this.financialScoreDisplay.setAttribute('class', 'score-value');
-    this.financialScoreDisplay.textContent = '--';
-    this.financialMessageDisplay = document.createElement('p');
-    this.financialMessageDisplay.setAttribute('class', 'score-message');
-    this.financialMessageDisplay.textContent = '버튼을 눌러 금전운을 확인하세요.';
-    financialLuckSection.appendChild(financialLuckTitle);
-    financialLuckSection.appendChild(this.financialScoreDisplay);
-    financialLuckSection.appendChild(this.financialMessageDisplay);
-
-    const relationshipLuckSection = document.createElement('div');
-    relationshipLuckSection.setAttribute('class', 'score-section');
-    const relationshipLuckTitle = document.createElement('h2');
-    relationshipLuckTitle.textContent = '인간관계운';
-    this.relationshipScoreDisplay = document.createElement('p');
-    this.relationshipScoreDisplay.setAttribute('class', 'score-value');
-    this.relationshipScoreDisplay.textContent = '--';
-    this.relationshipMessageDisplay = document.createElement('p');
-    this.relationshipMessageDisplay.setAttribute('class', 'score-message');
-    this.relationshipMessageDisplay.textContent = '버튼을 눌러 인간관계운을 확인하세요.';
-    relationshipLuckSection.appendChild(relationshipLuckTitle);
-    relationshipLuckSection.appendChild(this.relationshipScoreDisplay);
-    relationshipLuckSection.appendChild(this.relationshipMessageDisplay);
-
-    scoresContainer.appendChild(financialLuckSection);
-    scoresContainer.appendChild(relationshipLuckSection);
-
-    this.fortuneButton = document.createElement('button');
-    this.fortuneButton.textContent = '운세 보기';
     this.fortuneButton.addEventListener('click', () => this.getFortune());
-
-    const style = document.createElement('style');
-    style.textContent = `
-      :host {
-        --card-bg: #ffffff;
-        --card-shadow: rgba(180, 160, 140, 0.2);
-        --text-color-h1: #000000;
-        --text-color-h2: #34495e;
-        --text-color-score: #4a4a4a;
-        --text-color-message: #7f8c8d;
-        --section-bg: #fdfdfd;
-        --section-border: #eee;
-        --button-bg: #8bc34a;
-        --button-hover-bg: #7cb342;
-        --button-text: white;
-        --button-disabled-bg: #dcdcdc;
-        --button-disabled-text: #a0a0a0;
-        --toggle-bg: #ccc;
-        --toggle-knob: white;
-        transition: background-color 0.3s ease;
-      }
-
-      :host([data-theme='dark']) {
-        --card-bg: #2c3e50;
-        --card-shadow: rgba(0, 0, 0, 0.4);
-        --text-color-h1: #ecf0f1;
-        --text-color-h2: #95a5a6;
-        --text-color-score: #ecf0f1;
-        --text-color-message: #bdc3c7;
-        --section-bg: #34495e;
-        --section-border: #2c3e50;
-        --button-bg: #16a085;
-        --button-hover-bg: #1abc9c;
-        --button-disabled-bg: #7f8c8d;
-        --button-disabled-text: #bdc3c7;
-        --toggle-bg: #16a085;
-        --toggle-knob: #ecf0f1;
-      }
-
-      .fortune-card {
-        position: relative;
-        background-color: var(--card-bg);
-        color: var(--text-color);
-        padding: 2rem;
-        border-radius: 1rem;
-        box-shadow: 0 10px 20px var(--card-shadow);
-        text-align: center;
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
-
-      h1 {
-        color: var(--text-color-h1);
-      }
-
-      .scores-container {
-        display: flex;
-        justify-content: space-around;
-        gap: 1.5rem;
-        margin: 1.5rem 0;
-        flex-wrap: wrap;
-      }
-
-      .score-section {
-        flex: 1;
-        min-width: 150px;
-        padding: 1rem;
-        border: 1px solid var(--section-border);
-        border-radius: 0.75rem;
-        background-color: var(--section-bg);
-        transition: background-color 0.3s ease;
-      }
-
-      .score-section h2 {
-        font-size: 1.5rem;
-        color: var(--text-color-h2);
-        margin-bottom: 0.5rem;
-      }
-
-      .score-value {
-        font-size: 2.5rem;
-        font-weight: bold;
-        margin: 0.5rem 0;
-        color: var(--text-color-score);
-      }
-
-      .score-message {
-        font-style: italic;
-        color: var(--text-color-message);
-        font-weight: bold;
-        min-height: 3em;
-      }
-
-      button {
-        background-color: var(--button-bg);
-        color: var(--button-text);
-        padding: 1rem 2rem;
-        border: none;
-        border-radius: 0.5rem;
-        cursor: pointer;
-        font-size: 1rem;
-        transition: background-color 0.3s;
-        margin-top: 1.5rem;
-      }
-
-      button:hover {
-        background-color: var(--button-hover-bg);
-      }
-
-      button:disabled {
-        background-color: var(--button-disabled-bg);
-        cursor: not-allowed;
-        color: var(--button-disabled-text);
-      }
-      
-      .theme-toggle-container {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-      }
-
-      .theme-toggle-container label {
-        display: none; /* Hide text label */
-      }
-
-      #theme-toggle {
-        appearance: none;
-        width: 40px;
-        height: 20px;
-        background-color: var(--toggle-bg);
-        border-radius: 10px;
-        position: relative;
-        cursor: pointer;
-        outline: none;
-        transition: background-color 0.3s ease;
-      }
-
-      #theme-toggle::before {
-        content: '';
-        position: absolute;
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        background-color: var(--toggle-knob);
-        top: 2px;
-        left: 2px;
-        transition: transform 0.3s ease;
-      }
-
-      #theme-toggle:checked::before {
-        transform: translateX(20px);
-      }
-    `;
-
-    shadow.appendChild(style);
-    shadow.appendChild(wrapper);
-    wrapper.appendChild(themeToggleContainer);
-    wrapper.appendChild(title);
-    wrapper.appendChild(scoresContainer);
-    wrapper.appendChild(this.fortuneButton);
 
     this._applyInitialTheme();
     this.checkFortuneAvailability();
   }
 
+  _setupUI() {
+    const style = document.createElement('style');
+    style.textContent = `
+      :host {
+        --font-main: 'Orbitron', sans-serif;
+        --text-color-dark: #edf2f7;
+        --card-bg-dark: rgba(26, 32, 44, 0.7);
+        --primary-glow-dark: #f04a75;
+        --text-color-light: #1a202c;
+        --card-bg-light: rgba(255, 255, 255, 0.6);
+        --primary-glow-light: #667eea;
+
+        --card-bg: var(--card-bg-dark);
+        --text-color: var(--text-color-dark);
+        --glow-color: var(--primary-glow-dark);
+        --border-color: rgba(139, 148, 191, 0.3);
+      }
+      :host([data-theme='light']) {
+        --card-bg: var(--card-bg-light);
+        --text-color: var(--text-color-light);
+        --glow-color: var(--primary-glow-light);
+        --border-color: rgba(56, 66, 138, 0.2);
+      }
+
+      .fortune-card {
+        background: var(--card-bg);
+        color: var(--text-color);
+        padding: 2rem 2.5rem;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid var(--border-color);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), 0 0 12px var(--glow-color);
+        text-align: center;
+        transition: all 0.5s ease;
+        width: clamp(300px, 90vw, 500px);
+        margin: 1rem;
+      }
+      h1 {
+        font-family: var(--font-main);
+        font-size: 2.2rem;
+        font-weight: 700;
+        text-shadow: 0 0 5px var(--glow-color), 0 0 10px var(--glow-color);
+        margin-bottom: 1.5rem;
+      }
+      .scores-container {
+        display: flex;
+        justify-content: space-around;
+        gap: 1.5rem;
+        margin: 2rem 0;
+        flex-wrap: wrap;
+      }
+      .score-section {
+        flex: 1;
+        min-width: 180px;
+        padding: 1.5rem;
+        border: 1px solid var(--border-color);
+        border-radius: 15px;
+        transition: all 0.3s ease;
+      }
+      .score-section h2 {
+        font-family: var(--font-main);
+        font-size: 1.5rem;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        color: var(--text-color);
+      }
+      .score-value {
+        font-family: var(--font-main);
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin: 0;
+        color: var(--glow-color);
+        text-shadow: 0 0 8px var(--glow-color);
+      }
+      .score-message {
+        margin-top: 1rem;
+        min-height: 2.5em;
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+      button {
+        background: linear-gradient(45deg, var(--glow-color), #4e54c8);
+        color: white;
+        padding: 1rem 2.5rem;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-family: var(--font-main);
+        font-size: 1.1rem;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color) inset;
+        margin-top: 1rem;
+      }
+      button:hover:not(:disabled) {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px var(--glow-color), 0 0 30px var(--glow-color) inset;
+      }
+      button:disabled {
+        background: #555;
+        cursor: not-allowed;
+        box-shadow: none;
+        opacity: 0.6;
+      }
+      .theme-switch-container {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+      .theme-switch {
+        display: inline-block;
+        height: 28px;
+        position: relative;
+        width: 55px;
+      }
+      .theme-switch input { display:none; }
+      .slider {
+        background-color: #3e445b;
+        bottom: 0;
+        cursor: pointer;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: .4s;
+        border-radius: 28px;
+      }
+      .slider:before {
+        background-color: #fff;
+        bottom: 4px;
+        content: "☀️";
+        height: 20px;
+        width: 20px;
+        left: 4px;
+        line-height:20px;
+        font-size:12px;
+        text-align:center;
+        position: absolute;
+        transition: .4s;
+        border-radius: 50%;
+      }
+      input:checked + .slider {
+        background: linear-gradient(45deg, var(--glow-color), #4e54c8);
+      }
+      input:checked + .slider:before {
+        transform: translateX(27px);
+        content: "🌙";
+      }
+    `;
+    
+    const wrapper = document.createElement('div');
+    wrapper.className = 'fortune-card';
+    wrapper.innerHTML = `
+      <div class="theme-switch-container">
+        <label class="theme-switch">
+          <input type="checkbox" id="theme-toggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <h1>Today's Cosmic Fortune</h1>
+      <div class="scores-container">
+        <div class="score-section">
+          <h2><span role="img" aria-label="money">💰</span> Wealth</h2>
+          <p class="score-value" id="financial-score">--</p>
+          <p class="score-message" id="financial-message">Press the button to see your financial forecast.</p>
+        </div>
+        <div class="score-section">
+          <h2><span role="img" aria-label="people">🤝</span> Bonds</h2>
+          <p class="score-value" id="relationship-score">--</p>
+          <p class="score-message" id="relationship-message">Press the button to see your relationship forecast.</p>
+        </div>
+      </div>
+      <button id="fortune-button">Reveal Fortune</button>
+    `;
+
+    this.shadowRoot.append(style, wrapper);
+
+    this.themeToggle = this.shadowRoot.getElementById('theme-toggle');
+    this.fortuneButton = this.shadowRoot.getElementById('fortune-button');
+    this.financialScoreDisplay = this.shadowRoot.getElementById('financial-score');
+    this.relationshipScoreDisplay = this.shadowRoot.getElementById('relationship-score');
+    this.financialMessageDisplay = this.shadowRoot.getElementById('financial-message');
+    this.relationshipMessageDisplay = this.shadowRoot.getElementById('relationship-message');
+  }
+  
   _applyInitialTheme() {
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.body.dataset.theme = savedTheme;
     this.dataset.theme = savedTheme;
     this.themeToggle.checked = savedTheme === 'dark';
   }
 
   _toggleTheme() {
     const newTheme = this.themeToggle.checked ? 'dark' : 'light';
+    document.body.dataset.theme = newTheme;
     this.dataset.theme = newTheme;
     localStorage.setItem('theme', newTheme);
   }
 
   getFortune() {
-    if (!this.checkFortuneAvailability()) {
-      return; // Already checked fortune today
-    }
+    if (!this.checkFortuneAvailability(false)) return;
 
     const financialScore = Math.floor(Math.random() * 100) + 1;
     const relationshipScore = Math.floor(Math.random() * 100) + 1;
+    
+    const fortuneData = {
+        financialScore,
+        relationshipScore,
+        financialMessage: this.getFortuneMessage(financialScore),
+        relationshipMessage: this.getFortuneMessage(relationshipScore)
+    };
 
-    this.financialScoreDisplay.textContent = financialScore;
-    this.relationshipScoreDisplay.textContent = relationshipScore;
-
-    this.financialMessageDisplay.innerHTML = this.getFortuneMessage(financialScore);
-    this.relationshipMessageDisplay.innerHTML = this.getFortuneMessage(relationshipScore);
-
+    localStorage.setItem('fortuneData', JSON.stringify(fortuneData));
     localStorage.setItem('lastFortuneDate', new Date().toDateString());
-    this.checkFortuneAvailability(); // Update button state after checking
+
+    this._animateScore(this.financialScoreDisplay, financialScore);
+    this._animateScore(this.relationshipScoreDisplay, relationshipScore);
+
+    setTimeout(() => {
+        this.financialMessageDisplay.innerHTML = fortuneData.financialMessage;
+        this.relationshipMessageDisplay.innerHTML = fortuneData.relationshipMessage;
+    }, 1500);
+
+    this.checkFortuneAvailability(true);
+  }
+
+  _animateScore(element, finalScore) {
+    let currentScore = 0;
+    const duration = 1500;
+    const stepTime = Math.max(1, Math.floor(duration / finalScore));
+    
+    const timer = setInterval(() => {
+      currentScore++;
+      element.textContent = currentScore;
+      if (currentScore >= finalScore) {
+        clearInterval(timer);
+      }
+    }, stepTime);
   }
 
   getFortuneMessage(score) {
-    if (score >= 81) {
-      return '🌈 **환상적인 하루가 기다리고 있습니다! 당신의 행운이 빛나고 있습니다!** 🌟';
-    } else if (score >= 61) {
-      return '✨ **모든 것이 밝아 보입니다! 기회를 잡으세요!** 🍀';
-    } else if (score >= 41) {
-      return '☀️ **안정적인 하루입니다. 당신이 직접 태양을 만드세요!** 😊';
-    } else if (score >= 21) {
-      return '☁️ **조금 흐립니다. 오늘은 작은 즐거움에 집중하세요.** ☕';
-    } else {
-      return '🌧️ **비 오는 날처럼 보입니다. 긍정적인 전망을 유지하세요!** 💪';
-    }
+    if (score >= 81) return '🌟 **Cosmic alignment!** A universe of opportunities awaits!';
+    if (score >= 61) return '✨ **Starlight favor!** Good vibes are flowing your way.';
+    if (score >= 41) return '☀️ **Neutral space.** Your path is your own to forge.';
+    if (score >= 21) return '☁️ **Minor nebula.** Navigate with care and intention.';
+    return '☄️ **Asteroid field!** Keep your head up and stay positive.';
   }
 
-  checkFortuneAvailability() {
+  checkFortuneAvailability(isAfterClick = false) {
     const today = new Date().toDateString();
     const lastFortuneDate = localStorage.getItem('lastFortuneDate');
 
     if (lastFortuneDate === today) {
       this.fortuneButton.disabled = true;
-      this.fortuneButton.textContent = '운세 확인 완료';
-      this.financialMessageDisplay.textContent = '오늘의 운세를 이미 확인했습니다. 내일 다시 확인해주세요!';
-      this.relationshipMessageDisplay.textContent = '오늘의 운세를 이미 확인했습니다. 내일 다시 확인해주세요!';
+      this.fortuneButton.textContent = 'Fortune Revealed';
+      
+      if (!isAfterClick) {
+        const savedFortune = localStorage.getItem('fortuneData');
+        if (savedFortune) {
+            const data = JSON.parse(savedFortune);
+            this.financialScoreDisplay.textContent = data.financialScore;
+            this.relationshipScoreDisplay.textContent = data.relationshipScore;
+            this.financialMessageDisplay.innerHTML = data.financialMessage;
+            this.relationshipMessageDisplay.innerHTML = data.relationshipMessage;
+        }
+      }
       return false;
     } else {
       this.fortuneButton.disabled = false;
-      this.fortuneButton.textContent = '운세 보기';
-      this.financialMessageDisplay.textContent = '버튼을 눌러 금전운을 확인하세요.';
-      this.relationshipMessageDisplay.textContent = '버튼을 눌러 인간관계운을 확인하세요.';
-      this.financialScoreDisplay.textContent = '--'; // Reset score display
-      this.relationshipScoreDisplay.textContent = '--'; // Reset score display
+      this.fortuneButton.textContent = 'Reveal Fortune';
+      this.financialScoreDisplay.textContent = '--';
+      this.relationshipScoreDisplay.textContent = '--';
+      this.financialMessageDisplay.textContent = 'Press the button to see your financial forecast.';
+      this.relationshipMessageDisplay.textContent = 'Press the button to see your relationship forecast.';
       return true;
     }
   }
