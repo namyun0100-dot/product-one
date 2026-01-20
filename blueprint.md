@@ -1,32 +1,55 @@
+# 프로젝트 블루프린트
 
-# Blueprint: Today's Fortune App
+## 1. 프로젝트 개요
+이 프로젝트는 웹 기반의 간단한 게임들을 개발하는 것을 목표로 합니다. 현재는 "오늘의 운세"라는 게임이 구현되어 있으며, 사용자 인터랙션과 시각적 매력을 향상시키는 방향으로 개선되었습니다. 향후 새로운 게임을 추가할 예정입니다.
 
-## Overview
+## 2. 구현된 기능 및 디자인
 
-A simple, visually appealing web application that allows users to check their "fortune" for the day. The app will display a random score from 1 to 100 and a corresponding encouraging message.
 
-## Project Structure
+### 2.1. 오늘의 운세 게임 (Luck of the Day)
+사용자가 하루에 한 번 오늘의 운세 점수를 확인하고, 그 점수에 따라 격려의 메시지와 시각적인 피드백을 받는 웹 컴포넌트 기반 게임입니다.
 
-*   `index.html`: The main HTML file containing the structure of the app.
-*   `style.css`: The CSS file for styling the application.
-*   `main.js`: The JavaScript file containing the application logic, including a Web Component for the fortune display.
+*   **웹 컴포넌트:** `main.js`에 `FortuneTeller`라는 이름의 커스텀 엘리먼트로 구현되어 있습니다.
+*   **주요 기능:**
+    *   **두 가지 운세 (금전운, 인간관계운):** 기존 단일 운세에서 '금전운'과 '인간관계운' 두 가지 독립적인 운세 점수를 제공합니다. 각 운세는 1-100점 사이의 랜덤 점수와 개별 메시지를 가집니다.
+    *   **하루 한 번 운세 확인:** `localStorage`를 사용하여 사용자가 24시간 내에 한 번만 운세를 확인할 수 있도록 제한합니다. 버튼 상태가 '운세 보기'에서 '운세 확인 완료'로 변경되며 비활성화됩니다.
+    *   **점수별 동적 메시지:** 1-100점 사이의 운세 점수에 따라 다른 내용의 격려 메시지와 이모지가 표시됩니다. 이 메시지는 금전운과 인간관계운 각각에 대해 독립적으로 적용됩니다.
+        *   **81-100점 (최고의 운):** 🌈 **환상적인 하루가 기다리고 있습니다! 당신의 행운이 빛나고 있습니다!** 🌟
+        *   **61-80점 (좋은 운):** ✨ **모든 것이 밝아 보입니다! 기회를 잡으세요!** 🍀
+        *   **41-60점 (보통 운):** ☀️ **안정적인 하루입니다. 당신이 직접 태양을 만드세요!** 😊
+        *   **21-40점 (낮은 운):** ☁️ **조금 흐립니다. 오늘은 작은 즐거움에 집중하세요.** ☕
+        *   **1-20점 (매우 낮은 운):** 🌧️ **비 오는 날처럼 보입니다. 긍정적인 전망을 유지하세요!** 💪
+*   **디자인 및 스타일:**
+    *   **전반적인 테마:** 부드럽고 친근한 분위기를 위해 파스텔 톤의 색상 스킴을 적용했습니다.
+    *   **`body` 배경색:** `#f8f0e3` (부드러운 크림/복숭아색)으로 변경되었습니다. (`style.css`에서 정의)
+    *   **운세 카드 (`.fortune-card`):**
+        *   배경색: `#ffffff` (따뜻한 흰색)
+        *   그림자: `0 10px 20px rgba(180, 160, 140, 0.2)` (더 부드러운 그림자 효과)
+    *   **점수 컨테이너 (`.scores-container`):**
+        *   `flex` 레이아웃을 사용하여 '금전운'과 '인간관계운' 섹션을 가로로 배치하고, 화면 크기에 따라 줄바꿈(`flex-wrap: wrap`)되도록 반응형으로 설계되었습니다.
+        *   `gap`과 `margin`을 통해 적절한 간격을 유지합니다.
+    *   **개별 운세 섹션 (`.score-section`):**
+        *   `flex: 1`과 `min-width`를 통해 유연하게 크기가 조절되며, 패딩과 테두리, 배경색이 적용됩니다.
+    *   **운세 제목 (`.score-section h2`):**
+        *   `font-size: 1.5rem` 및 `#34495e` 색상으로 제목의 가독성을 높였습니다.
+    *   **운세 점수 (`.score-value`):**
+        *   `font-size: 2.5rem`, 볼드체, `#4a4a4a` 색상으로 점수를 강조합니다.
+    *   **운세 메시지 (`.score-message`):**
+        *   `font-style: italic`, 볼드체, `#7f8c8d` 색상으로 메시지를 표시하며, 최소 높이를 지정하여 레이아웃의 일관성을 유지합니다.
+    *   **버튼 (`button`):**
+        *   일반 상태 배경색: `#8bc34a` (밝은 녹색)
+        *   호버 상태 배경색: `#7cb342` (약간 더 어두운 녹색)
+        *   비활성화 상태 배경색: `#dcdcdc` (밝은 회색)
+        *   비활성화 상태 텍스트 색상: `#a0a0a0`
+        *   새로운 레이아웃에 맞춰 `margin-top`이 추가되었습니다.
 
-## Design and Features
+## 3. 현재 작업 상태 및 다음 계획
 
-### Visual Design
+*   **현재까지 완료된 사항:**
+    *   "오늘의 운세" 게임의 하루 한 번 클릭 제한 기능 구현
+    *   "오늘의 운세" 게임의 점수별 동적 메시지 및 이모지 표시 기능 구현
+    *   "오늘의 운세" 게임의 색상 스킴 업데이트
 
-*   **Layout**: A centered, card-based layout that is responsive and works well on mobile and desktop.
-*   **Color Palette**: A modern and vibrant color scheme.
-*   **Typography**: Clean and readable fonts.
-*   **Iconography**: An icon will be used for the button.
-
-### Features
-
-*   **Fortune Generation**: Clicking a button generates a random number between 1 and 100.
-*   **Dynamic Messages**: A set of messages that change based on the generated score. There are four message categories based on the score.
-*   **Web Component**: The fortune display will be encapsulated in a `<fortune-teller>` custom element for reusability and clean code.
-
-## Current Plan: Revert to English
-
-1.  **Update `index.html`**: Revert the page title back to English.
-2.  **Update `main.js`**: Revert all user-facing strings in the `FortuneTeller` component to English.
+*   **다음 계획:**
+    *   "오늘의 운세" 게임에 대한 추가 개선 (예: 점수 기록, 미니게임 연동 등)
+    *   제안되었던 새로운 게임 아이디어: 벽돌깨기, 두더지 잡기, 스네이크 게임. 다음 세션에서 어떤 게임을 만들지 논의 예정.
