@@ -49,7 +49,7 @@ body::before {
     top: 10%;
     left: 15%;
     animation: moveGlow 15s infinite alternate ease-in-out;
-    z-index: -1; /* Ensure behind content */
+    z-index: 0; /* Bring back to visible layer */
     pointer-events: none; /* Don't interfere with touches */
 }
 
@@ -63,7 +63,7 @@ body::after {
     bottom: 5%;
     right: 10%;
     animation: moveGlow 20s infinite alternate ease-in-out reverse;
-    z-index: -1;
+    z-index: 0;
     pointer-events: none;
 }
 

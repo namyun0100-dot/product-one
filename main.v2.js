@@ -3,14 +3,56 @@ class CosmicOracle extends HTMLElement {
     super();
     this.attachShadow({ mode: 'open' });
 
+    // Translations Data
+    this.translations = {
+        en: {
+            title: "Today's Cosmic Fortune",
+            wealth: "Wealth",
+            bonds: "Bonds",
+            btnReveal: "Reveal Fortune",
+            btnRevealed: "Fortune Revealed",
+            msgWait: "Press the button to see your forecast.",
+            msgFinancial: "Press the button to see your financial forecast.",
+            msgRelationship: "Press the button to see your relationship forecast.",
+            fortunes: {
+                81: "🌟 <strong>Cosmic alignment!</strong> A universe of opportunities awaits!",
+                61: "✨ <strong>Starlight favor!</strong> Good vibes are flowing your way.",
+                41: "☀️ <strong>Neutral space.</strong> Your path is your own to forge.",
+                21: "☁️ <strong>Minor nebula.</strong> Navigate with care and intention.",
+                0: "☄️ <strong>Asteroid field!</strong> Keep your head up and stay positive."
+            }
+        },
+        ko: {
+            title: "오늘의 우주 운세",
+            wealth: "금전운",
+            bonds: "인연운",
+            btnReveal: "운세 확인하기",
+            btnRevealed: "운세 확인 완료",
+            msgWait: "버튼을 눌러 오늘의 운세를 확인하세요.",
+            msgFinancial: "버튼을 눌러 금전운을 확인하세요.",
+            msgRelationship: "버튼을 눌러 인연운을 확인하세요.",
+            fortunes: {
+                81: "🌟 <strong>우주의 축복!</strong> 엄청난 기회가 기다리고 있어요!",
+                61: "✨ <strong>별빛의 가호!</strong> 좋은 기운이 흐르고 있네요.",
+                41: "☀️ <strong>고요한 우주.</strong> 당신이 길을 개척할 시간입니다.",
+                21: "☁️ <strong>작은 성운.</strong> 신중하게 나아가는 게 좋겠어요.",
+                0: "☄️ <strong>소행성 주의!</strong> 긍정적인 마음을 잃지 마세요."
+            }
+        }
+    };
+
+    this.lang = localStorage.getItem('lang') || 'ko'; // Default to Korean
+
     this._setupUI();
     
     this.themeToggle.addEventListener('change', () => this._toggleTheme());
+    this.langBtn.addEventListener('click', () => this._toggleLang());
     this.fortuneButton.addEventListener('click', () => this.getFortune());
 
     this._applyInitialTheme();
+    this._updateText(); // Apply initial language
     this.checkFortuneAvailability();
-  }
+}
 
   _setupUI() {
     const style = document.createElement('style');
@@ -35,7 +77,6 @@ class CosmicOracle extends HTMLElement {
         --glow-color: var(--primary-glow-light);
         --border-color: rgba(56, 66, 138, 0.2);
       }
-
       * { box-sizing: border-box; } /* Reset for Shadow DOM */
       
       .fortune-card {
@@ -51,6 +92,7 @@ class CosmicOracle extends HTMLElement {
         transition: all 0.5s ease;
         width: 100%;
         max-width: 500px;
+        position: relative;
         /* margin: 1rem; Removed to prevent overflow/alignment issues */
       }
 
@@ -160,10 +202,29 @@ class CosmicOracle extends HTMLElement {
         box-shadow: none;
         opacity: 0.6;
       }
-      .theme-switch-container {
+      .controls-container {
         position: absolute;
         top: 20px;
         right: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .lang-btn {
+        background: transparent;
+        border: 1px solid var(--text-color);
+        color: var(--text-color);
+        padding: 2px 8px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: var(--font-main);
+        font-size: 0.8rem;
+        transition: all 0.3s ease;
+      }
+      .lang-btn:hover {
+        background: var(--glow-color);
+        border-color: var(--glow-color);
+        color: white;
       }
       .theme-switch {
         display: inline-block;
@@ -209,21 +270,22 @@ class CosmicOracle extends HTMLElement {
     const wrapper = document.createElement('div');
     wrapper.className = 'fortune-card';
     wrapper.innerHTML = `
-      <div class="theme-switch-container">
+      <div class="controls-container">
+        <button id="lang-btn" class="lang-btn">KO</button>
         <label class="theme-switch">
           <input type="checkbox" id="theme-toggle">
           <span class="slider"></span>
         </label>
       </div>
-      <h1>Today's Cosmic Fortune</h1>
+      <h1 id="title">Today's Cosmic Fortune</h1>
       <div class="scores-container">
         <div class="score-section">
-          <h2><span role="img" aria-label="money">💰</span> Wealth</h2>
+          <h2><span role="img" aria-label="money">💰</span> <span id="label-wealth">Wealth</span></h2>
           <p class="score-value" id="financial-score">--</p>
           <p class="score-message" id="financial-message">Press the button to see your financial forecast.</p>
         </div>
         <div class="score-section">
-          <h2><span role="img" aria-label="people">🤝</span> Bonds</h2>
+          <h2><span role="img" aria-label="people">🤝</span> <span id="label-bonds">Bonds</span></h2>
           <p class="score-value" id="relationship-score">--</p>
           <p class="score-message" id="relationship-message">Press the button to see your relationship forecast.</p>
         </div>
@@ -234,7 +296,13 @@ class CosmicOracle extends HTMLElement {
     this.shadowRoot.append(style, wrapper);
 
     this.themeToggle = this.shadowRoot.getElementById('theme-toggle');
+    this.langBtn = this.shadowRoot.getElementById('lang-btn');
     this.fortuneButton = this.shadowRoot.getElementById('fortune-button');
+    
+    this.titleDisplay = this.shadowRoot.getElementById('title');
+    this.labelWealth = this.shadowRoot.getElementById('label-wealth');
+    this.labelBonds = this.shadowRoot.getElementById('label-bonds');
+    
     this.financialScoreDisplay = this.shadowRoot.getElementById('financial-score');
     this.relationshipScoreDisplay = this.shadowRoot.getElementById('relationship-score');
     this.financialMessageDisplay = this.shadowRoot.getElementById('financial-message');
@@ -255,17 +323,36 @@ class CosmicOracle extends HTMLElement {
     localStorage.setItem('theme', newTheme);
   }
 
+  _toggleLang() {
+      this.lang = this.lang === 'en' ? 'ko' : 'en';
+      localStorage.setItem('lang', this.lang);
+      this._updateText();
+      // If fortune is revealed, update messages
+      this.checkFortuneAvailability();
+      // Update global quote
+      updateQuote(this.lang);
+  }
+
+  _updateText() {
+      const t = this.translations[this.lang];
+      this.langBtn.textContent = this.lang === 'en' ? 'KO' : 'EN'; // Show opposite as option
+      this.titleDisplay.textContent = t.title;
+      this.labelWealth.textContent = t.wealth;
+      this.labelBonds.textContent = t.bonds;
+      
+      // Button text updates based on state in checkFortuneAvailability
+  }
+
   getFortune() {
     if (!this.checkFortuneAvailability(false)) return;
 
     const financialScore = Math.floor(Math.random() * 100) + 1;
     const relationshipScore = Math.floor(Math.random() * 100) + 1;
     
+    // Store score only, messages are dynamic based on lang
     const fortuneData = {
         financialScore,
-        relationshipScore,
-        financialMessage: this.getFortuneMessage(financialScore),
-        relationshipMessage: this.getFortuneMessage(relationshipScore)
+        relationshipScore
     };
 
     localStorage.setItem('fortuneData', JSON.stringify(fortuneData));
@@ -275,11 +362,10 @@ class CosmicOracle extends HTMLElement {
     this._animateScore(this.relationshipScoreDisplay, relationshipScore);
 
     setTimeout(() => {
-        this.financialMessageDisplay.innerHTML = fortuneData.financialMessage;
-        this.relationshipMessageDisplay.innerHTML = fortuneData.relationshipMessage;
+        this.checkFortuneAvailability(true);
     }, 1500);
 
-    this.checkFortuneAvailability(true);
+    this.checkFortuneAvailability(true); // Disable button immediately
   }
 
   _animateScore(element, finalScore) {
@@ -297,39 +383,45 @@ class CosmicOracle extends HTMLElement {
   }
 
   getFortuneMessage(score) {
-    if (score >= 81) return '🌟 <strong>Cosmic alignment!</strong> A universe of opportunities awaits!';
-    if (score >= 61) return '✨ <strong>Starlight favor!</strong> Good vibes are flowing your way.';
-    if (score >= 41) return '☀️ <strong>Neutral space.</strong> Your path is your own to forge.';
-    if (score >= 21) return '☁️ <strong>Minor nebula.</strong> Navigate with care and intention.';
-    return '☄️ <strong>Asteroid field!</strong> Keep your head up and stay positive.';
+    const t = this.translations[this.lang].fortunes;
+    if (score >= 81) return t[81];
+    if (score >= 61) return t[61];
+    if (score >= 41) return t[41];
+    if (score >= 21) return t[21];
+    return t[0];
   }
 
   checkFortuneAvailability(isAfterClick = false) {
     const today = new Date().toDateString();
     const lastFortuneDate = localStorage.getItem('lastFortuneDate');
+    const t = this.translations[this.lang];
 
     if (lastFortuneDate === today) {
       this.fortuneButton.disabled = true;
-      this.fortuneButton.textContent = 'Fortune Revealed';
+      this.fortuneButton.textContent = t.btnRevealed;
       
-      if (!isAfterClick) {
-        const savedFortune = localStorage.getItem('fortuneData');
-        if (savedFortune) {
+      const savedFortune = localStorage.getItem('fortuneData');
+      if (savedFortune) {
             const data = JSON.parse(savedFortune);
             this.financialScoreDisplay.textContent = data.financialScore;
             this.relationshipScoreDisplay.textContent = data.relationshipScore;
-            this.financialMessageDisplay.innerHTML = data.financialMessage;
-            this.relationshipMessageDisplay.innerHTML = data.relationshipMessage;
-        }
+            
+            // Generate message dynamically based on current lang
+            this.financialMessageDisplay.innerHTML = this.getFortuneMessage(data.financialScore);
+            this.relationshipMessageDisplay.innerHTML = this.getFortuneMessage(data.relationshipScore);
       }
       return false;
     } else {
       this.fortuneButton.disabled = false;
-      this.fortuneButton.textContent = 'Reveal Fortune';
-      this.financialScoreDisplay.textContent = '--';
-      this.relationshipScoreDisplay.textContent = '--';
-      this.financialMessageDisplay.textContent = 'Press the button to see your financial forecast.';
-      this.relationshipMessageDisplay.textContent = 'Press the button to see your relationship forecast.';
+      this.fortuneButton.textContent = t.btnReveal;
+      
+      // Only reset display if we aren't mid-reveal (though logic usually prevents this overlap)
+      if (!isAfterClick) {
+        this.financialScoreDisplay.textContent = '--';
+        this.relationshipScoreDisplay.textContent = '--';
+        this.financialMessageDisplay.textContent = t.msgFinancial;
+        this.relationshipMessageDisplay.textContent = t.msgRelationship;
+      }
       return true;
     }
   }
@@ -337,19 +429,38 @@ class CosmicOracle extends HTMLElement {
 
 customElements.define('cosmic-oracle', CosmicOracle);
 
-// New Feature: Quote of the Day
-document.addEventListener('DOMContentLoaded', () => {
-    const quotes = [
-        "\"The universe is under no obligation to make sense to you.\" - Neil deGrasse Tyson",
-        "\"Somewhere, something incredible is waiting to be known.\" - Carl Sagan",
-        "\"We are all in the gutter, but some of us are looking at the stars.\" - Oscar Wilde",
-        "\"Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.\" - Albert Einstein",
-        "\"Look up at the stars and not down at your feet. Try to make sense of what you see, and wonder about what makes the universe exist. Be curious.\" - Stephen Hawking"
-    ];
+// Global function to update quote
+window.updateQuote = function(lang) {
+    const quotes = {
+        en: [
+            "\"The universe is under no obligation to make sense to you.\" - Neil deGrasse Tyson",
+            "\"Somewhere, something incredible is waiting to be known.\" - Carl Sagan",
+            "\"We are all in the gutter, but some of us are looking at the stars.\" - Oscar Wilde",
+            "\"Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.\" - Albert Einstein",
+            "\"Look up at the stars and not down at your feet.\" - Stephen Hawking"
+        ],
+        ko: [
+            "\"우주는 당신을 이해시킬 의무가 없습니다.\" - 닐 타이슨",
+            "\"어딘가에 믿을 수 없는 무언가가 알려지길 기다리고 있습니다.\" - 칼 세이건",
+            "\"우리는 모두 시궁창에 살고 있지만, 우리 중 누군가는 별을 바라보고 있습니다.\" - 오스카 와일드",
+            "\"무한한 것은 두 가지입니다. 우주와 인간의 어리석음. 우주는 확실하지 않네요.\" - 아인슈타인",
+            "\"고개를 숙여 발을 보지 말고 고개를 들어 별을 바라보세요.\" - 스티븐 호킹"
+        ]
+    };
 
     const quoteElement = document.getElementById('quote-of-the-day');
     if (quoteElement) {
-        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        // Deterministic daily quote based on date to match static feel, or random?
+        // Let's stick to random but consistent for the session or just random.
+        // For language toggle demo, random is fine.
+        const list = quotes[lang] || quotes['en'];
+        const randomQuote = list[Math.floor(Math.random() * list.length)];
         quoteElement.textContent = randomQuote;
     }
+}
+
+// Initial Quote
+document.addEventListener('DOMContentLoaded', () => {
+    const lang = localStorage.getItem('lang') || 'ko';
+    updateQuote(lang);
 });
