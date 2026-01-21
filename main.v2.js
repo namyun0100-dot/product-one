@@ -1,57 +1,76 @@
+// Global Translations Data
+const translations = {
+    en: {
+        title: "Today's Cosmic Fortune",
+        wealth: "Wealth",
+        bonds: "Bonds",
+        btnReveal: "Reveal Fortune",
+        btnRevealed: "Fortune Revealed",
+        msgWait: "Press the button to see your forecast.",
+        msgFinancial: "Press the button to see your financial forecast.",
+        msgRelationship: "Press the button to see your relationship forecast.",
+        fortunes: {
+            81: "🌟 <strong>Cosmic alignment!</strong> A universe of opportunities awaits!",
+            61: "✨ <strong>Starlight favor!</strong> Good vibes are flowing your way.",
+            41: "☀️ <strong>Neutral space.</strong> Your path is your own to forge.",
+            21: "☁️ <strong>Minor nebula.</strong> Navigate with care and intention.",
+            0: "☄️ <strong>Asteroid field!</strong> Keep your head up and stay positive."
+        },
+        contactTitle: "Cosmic Collaboration Inquiry",
+        labelName: "Your Name:",
+        labelEmail: "Your Email:",
+        labelMessage: "Your Message:",
+        btnSendSignal: "Send Signal",
+        formInstructions: "We usually respond to cosmic signals within 24 light-hours."
+    },
+    ko: {
+        title: "오늘의 우주 운세",
+        wealth: "금전운",
+        bonds: "인연운",
+        btnReveal: "운세 확인하기",
+        btnRevealed: "운세 확인 완료",
+        msgWait: "버튼을 눌러 오늘의 운세를 확인하세요.",
+        msgFinancial: "버튼을 눌러 금전운을 확인하세요.",
+        msgRelationship: "버튼을 눌러 인연운을 확인하세요.",
+        fortunes: {
+            81: "🌟 <strong>우주의 축복!</strong> 엄청난 기회가 기다리고 있어요!",
+            61: "✨ <strong>별빛의 가호!</strong> 좋은 기운이 흐르고 있네요!",
+            41: "☀️ <strong>고요한 우주.</strong> 당신이 길을 개척할 시간입니다.",
+            21: "☁️ <strong>작은 성운.</strong> 신중하게 나아가는 게 좋겠어요.",
+            0: "☄️ <strong>소행성 주의!</strong> 긍정적인 마음을 잃지 마세요!"
+        },
+        contactTitle: "우주 협력 문의",
+        labelName: "이름:",
+        labelEmail: "이메일:",
+        labelMessage: "메시지:",
+        btnSendSignal: "신호 보내기",
+        formInstructions: "우주 신호는 보통 24광시(시간) 내에 응답해 드립니다."
+    }
+};
+
+// Global Quotes Data
+const quotes = {
+    en: [
+        "\"The universe is under no obligation to make sense to you.\" - Neil deGrasse Tyson",
+        "\"Somewhere, something incredible is waiting to be known.\" - Carl Sagan",
+        "\"We are all in the gutter, but some of us are looking at the stars.\" - Oscar Wilde",
+        "\"Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.\" - Albert Einstein",
+        "\"Look up at the stars and not down at your feet.\" - Stephen Hawking"
+    ],
+    ko: [
+        "\"우주는 당신을 이해시킬 의무가 없습니다.\" - 닐 타이슨",
+        "\"어딘가에 믿을 수 없는 무언가가 알려지길 기다리고 있습니다.\" - 칼 세이건",
+        "\"우리는 모두 시궁창에 살고 있지만, 우리 중 누군가는 별을 바라보고 있습니다.\" - 오스카 와일드",
+        "\"무한한 것은 두 가지입니다. 우주와 인간의 어리석음. 우주는 확실하지 않네요.\" - 아인슈타인",
+        "\"고개를 숙여 발을 보지 말고 고개를 들어 별을 바라보세요.\" - 스티븐 호킹"
+    ]
+};
+
+
 class CosmicOracle extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
-
-    // Translations Data
-    this.translations = {
-        en: {
-            title: "Today's Cosmic Fortune",
-            wealth: "Wealth",
-            bonds: "Bonds",
-            btnReveal: "Reveal Fortune",
-            btnRevealed: "Fortune Revealed",
-            msgWait: "Press the button to see your forecast.",
-            msgFinancial: "Press the button to see your financial forecast.",
-            msgRelationship: "Press the button to see your relationship forecast.",
-            fortunes: {
-                81: "🌟 <strong>Cosmic alignment!</strong> A universe of opportunities awaits!",
-                61: "✨ <strong>Starlight favor!</strong> Good vibes are flowing your way.",
-                41: "☀️ <strong>Neutral space.</strong> Your path is your own to forge.",
-                21: "☁️ <strong>Minor nebula.</strong> Navigate with care and intention.",
-                0: "☄️ <strong>Asteroid field!</strong> Keep your head up and stay positive."
-            },
-            contactTitle: "Cosmic Collaboration Inquiry",
-            labelName: "Your Name:",
-            labelEmail: "Your Email:",
-            labelMessage: "Your Message:",
-            btnSendSignal: "Send Signal",
-            formInstructions: "We usually respond to cosmic signals within 24 light-hours."
-        },
-        ko: {
-            title: "오늘의 우주 운세",
-            wealth: "금전운",
-            bonds: "인연운",
-            btnReveal: "운세 확인하기",
-            btnRevealed: "운세 확인 완료",
-            msgWait: "버튼을 눌러 오늘의 운세를 확인하세요.",
-            msgFinancial: "버튼을 눌러 금전운을 확인하세요.",
-            msgRelationship: "버튼을 눌러 인연운을 확인하세요.",
-            fortunes: {
-                81: "🌟 <strong>우주의 축복!</strong> 엄청난 기회가 기다리고 있어요!",
-                61: "✨ <strong>별빛의 가호!</strong> 좋은 기운이 흐르고 있네요.",
-                41: "☀️ <strong>고요한 우주.</strong> 당신이 길을 개척할 시간입니다.",
-                21: "☁️ <strong>작은 성운.</strong> 신중하게 나아가는 게 좋겠어요.",
-                0: "☄️ <strong>소행성 주의!</strong> 긍정적인 마음을 잃지 마세요."
-            },
-            contactTitle: "우주 협력 문의",
-            labelName: "이름:",
-            labelEmail: "이메일:",
-            labelMessage: "메시지:",
-            btnSendSignal: "신호 보내기",
-            formInstructions: "우주 신호는 보통 24광시(시간) 내에 응답해 드립니다."
-        }
-    };
 
     this.lang = localStorage.getItem('lang') || 'ko'; // Default to Korean
 
@@ -62,10 +81,11 @@ class CosmicOracle extends HTMLElement {
     this.fortuneButton.addEventListener('click', () => this.getFortune());
 
     this._applyInitialTheme();
-    this._updateText(); // Apply initial language
+    // this._updateText() will be called by updateGlobalText in DOMContentLoaded after all elements are ready.
+    // However, for the Shadow DOM elements, we need an initial call.
+    this._updateText(); 
     this.checkFortuneAvailability();
-}
-
+  }
   _setupUI() {
     const style = document.createElement('style');
     style.textContent = `
@@ -296,20 +316,20 @@ class CosmicOracle extends HTMLElement {
           <span class="slider"></span>
         </label>
       </div>
-      <h1 id="title">Today's Cosmic Fortune</h1>
+      <h1 id="title"></h1>
       <div class="scores-container">
         <div class="score-section">
-          <h2><span role="img" aria-label="money">💰</span> <span id="label-wealth">Wealth</span></h2>
+          <h2><span role="img" aria-label="money">💰</span> <span id="label-wealth"></span></h2>
           <p class="score-value" id="financial-score">--</p>
-          <p class="score-message" id="financial-message">Press the button to see your financial forecast.</p>
+          <p class="score-message" id="financial-message"></p>
         </div>
         <div class="score-section">
-          <h2><span role="img" aria-label="people">🤝</span> <span id="label-bonds">Bonds</span></h2>
+          <h2><span role="img" aria-label="people">🤝</span> <span id="label-bonds"></span></h2>
           <p class="score-value" id="relationship-score">--</p>
-          <p class="score-message" id="relationship-message">Press the button to see your relationship forecast.</p>
+          <p class="score-message" id="relationship-message"></p>
         </div>
       </div>
-      <button id="fortune-button">Reveal Fortune</button>
+      <button id="fortune-button"></button>
     `;
 
     this.shadowRoot.append(style, wrapper);
@@ -345,31 +365,17 @@ class CosmicOracle extends HTMLElement {
   _toggleLang() {
       this.lang = this.lang === 'en' ? 'ko' : 'en';
       localStorage.setItem('lang', this.lang);
-      this._updateText();
-      // If fortune is revealed, update messages
-      this.checkFortuneAvailability();
-      // Update global quote
-      updateQuote(this.lang);
+      this._updateText(); // Update Shadow DOM elements
+      updateGlobalText(this.lang); // Update global DOM elements (contact form)
+      updateQuote(this.lang); // Update global quote
   }
 
-  _updateText() {
-      const t = this.translations[this.lang];
+  _updateText() { // Updates elements inside Shadow DOM
+      const t = translations[this.lang]; // Access global translations
       this.langBtn.textContent = this.lang === 'en' ? 'KO' : 'EN'; // Show opposite as option
       this.titleDisplay.textContent = t.title;
       this.labelWealth.textContent = t.wealth;
       this.labelBonds.textContent = t.bonds;
-      
-      // Update contact form elements (global scope)
-      document.getElementById('contact-title').textContent = t.contactTitle;
-      document.getElementById('label-name').textContent = t.labelName;
-      document.getElementById('label-email').textContent = t.labelEmail;
-      document.getElementById('label-message').textContent = t.labelMessage;
-      document.getElementById('form-submit-btn').textContent = t.btnSendSignal;
-      const formInstructionsElement = document.getElementById('form-instructions-text');
-      if (formInstructionsElement) {
-          formInstructionsElement.textContent = t.formInstructions;
-      }
-
       // Button text updates based on state in checkFortuneAvailability
   }
 
@@ -413,7 +419,7 @@ class CosmicOracle extends HTMLElement {
   }
 
   getFortuneMessage(score) {
-    const t = this.translations[this.lang].fortunes;
+    const t = translations[this.lang].fortunes; // Access global translations
     if (score >= 81) return t[81];
     if (score >= 61) return t[61];
     if (score >= 41) return t[41];
@@ -424,7 +430,7 @@ class CosmicOracle extends HTMLElement {
   checkFortuneAvailability(isAfterClick = false) {
     const today = new Date().toDateString();
     const lastFortuneDate = localStorage.getItem('lastFortuneDate');
-    const t = this.translations[this.lang];
+    const t = translations[this.lang]; // Access global translations
 
     if (lastFortuneDate === today) {
       this.fortuneButton.disabled = true;
@@ -459,38 +465,34 @@ class CosmicOracle extends HTMLElement {
 
 customElements.define('cosmic-oracle', CosmicOracle);
 
+// Global function to update contact form and other main document texts
+window.updateGlobalText = function(lang) {
+    const t = translations[lang];
+
+    document.getElementById('contact-title').textContent = t.contactTitle;
+    document.getElementById('label-name').textContent = t.labelName;
+    document.getElementById('label-email').textContent = t.labelEmail;
+    document.getElementById('label-message').textContent = t.labelMessage;
+    document.getElementById('form-submit-btn').textContent = t.btnSendSignal;
+    document.getElementById('form-instructions-text').textContent = t.formInstructions;
+}
+
 // Global function to update quote
 window.updateQuote = function(lang) {
-    const quotes = {
-        en: [
-            "\"The universe is under no obligation to make sense to you.\" - Neil deGrasse Tyson",
-            "\"Somewhere, something incredible is waiting to be known.\" - Carl Sagan",
-            "\"We are all in the gutter, but some of us are looking at the stars.\" - Oscar Wilde",
-            "\"Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.\" - Albert Einstein",
-            "\"Look up at the stars and not down at your feet.\" - Stephen Hawking"
-        ],
-        ko: [
-            "\"우주는 당신을 이해시킬 의무가 없습니다.\" - 닐 타이슨",
-            "\"어딘가에 믿을 수 없는 무언가가 알려지길 기다리고 있습니다.\" - 칼 세이건",
-            "\"우리는 모두 시궁창에 살고 있지만, 우리 중 누군가는 별을 바라보고 있습니다.\" - 오스카 와일드",
-            "\"무한한 것은 두 가지입니다. 우주와 인간의 어리석음. 우주는 확실하지 않네요.\" - 아인슈타인",
-            "\"고개를 숙여 발을 보지 말고 고개를 들어 별을 바라보세요.\" - 스티븐 호킹"
-        ]
-    };
-
+    const t = translations[lang]; // This was an error, should use quotes not translations
+    const list = quotes[lang] || quotes['en'];
     const quoteElement = document.getElementById('quote-of-the-day');
     if (quoteElement) {
-        // Deterministic daily quote based on date to match static feel, or random?
-        // Let's stick to random but consistent for the session or just random.
-        // For language toggle demo, random is fine.
-        const list = quotes[lang] || quotes['en'];
         const randomQuote = list[Math.floor(Math.random() * list.length)];
         quoteElement.textContent = randomQuote;
     }
 }
 
-// Initial Quote
+// Initial Load Handler
 document.addEventListener('DOMContentLoaded', () => {
     const lang = localStorage.getItem('lang') || 'ko';
+    // Ensure _updateText in CosmicOracle is called once for initial setup
+    // This happens implicitly when CosmicOracle constructor runs
     updateQuote(lang);
+    updateGlobalText(lang); // Update global text (contact form) on load
 });
