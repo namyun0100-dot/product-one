@@ -20,7 +20,13 @@ class CosmicOracle extends HTMLElement {
                 41: "☀️ <strong>Neutral space.</strong> Your path is your own to forge.",
                 21: "☁️ <strong>Minor nebula.</strong> Navigate with care and intention.",
                 0: "☄️ <strong>Asteroid field!</strong> Keep your head up and stay positive."
-            }
+            },
+            contactTitle: "Cosmic Collaboration Inquiry",
+            labelName: "Your Name:",
+            labelEmail: "Your Email:",
+            labelMessage: "Your Message:",
+            btnSendSignal: "Send Signal",
+            formInstructions: "To activate this form, replace \"YOUR_FORMSPREE_ID\" with your actual Formspree ID. Visit"
         },
         ko: {
             title: "오늘의 우주 운세",
@@ -37,7 +43,13 @@ class CosmicOracle extends HTMLElement {
                 41: "☀️ <strong>고요한 우주.</strong> 당신이 길을 개척할 시간입니다.",
                 21: "☁️ <strong>작은 성운.</strong> 신중하게 나아가는 게 좋겠어요.",
                 0: "☄️ <strong>소행성 주의!</strong> 긍정적인 마음을 잃지 마세요."
-            }
+            },
+            contactTitle: "우주 협력 문의",
+            labelName: "이름:",
+            labelEmail: "이메일:",
+            labelMessage: "메시지:",
+            btnSendSignal: "신호 보내기",
+            formInstructions: "이 양식을 활성화하려면 \"YOUR_FORMSPREE_ID\"를 실제 Formspree ID로 바꾸세요. 방문"
         }
     };
 
@@ -347,6 +359,18 @@ class CosmicOracle extends HTMLElement {
       this.labelWealth.textContent = t.wealth;
       this.labelBonds.textContent = t.bonds;
       
+      // Update contact form elements (global scope)
+      document.getElementById('contact-title').textContent = t.contactTitle;
+      document.getElementById('label-name').textContent = t.labelName;
+      document.getElementById('label-email').textContent = t.labelEmail;
+      document.getElementById('label-message').textContent = t.labelMessage;
+      document.getElementById('form-submit-btn').textContent = t.btnSendSignal;
+      const formInstructionsElement = document.getElementById('form-instructions-text');
+      if (formInstructionsElement) {
+          // Recreate text with link
+          formInstructionsElement.innerHTML = `${t.formInstructions} <a href="https://formspree.io/" target="_blank">Formspree.io</a> ${this.lang === 'ko' ? '를 방문하세요.' : 'to get started.'}`;
+      }
+
       // Button text updates based on state in checkFortuneAvailability
   }
 
