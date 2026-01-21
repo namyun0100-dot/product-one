@@ -42,35 +42,35 @@ body {
 body::before {
     content: '';
     position: fixed;
-    width: 600px; /* Wider beam */
-    height: 100vh; /* Full height */
-    background: linear-gradient(180deg, rgba(var(--glow-rgb-dark), 0.2) 0%, rgba(var(--glow-rgb-dark), 0) 80%);
-    top: -20%;
-    left: 20%;
-    transform-origin: top center; /* Swing from top */
+    width: 800px; /* Wider beam */
+    height: 120vh; /* Longer beam */
+    background: linear-gradient(180deg, rgba(var(--glow-rgb-dark), 0.6) 0%, rgba(var(--glow-rgb-dark), 0) 80%); /* Increased opacity */
+    top: -30%;
+    left: 10%;
+    transform-origin: top center;
     transform: rotate(-15deg);
     animation: swayLight 8s infinite alternate ease-in-out;
     z-index: 0; 
     pointer-events: none; 
-    border-radius: 0; /* No longer a ball */
-    filter: blur(20px); /* Soften edges */
+    border-radius: 0;
+    filter: blur(30px); /* Increased blur for soft light */
 }
 
 body::after {
     content: '';
     position: fixed;
-    width: 500px;
-    height: 100vh;
-    background: linear-gradient(180deg, rgba(78, 84, 200, 0.2) 0%, rgba(78, 84, 200, 0) 80%);
-    top: -20%;
-    right: 10%;
+    width: 600px;
+    height: 120vh;
+    background: linear-gradient(180deg, rgba(78, 84, 200, 0.5) 0%, rgba(78, 84, 200, 0) 80%); /* Increased opacity */
+    top: -30%;
+    right: 5%;
     transform-origin: top center;
     transform: rotate(15deg);
-    animation: swayLight 12s infinite alternate ease-in-out reverse;
+    animation: swayLight 10s infinite alternate ease-in-out reverse;
     z-index: 0;
     pointer-events: none;
     border-radius: 0;
-    filter: blur(30px);
+    filter: blur(40px);
 }
 
 body[data-theme="light"] {
@@ -79,10 +79,10 @@ body[data-theme="light"] {
 }
 
 body[data-theme="light"]::before {
-     background: linear-gradient(180deg, rgba(var(--glow-rgb-light), 0.3) 0%, rgba(var(--glow-rgb-light), 0) 80%);
+     background: linear-gradient(180deg, rgba(var(--glow-rgb-light), 0.6) 0%, rgba(var(--glow-rgb-light), 0) 80%);
 }
 body[data-theme="light"]::after {
-     background: linear-gradient(180deg, rgba(132, 94, 247, 0.2) 0%, rgba(132, 94, 247, 0) 80%);
+     background: linear-gradient(180deg, rgba(132, 94, 247, 0.5) 0%, rgba(132, 94, 247, 0) 80%);
 }
 
 main {
@@ -125,11 +125,11 @@ body[data-theme="light"] #quote-of-the-day {
 
 @keyframes swayLight {
     0% {
-        transform: rotate(-20deg);
-        opacity: 0.5;
+        transform: rotate(-25deg) translateY(-20px); /* Added slight vertical movement */
+        opacity: 0.4;
     }
     100% {
-        transform: rotate(-5deg);
+        transform: rotate(10deg) translateY(0);
         opacity: 0.8;
     }
 }
