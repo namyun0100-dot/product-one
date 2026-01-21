@@ -39,64 +39,33 @@ body {
     }
 }
 
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 2px;
-    height: 2px;
-    background: transparent;
-    box-shadow: 
-        10vw 10vh #fff, 20vw 80vh #fff, 30vw 20vh #fff, 40vw 60vh #fff, 
-        50vw 90vh #fff, 60vw 30vh #fff, 70vw 70vh #fff, 80vw 10vh #fff, 
-        90vw 50vh #fff, 5vw 40vh #fff, 15vw 95vh #fff, 25vw 5vh #fff,
-        35vw 35vh #fff, 45vw 85vh #fff, 55vw 15vh #fff, 65vw 55vh #fff,
-        75vw 25vh #fff, 85vw 65vh #fff, 95vw 45vh #fff;
-    border-radius: 50%;
-    animation: twinkle 4s infinite ease-in-out;
-    opacity: 0.5;
-    z-index: -1; /* Send to back! */
-    pointer-events: none;
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--bg-dark);
+    transition: background-color 0.5s ease;
+    margin: 0;
+    padding: 1rem; /* Reduced base padding */
+    overflow-y: auto;
+    overflow-x: hidden; /* Strict horizontal lock */
+    position: relative;
+    -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
 }
 
-body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 3px;
-    height: 3px;
-    background: transparent;
-    box-shadow: 
-        12vw 12vh #fff, 22vw 82vh #fff, 32vw 22vh #fff, 42vw 62vh #fff, 
-        52vw 92vh #fff, 62vw 32vh #fff, 72vw 72vh #fff, 82vw 12vh #fff, 
-        92vw 52vh #fff, 7vw 42vh #fff, 17vw 97vh #fff, 27vw 7vh #fff,
-        37vw 37vh #fff, 47vw 87vh #fff, 57vw 17vh #fff, 67vw 57vh #fff,
-        77vw 27vh #fff, 87vw 67vh #fff, 97vw 47vh #fff;
-    border-radius: 50%;
-    animation: twinkle 6s infinite ease-in-out reverse;
-    opacity: 0.3;
-    z-index: -1; /* Send to back! */
-    pointer-events: none;
+@media (max-width: 600px) {
+    body {
+        padding: 0.5rem; /* Tighter padding for mobile */
+        justify-content: center; /* Try to keep centered if it fits */
+    }
 }
 
 body[data-theme="light"] {
     background-color: var(--bg-light);
     --text-color-light: #2d3748;
-}
-
-body[data-theme="light"]::before,
-body[data-theme="light"]::after {
-    /* Stars are less visible on light theme, make them dark grey or hide them? 
-       Let's make them faint slate blue for a "daytime sky" feel */
-    box-shadow: 
-        10vw 10vh #667eea, 20vw 80vh #667eea, 30vw 20vh #667eea, 40vw 60vh #667eea, 
-        50vw 90vh #667eea, 60vw 30vh #667eea, 70vw 70vh #667eea, 80vw 10vh #667eea, 
-        90vw 50vh #667eea, 5vw 40vh #667eea, 15vw 95vh #667eea, 25vw 5vh #667eea,
-        35vw 35vh #667eea, 45vw 85vh #667eea, 55vw 15vh #667eea, 65vw 55vh #667eea,
-        75vw 25vh #667eea, 85vw 65vh #667eea, 95vw 45vh #667eea;
-    opacity: 0.3;
 }
 
 main {
@@ -135,17 +104,6 @@ main {
 body[data-theme="light"] #quote-of-the-day {
     color: var(--text-color-light);
     text-shadow: 0 0 5px rgba(var(--glow-rgb-light), 0.5);
-}
-
-@keyframes twinkle {
-    0%, 100% {
-        opacity: 0.3;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 0.8;
-        transform: scale(1.1); /* Very subtle pulse */
-    }
 }
 
 /* Contact Form Styles */
