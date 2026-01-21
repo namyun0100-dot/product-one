@@ -43,11 +43,11 @@ const translations = {
         labelName: "이름:",
         labelEmail: "이메일:",
         labelMessage: "메시지:",
-        btnSendSignal: "신호 보내기",
-        formInstructions: "우주 신호는 보통 24광시(시간) 내에 응답해 드립니다."
-    }
-};
-
+                    btnSendSignal: "신호 보내기",
+                    formInstructions: "우주 신호는 보통 24광시(시간) 내에 응답해 드립니다.",
+                    disqusTitle: "우주 토론"
+                }
+            };
 // Global Quotes Data
 const quotes = {
     en: [
@@ -475,6 +475,7 @@ window.updateGlobalText = function(lang) {
     document.getElementById('label-message').textContent = t.labelMessage;
     document.getElementById('form-submit-btn').textContent = t.btnSendSignal;
     document.getElementById('form-instructions-text').textContent = t.formInstructions;
+    document.getElementById('disqus-title').textContent = t.disqusTitle;
 }
 
 // Global function to update quote

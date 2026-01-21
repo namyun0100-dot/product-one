@@ -73,4 +73,14 @@ GitHub Pages가 계속 불안정하다면, 더 이상 같은 방법을 고수할
     *   `index.html`에 "Cosmic Collaboration Inquiry" 섹션과 Formspree 양식 추가.
     *   `style.v2.css`에 기존 테마에 어울리면서 반응형을 고려한 폼 스타일링 추가.
     *   `main.v2.js`에 폼의 제목, 입력 필드 라벨, 버튼 텍스트, 안내 메시지 등에 대한 다국어(KO/EN) 지원 추가.
-*   **활성화 방법:** 폼의 `action` 속성에 있는 `YOUR_FORMSPREE_ID`를 Formspree.io에서 발급받은 실제 ID로 교체해야 합니다.
+    *   **활성화 방법:** 폼의 `action` 속성에 있는 `YOUR_FORMSPREE_ID`를 Formspree.io에서 발급받은 실제 ID로 교체해야 합니다.
+
+### 4.6. 6단계: Disqus 댓글 기능 추가 (완료)
+페이지 하단에 Disqus 댓글 기능을 통합하여 사용자 간의 소통을 가능하게 했습니다.
+
+*   **목적:** 페이지에 커뮤니티 기능 추가 및 사용자 참여 유도.
+*   **구현:**
+    *   `index.html`에 `<div id="disqus_thread"></div>`와 Disqus 임베드 스크립트 추가.
+    *   Disqus 설정 변수 (`this.page.url`, `this.page.identifier`)를 현재 페이지 정보에 맞게 동적으로 설정.
+    *   `style.v2.css`에 Disqus 섹션의 스타일을 기존 테마에 맞춰 추가하고 반응형 고려.
+    *   `main.v2.js`의 `translations` 객체에 Disqus 섹션 제목 (`Cosmic Discussions` / `우주 토론`)에 대한 다국어 지원 추가 및 `updateGlobalText` 함수에 적용.
