@@ -203,18 +203,25 @@ class CosmicOracle extends HTMLElement {
         opacity: 0.6;
       }
       .controls-container {
-        position: absolute;
-        top: 20px;
-        right: 20px;
         display: flex;
+        justify-content: flex-end;
         align-items: center;
         gap: 10px;
+        width: 100%;
+        margin-bottom: 0.5rem; /* Push content down */
+        position: relative; /* No longer absolute overlap */
+      }
+      @media (max-width: 600px) {
+        .controls-container {
+            justify-content: center; /* Center controls on mobile for symmetry */
+            margin-bottom: 1rem;
+        }
       }
       .lang-btn {
         background: transparent;
         border: 1px solid var(--text-color);
         color: var(--text-color);
-        padding: 2px 8px;
+        padding: 4px 8px; /* Slightly easier to tap */
         border-radius: 5px;
         cursor: pointer;
         font-family: var(--font-main);
