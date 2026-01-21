@@ -36,6 +36,8 @@ class CosmicOracle extends HTMLElement {
         --border-color: rgba(56, 66, 138, 0.2);
       }
 
+      * { box-sizing: border-box; } /* Reset for Shadow DOM */
+      
       .fortune-card {
         background: var(--card-bg);
         color: var(--text-color);
@@ -47,15 +49,51 @@ class CosmicOracle extends HTMLElement {
         box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), 0 0 12px var(--glow-color);
         text-align: center;
         transition: all 0.5s ease;
-        width: clamp(300px, 90vw, 500px);
-        margin: 1rem;
+        width: 100%;
+        max-width: 500px;
+        /* margin: 1rem; Removed to prevent overflow/alignment issues */
       }
+
+      @media (max-width: 600px) {
+        .fortune-card {
+          padding: 1.2rem 1rem; /* Compact padding */
+          border-radius: 15px;
+        }
+        h1 {
+          font-size: 1.5rem !important; /* Force smaller title */
+          margin-bottom: 1rem !important;
+        }
+        .score-value {
+          font-size: 2rem !important;
+        }
+        .scores-container {
+          flex-direction: column;
+          gap: 0.8rem !important; /* Tighter gap */
+          margin: 1rem 0 !important;
+        }
+        .score-section {
+            padding: 1rem !important;
+            min-width: auto;
+            width: 100%;
+        }
+        .score-section h2 {
+            font-size: 1.2rem !important;
+            margin-bottom: 0.5rem !important;
+        }
+        button {
+            padding: 0.8rem 2rem !important;
+            font-size: 1rem !important;
+            margin-top: 0.5rem !important;
+        }
+      }
+
       h1 {
         font-family: var(--font-main);
         font-size: 2.2rem;
         font-weight: 700;
         text-shadow: 0 0 5px var(--glow-color), 0 0 10px var(--glow-color);
         margin-bottom: 1.5rem;
+        margin-top: 0.5rem;
       }
       .scores-container {
         display: flex;
@@ -66,7 +104,7 @@ class CosmicOracle extends HTMLElement {
       }
       .score-section {
         flex: 1;
-        min-width: 180px;
+        min-width: 150px; /* Reduced min-width */
         padding: 1.5rem;
         border: 1px solid var(--border-color);
         border-radius: 15px;
