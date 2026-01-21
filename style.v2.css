@@ -41,30 +41,36 @@ body {
 
 body::before {
     content: '';
-    position: fixed; /* Fixed to viewport */
-    width: min(400px, 80vw); /* Responsive size */
-    height: min(400px, 80vw);
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(var(--glow-rgb-dark), 0.3) 0%, rgba(var(--glow-rgb-dark), 0) 70%);
-    top: 20%;
-    left: 10%;
-    animation: moveGlow 15s infinite alternate ease-in-out;
+    position: fixed;
+    width: 600px; /* Wider beam */
+    height: 100vh; /* Full height */
+    background: linear-gradient(180deg, rgba(var(--glow-rgb-dark), 0.2) 0%, rgba(var(--glow-rgb-dark), 0) 80%);
+    top: -20%;
+    left: 20%;
+    transform-origin: top center; /* Swing from top */
+    transform: rotate(-15deg);
+    animation: swayLight 8s infinite alternate ease-in-out;
     z-index: 0; 
     pointer-events: none; 
+    border-radius: 0; /* No longer a ball */
+    filter: blur(20px); /* Soften edges */
 }
 
 body::after {
     content: '';
-    position: fixed; /* Fixed to viewport */
-    width: min(300px, 60vw);
-    height: min(300px, 60vw);
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(78, 84, 200, 0.3) 0%, rgba(78, 84, 200, 0) 70%);
-    bottom: 10%;
+    position: fixed;
+    width: 500px;
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(78, 84, 200, 0.2) 0%, rgba(78, 84, 200, 0) 80%);
+    top: -20%;
     right: 10%;
-    animation: moveGlow 20s infinite alternate ease-in-out reverse;
+    transform-origin: top center;
+    transform: rotate(15deg);
+    animation: swayLight 12s infinite alternate ease-in-out reverse;
     z-index: 0;
     pointer-events: none;
+    border-radius: 0;
+    filter: blur(30px);
 }
 
 body[data-theme="light"] {
@@ -73,10 +79,10 @@ body[data-theme="light"] {
 }
 
 body[data-theme="light"]::before {
-     background: radial-gradient(circle, rgba(var(--glow-rgb-light), 0.4) 0%, rgba(var(--glow-rgb-light), 0) 70%);
+     background: linear-gradient(180deg, rgba(var(--glow-rgb-light), 0.3) 0%, rgba(var(--glow-rgb-light), 0) 80%);
 }
 body[data-theme="light"]::after {
-     background: radial-gradient(circle, rgba(132, 94, 247, 0.3) 0%, rgba(132, 94, 247, 0) 70%);
+     background: linear-gradient(180deg, rgba(132, 94, 247, 0.2) 0%, rgba(132, 94, 247, 0) 80%);
 }
 
 main {
@@ -86,7 +92,7 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    width: 100%; /* Ensure main takes full width for flex alignment */
+    width: 100%;
 }
 
 #quote-of-the-day {
@@ -98,15 +104,15 @@ main {
     max-width: 600px;
     text-shadow: 0 0 5px rgba(var(--glow-rgb-dark), 0.7);
     transition: all 0.5s ease;
-    padding-bottom: 2rem; /* Add space at bottom */
+    padding-bottom: 2rem;
     width: 100%;
 }
 
 @media (max-width: 600px) {
     #quote-of-the-day {
-        font-size: 1.1rem; /* Fixed readable size on mobile */
+        font-size: 1.1rem; 
         margin-top: 1rem;
-        background: rgba(0, 0, 0, 0.2); /* Slight background for readability */
+        background: rgba(0, 0, 0, 0.2); 
         padding: 1rem;
         border-radius: 10px;
     }
@@ -117,14 +123,13 @@ body[data-theme="light"] #quote-of-the-day {
     text-shadow: 0 0 5px rgba(var(--glow-rgb-light), 0.5);
 }
 
-@keyframes moveGlow {
+@keyframes swayLight {
     0% {
-        transform: translate(0, 0) scale(1);
-    }
-    50% {
-        transform: translate(10vw, 5vh) scale(1.1); /* Use viewport units */
+        transform: rotate(-20deg);
+        opacity: 0.5;
     }
     100% {
-        transform: translate(-5vw, -5vh) scale(0.9);
+        transform: rotate(-5deg);
+        opacity: 0.8;
     }
 }
