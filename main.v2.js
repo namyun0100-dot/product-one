@@ -26,7 +26,7 @@ class CosmicOracle extends HTMLElement {
             labelEmail: "Your Email:",
             labelMessage: "Your Message:",
             btnSendSignal: "Send Signal",
-            formInstructions: "To activate this form, replace \"YOUR_FORMSPREE_ID\" with your actual Formspree ID. Visit"
+            formInstructions: "We usually respond to cosmic signals within 24 light-hours."
         },
         ko: {
             title: "오늘의 우주 운세",
@@ -49,7 +49,7 @@ class CosmicOracle extends HTMLElement {
             labelEmail: "이메일:",
             labelMessage: "메시지:",
             btnSendSignal: "신호 보내기",
-            formInstructions: "이 양식을 활성화하려면 \"YOUR_FORMSPREE_ID\"를 실제 Formspree ID로 바꾸세요. 방문"
+            formInstructions: "우주 신호는 보통 24광시(시간) 내에 응답해 드립니다."
         }
     };
 
@@ -367,8 +367,7 @@ class CosmicOracle extends HTMLElement {
       document.getElementById('form-submit-btn').textContent = t.btnSendSignal;
       const formInstructionsElement = document.getElementById('form-instructions-text');
       if (formInstructionsElement) {
-          // Recreate text with link
-          formInstructionsElement.innerHTML = `${t.formInstructions} <a href="https://formspree.io/" target="_blank">Formspree.io</a> ${this.lang === 'ko' ? '를 방문하세요.' : 'to get started.'}`;
+          formInstructionsElement.textContent = t.formInstructions;
       }
 
       // Button text updates based on state in checkFortuneAvailability
