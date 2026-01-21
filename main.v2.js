@@ -55,14 +55,24 @@ const quotes = {
         "\"Somewhere, something incredible is waiting to be known.\" - Carl Sagan",
         "\"We are all in the gutter, but some of us are looking at the stars.\" - Oscar Wilde",
         "\"Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.\" - Albert Einstein",
-        "\"Look up at the stars and not down at your feet.\" - Stephen Hawking"
+        "\"Look up at the stars and not down at your feet.\" - Stephen Hawking",
+        "\"For my part I know nothing with any certainty, but the sight of the stars makes me dream.\" - Vincent Van Gogh",
+        "\"We are made of starstuff.\" - Carl Sagan",
+        "\"Astronomy compels the soul to look upwards and leads us from this world to another.\" - Plato",
+        "\"Turn your face to the sun and the shadows fall behind you.\" - Ralph Waldo Emerson",
+        "\"Earth is the cradle of humanity, but one cannot live in a cradle forever.\" - Konstantin Tsiolkovsky"
     ],
     ko: [
         "\"우주는 당신을 이해시킬 의무가 없습니다.\" - 닐 타이슨",
         "\"어딘가에 믿을 수 없는 무언가가 알려지길 기다리고 있습니다.\" - 칼 세이건",
         "\"우리는 모두 시궁창에 살고 있지만, 우리 중 누군가는 별을 바라보고 있습니다.\" - 오스카 와일드",
         "\"무한한 것은 두 가지입니다. 우주와 인간의 어리석음. 우주는 확실하지 않네요.\" - 아인슈타인",
-        "\"고개를 숙여 발을 보지 말고 고개를 들어 별을 바라보세요.\" - 스티븐 호킹"
+        "\"고개를 숙여 발을 보지 말고 고개를 들어 별을 바라보세요.\" - 스티븐 호킹",
+        "\"나는 아무것도 확실히 알지 못하지만, 별을 바라보면 꿈을 꾸게 된다.\" - 빈센트 반 고흐",
+        "\"우리는 별의 물질로 이루어져 있습니다.\" - 칼 세이건",
+        "\"천문학은 영혼을 위로 보게 하고, 우리를 이 세상에서 다른 세상으로 인도한다.\" - 플라톤",
+        "\"태양을 향해 얼굴을 돌려라. 그리하면 그림자는 당신 뒤로 떨어질 것이다.\" - 랄프 왈도 에머슨",
+        "\"지구는 인류의 요람이지만, 영원히 요람에서 살 수는 없다.\" - 콘스탄틴 치올코프스키"
     ]
 };
 
