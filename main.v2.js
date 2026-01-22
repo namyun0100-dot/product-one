@@ -382,11 +382,14 @@ class CosmicOracle extends HTMLElement {
 
   _updateText() { // Updates elements inside Shadow DOM
       const t = translations[this.lang]; // Access global translations
-      this.langBtn.textContent = this.lang === 'en' ? 'KO' : 'EN'; // Show opposite as option
+      // Switch button text to the *target* language for better UX
+      this.langBtn.textContent = this.lang === 'en' ? '한국어' : 'English';
       this.titleDisplay.textContent = t.title;
       this.labelWealth.textContent = t.wealth;
       this.labelBonds.textContent = t.bonds;
-      // Button text updates based on state in checkFortuneAvailability
+      
+      // Refresh the state/messages to reflect the new language immediately
+      this.checkFortuneAvailability();
   }
 
   getFortune() {
