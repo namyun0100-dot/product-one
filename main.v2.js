@@ -374,13 +374,16 @@ class CosmicOracle extends HTMLElement {
     // Inform Disqus about the theme change to ensure it re-evaluates its color scheme.
     // User needs to ensure Disqus admin panel is set to "Auto" for color scheme detection.
     if (typeof DISQUS !== 'undefined') {
-      DISQUS.reset({
-        reload: true,
-        config: function () {
-          this.page.url = window.location.href;  // Re-set URL
-          this.page.identifier = 'cosmic-fortune-page'; // Re-set identifier
-        }
-      });
+        // Add a small delay to ensure DOM and CSS (color-scheme) are fully updated
+        setTimeout(() => {
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.url = window.location.href;  // Re-set URL
+                    this.page.identifier = 'cosmic-fortune-page'; // Re-set identifier
+                }
+            });
+        }, 200);
     }
   }
 
