@@ -104,3 +104,12 @@ GitHub Pages가 계속 불안정하다면, 더 이상 같은 방법을 고수할
 *   **해결책:**
     *   **Disqus `DISQUS.reset()` 호출:** 테마 변경 시 `main.v2.js`에서 `DISQUS.reset()` 함수를 호출하도록 수정했습니다. 이는 Disqus가 부모 페이지의 새로운 테마(다크/라이트)를 감지하고 자체 댓글 UI의 색상 스키마를 업데이트하도록 강제합니다.
     *   **전제 조건:** 이 기능이 올바르게 작동하려면 Disqus 관리자 패널에서 해당 사이트의 색상 스키마 설정을 **"자동(Auto)"**으로 설정해야 합니다. Disqus는 "자동" 설정 시 부모 페이지의 CSS 변수(`--text-color-dark`, `--text-color-light` 등)를 기반으로 테마를 감지합니다.
+
+### 4.9. 9단계: SEO 최적화 (메타 태그 추가) (완료)
+사용자님의 애드센스 계획 및 검색 엔진 노출을 위해 기본 SEO 메타 태그를 추가했습니다.
+
+*   **목적:** 검색 엔진이 사이트를 더 잘 이해하고 검색 결과에 노출될 수 있도록 돕습니다.
+*   **해결책:**
+    *   `index.html` 파일의 `<head>` 섹션에 `<meta name="description" ...>`과 `<meta name="keywords" ...>` 태그를 추가했습니다.
+    *   `description`: 사이트의 간략한 설명을 제공합니다. (예: "Cosmic Fortune: Discover your daily cosmic forecast for wealth and bonds. A personalized fortune-telling experience with a touch of the universe.")
+    *   `keywords`: 사이트와 관련된 주요 키워드를 제공합니다. (예: "운세, 오늘의 운세, 우주 운세, 재물운, 인연운, 점성술, 별자리 운세, fortune, cosmic fortune, daily horoscope, wealth fortune, relationship fortune, astrology, horoscope")
