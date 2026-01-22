@@ -247,36 +247,24 @@ body[data-theme="light"] .form-instructions a {
     z-index: 1; /* Ensure it's above background effects */
     margin-top: 4rem; /* Spacing from contact form */
     padding: 3rem 2rem;
-    background-color: rgba(0, 0, 0, 0.4); /* Consistent with contact form */
+    background-color: #e2e8f0; /* Always light background for visibility */
     border-top: 1px solid rgba(var(--glow-rgb-dark), 0.2);
     width: 100%;
     max-width: 700px; /* Limit width for desktop */
     border-radius: 15px;
     text-align: center;
     box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
-    color: var(--text-color-dark);
+    color: #1a202c; /* Always dark text for contrast */
     transition: all 0.5s ease;
-}
-
-body[data-theme="light"] #disqus-comments-section {
-    background-color: rgba(255, 255, 255, 0.6);
-    border-top: 1px solid rgba(var(--glow-rgb-light), 0.3);
-    color: var(--text-color-light);
-    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
 }
 
 #disqus-title {
     font-family: 'Orbitron', sans-serif;
     font-size: 2rem;
-    color: var(--primary-glow-dark);
+    color: #4a5568; /* Dark grey for title to match light bg */
     margin-bottom: 2rem;
-    text-shadow: 0 0 5px rgba(var(--glow-rgb-dark), 0.7);
+    text-shadow: none; /* Clean look for light card */
     transition: all 0.5s ease;
-}
-
-body[data-theme="light"] #disqus-title {
-    color: var(--primary-glow-light);
-    text-shadow: 0 0 5px rgba(var(--glow-rgb-light), 0.5);
 }
 
 @media (max-width: 600px) {
