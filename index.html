@@ -25,6 +25,39 @@
         </div>
     </section>
 
+    <section id="chemistry-section">
+        <h2 id="chemistry-title">Cosmic Chemistry</h2>
+        <p id="chemistry-subtitle">Do your stars align?</p>
+        
+        <div class="chemistry-container">
+            <div class="chem-input-group">
+                <label for="sign-1" id="label-sign-1">Me</label>
+                <select id="sign-1" class="zodiac-select-main">
+                    <option value="" disabled selected>Select Sign</option>
+                    <!-- Options injected by JS -->
+                </select>
+            </div>
+            
+            <div class="chem-divider">
+                <span class="heart-icon">❤️</span>
+            </div>
+
+            <div class="chem-input-group">
+                <label for="sign-2" id="label-sign-2">Partner</label>
+                <select id="sign-2" class="zodiac-select-main">
+                    <option value="" disabled selected>Select Sign</option>
+                    <!-- Options injected by JS -->
+                </select>
+            </div>
+        </div>
+        
+        <button id="btn-check-chemistry">Calculate Compatibility</button>
+        
+        <div id="chemistry-result" class="chemistry-result hidden">
+            <!-- Result injected here -->
+        </div>
+    </section>
+
     <!-- Zodiac Modal -->
     <div id="zodiac-modal" class="modal-overlay hidden">
         <div class="modal-content">

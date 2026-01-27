@@ -808,7 +808,7 @@ const ZodiacManager = {
         this.modal = document.getElementById('zodiac-modal');
         this.modalBody = document.getElementById('modal-body');
         this.closeBtn = document.querySelector('.close-modal');
-        this.currentSignId = null; // Track open sign for language updates
+        this.currentSignId = null; 
 
         if (!this.grid || !this.modal) return;
 
@@ -817,7 +817,7 @@ const ZodiacManager = {
     },
 
     renderGrid() {
-        this.grid.innerHTML = ''; // Clear existing
+        this.grid.innerHTML = ''; 
         const lang = localStorage.getItem('lang') || 'ko';
 
         Object.values(zodiacData).forEach(sign => {
@@ -825,7 +825,6 @@ const ZodiacManager = {
             card.className = 'zodiac-card';
             card.dataset.id = sign.id;
             
-            // Only name and date change by language on the card
             const name = sign[lang].name;
 
             card.innerHTML = `
@@ -844,7 +843,7 @@ const ZodiacManager = {
         this.updateModalContent();
         this.modal.classList.add('active');
         this.modal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        document.body.style.overflow = 'hidden'; 
     },
 
     closeModal() {
@@ -852,8 +851,8 @@ const ZodiacManager = {
         this.currentSignId = null;
         setTimeout(() => {
             this.modal.classList.add('hidden');
-            document.body.style.overflow = ''; // Restore scrolling
-        }, 300); // Wait for transition
+            document.body.style.overflow = ''; 
+        }, 300); 
     },
 
     updateModalContent() {
@@ -864,22 +863,10 @@ const ZodiacManager = {
         const content = data[lang];
 
         const labels = {
-            en: { 
-                personality: "Cosmic Personality", shadow: "Shadow Side", love: "Love Style", match: "Best Match", lucky: "Lucky Item",
-                checkMatch: "Check Compatibility", selectPartner: "Select Partner's Sign", calc: "Calculate"
-            },
-            ko: { 
-                personality: "기본 성격", shadow: "숨겨진 단점 (팩폭)", love: "연애 스타일", match: "베스트 궁합", lucky: "행운 아이템",
-                checkMatch: "우주 궁합 보기", selectPartner: "상대방 별자리 선택", calc: "궁합 확인"
-            }
+            en: { personality: "Cosmic Personality", shadow: "Shadow Side", love: "Love Style", match: "Best Match", lucky: "Lucky Item" },
+            ko: { personality: "기본 성격", shadow: "숨겨진 단점 (팩폭)", love: "연애 스타일", match: "베스트 궁합", lucky: "행운 아이템" }
         };
         const label = labels[lang];
-
-        // Generate options for select box
-        let optionsHtml = `<option value="" disabled selected>${label.selectPartner}</option>`;
-        Object.values(zodiacData).forEach(sign => {
-            optionsHtml += `<option value="${sign.id}">${sign.icon} ${sign[lang].name}</option>`;
-        });
 
         this.modalBody.innerHTML = `
             <div class="zodiac-detail-header">
@@ -915,45 +902,93 @@ const ZodiacManager = {
                 <div class="zodiac-info-label">🍀 ${label.lucky}</div>
                 <div class="zodiac-info-text">${content.lucky}</div>
             </div>
-
-            <div class="compatibility-section">
-                <h3>${label.checkMatch}</h3>
-                <div class="comp-controls">
-                    <select id="partner-select" class="zodiac-select">
-                        ${optionsHtml}
-                    </select>
-                </div>
-                <div id="comp-result" class="comp-result hidden">
-                    <!-- Result will be injected here -->
-                </div>
-            </div>
         `;
-
-        // Bind event for select change
-        const select = document.getElementById('partner-select');
-        select.addEventListener('change', (e) => this.showCompatibility(e.target.value));
     },
 
-    showCompatibility(partnerId) {
-        if (!this.currentSignId || !partnerId) return;
+    bindEvents() {
+        this.closeBtn.addEventListener('click', () => this.closeModal());
+        
+        this.modal.addEventListener('click', (e) => {
+            if (e.target === this.modal) {
+                this.closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.modal.classList.contains('active')) {
+                this.closeModal();
+            }
+        });
+    },
+    
+    updateUI() {
+        this.renderGrid();
+        if (this.modal.classList.contains('active')) {
+            this.updateModalContent();
+        }
+    }
+};
+
+// Chemistry Logic Module
+const ChemistryManager = {
+    init() {
+        this.select1 = document.getElementById('sign-1');
+        this.select2 = document.getElementById('sign-2');
+        this.btnCalc = document.getElementById('btn-check-chemistry');
+        this.resultDiv = document.getElementById('chemistry-result');
+        
+        if (!this.select1 || !this.select2) return;
+
+        this.populateSelects();
+        this.btnCalc.addEventListener('click', () => this.calculate());
+    },
+
+    populateSelects() {
+        const lang = localStorage.getItem('lang') || 'ko';
+        const placeholder = lang === 'en' ? "Select Sign" : "별자리 선택";
+        
+        // Save current selection if re-populating (e.g. language switch)
+        const val1 = this.select1.value;
+        const val2 = this.select2.value;
+
+        let optionsHtml = `<option value="" disabled selected>${placeholder}</option>`;
+        
+        Object.values(zodiacData).forEach(sign => {
+            optionsHtml += `<option value="${sign.id}">${sign.icon} ${sign[lang].name}</option>`;
+        });
+
+        this.select1.innerHTML = optionsHtml;
+        this.select2.innerHTML = optionsHtml;
+
+        // Restore selection if valid
+        if (val1) this.select1.value = val1;
+        if (val2) this.select2.value = val2;
+    },
+
+    calculate() {
+        const sign1 = this.select1.value;
+        const sign2 = this.select2.value;
+
+        if (!sign1 || !sign2) {
+            alert("Please select both signs! / 두 별자리를 모두 선택해주세요!");
+            return;
+        }
 
         const lang = localStorage.getItem('lang') || 'ko';
-        const mySign = zodiacData[this.currentSignId];
-        const partnerSign = zodiacData[partnerId];
+        const s1Data = zodiacData[sign1];
+        const s2Data = zodiacData[sign2];
+        const el1 = zodiacElements[sign1];
+        const el2 = zodiacElements[sign2];
+
+        let score = elementCompatibility[el1][el2];
         
-        const myEl = zodiacElements[this.currentSignId];
-        const partnerEl = zodiacElements[partnerId];
-        
-        let score = elementCompatibility[myEl][partnerEl];
-        
-        // Add random variance for fun (+/- 5)
+        // Random variance (+/- 5)
         const variance = Math.floor(Math.random() * 11) - 5; 
         score = Math.min(100, Math.max(0, score + variance));
 
-        const resultDiv = document.getElementById('comp-result');
         let message = "";
+        let colorClass = "text-color-dark"; // default
 
-        // Simple message logic based on score
         if (score >= 90) {
             message = lang === 'en' ? "A Match Made in the Stars! 🌟" : "우주가 맺어준 천생연분! 🌟";
         } else if (score >= 70) {
@@ -964,17 +999,116 @@ const ZodiacManager = {
             message = lang === 'en' ? "Sparks might fly (and not the good kind). 🔥" : "스파크가 튈 수 있어요 (조심!). 🔥";
         }
 
-        resultDiv.innerHTML = `
+        this.resultDiv.innerHTML = `
             <div class="score-display">${score}%</div>
             <div class="score-desc">${message}</div>
             <div class="score-detail">
-                ${mySign.icon} (${myEl}) + ${partnerSign.icon} (${partnerEl})
+                ${s1Data.icon} ${s1Data[lang].name} (${el1}) <span style="margin:0 10px">❤️</span> ${s2Data.icon} ${s2Data[lang].name} (${el2})
             </div>
         `;
-        resultDiv.classList.remove('hidden');
+        this.resultDiv.classList.remove('hidden');
+        
+        // Scroll to result
+        this.resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     },
 
-    bindEvents() {
+    updateText() {
+        this.populateSelects();
+        // Clear result on language change to avoid mixed language text
+        this.resultDiv.innerHTML = ''; 
+        this.resultDiv.classList.add('hidden');
+    }
+};
+
+
+// Global function to update contact form, zodiac section, and other texts
+window.updateGlobalText = function(lang) {
+    const t = translations[lang];
+
+    const contactTitle = document.getElementById('contact-title');
+    if (contactTitle) contactTitle.textContent = t.contactTitle;
+    
+    const labelName = document.getElementById('label-name');
+    if (labelName) labelName.textContent = t.labelName;
+    
+    const labelEmail = document.getElementById('label-email');
+    if (labelEmail) labelEmail.textContent = t.labelEmail;
+    
+    const labelMessage = document.getElementById('label-message');
+    if (labelMessage) labelMessage.textContent = t.labelMessage;
+    
+    const btnSend = document.getElementById('form-submit-btn');
+    if (btnSend) btnSend.textContent = t.btnSendSignal;
+    
+    const inst = document.getElementById('form-instructions-text');
+    if (inst) inst.textContent = t.formInstructions;
+    
+    const disqusTitle = document.getElementById('disqus-title');
+    if (disqusTitle) disqusTitle.textContent = t.disqusTitle;
+
+    // Zodiac Section Titles
+    const zodiacTitles = {
+        en: { title: "Cosmic Constellations", subtitle: "Discover the secrets of the stars" },
+        ko: { title: "우주의 별자리", subtitle: "당신의 별이 속삭이는 비밀을 들어보세요" }
+    };
+    
+    const zTitle = document.getElementById('zodiac-title');
+    const zSubtitle = document.getElementById('zodiac-subtitle');
+    
+    if (zTitle) zTitle.textContent = zodiacTitles[lang].title;
+    if (zSubtitle) zSubtitle.textContent = zodiacTitles[lang].subtitle;
+
+    // Chemistry Section Titles
+    const chemTitles = {
+        en: { title: "Cosmic Chemistry", subtitle: "Do your stars align?", me: "Me", partner: "Partner", btn: "Calculate Compatibility" },
+        ko: { title: "우주 궁합", subtitle: "우리의 별들은 얼마나 잘 맞을까요?", me: "나", partner: "상대방", btn: "궁합 확인하기" }
+    };
+
+    const cTitle = document.getElementById('chemistry-title');
+    const cSubtitle = document.getElementById('chemistry-subtitle');
+    const lSign1 = document.getElementById('label-sign-1');
+    const lSign2 = document.getElementById('label-sign-2');
+    const btnCalc = document.getElementById('btn-check-chemistry');
+
+    if (cTitle) cTitle.textContent = chemTitles[lang].title;
+    if (cSubtitle) cSubtitle.textContent = chemTitles[lang].subtitle;
+    if (lSign1) lSign1.textContent = chemTitles[lang].me;
+    if (lSign2) lSign2.textContent = chemTitles[lang].partner;
+    if (btnCalc) btnCalc.textContent = chemTitles[lang].btn;
+
+    // Update Zodiac Cards & Modal
+    ZodiacManager.updateUI();
+    
+    // Update Chemistry Selects
+    ChemistryManager.updateText();
+}
+
+// Global function to update quote
+window.updateQuote = function(lang) {
+    const list = quotes[lang] || quotes['en'];
+    const quoteElement = document.getElementById('quote-of-the-day');
+    if (quoteElement) {
+        const randomQuote = list[Math.floor(Math.random() * list.length)];
+        quoteElement.textContent = randomQuote;
+    }
+}
+
+// Initial Load Handler
+document.addEventListener('DOMContentLoaded', () => {
+    const lang = localStorage.getItem('lang') || 'ko';
+    
+    // Initialize Zodiac Section
+    ZodiacManager.init();
+    
+    // Initialize Chemistry Section
+    ChemistryManager.init();
+
+    // Initial Global Text Update (covers Contact Form & Zodiac Titles)
+    updateGlobalText(lang);
+    
+    // Initial Quote
+    updateQuote(lang);
+});
         this.closeBtn.addEventListener('click', () => this.closeModal());
         
         // Close on background click
