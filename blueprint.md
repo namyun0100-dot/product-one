@@ -48,7 +48,7 @@
 ### 2.6. 상단 고정 내비게이션 (Sticky Navbar) - 신규
 사용자 편의성을 위해 주요 기능으로 바로 이동할 수 있는 상단 메뉴바를 추가했습니다.
 
-*   **메뉴:** Fortune, Zodiac, Chemistry, AI Face.
+*   **메뉴:** Daily Fortune, Zodiac, Chemistry, Dog Face AI (한글: 오늘의 운세, 별자리, 궁합, 댕댕이 관상).
 *   **디자인:** Glassmorphism 효과, 모바일 반응형 레이아웃.
 
 ## 3. 현재 직면한 핵심 문제

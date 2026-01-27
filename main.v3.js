@@ -24,10 +24,10 @@ const translations = {
         formInstructions: "We usually respond to cosmic signals within 24 light-hours.",
         disqusTitle: "Cosmic Discussions",
         // Navigation
-        navFortune: "Fortune",
+        navFortune: "Daily Fortune",
         navZodiac: "Zodiac",
         navChemistry: "Chemistry",
-        navFace: "AI Face"
+        navFace: "Dog Face AI"
     },
     ko: {
         title: "오늘의 우주 운세",
@@ -53,10 +53,10 @@ const translations = {
         formInstructions: "우주 신호는 보통 24광시(시간) 내에 응답해 드립니다.",
         disqusTitle: "우주 토론",
         // Navigation
-        navFortune: "운세",
+        navFortune: "오늘의 운세",
         navZodiac: "별자리",
         navChemistry: "궁합",
-        navFace: "AI 관상"
+        navFace: "댕댕이 관상"
     }
 };
 // Global Quotes Data
