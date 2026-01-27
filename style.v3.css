@@ -524,6 +524,92 @@ body[data-theme="light"] .zodiac-detail-catchphrase {
     }
 }
 
+/* Compatibility Section Styles */
+.compatibility-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px dashed rgba(var(--glow-rgb-dark), 0.3);
+    text-align: center;
+}
+
+body[data-theme="light"] .compatibility-section {
+    border-top-color: rgba(var(--glow-rgb-light), 0.3);
+}
+
+.compatibility-section h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--primary-glow-dark);
+    margin-bottom: 1rem;
+}
+
+body[data-theme="light"] .compatibility-section h3 {
+    color: var(--primary-glow-light);
+}
+
+.zodiac-select {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--primary-glow-dark);
+    color: var(--text-color-dark);
+    font-family: 'Kalam', cursive;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    appearance: none; /* Hide default arrow in some browsers */
+}
+
+body[data-theme="light"] .zodiac-select {
+    background: rgba(255, 255, 255, 0.5);
+    border-color: var(--primary-glow-light);
+    color: var(--text-color-light);
+}
+
+.comp-result {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(var(--glow-rgb-dark), 0.1);
+    border-radius: 15px;
+    border: 1px solid var(--primary-glow-dark);
+    animation: fadeIn 0.5s ease;
+}
+
+body[data-theme="light"] .comp-result {
+    background: rgba(var(--glow-rgb-light), 0.1);
+    border-color: var(--primary-glow-light);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.score-display {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-glow-dark);
+    text-shadow: 0 0 10px rgba(var(--glow-rgb-dark), 0.5);
+}
+
+body[data-theme="light"] .score-display {
+    color: var(--primary-glow-light);
+    text-shadow: 0 0 10px rgba(var(--glow-rgb-light), 0.5);
+}
+
+.score-desc {
+    font-family: 'Kalam', cursive;
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+
+.score-detail {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
 /* Utility Class */
 .hidden {
     display: none !important;

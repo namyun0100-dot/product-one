@@ -787,6 +787,20 @@ const zodiacData = {
     }
 };
 
+const zodiacElements = {
+    aries: 'fire', leo: 'fire', sagittarius: 'fire',
+    taurus: 'earth', virgo: 'earth', capricorn: 'earth',
+    gemini: 'air', libra: 'air', aquarius: 'air',
+    cancer: 'water', scorpio: 'water', pisces: 'water'
+};
+
+const elementCompatibility = {
+    fire: { fire: 95, air: 90, earth: 50, water: 30 },
+    air: { fire: 90, air: 95, earth: 50, water: 60 },
+    earth: { fire: 50, air: 50, earth: 95, water: 90 },
+    water: { fire: 30, air: 60, earth: 90, water: 95 }
+};
+
 // Zodiac Logic Module
 const ZodiacManager = {
     init() {
@@ -850,10 +864,22 @@ const ZodiacManager = {
         const content = data[lang];
 
         const labels = {
-            en: { personality: "Cosmic Personality", shadow: "Shadow Side", love: "Love Style", match: "Best Match", lucky: "Lucky Item" },
-            ko: { personality: "기본 성격", shadow: "숨겨진 단점 (팩폭)", love: "연애 스타일", match: "베스트 궁합", lucky: "행운 아이템" }
+            en: { 
+                personality: "Cosmic Personality", shadow: "Shadow Side", love: "Love Style", match: "Best Match", lucky: "Lucky Item",
+                checkMatch: "Check Compatibility", selectPartner: "Select Partner's Sign", calc: "Calculate"
+            },
+            ko: { 
+                personality: "기본 성격", shadow: "숨겨진 단점 (팩폭)", love: "연애 스타일", match: "베스트 궁합", lucky: "행운 아이템",
+                checkMatch: "우주 궁합 보기", selectPartner: "상대방 별자리 선택", calc: "궁합 확인"
+            }
         };
         const label = labels[lang];
+
+        // Generate options for select box
+        let optionsHtml = `<option value="" disabled selected>${label.selectPartner}</option>`;
+        Object.values(zodiacData).forEach(sign => {
+            optionsHtml += `<option value="${sign.id}">${sign.icon} ${sign[lang].name}</option>`;
+        });
 
         this.modalBody.innerHTML = `
             <div class="zodiac-detail-header">
@@ -889,7 +915,63 @@ const ZodiacManager = {
                 <div class="zodiac-info-label">🍀 ${label.lucky}</div>
                 <div class="zodiac-info-text">${content.lucky}</div>
             </div>
+
+            <div class="compatibility-section">
+                <h3>${label.checkMatch}</h3>
+                <div class="comp-controls">
+                    <select id="partner-select" class="zodiac-select">
+                        ${optionsHtml}
+                    </select>
+                </div>
+                <div id="comp-result" class="comp-result hidden">
+                    <!-- Result will be injected here -->
+                </div>
+            </div>
         `;
+
+        // Bind event for select change
+        const select = document.getElementById('partner-select');
+        select.addEventListener('change', (e) => this.showCompatibility(e.target.value));
+    },
+
+    showCompatibility(partnerId) {
+        if (!this.currentSignId || !partnerId) return;
+
+        const lang = localStorage.getItem('lang') || 'ko';
+        const mySign = zodiacData[this.currentSignId];
+        const partnerSign = zodiacData[partnerId];
+        
+        const myEl = zodiacElements[this.currentSignId];
+        const partnerEl = zodiacElements[partnerId];
+        
+        let score = elementCompatibility[myEl][partnerEl];
+        
+        // Add random variance for fun (+/- 5)
+        const variance = Math.floor(Math.random() * 11) - 5; 
+        score = Math.min(100, Math.max(0, score + variance));
+
+        const resultDiv = document.getElementById('comp-result');
+        let message = "";
+
+        // Simple message logic based on score
+        if (score >= 90) {
+            message = lang === 'en' ? "A Match Made in the Stars! 🌟" : "우주가 맺어준 천생연분! 🌟";
+        } else if (score >= 70) {
+            message = lang === 'en' ? "Great Chemistry! ✨" : "아주 좋은 케미를 보여주네요! ✨";
+        } else if (score >= 50) {
+            message = lang === 'en' ? "Good Potential. requires effort. 🌱" : "노력하면 좋은 관계가 될 수 있어요. 🌱";
+        } else {
+            message = lang === 'en' ? "Sparks might fly (and not the good kind). 🔥" : "스파크가 튈 수 있어요 (조심!). 🔥";
+        }
+
+        resultDiv.innerHTML = `
+            <div class="score-display">${score}%</div>
+            <div class="score-desc">${message}</div>
+            <div class="score-detail">
+                ${mySign.icon} (${myEl}) + ${partnerSign.icon} (${partnerEl})
+            </div>
+        `;
+        resultDiv.classList.remove('hidden');
     },
 
     bindEvents() {
