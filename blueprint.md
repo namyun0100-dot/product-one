@@ -51,6 +51,12 @@
 *   **메뉴:** Daily Fortune, Zodiac, Chemistry, Dog Face AI (한글: 오늘의 운세, 별자리, 궁합, 댕댕이 관상).
 *   **디자인:** Glassmorphism 효과, 모바일 반응형 레이아웃.
 
+### 2.7. Google AdSense 연동 - 신규
+사이트 수익화를 위해 Google AdSense 자동 광고 스크립트를 추가했습니다.
+
+*   **기능:** AdSense가 페이지 콘텐츠와 레이아웃을 분석하여 최적의 위치에 자동으로 광고를 배치합니다.
+*   **클라이언트 ID:** `ca-pub-2250980960704364`
+
 ## 3. 현재 직면한 핵심 문제
 
 *   **GitHub Pages 배포 실패 (`523` 에러):** 최신 코드가 `git push`로 성공적으로 반영되었음에도 불구하고, 실제 웹사이트에는 적용되지 않는 문제가 지속되고 있습니다. 사용자가 직접 확인한 결과, 배포 과정에서 **Cloudflare `523` 에러(Origin Unreachable)**가 발생했으며, 이는 우리 코드가 아닌 GitHub Pages 서버 인프라의 문제임을 시사합니다.
