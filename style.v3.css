@@ -40,6 +40,85 @@ body {
     }
 }
 
+/* Header & Navigation */
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(26, 32, 44, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+body[data-theme="light"] #main-header {
+    background: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    background: linear-gradient(45deg, var(--primary-glow-dark), #4e54c8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--text-color-dark);
+    font-family: 'Kalam', cursive;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+body[data-theme="light"] .nav-links li a {
+    color: var(--text-color-light);
+}
+
+.nav-links li a:hover {
+    color: var(--primary-glow-dark);
+}
+
+body[data-theme="light"] .nav-links li a:hover {
+    color: var(--primary-glow-light);
+}
+
+/* Mobile Nav Tweaks */
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+}
+
 body[data-theme="light"] {
     background-color: var(--bg-light);
     --text-color-light: #2d3748;
@@ -54,6 +133,7 @@ main {
     align-items: center;
     gap: 2rem;
     width: 100%;
+    padding-top: 80px; /* Offset for fixed header */
 }
 
 #quote-of-the-day {

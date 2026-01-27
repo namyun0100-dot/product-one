@@ -14,7 +14,21 @@
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 </head>
 <body data-theme="dark">
-    <main>
+    <header id="main-header">
+        <div class="header-container">
+            <div class="logo">Cosmic</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#main-content">Fortune</a></li>
+                    <li><a href="#zodiac-section">Zodiac</a></li>
+                    <li><a href="#chemistry-section">Chemistry</a></li>
+                    <li><a href="#dog-face-section">AI Face</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
         <cosmic-oracle></cosmic-oracle>
         <p id="quote-of-the-day"></p>
     </main>
