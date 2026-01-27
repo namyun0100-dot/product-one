@@ -1095,6 +1095,12 @@ body[data-theme="light"] .bar-fill {
     width: 100%;
     max-width: 1000px;
     text-align: center;
+    background: rgba(0, 0, 0, 0.2); /* Add background */
+    border-radius: 20px;
+}
+
+body[data-theme="light"] #cosmic-wisdom-section {
+    background: rgba(255, 255, 255, 0.3);
 }
 
 #wisdom-title {

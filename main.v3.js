@@ -27,7 +27,8 @@ const translations = {
         navFortune: "Daily Fortune",
         navZodiac: "Zodiac",
         navChemistry: "Chemistry",
-        navFace: "Dog Face AI"
+        navFace: "Dog Face Test",
+        dogUpload: "Click or Drag Photo Here"
     },
     ko: {
         title: "오늘의 우주 운세",
@@ -56,7 +57,8 @@ const translations = {
         navFortune: "오늘의 운세",
         navZodiac: "별자리",
         navChemistry: "궁합",
-        navFace: "댕댕이 관상"
+        navFace: "댕댕이상 테스트",
+        dogUpload: "사진을 클릭하거나 드래그하세요"
     }
 };
 // Global Quotes Data
@@ -1465,16 +1467,18 @@ window.updateGlobalText = function(lang) {
     // Dog Face Section Titles
     const dogTitles = {
         en: { title: "Cosmic Dog Face", subtitle: "Which space puppy are you?", btn: "Analyze Face" },
-        ko: { title: "우주 댕댕이 관상", subtitle: "나는 어떤 우주 강아지일까요?", btn: "얼굴 분석하기" }
+        ko: { title: "우주 댕댕이상 테스트", subtitle: "나는 어떤 우주 강아지일까요?", btn: "얼굴 분석하기" }
     };
     
     const dTitle = document.getElementById('dog-title');
     const dSubtitle = document.getElementById('dog-subtitle');
     const btnDog = document.getElementById('btn-analyze-dog');
+    const dogUploadText = document.querySelector('#upload-placeholder p');
     
     if (dTitle) dTitle.textContent = dogTitles[lang].title;
     if (dSubtitle) dSubtitle.textContent = dogTitles[lang].subtitle;
     if (btnDog) btnDog.textContent = dogTitles[lang].btn;
+    if (dogUploadText) dogUploadText.textContent = t.dogUpload;
 
     // Update Zodiac Cards & Modal
     ZodiacManager.updateUI();
