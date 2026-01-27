@@ -987,8 +987,7 @@ const ChemistryManager = {
         score = Math.min(100, Math.max(0, score + variance));
 
         let message = "";
-        let colorClass = "text-color-dark"; // default
-
+        
         if (score >= 90) {
             message = lang === 'en' ? "A Match Made in the Stars! 🌟" : "우주가 맺어준 천생연분! 🌟";
         } else if (score >= 70) {
@@ -1102,99 +1101,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize Chemistry Section
     ChemistryManager.init();
-
-    // Initial Global Text Update (covers Contact Form & Zodiac Titles)
-    updateGlobalText(lang);
-    
-    // Initial Quote
-    updateQuote(lang);
-});
-        this.closeBtn.addEventListener('click', () => this.closeModal());
-        
-        // Close on background click
-        this.modal.addEventListener('click', (e) => {
-            if (e.target === this.modal) {
-                this.closeModal();
-            }
-        });
-
-        // Close on Esc key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && this.modal.classList.contains('active')) {
-                this.closeModal();
-            }
-        });
-    },
-    
-    // Updates UI when language changes
-    updateUI() {
-        this.renderGrid();
-        if (this.modal.classList.contains('active')) {
-            this.updateModalContent();
-        }
-    }
-};
-
-
-// Global function to update contact form, zodiac section, and other texts
-window.updateGlobalText = function(lang) {
-    const t = translations[lang];
-
-    const contactTitle = document.getElementById('contact-title');
-    if (contactTitle) contactTitle.textContent = t.contactTitle;
-    
-    const labelName = document.getElementById('label-name');
-    if (labelName) labelName.textContent = t.labelName;
-    
-    const labelEmail = document.getElementById('label-email');
-    if (labelEmail) labelEmail.textContent = t.labelEmail;
-    
-    const labelMessage = document.getElementById('label-message');
-    if (labelMessage) labelMessage.textContent = t.labelMessage;
-    
-    const btnSend = document.getElementById('form-submit-btn');
-    if (btnSend) btnSend.textContent = t.btnSendSignal;
-    
-    const inst = document.getElementById('form-instructions-text');
-    if (inst) inst.textContent = t.formInstructions;
-    
-    const disqusTitle = document.getElementById('disqus-title');
-    if (disqusTitle) disqusTitle.textContent = t.disqusTitle;
-
-    // Zodiac Section Titles
-    const zodiacTitles = {
-        en: { title: "Cosmic Constellations", subtitle: "Discover the secrets of the stars" },
-        ko: { title: "우주의 별자리", subtitle: "당신의 별이 속삭이는 비밀을 들어보세요" }
-    };
-    
-    const zTitle = document.getElementById('zodiac-title');
-    const zSubtitle = document.getElementById('zodiac-subtitle');
-    
-    if (zTitle) zTitle.textContent = zodiacTitles[lang].title;
-    if (zSubtitle) zSubtitle.textContent = zodiacTitles[lang].subtitle;
-
-    // Update Zodiac Cards & Modal
-    ZodiacManager.updateUI();
-}
-
-// Global function to update quote
-window.updateQuote = function(lang) {
-    const list = quotes[lang] || quotes['en'];
-    const quoteElement = document.getElementById('quote-of-the-day');
-    if (quoteElement) {
-        // Keep the same quote if possible, or just pick random. 
-        // For simplicity, random pick on language switch is acceptable behavior for "fun".
-        const randomQuote = list[Math.floor(Math.random() * list.length)];
-        quoteElement.textContent = randomQuote;
-    }
-}
-
-// Initial Load Handler
-document.addEventListener('DOMContentLoaded', () => {
-    const lang = localStorage.getItem('lang') || 'ko';
-    
-    // Initialize Zodiac Section
-    ZodiacManager.init();
 
     // Initial Global Text Update (covers Contact Form & Zodiac Titles)
     updateGlobalText(lang);
