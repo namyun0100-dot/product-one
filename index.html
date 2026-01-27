@@ -9,14 +9,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Kalam:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.v2.css">
+    <link rel="stylesheet" href="style.v3.css">
 </head>
 <body data-theme="dark">
     <main>
         <cosmic-oracle></cosmic-oracle>
         <p id="quote-of-the-day"></p>
     </main>
-    <script src="main.v2.js"></script>
+
+    <section id="zodiac-section">
+        <h2 id="zodiac-title">Cosmic Constellations</h2>
+        <p id="zodiac-subtitle">Discover the secrets of the stars</p>
+        <div id="zodiac-grid" class="zodiac-grid">
+            <!-- Zodiac cards will be injected here by JS -->
+        </div>
+    </section>
+
+    <!-- Zodiac Modal -->
+    <div id="zodiac-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-body">
+                <!-- Dynamic Content -->
+            </div>
+        </div>
+    </div>
+
+    <script src="main.v3.js"></script>
 
     <section id="contact-form-section">
         <h2 id="contact-title">Cosmic Collaboration Inquiry</h2>

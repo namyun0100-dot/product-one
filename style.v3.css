@@ -267,14 +267,266 @@ body[data-theme="light"] .form-instructions a {
     transition: all 0.5s ease;
 }
 
+
+/* Zodiac Section Styles */
+#zodiac-section {
+    position: relative;
+    z-index: 1;
+    margin-top: 4rem;
+    padding: 3rem 2rem;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+}
+
+#zodiac-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: var(--primary-glow-dark);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(var(--glow-rgb-dark), 0.7);
+}
+
+#zodiac-subtitle {
+    font-family: 'Kalam', cursive;
+    color: var(--text-color-dark);
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+body[data-theme="light"] #zodiac-title {
+    color: var(--primary-glow-light);
+    text-shadow: 0 0 10px rgba(var(--glow-rgb-light), 0.5);
+}
+
+body[data-theme="light"] #zodiac-subtitle {
+    color: var(--text-color-light);
+}
+
+/* Zodiac Grid */
+.zodiac-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Responsive grid */
+    gap: 1rem;
+    justify-content: center;
+}
+
+.zodiac-card {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(var(--glow-rgb-dark), 0.3);
+    border-radius: 12px;
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(5px);
+}
+
+.zodiac-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: rgba(var(--glow-rgb-dark), 0.2);
+    border-color: var(--primary-glow-dark);
+    box-shadow: 0 0 15px rgba(var(--glow-rgb-dark), 0.4);
+}
+
+.zodiac-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+}
+
+.zodiac-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-color-dark);
+    font-weight: 700;
+}
+
+.zodiac-date {
+    font-family: 'Kalam', cursive;
+    font-size: 0.7rem;
+    color: var(--text-color-dark);
+    opacity: 0.7;
+}
+
+/* Light Theme for Cards */
+body[data-theme="light"] .zodiac-card {
+    background: rgba(255, 255, 255, 0.6);
+    border-color: rgba(var(--glow-rgb-light), 0.3);
+}
+
+body[data-theme="light"] .zodiac-card:hover {
+    background: rgba(var(--glow-rgb-light), 0.2);
+    border-color: var(--primary-glow-light);
+    box-shadow: 0 0 15px rgba(var(--glow-rgb-light), 0.4);
+}
+
+body[data-theme="light"] .zodiac-name,
+body[data-theme="light"] .zodiac-date {
+    color: var(--text-color-light);
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 1rem;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--bg-dark);
+    border: 2px solid var(--primary-glow-dark);
+    border-radius: 20px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 0 30px rgba(var(--glow-rgb-dark), 0.5);
+    transform: scale(0.8);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: var(--text-color-dark);
+    text-align: left;
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+body[data-theme="light"] .modal-content {
+    background: var(--bg-light);
+    border-color: var(--primary-glow-light);
+    box-shadow: 0 0 30px rgba(var(--glow-rgb-light), 0.5);
+    color: var(--text-color-light);
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-color-dark);
+    transition: transform 0.2s ease;
+}
+
+body[data-theme="light"] .close-modal {
+    color: var(--text-color-light);
+}
+
+.close-modal:hover {
+    transform: rotate(90deg);
+}
+
+/* Modal Internal Typography */
+.zodiac-detail-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(var(--glow-rgb-dark), 0.3);
+    padding-bottom: 1rem;
+}
+
+body[data-theme="light"] .zodiac-detail-header {
+    border-bottom-color: rgba(var(--glow-rgb-light), 0.3);
+}
+
+.zodiac-detail-icon {
+    font-size: 3rem;
+}
+
+.zodiac-detail-title h3 {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: var(--primary-glow-dark);
+}
+
+body[data-theme="light"] .zodiac-detail-title h3 {
+    color: var(--primary-glow-light);
+}
+
+.zodiac-detail-date {
+    font-family: 'Kalam', cursive;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.zodiac-detail-catchphrase {
+    font-family: 'Kalam', cursive;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary-glow-dark);
+    font-style: italic;
+}
+
+body[data-theme="light"] .zodiac-detail-catchphrase {
+    color: var(--primary-glow-light);
+}
+
+.zodiac-info-block {
+    margin-bottom: 1.2rem;
+}
+
+.zodiac-info-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.zodiac-info-text {
+    font-family: 'Kalam', cursive;
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+/* Mobile Tweaks for Modal */
 @media (max-width: 600px) {
-    #disqus-comments-section {
-        padding: 2rem 1rem;
-        margin-top: 2rem;
+    .modal-content {
+        padding: 1.5rem;
+        width: 95%;
+    }
+    .zodiac-detail-icon {
+        font-size: 2.5rem;
     }
 
-    #disqus-title {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
+    .zodiac-detail-title h3 {
+        font-size: 1.3rem;
     }
 }
+
+/* Utility Class */
+.hidden {
+    display: none !important;
+}
+
+
