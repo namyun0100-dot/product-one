@@ -1086,6 +1086,129 @@ body[data-theme="light"] .bar-fill {
     font-family: 'Orbitron', sans-serif;
 }
 
+/* Cosmic Wisdom Section */
+#cosmic-wisdom-section {
+    position: relative;
+    z-index: 1;
+    margin-top: 4rem;
+    padding: 3rem 2rem;
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+#wisdom-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: var(--primary-glow-dark);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(var(--glow-rgb-dark), 0.7);
+}
+
+body[data-theme="light"] #wisdom-title {
+    color: var(--primary-glow-light);
+    text-shadow: 0 0 10px rgba(var(--glow-rgb-light), 0.5);
+}
+
+#wisdom-subtitle {
+    font-family: 'Kalam', cursive;
+    color: var(--text-color-dark);
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+body[data-theme="light"] #wisdom-subtitle {
+    color: var(--text-color-light);
+}
+
+.wisdom-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.wisdom-card {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(var(--glow-rgb-dark), 0.2);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+body[data-theme="light"] .wisdom-card {
+    background: rgba(255, 255, 255, 0.5);
+    border-color: rgba(var(--glow-rgb-light), 0.2);
+}
+
+.wisdom-card:hover {
+    transform: translateY(-5px);
+}
+
+.wisdom-card h3 {
+    font-family: 'Kalam', cursive; /* Using handwriting font for friendly feel */
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-glow-dark);
+}
+
+body[data-theme="light"] .wisdom-card h3 {
+    color: var(--primary-glow-light);
+}
+
+.wisdom-card p {
+    font-family: 'Kalam', cursive;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color-dark);
+    opacity: 0.9;
+}
+
+body[data-theme="light"] .wisdom-card p {
+    color: var(--text-color-light);
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    color: #888;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 10;
+}
+
+body[data-theme="light"] footer {
+    background: #e2e8f0;
+    color: #555;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-links {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-glow-dark);
+}
+
+body[data-theme="light"] .footer-links a:hover {
+    color: var(--primary-glow-light);
+}
+
 /* Utility Class */
 .hidden {
     display: none !important;
