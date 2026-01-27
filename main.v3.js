@@ -21,7 +21,13 @@ const translations = {
         labelEmail: "Your Email:",
         labelMessage: "Your Message:",
         btnSendSignal: "Send Signal",
-        formInstructions: "We usually respond to cosmic signals within 24 light-hours."
+        formInstructions: "We usually respond to cosmic signals within 24 light-hours.",
+        disqusTitle: "Cosmic Discussions",
+        // Navigation
+        navFortune: "Fortune",
+        navZodiac: "Zodiac",
+        navChemistry: "Chemistry",
+        navFace: "AI Face"
     },
     ko: {
         title: "오늘의 우주 운세",
@@ -43,11 +49,16 @@ const translations = {
         labelName: "이름:",
         labelEmail: "이메일:",
         labelMessage: "메시지:",
-                    btnSendSignal: "신호 보내기",
-                    formInstructions: "우주 신호는 보통 24광시(시간) 내에 응답해 드립니다.",
-                    disqusTitle: "우주 토론"
-                }
-            };
+        btnSendSignal: "신호 보내기",
+        formInstructions: "우주 신호는 보통 24광시(시간) 내에 응답해 드립니다.",
+        disqusTitle: "우주 토론",
+        // Navigation
+        navFortune: "운세",
+        navZodiac: "별자리",
+        navChemistry: "궁합",
+        navFace: "AI 관상"
+    }
+};
 // Global Quotes Data
 const quotes = {
     en: [
@@ -1409,6 +1420,17 @@ window.updateGlobalText = function(lang) {
     
     const disqusTitle = document.getElementById('disqus-title');
     if (disqusTitle) disqusTitle.textContent = t.disqusTitle;
+
+    // Navigation Bar
+    const navFortune = document.getElementById('nav-fortune');
+    const navZodiac = document.getElementById('nav-zodiac');
+    const navChemistry = document.getElementById('nav-chemistry');
+    const navFace = document.getElementById('nav-face');
+
+    if (navFortune) navFortune.textContent = t.navFortune;
+    if (navZodiac) navZodiac.textContent = t.navZodiac;
+    if (navChemistry) navChemistry.textContent = t.navChemistry;
+    if (navFace) navFace.textContent = t.navFace;
 
     // Zodiac Section Titles
     const zodiacTitles = {
