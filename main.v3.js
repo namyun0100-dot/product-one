@@ -1231,6 +1231,159 @@ const ChemistryManager = {
     }
 };
 
+// Dog Face Logic Module
+const DogFaceManager = {
+    URL: "https://teachablemachine.withgoogle.com/models/1pr_o9L33/",
+    model: null,
+    
+    // Result Data (Cosmic Interpretation)
+    dogData: {
+        retriever: {
+            ko: { name: "태양의 수호자 골든 리트리버", desc: "당신은 따뜻하고 긍정적인 에너지로 주변을 밝히는 '인간 태양'입니다. 친화력이 좋고 멍뭉미가 넘쳐서 어디서나 사랑받는 인기쟁이시군요!" },
+            en: { name: "Guardian of the Sun: Golden Retriever", desc: "You are a 'Human Sun' brightening the world with warmth and positivity. Friendly and full of puppy-like charm, you are loved everywhere!" }
+        },
+        chihuahua: {
+            ko: { name: "작은 거인 치와와", desc: "작지만 강한 존재감! 눈치가 빠르고 야무진 당신은 은하계의 똑쟁이입니다. 내 사람에게는 애교가 넘치지만, 선을 넘는 사람에겐 참지 않죠." },
+            en: { name: "Little Giant: Chihuahua", desc: "Small but mighty! Sharp and smart, you are the galaxy's cleverest. Sweet to your own people, but you don't tolerate nonsense." }
+        },
+        husky: {
+            ko: { name: "얼음 행성의 늑대 시베리안 허스키", desc: "차가운 도시의 늑대 같지만 알고 보면 엉뚱한 매력이 있는 당신! 카리스마 넘치는 외모 뒤에 숨겨진 반전 매력(허당기)이 치명적입니다." },
+            en: { name: "Wolf of the Ice Planet: Siberian Husky", desc: "Cool on the outside, goofy on the inside! Your fatal charm lies in the contrast between your charismatic look and your silly side." }
+        },
+        maltese: { // Also covers Bichon
+            ko: { name: "구름 위의 천사 말티즈", desc: "하얗고 소중한 솜뭉치! 사랑스러움 그 자체인 당신은 보기만 해도 힐링이 되는 존재입니다. 하지만 참지 않는 성격도 숨겨져 있죠." },
+            en: { name: "Angel on Clouds: Maltese", desc: "A precious ball of fluff! Pure loveliness, you are a healing presence. But you also have a sassy side that won't hold back." }
+        },
+        bulldog: { // Also covers Pug
+            ko: { name: "지구 방위대장 불독", desc: "묵직하고 듬직한 매력! 겉모습은 강해 보이지만 속마음은 누구보다 여리고 따뜻한 '겉바속촉'의 정석입니다. 억울한 표정이 포인트!" },
+            en: { name: "Earth Defender: Bulldog", desc: "Solid and reliable! Tough on the outside, soft on the inside. Your slightly 'unjust' expression is your charm point." }
+        },
+        shiba: { // Also covers Jindo
+            ko: { name: "행운의 여우 시바견", desc: "볼살이 매력적인 당신! 독립적이고 마이웨이 성향이 강하지만, 한 번 마음을 주면 충성하는 츤데레 매력의 소유자입니다." },
+            en: { name: "Lucky Fox: Shiba Inu", desc: "Charming cheeks! Independent and doing things your way, but a loyal 'Tsundere' once you open your heart." }
+        }
+    },
+
+    init() {
+        this.uploadArea = document.getElementById('dog-upload-area');
+        this.fileInput = document.getElementById('dog-image-upload');
+        this.previewImg = document.getElementById('dog-preview-image');
+        this.placeholder = document.getElementById('upload-placeholder');
+        this.loading = document.getElementById('dog-loading');
+        this.btnAnalyze = document.getElementById('btn-analyze-dog');
+        this.resultDiv = document.getElementById('dog-result');
+
+        if (!this.uploadArea) return;
+
+        // Load Model
+        this.loadModel();
+
+        // Event Listeners
+        this.uploadArea.addEventListener('click', () => this.fileInput.click());
+        this.fileInput.addEventListener('change', (e) => this.handleImageUpload(e));
+        this.btnAnalyze.addEventListener('click', () => this.predict());
+    },
+
+    async loadModel() {
+        try {
+            const modelURL = this.URL + "model.json";
+            const metadataURL = this.URL + "metadata.json";
+            this.model = await tmImage.load(modelURL, metadataURL);
+            console.log("Model Loaded");
+        } catch (e) {
+            console.error("Model Load Failed:", e);
+        }
+    },
+
+    handleImageUpload(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            this.previewImg.src = e.target.result;
+            this.previewImg.classList.remove('hidden');
+            this.placeholder.classList.add('hidden');
+            this.btnAnalyze.classList.remove('hidden');
+            this.resultDiv.classList.add('hidden'); // Hide previous result
+        };
+        reader.readAsDataURL(file);
+    },
+
+    async predict() {
+        if (!this.model) {
+            alert("AI is still waking up... Please wait a moment. / AI가 아직 로딩 중입니다. 잠시만 기다려주세요.");
+            return;
+        }
+
+        // Show Loading
+        this.loading.classList.remove('hidden');
+        this.previewImg.classList.add('opacity-50'); // Dim image
+        this.btnAnalyze.disabled = true;
+
+        try {
+            const prediction = await this.model.predict(this.previewImg);
+            
+            // Sort by probability
+            prediction.sort((a, b) => b.probability - a.probability);
+            
+            // Get Top 1
+            const topClass = prediction[0].className.toLowerCase();
+            this.showResult(topClass, prediction);
+
+        } catch (e) {
+            console.error(e);
+            alert("Analysis failed. / 분석에 실패했습니다.");
+        } finally {
+            // Hide Loading
+            this.loading.classList.add('hidden');
+            this.previewImg.classList.remove('opacity-50');
+            this.btnAnalyze.disabled = false;
+        }
+    },
+
+    showResult(className, allPredictions) {
+        const lang = localStorage.getItem('lang') || 'ko';
+        
+        // Find matching key in dogData (simple keyword matching)
+        let key = 'retriever'; // default
+        if (className.includes('retriever')) key = 'retriever';
+        else if (className.includes('chihuahua')) key = 'chihuahua';
+        else if (className.includes('husky')) key = 'husky';
+        else if (className.includes('maltese') || className.includes('bichon')) key = 'maltese';
+        else if (className.includes('bulldog') || className.includes('pug')) key = 'bulldog';
+        else if (className.includes('shiba') || className.includes('jindo')) key = 'shiba';
+
+        const data = this.dogData[key];
+        const content = data[lang];
+
+        // Generate Probability Bars HTML
+        let barsHtml = '';
+        allPredictions.slice(0, 3).forEach(p => { // Top 3 only
+            const percent = (p.probability * 100).toFixed(1);
+            barsHtml += `
+                <div class="bar-label">
+                    <span>${p.className}</span>
+                    <span>${percent}%</span>
+                </div>
+                <div class="bar-container">
+                    <div class="bar-fill" style="width: ${percent}%"></div>
+                </div>
+            `;
+        });
+
+        this.resultDiv.innerHTML = `
+            <h3 class="dog-name">${content.name}</h3>
+            <p class="dog-desc">${content.desc}</p>
+            <div class="dog-stats">
+                ${barsHtml}
+            </div>
+        `;
+        this.resultDiv.classList.remove('hidden');
+        this.resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+};
+
 
 // Global function to update contact form, zodiac section, and other texts
 window.updateGlobalText = function(lang) {
@@ -1287,6 +1440,20 @@ window.updateGlobalText = function(lang) {
     if (lSign2) lSign2.textContent = chemTitles[lang].partner;
     if (btnCalc) btnCalc.textContent = chemTitles[lang].btn;
 
+    // Dog Face Section Titles
+    const dogTitles = {
+        en: { title: "Cosmic Dog Face", subtitle: "Which space puppy are you?", btn: "Analyze Face" },
+        ko: { title: "우주 댕댕이 관상", subtitle: "나는 어떤 우주 강아지일까요?", btn: "얼굴 분석하기" }
+    };
+    
+    const dTitle = document.getElementById('dog-title');
+    const dSubtitle = document.getElementById('dog-subtitle');
+    const btnDog = document.getElementById('btn-analyze-dog');
+    
+    if (dTitle) dTitle.textContent = dogTitles[lang].title;
+    if (dSubtitle) dSubtitle.textContent = dogTitles[lang].subtitle;
+    if (btnDog) btnDog.textContent = dogTitles[lang].btn;
+
     // Update Zodiac Cards & Modal
     ZodiacManager.updateUI();
     
@@ -1313,6 +1480,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize Chemistry Section
     ChemistryManager.init();
+    
+    // Initialize Dog Face Section
+    DogFaceManager.init();
 
     // Initial Global Text Update (covers Contact Form & Zodiac Titles)
     updateGlobalText(lang);

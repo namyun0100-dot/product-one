@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Kalam:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.v3.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 </head>
 <body data-theme="dark">
     <main>
@@ -54,6 +56,30 @@
         <button id="btn-check-chemistry">Calculate Compatibility</button>
         
         <div id="chemistry-result" class="chemistry-result hidden">
+            <!-- Result injected here -->
+        </div>
+    </section>
+
+    <section id="dog-face-section">
+        <h2 id="dog-title">Cosmic Dog Face</h2>
+        <p id="dog-subtitle">Which space puppy are you?</p>
+        
+        <div class="dog-upload-area" id="dog-upload-area">
+            <input type="file" id="dog-image-upload" accept="image/*" hidden>
+            <div class="upload-placeholder" id="upload-placeholder">
+                <span class="upload-icon">📸</span>
+                <p>Click or Drag Photo Here</p>
+            </div>
+            <img id="dog-preview-image" class="hidden" alt="Face Preview">
+            <div id="dog-loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Scanning Cosmic Energy...</p>
+            </div>
+        </div>
+
+        <button id="btn-analyze-dog" class="hidden">Analyze Face</button>
+        
+        <div id="dog-result" class="dog-result hidden">
             <!-- Result injected here -->
         </div>
     </section>
