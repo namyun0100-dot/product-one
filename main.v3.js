@@ -794,11 +794,222 @@ const zodiacElements = {
     cancer: 'water', scorpio: 'water', pisces: 'water'
 };
 
-const elementCompatibility = {
-    fire: { fire: 95, air: 90, earth: 50, water: 30 },
-    air: { fire: 90, air: 95, earth: 50, water: 60 },
-    earth: { fire: 50, air: 50, earth: 95, water: 90 },
-    water: { fire: 30, air: 60, earth: 90, water: 95 }
+const compatibilityData = {
+    // Fire Combinations
+    "fire-fire": {
+        score: 95,
+        ko: {
+            title: "폭발하는 에너지! 열정의 도가니",
+            desc: "두 분이 만나면 핵폭발급 에너지가 발생합니다! 서로의 열정을 누구보다 잘 이해하고, 함께하면 두려울 게 없는 천하무적 파트너가 됩니다. 지루할 틈이 없는 스펙터클한 관계입니다.",
+            tip: "싸울 때도 불같이 싸우니 조심하세요. 자존심 대결만 피하면 완벽합니다."
+        },
+        en: {
+            title: "Explosive Energy! Passionate Powerhouse",
+            desc: "When you two meet, it's like a nuclear explosion of energy! You understand each other's passion perfectly and become an invincible duo. Never a boring moment.",
+            tip: "You fight like fire too. Avoid ego battles, and you're perfect."
+        }
+    },
+    "fire-air": {
+        score: 90,
+        ko: {
+            title: "불길을 더 키워주는 바람",
+            desc: "환상의 짝꿍입니다! 공기(바람)가 불을 더 크게 타오르게 하듯, 상대방은 당신의 열정에 영감을 불어넣어 줍니다. 대화가 끊이지 않고 항상 새로운 아이디어가 넘쳐납니다.",
+            tip: "너무 들떠서 현실적인 문제를 놓칠 수 있습니다. 가끔은 차분하게 계획을 세워보세요."
+        },
+        en: {
+            title: "Wind Fanning the Flames",
+            desc: "A fantastic match! Just as wind fuels fire, your partner inspires your passion. Conversations never end, and new ideas are always flowing.",
+            tip: "Don't get too carried away. Sometimes you need to sit down and plan realistically."
+        }
+    },
+    "fire-earth": {
+        score: 50,
+        ko: {
+            title: "달리는 스포츠카와 과속방지턱",
+            desc: "불은 앞만 보고 달리려 하고, 흙은 멈춰서 다지려 합니다. 처음엔 답답할 수 있지만, 흙의 안정감이 불의 무모함을 막아주는 상호보완적인 관계가 될 수 있습니다.",
+            tip: "상대방의 신중함을 '느리다'고 비난하지 마세요. 그게 당신을 살리는 길입니다."
+        },
+        en: {
+            title: "Sports Car vs Speed Bump",
+            desc: "Fire wants to run, Earth wants to stay and build. It might feel frustrating at first, but Earth's stability can save Fire from recklessness.",
+            tip: "Don't blame their caution as 'slow'. It's what keeps you safe."
+        }
+    },
+    "fire-water": {
+        score: 30,
+        ko: {
+            title: "앗, 뜨거! 물과 기름의 만남",
+            desc: "서로 너무 다릅니다. 불의 직설적인 화법이 물의 감성을 증발시켜 상처를 줄 수 있고, 물의 감정 기복이 불을 꺼뜨릴 수 있습니다. 하지만 그 '다름'이 강렬한 끌림을 만들기도 합니다.",
+            tip: "논리적으로 따지기보다 감정을 먼저 읽어주세요. '그랬구나' 공법이 필요합니다."
+        },
+        en: {
+            title: "Ouch, Hot! Steam and Hiss",
+            desc: "Very different. Fire's bluntness can hurt Water's feelings, and Water's moods can dampen Fire's spirit. But that difference can create intense attraction.",
+            tip: "Don't argue with logic; validate feelings first. Empathy is key."
+        }
+    },
+
+    // Earth Combinations
+    "earth-earth": {
+        score: 95,
+        ko: {
+            title: "흔들리지 않는 편안함",
+            desc: "말하지 않아도 통하는 사이입니다. 두 분 모두 현실적이고 안정을 추구해서, 갈등 없이 신뢰를 쌓아갑니다. 함께 미래를 계획하고 자산을 늘려가는 데 최고의 파트너입니다.",
+            tip: "너무 안정적이라 지루해질 수 있습니다. 가끔은 계획 없는 여행을 떠나보세요."
+        },
+        en: {
+            title: "Unshakable Comfort",
+            desc: "You understand each other without words. Both realistic and stability-seeking, you build deep trust with little conflict. Great for building a future (and wealth) together.",
+            tip: "Can get a bit boring. Try a spontaneous trip once in a while."
+        }
+    },
+    "earth-water": {
+        score: 90,
+        ko: {
+            title: "비 온 뒤 굳어지는 단단한 땅",
+            desc: "흙은 물을 담아주고, 물은 흙을 촉촉하게 해줍니다. 흙의 든든함이 물의 불안함을 잠재워주고, 물의 감수성이 흙의 딱딱함을 녹여주는 힐링 관계입니다.",
+            tip: "너무 의존적인 관계가 되지 않도록 서로의 독립성을 존중해주세요."
+        },
+        en: {
+            title: "Nourishing Rain on Dry Land",
+            desc: "Earth holds Water, and Water nourishes Earth. Earth calms Water's anxiety, and Water softens Earth's rigidity. A healing relationship.",
+            tip: "Respect each other's independence to avoid becoming too dependent."
+        }
+    },
+    "earth-fire": {
+        score: 50,
+        ko: {
+            title: "화산 폭발 직전의 땅",
+            desc: "현실적인 당신에게 불 같은 상대방은 너무 무모해 보일 수 있습니다. 하지만 상대방의 추진력이 당신을 더 높은 곳으로 이끌어 줄 수 있습니다. 자극이 되는 관계입니다.",
+            tip: "잔소리는 조금만 줄이세요. 상대방의 기를 살려주는 것이 결국 이득입니다."
+        },
+        en: {
+            title: "Volcanic Ground",
+            desc: "To realistic you, the fiery partner seems reckless. But their drive can lead you to new heights. A stimulating relationship.",
+            tip: "Nag less. Boosting their morale will benefit you in the end."
+        }
+    },
+    "earth-air": {
+        score: 50,
+        ko: {
+            title: "모래바람 날리는 사막",
+            desc: "흙은 자리를 지키고 싶은데, 공기는 자꾸 떠돌아다닙니다. 서로의 라이프스타일이 달라서 이해하기 힘들 수 있습니다. 하지만 서로의 부족한 점(현실감각 vs 융통성)을 배울 수 있습니다.",
+            tip: "상대방을 가두려 하지 마세요. 자유를 줄수록 돌아옵니다."
+        },
+        en: {
+            title: "Dust in the Wind",
+            desc: "Earth wants to stay, Air wants to roam. Different lifestyles make understanding hard. But you can learn from each other (Reality vs Flexibility).",
+            tip: "Don't try to cage them. Freedom brings them back."
+        }
+    },
+
+    // Air Combinations
+    "air-air": {
+        score: 95,
+        ko: {
+            title: "밤새도록 수다 떠는 소울메이트",
+            desc: "만나면 접시가 깨질 정도로 할 말이 많습니다! 지적 호기심과 코드가 완벽하게 맞아서, 연인이자 가장 친한 친구가 될 수 있습니다. 구속 없는 자유로운 사랑을 합니다.",
+            tip: "말만 하다가 끝날 수 있습니다. 실천하는 힘을 기르는 것이 중요합니다."
+        },
+        en: {
+            title: "Chatty Soulmates",
+            desc: "You can talk forever! Intellectual curiosity and vibes match perfectly. Lovers and best friends. A free love without restrictions.",
+            tip: "Don't just talk; action matters. Build the habit of doing things together."
+        }
+    },
+    "air-fire": {
+        score: 90,
+        ko: {
+            title: "열기구 타고 날아가는 모험",
+            desc: "당신의 아이디어에 상대방이 불을 붙여 실행에 옮깁니다. 함께 있으면 긍정적인 에너지가 넘치고, 매일매일이 시트콤처럼 즐거운 커플이 됩니다.",
+            tip: "둘 다 참을성이 좀 부족합니다. 화가 날 땐 10분만 떨어져 있으세요."
+        },
+        en: {
+            title: "Hot Air Balloon Adventure",
+            desc: "Your ideas meet their action. Together, positive energy overflows, and every day is like a fun sitcom.",
+            tip: "Both lack patience. Take a 10-minute break when angry."
+        }
+    },
+    "air-water": {
+        score: 60,
+        ko: {
+            title: "호수 위의 안개",
+            desc: "신비롭고 몽환적인 분위기가 있지만, 잡힐 듯 잡히지 않는 관계입니다. 당신의 이성적인 면이 상대방의 감성적인 면을 이해하지 못해 '차갑다'는 오해를 받을 수 있습니다.",
+            tip: "논리로 이기려 들지 마세요. 상대방에게 필요한 건 '해결책'이 아니라 '공감'입니다."
+        },
+        en: {
+            title: "Mist on the Lake",
+            desc: "Mysterious and dreamy, but elusive. Your logic might clash with their emotions, making you seem 'cold'.",
+            tip: "Don't win with logic. They need 'empathy', not a 'solution'."
+        }
+    },
+    "air-earth": {
+        score: 50,
+        ko: {
+            title: "땅에 묶인 연",
+            desc: "당신은 자유롭게 날고 싶은데, 상대방은 줄을 잡고 현실로 끌어당깁니다. 답답할 수 있지만, 당신이 날아가버리지 않게 잡아주는 고마운 존재이기도 합니다.",
+            tip: "상대방의 현실적인 조언을 무시하지 마세요. 뼈가 되고 살이 됩니다."
+        },
+        en: {
+            title: "Kite on a String",
+            desc: "You want to fly, they pull you back to reality. Frustrating, but they keep you grounded and safe.",
+            tip: "Don't ignore their realistic advice. It's truly helpful."
+        }
+    },
+
+    // Water Combinations
+    "water-water": {
+        score: 95,
+        ko: {
+            title: "말없이 흐르는 깊은 강물",
+            desc: "눈빛만 봐도 기분을 아는 텔레파시 커플입니다. 감정적 교류가 깊고 서로를 끔찍이 아끼지만, 둘 다 기분이 다운되면 끝도 없이 우울해질 수 있습니다.",
+            tip: "서로의 감정 쓰레기통이 되지 않도록 주의하세요. 밝은 데이트가 필요합니다."
+        },
+        en: {
+            title: "Deep Silent River",
+            desc: "Telepathic couple who knows each other's moods by a glance. Deep emotional bond. But if both get down, it's a deep dive into gloom.",
+            tip: "Don't become emotional dumpsters for each other. Go on bright, fun dates."
+        }
+    },
+    "water-earth": {
+        score: 90,
+        ko: {
+            title: "꽃을 피우는 단비와 옥토",
+            desc: "당신의 사랑과 배려가 상대방을 성장시키고, 상대방의 든든함이 당신에게 안식처가 되어줍니다. 결혼 상대로 가장 이상적인 안정적인 조합입니다.",
+            tip: "상대방이 표현이 좀 서툴러도 마음은 진국이니 재촉하지 마세요."
+        },
+        en: {
+            title: "Rain and Soil Blooming Flowers",
+            desc: "Your love helps them grow, and their strength gives you a home. An ideal, stable match for marriage.",
+            tip: "They might be bad at expressing feelings, but their heart is true. Be patient."
+        }
+    },
+    "water-fire": {
+        score: 30,
+        ko: {
+            title: "끓어 넘치는 냄비",
+            desc: "상대방의 열정이 매력적이지만, 가끔은 당신을 지치게 만듭니다. 당신의 섬세함을 상대방은 '예민하다'고 받아들일 수 있습니다. 서로의 온도 차이를 인정해야 합니다.",
+            tip: "직설적인 말에 상처받지 마세요. 악의는 없습니다. 쿨하게 넘기는 연습이 필요합니다."
+        },
+        en: {
+            title: "Boiling Pot",
+            desc: "Their passion is attractive but exhausting. They might see your sensitivity as being 'touchy'. Acknowledge the temperature difference.",
+            tip: "Don't get hurt by blunt words. No malice intended. Practice letting it go."
+        }
+    },
+    "water-air": {
+        score: 60,
+        ko: {
+            title: "파도를 일으키는 바람",
+            desc: "바람이 불면 파도가 치듯, 상대방의 말 한마디에 당신의 마음이 요동칩니다. 지적으로는 즐겁지만, 감정적으로는 채워지지 않는 공허함을 느낄 수도 있습니다.",
+            tip: "상대방에게 깊은 감정적 공감을 기대하지 마세요. 가벼운 대화 친구로서는 최고입니다."
+        },
+        en: {
+            title: "Wind Causing Waves",
+            desc: "Like wind on water, their words stir your emotions. Intellectually fun, but you might feel emotionally empty.",
+            tip: "Don't expect deep emotional empathy. They are great for lighthearted talks."
+        }
+    }
 };
 
 // Zodiac Logic Module
@@ -970,7 +1181,8 @@ const ChemistryManager = {
         const sign2 = this.select2.value;
 
         if (!sign1 || !sign2) {
-            alert("Please select both signs! / 두 별자리를 모두 선택해주세요!");
+            const lang = localStorage.getItem('lang') || 'ko';
+            alert(lang === 'en' ? "Please select both signs!" : "두 별자리를 모두 선택해주세요!");
             return;
         }
 
@@ -980,27 +1192,27 @@ const ChemistryManager = {
         const el1 = zodiacElements[sign1];
         const el2 = zodiacElements[sign2];
 
-        let score = elementCompatibility[el1][el2];
+        // Key for compatibility data: e.g., "fire-water"
+        const key = `${el1}-${el2}`;
+        const data = compatibilityData[key];
         
-        // Random variance (+/- 5)
+        // Random variance (+/- 5) for score
         const variance = Math.floor(Math.random() * 11) - 5; 
-        score = Math.min(100, Math.max(0, score + variance));
+        const finalScore = Math.min(100, Math.max(0, data.score + variance));
 
-        let message = "";
-        
-        if (score >= 90) {
-            message = lang === 'en' ? "A Match Made in the Stars! 🌟" : "우주가 맺어준 천생연분! 🌟";
-        } else if (score >= 70) {
-            message = lang === 'en' ? "Great Chemistry! ✨" : "아주 좋은 케미를 보여주네요! ✨";
-        } else if (score >= 50) {
-            message = lang === 'en' ? "Good Potential. requires effort. 🌱" : "노력하면 좋은 관계가 될 수 있어요. 🌱";
-        } else {
-            message = lang === 'en' ? "Sparks might fly (and not the good kind). 🔥" : "스파크가 튈 수 있어요 (조심!). 🔥";
-        }
+        const content = data[lang];
 
         this.resultDiv.innerHTML = `
-            <div class="score-display">${score}%</div>
-            <div class="score-desc">${message}</div>
+            <div class="score-display">${finalScore}%</div>
+            <h3 class="comp-title">"${content.title}"</h3>
+            
+            <div class="comp-detail-box">
+                <p class="comp-desc">${content.desc}</p>
+                <div class="comp-tip">
+                    <strong>💡 Cosmic Tip:</strong> ${content.tip}
+                </div>
+            </div>
+
             <div class="score-detail">
                 ${s1Data.icon} ${s1Data[lang].name} (${el1}) <span style="margin:0 10px">❤️</span> ${s2Data.icon} ${s2Data[lang].name} (${el2})
             </div>

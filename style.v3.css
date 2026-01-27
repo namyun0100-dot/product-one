@@ -764,6 +764,60 @@ body[data-theme="light"] .chemistry-result {
     border-color: var(--primary-glow-light);
 }
 
+.comp-title {
+    font-family: 'Kalam', cursive;
+    font-size: 1.5rem;
+    color: var(--text-color-dark);
+    margin: 0.5rem 0 1.5rem 0;
+    font-weight: bold;
+    word-break: keep-all;
+}
+
+body[data-theme="light"] .comp-title {
+    color: var(--text-color-light);
+}
+
+.comp-detail-box {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1.2rem;
+    border-radius: 10px;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+body[data-theme="light"] .comp-detail-box {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.comp-desc {
+    font-family: 'Kalam', cursive;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--text-color-dark);
+    opacity: 0.9;
+}
+
+body[data-theme="light"] .comp-desc {
+    color: var(--text-color-light);
+}
+
+.comp-tip {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    color: var(--primary-glow-dark);
+    background: rgba(var(--glow-rgb-dark), 0.1);
+    padding: 0.8rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-glow-dark);
+}
+
+body[data-theme="light"] .comp-tip {
+    color: var(--primary-glow-light);
+    background: rgba(var(--glow-rgb-light), 0.1);
+    border-left-color: var(--primary-glow-light);
+}
+
 @keyframes slideUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
