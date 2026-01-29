@@ -1273,3 +1273,33 @@ body[data-theme="light"] .footer-links a:hover {
 .hidden {
     display: none !important;
 }
+
+.blog-link-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: transparent;
+    border: 2px solid var(--primary-glow-dark);
+    color: var(--primary-glow-dark);
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+body[data-theme="light"] .blog-link-btn {
+    border-color: var(--primary-glow-light);
+    color: var(--primary-glow-light);
+}
+
+.blog-link-btn:hover {
+    background: var(--primary-glow-dark);
+    color: white;
+    box-shadow: 0 0 15px var(--primary-glow-dark);
+}
+
+body[data-theme="light"] .blog-link-btn:hover {
+    background: var(--primary-glow-light);
+    box-shadow: 0 0 15px var(--primary-glow-light);
+}
