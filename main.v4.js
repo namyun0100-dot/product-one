@@ -101,6 +101,17 @@ const translations = {
             h3_3: "Broken or Chained?",
             p4: "Breaks or chains in the Life Line often signify periods of significant change, stress, or health transitions. These aren't necessarily negative, but mark points where you've had to adapt or overcome difficulties."
         },
+        article6: {
+            title: "🐾 Pet Zodiac Encyclopedia: Why is My Pet Like This?",
+            meta: "February 10, 2026 | Pet Astrology",
+            p1: "Have you ever wondered why your furry friend acts the way they do? Just like humans, pets are influenced by the stars! Knowing their zodiac sign can unlock the secrets to their unique personality.",
+            h3_1: "Aries Pet (March 21 - April 19): The Energetic Pioneer",
+            p2: "Aries pets are born leaders! Full of energy, they love to explore and can be a bit mischievous. Be ready for playful antics and lots of adventure.",
+            h3_2: "Taurus Pet (April 20 - May 20): The Gentle Foodie",
+            p3: "Taurus pets love comfort, food, and affection. They can be stubborn but are incredibly loyal. A comfy bed and tasty treats are the keys to their heart.",
+            h3_3: "Gemini Pet (May 21 - June 20): The Curious Communicator",
+            p4: "Gemini pets are intelligent and curious. They love to 'talk' (bark, meow, chirp) and need constant mental stimulation. Boredom is their worst enemy!"
+        },
         backHomeLink: "← Back to Cosmic Fortune"
 
     },
@@ -204,6 +215,17 @@ const translations = {
             p3: "짧거나 희미한 선이 짧은 수명을 의미하는 것은 아닙니다! 이는 신체 에너지가 적거나 건강과 웰빙에 더 주의를 기울일 필요가 있음을 시사할 수 있습니다. 또한 좀 더 정적인 생활 방식을 나타낼 수도 있습니다.",
             h3_3: "끊어지거나 사슬 모양?",
             p4: "생명선의 끊어짐이나 사슬 모양은 종종 중요한 변화, 스트레스 또는 건강상의 전환기를 의미합니다. 이는 반드시 부정적인 것은 아니지만, 당신이 적응하거나 어려움을 극복해야 했던 시점을 나타냅니다."
+        },
+        article6: {
+            title: "🐾 반려동물 별자리 사전: 우리 아이 성격이 왜 이럴까?",
+            meta: "2026년 2월 10일 | 반려동물 점성술",
+            p1: "혹시 우리 집 귀여운 동물 친구들이 왜 그런 행동을 하는지 궁금했던 적 없으신가요? 사람처럼 반려동물도 별의 영향을 받는답니다! 아이들의 별자리를 알면 숨겨진 개성을 파악할 수 있어요.",
+            h3_1: "양자리 펫 (3월 21일 - 4월 19일): 에너제틱 개척자",
+            p2: "양자리 펫은 타고난 리더입니다! 에너지가 넘치고 탐험을 좋아하며, 장난기가 많을 수 있어요. 놀이와 모험을 위한 준비가 필요합니다.",
+            h3_2: "황소자리 펫 (4월 20일 - 5월 20일): 온순한 미식가",
+            p3: "황소자리 펫은 편안함, 맛있는 음식, 애정을 사랑합니다. 고집이 셀 수 있지만 놀랍도록 충성스러워요. 편안한 잠자리와 맛있는 간식이 마음을 사로잡는 열쇠입니다.",
+            h3_3: "쌍둥이자리 펫 (5월 21일 - 6월 20일): 호기심 많은 소통가",
+            p4: "쌍둥이자리 펫은 똑똑하고 호기심이 많아요. '말하기'를 좋아하고(짖거나, 야옹거리거나, 지저귀거나), 끊임없는 정신적 자극이 필요합니다. 지루함이 최대의 적입니다!"
         },
         backHomeLink: "← 코스믹 포춘으로 돌아가기"
     }
@@ -1792,6 +1814,7 @@ window.updateBlogText = function(lang) {
     updateArticle('article3', t.article3);
     updateArticle('article4', t.article4);
     updateArticle('article5', t.article5);
+    updateArticle('article6', t.article6);
 
     const backHomeLink = document.getElementById('back-home-link');
     if (backHomeLink && t.backHomeLink) backHomeLink.textContent = t.backHomeLink;
