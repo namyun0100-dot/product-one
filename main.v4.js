@@ -1661,6 +1661,61 @@ const DogFaceManager = {
     }
 };
 
+// Global function to update blog specific texts
+window.updateBlogText = function(lang) {
+    const t = translations[lang];
+    if (!t) return; // Safety check
+
+    const blogPageTitle = document.getElementById('blog-page-title');
+    if (blogPageTitle && t.blogPageTitle) blogPageTitle.textContent = t.blogPageTitle;
+
+    const blogPageDescription = document.getElementById('blog-page-description');
+    if (blogPageDescription && t.blogPageDescription) blogPageDescription.content = t.blogPageDescription;
+
+    const navHome = document.getElementById('nav-home');
+    if (navHome && t.navHome) navHome.textContent = t.navHome;
+    const navFortuneBlog = document.getElementById('nav-fortune');
+    if (navFortuneBlog && t.navFortune) navFortuneBlog.textContent = t.navFortune;
+
+    const blogHeaderTitle = document.getElementById('blog-header-title');
+    if (blogHeaderTitle && t.blogHeaderTitle) blogHeaderTitle.textContent = t.blogHeaderTitle;
+
+    const blogHeaderSubtitle = document.getElementById('blog-header-subtitle');
+    if (blogHeaderSubtitle && t.blogHeaderSubtitle) blogHeaderSubtitle.textContent = t.blogHeaderSubtitle;
+
+    // Helper for articles to avoid repetitive null checks
+    const updateArticle = (prefix, data) => {
+        if (!data) return;
+        const titleEl = document.getElementById(`${prefix}-title`);
+        const metaEl = document.getElementById(`${prefix}-meta`);
+        const contentEl = document.getElementById(`${prefix}-content`);
+
+        if (titleEl) titleEl.innerHTML = data.title;
+        if (metaEl) metaEl.textContent = data.meta;
+        if (contentEl) {
+            // Construct HTML safely
+            let html = '';
+            if (data.p1) html += `<p>${data.p1}</p>`;
+            if (data.h3_1) html += `<h3 id="${prefix}-h3-1">${data.h3_1}</h3>`;
+            if (data.p2) html += `<p>${data.p2}</p>`;
+            if (data.h3_2) html += `<h3 id="${prefix}-h3-2">${data.h3_2}</h3>`;
+            if (data.p3) html += `<p>${data.p3}</p>`;
+            if (data.h3_3) html += `<h3 id="${prefix}-h3-3">${data.h3_3}</h3>`;
+            if (data.p4) html += `<p>${data.p4}</p>`;
+            if (data.h3_4) html += `<h3 id="${prefix}-h3-4">${data.h3_4}</h3>`;
+            if (data.p5) html += `<p>${data.p5}</p>`;
+            contentEl.innerHTML = html;
+        }
+    };
+
+    updateArticle('article1', t.article1);
+    updateArticle('article2', t.article2);
+    updateArticle('article3', t.article3);
+
+    const backHomeLink = document.getElementById('back-home-link');
+    if (backHomeLink && t.backHomeLink) backHomeLink.textContent = t.backHomeLink;
+}
+
 
 // Global function to update contact form, zodiac section, and other texts
 window.updateGlobalText = function(lang) {
@@ -1752,61 +1807,6 @@ window.updateGlobalText = function(lang) {
 
     // Update Blog Text if on blog.html
     updateBlogText(lang);
-}
-
-// Global function to update blog specific texts
-window.updateBlogText = function(lang) {
-    const t = translations[lang];
-    if (!t) return; // Safety check
-
-    const blogPageTitle = document.getElementById('blog-page-title');
-    if (blogPageTitle && t.blogPageTitle) blogPageTitle.textContent = t.blogPageTitle;
-
-    const blogPageDescription = document.getElementById('blog-page-description');
-    if (blogPageDescription && t.blogPageDescription) blogPageDescription.content = t.blogPageDescription;
-
-    const navHome = document.getElementById('nav-home');
-    if (navHome && t.navHome) navHome.textContent = t.navHome;
-    const navFortuneBlog = document.getElementById('nav-fortune');
-    if (navFortuneBlog && t.navFortune) navFortuneBlog.textContent = t.navFortune;
-
-    const blogHeaderTitle = document.getElementById('blog-header-title');
-    if (blogHeaderTitle && t.blogHeaderTitle) blogHeaderTitle.textContent = t.blogHeaderTitle;
-
-    const blogHeaderSubtitle = document.getElementById('blog-header-subtitle');
-    if (blogHeaderSubtitle && t.blogHeaderSubtitle) blogHeaderSubtitle.textContent = t.blogHeaderSubtitle;
-
-    // Helper for articles to avoid repetitive null checks
-    const updateArticle = (prefix, data) => {
-        if (!data) return;
-        const titleEl = document.getElementById(`${prefix}-title`);
-        const metaEl = document.getElementById(`${prefix}-meta`);
-        const contentEl = document.getElementById(`${prefix}-content`);
-
-        if (titleEl) titleEl.innerHTML = data.title;
-        if (metaEl) metaEl.textContent = data.meta;
-        if (contentEl) {
-            // Construct HTML safely
-            let html = '';
-            if (data.p1) html += `<p>${data.p1}</p>`;
-            if (data.h3_1) html += `<h3 id="${prefix}-h3-1">${data.h3_1}</h3>`;
-            if (data.p2) html += `<p>${data.p2}</p>`;
-            if (data.h3_2) html += `<h3 id="${prefix}-h3-2">${data.h3_2}</h3>`;
-            if (data.p3) html += `<p>${data.p3}</p>`;
-            if (data.h3_3) html += `<h3 id="${prefix}-h3-3">${data.h3_3}</h3>`;
-            if (data.p4) html += `<p>${data.p4}</p>`;
-            if (data.h3_4) html += `<h3 id="${prefix}-h3-4">${data.h3_4}</h3>`;
-            if (data.p5) html += `<p>${data.p5}</p>`;
-            contentEl.innerHTML = html;
-        }
-    };
-
-    updateArticle('article1', t.article1);
-    updateArticle('article2', t.article2);
-    updateArticle('article3', t.article3);
-
-    const backHomeLink = document.getElementById('back-home-link');
-    if (backHomeLink && t.backHomeLink) backHomeLink.textContent = t.backHomeLink;
 }
 
 // Global function to update quote
