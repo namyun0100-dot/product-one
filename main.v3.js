@@ -31,7 +31,48 @@ const translations = {
         dogUpload: "Click or Drag Photo Here",
         // Zodiac Modal Tabs
         tabPersonality: "Personality",
-        tabMonthly: "Monthly Forecast"
+        tabMonthly: "Monthly Forecast",
+        // Blog Page
+        blogPageTitle: "Cosmic Blog - Unlock the Universe",
+        blogPageDescription: "Explore deep cosmic wisdom, astrology insights, and spiritual guides. Your journey to understanding the stars starts here.",
+        navHome: "Home",
+        blogHeaderTitle: "Cosmic Wisdom",
+        blogHeaderSubtitle: "Universe, Stars, and You. Exploring the hidden connections.",
+        article1: {
+            title: "🌟 2026: The Year of Spiritual Awakening?",
+            meta: "February 1, 2026 | Astrology Trend",
+            p1: "Welcome to 2026. As Pluto settles deeply into Aquarius, we are witnessing a massive shift in how humanity connects. It's no longer just about technology; it's about 'Spiritual Technology.'",
+            h3_1: "Why 2026 is Special",
+            p2: "This year, the alignment of Jupiter and Neptune suggests a surge in collective empathy. You might find yourself feeling more connected to nature, the stars, and even strangers. It's not a coincidence; it's the cosmic weather.",
+            h3_2: "Key Dates to Watch",
+            p3: "Keep an eye on the Solar Eclipse in August. It will be a powerful time for setting intentions related to your career and public image. Don't be afraid to dream big."
+        },
+        article2: {
+            title: "🧠 MBTI & The 4 Elements: Are They Connected?",
+            meta: "January 28, 2026 | Psychology & Stars",
+            p1: "We love MBTI. We love Zodiac signs. But did you know they share a common root in ancient elemental theory? Let's break down the 4 Elements (Fire, Earth, Air, Water) and how they map to modern personality types.",
+            h3_1: "🔥 Fire (Aries, Leo, Sagittarius) ≈ NF Types",
+            p2: "Fire signs are driven by intuition and feeling. They are the 'Idealists' (ENFP, INFJ, INFP, ENFJ). They burn with passion and are often the ones starting new movements.",
+            h3_2: "🌍 Earth (Taurus, Virgo, Capricorn) ≈ SJ Types",
+            p3: "Earth signs ground us. They correspond to the 'Guardians' (ISTJ, ISFJ, ESTJ, ESFJ). Practical, reliable, and focused on the tangible world.",
+            h3_3: "🌬️ Air (Gemini, Libra, Aquarius) ≈ NT Types",
+            p4: "Air represents the intellect. The 'Rationals' (INTJ, INTP, ENTJ, ENTP) fit here perfectly. They analyze, communicate, and innovate.",
+            h3_4: "💧 Water (Cancer, Scorpio, Pisces) ≈ SP Types?",
+            p5: "Actually, Water is unique. While often linked to 'Feeling', its adaptability also mirrors the 'Artisans' (ISFP, ESFP, ISTP, ESTP) who flow with the moment. Water signs feel deeply and react instinctively."
+        },
+        article3: {
+            title: "✋ Palmistry 101: The Heart Line",
+            meta: "January 15, 2026 | Ancient Arts",
+            p1: "Look at your dominant hand. See the top horizontal line running from under your pinky finger towards your index finger? That's your Heart Line. It reveals your emotional style, not just your romantic future.",
+            h3_1: "Long & Curved?",
+            p2: "If it curves up towards your index finger, you are a romantic at heart. You express feelings openly and love deeply.",
+            h3_2: "Straight & Short?",
+            p3: "If it ends under the middle finger, you might be more practical or even a bit selfish in love. You need your freedom.",
+            h3_3: "Broken Line?",
+            p4: "Don't worry, it doesn't mean a broken heart forever. It often indicates a major emotional stress or change that you have overcome."
+        },
+        backHomeLink: "← Back to Cosmic Fortune"
+
     },
     ko: {
         title: "오늘의 우주 운세",
@@ -64,7 +105,47 @@ const translations = {
         dogUpload: "사진을 클릭하거나 드래그하세요",
         // Zodiac Modal Tabs
         tabPersonality: "성격 분석",
-        tabMonthly: "이달의 운세"
+        tabMonthly: "이달의 운세",
+        // Blog Page
+        blogPageTitle: "코스믹 블로그 - 우주를 탐험하다",
+        blogPageDescription: "깊은 우주의 지혜, 점성술 인사이트, 영적 가이드를 탐험해보세요. 별을 이해하는 당신의 여정이 여기에서 시작됩니다.",
+        navHome: "홈",
+        blogHeaderTitle: "코스믹 지혜",
+        blogHeaderSubtitle: "우주, 별, 그리고 당신. 숨겨진 연결고리를 탐험하세요.",
+        article1: {
+            title: "🌟 2026: 영적 각성의 해가 될까?",
+            meta: "2026년 2월 1일 | 점성술 트렌드",
+            p1: "2026년에 오신 것을 환영합니다. 명왕성이 물병자리에서 깊이 자리 잡으면서, 우리는 인류가 연결되는 방식에 엄청난 변화를 목격하고 있습니다. 더 이상 기술만이 아니라 '영적인 기술'에 관한 것입니다.",
+            h3_1: "왜 2026년이 특별할까요?",
+            p2: "올해 목성과 해왕성의 정렬은 집단적 공감의 급증을 암시합니다. 당신은 자연, 별, 심지어 낯선 사람들과도 더 연결되어 있다고 느낄 수 있습니다. 이것은 우연이 아닙니다. 우주의 날씨입니다.",
+            h3_2: "주목해야 할 주요 날짜",
+            p3: "8월의 일식에 주목하세요. 이는 당신의 경력과 대중적 이미지와 관련된 의도를 설정하는 데 강력한 시간이 될 것입니다. 크게 꿈꾸는 것을 두려워하지 마세요."
+        },
+        article2: {
+            title: "🧠 MBTI & 4원소: 과연 연결되어 있을까?",
+            meta: "2026년 1월 28일 | 심리학 & 별",
+            p1: "우리는 MBTI를 좋아합니다. 우리는 별자리를 좋아합니다. 하지만 고대 원소 이론에서 공통된 뿌리를 공유한다는 사실을 알고 계셨나요? 4원소(불, 흙, 공기, 물)와 현대 성격 유형이 어떻게 매핑되는지 살펴보겠습니다.",
+            h3_1: "🔥 불 (양자리, 사자자리, 사수자리) ≈ NF 유형",
+            p2: "불의 별자리는 직관과 감정에 의해 움직입니다. 그들은 '이상주의자' (ENFP, INFJ, INFP, ENFJ). 그들은 열정으로 불타오르며 종종 새로운 움직임을 시작하는 사람들입니다.",
+            h3_2: "🌍 흙 (황소자리, 처녀자리, 염소자리) ≈ SJ 유형",
+            p3: "흙의 별자리는 우리를 안정시킵니다. 그들은 '수호자' (ISTJ, ISFJ, ESTJ, ESFJ)에 완벽하게 해당합니다. 실용적이고 신뢰할 수 있으며, 실제 세계에 집중합니다.",
+            h3_3: "🌬️ 공기 (쌍둥이자리, 천칭자리, 물병자리) ≈ NT 유형",
+            p4: "공기는 지성을 나타냅니다. '합리주의자' (INTJ, INTP, ENTJ, ENTP)는 여기에 완벽하게 들어맞습니다. 그들은 분석하고, 소통하며, 혁신합니다.",
+            h3_4: "💧 물 (게자리, 전갈자리, 물고기자리) ≈ SP 유형?",
+            p5: "실제로 물은 독특합니다. 종종 '감정'과 연결되지만, 그들의 적응력은 또한 순간에 따라 흐르는 '예술가' (ISFP, ESFP, ISTP, ESTP)를 반영합니다. 물의 별자리는 깊이 느끼고 본능적으로 반응합니다."
+        },
+        article3: {
+            title: "✋ 손금 101: 감정선",
+            meta: "2026년 1월 15일 | 고대 예술",
+            p1: "지배적인 손을 보세요. 새끼손가락 아래에서 집게손가락 쪽으로 이어지는 맨 위 가로선을 보세요? 그것이 바로 감정선입니다. 이것은 당신의 감정적인 스타일을 나타내며, 단지 당신의 로맨틱한 미래만을 나타내는 것은 아닙니다.",
+            h3_1: "길고 구부러져 있나요?",
+            p2: "만약 감정선이 집게손가락 쪽으로 구부러져 있다면, 당신은 타고난 로맨티스트입니다. 감정을 솔직하게 표현하고 깊이 사랑합니다.",
+            h3_2: "직선이고 짧나요?",
+            p3: "만약 중지 아래에서 끝난다면, 당신은 사랑에 있어서 더 실용적이거나 심지어 이기적일 수 있습니다. 당신은 자유가 필요합니다.",
+            h3_3: "끊어진 선인가요?",
+            p4: "걱정하지 마세요. 영원히 깨진 마음을 의미하는 것은 아닙니다. 종종 당신이 극복한 주요한 감정적 스트레스나 변화를 나타냅니다."
+        },
+        backHomeLink: "← 코스믹 포춘으로 돌아가기"
     }
 };
 
@@ -1668,6 +1749,83 @@ window.updateGlobalText = function(lang) {
     
     // Update Chemistry Selects
     ChemistryManager.updateText();
+
+    // Update Blog Text if on blog.html
+    updateBlogText(lang);
+}
+
+// Global function to update blog specific texts
+window.updateBlogText = function(lang) {
+    const t = translations[lang];
+
+    const blogPageTitle = document.getElementById('blog-page-title');
+    if (blogPageTitle) blogPageTitle.textContent = t.blogPageTitle;
+
+    const blogPageDescription = document.getElementById('blog-page-description');
+    if (blogPageDescription) blogPageDescription.content = t.blogPageDescription; // Update meta description
+
+    const navHome = document.getElementById('nav-home');
+    if (navHome) navHome.textContent = t.navHome;
+    const navFortuneBlog = document.getElementById('nav-fortune'); // For blog.html nav
+    if (navFortuneBlog) navFortuneBlog.textContent = t.navFortune;
+
+
+    const blogHeaderTitle = document.getElementById('blog-header-title');
+    if (blogHeaderTitle) blogHeaderTitle.textContent = t.blogHeaderTitle;
+
+    const blogHeaderSubtitle = document.getElementById('blog-header-subtitle');
+    if (blogHeaderSubtitle) blogHeaderSubtitle.textContent = t.blogHeaderSubtitle;
+
+    // Article 1
+    const article1Title = document.getElementById('article1-title');
+    if (article1Title) article1Title.innerHTML = t.article1.title;
+    const article1Meta = document.getElementById('article1-meta');
+    if (article1Meta) article1Meta.textContent = t.article1.meta;
+    const article1Content = document.getElementById('article1-content');
+    if (article1Content) article1Content.innerHTML = `
+        <p>${t.article1.p1}</p>
+        <h3 id="article1-h3-1">${t.article1.h3_1}</h3>
+        <p>${t.article1.p2}</p>
+        <h3 id="article1-h3-2">${t.article1.h3_2}</h3>
+        <p>${t.article1.p3}</p>
+    `;
+
+    // Article 2
+    const article2Title = document.getElementById('article2-title');
+    if (article2Title) article2Title.innerHTML = t.article2.title;
+    const article2Meta = document.getElementById('article2-meta');
+    if (article2Meta) article2Meta.textContent = t.article2.meta;
+    const article2Content = document.getElementById('article2-content');
+    if (article2Content) article2Content.innerHTML = `
+        <p>${t.article2.p1}</p>
+        <h3 id="article2-h3-1">${t.article2.h3_1}</h3>
+        <p>${t.article2.p2}</p>
+        <h3 id="article2-h3-2">${t.article2.h3_2}</h3>
+        <p>${t.article2.p3}</p>
+        <h3 id="article2-h3-3">${t.article2.h3_3}</h3>
+        <p>${t.article2.p4}</p>
+        <h3 id="article2-h3-4">${t.article2.h3_4}</h3>
+        <p>${t.article2.p5}</p>
+    `;
+
+    // Article 3
+    const article3Title = document.getElementById('article3-title');
+    if (article3Title) article3Title.innerHTML = t.article3.title;
+    const article3Meta = document.getElementById('article3-meta');
+    if (article3Meta) article3Meta.textContent = t.article3.meta;
+    const article3Content = document.getElementById('article3-content');
+    if (article3Content) article3Content.innerHTML = `
+        <p>${t.article3.p1}</p>
+        <h3 id="article3-h3-1">${t.article3.h3_1}</h3>
+        <p>${t.article3.p2}</p>
+        <h3 id="article3-h3-2">${t.article3.h3_2}</h3>
+        <p>${t.article3.p3}</p>
+        <h3 id="article3-h3-3">${t.article3.h3_3}</h3>
+        <p>${t.article3.p4}</p>
+    `;
+
+    const backHomeLink = document.getElementById('back-home-link');
+    if (backHomeLink) backHomeLink.textContent = t.backHomeLink;
 }
 
 // Global function to update quote

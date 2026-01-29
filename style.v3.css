@@ -1269,9 +1269,128 @@ body[data-theme="light"] .footer-links a:hover {
     color: var(--primary-glow-light);
 }
 
-/* Utility Class */
-.hidden {
-    display: none !important;
+/* Blog Specific Styles */
+.blog-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-top: 100px; /* Offset for fixed header */
+}
+
+.blog-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.blog-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: var(--primary-glow-dark);
+    text-shadow: 0 0 10px rgba(var(--glow-rgb-dark), 0.7);
+    margin-bottom: 1rem;
+}
+
+body[data-theme="light"] .blog-title {
+    color: var(--primary-glow-light);
+    text-shadow: 0 0 10px rgba(var(--glow-rgb-light), 0.5);
+}
+
+.blog-subtitle {
+    font-family: 'Kalam', cursive;
+    font-size: 1.2rem;
+    color: var(--text-color-dark);
+    opacity: 0.8;
+}
+
+body[data-theme="light"] .blog-subtitle {
+    color: var(--text-color-light);
+}
+
+.article-card {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(var(--glow-rgb-dark), 0.2);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+body[data-theme="light"] .article-card {
+    background: rgba(255, 255, 255, 0.6);
+    border-color: rgba(var(--glow-rgb-light), 0.2);
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+}
+
+.article-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+body[data-theme="light"] .article-title {
+    color: #2d3748;
+}
+
+.article-meta {
+    font-size: 0.9rem;
+    color: var(--primary-glow-dark);
+    margin-bottom: 1.5rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body[data-theme="light"] .article-meta {
+    color: var(--primary-glow-light);
+}
+
+.article-content {
+    font-family: 'Kalam', cursive; /* Using Kalam for body text for friendly vibe */
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color-dark);
+    opacity: 0.9;
+}
+
+.article-content h3 {
+     font-family: 'Orbitron', sans-serif; /* Subheadings in techno font */
+     margin-top: 2rem;
+     margin-bottom: 1rem;
+     color: #e2e8f0;
+}
+
+body[data-theme="light"] .article-content h3 {
+     color: #4a5568;
+}
+
+body[data-theme="light"] .article-content {
+    color: var(--text-color-light);
+}
+
+.back-home {
+    display: block;
+    text-align: center;
+    margin-top: 3rem;
+    text-decoration: none;
+    color: var(--primary-glow-dark);
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+body[data-theme="light"] .back-home {
+    color: var(--primary-glow-light);
+}
+
+.back-home:hover {
+    letter-spacing: 2px;
 }
 
 .blog-link-btn {
