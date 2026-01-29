@@ -1757,75 +1757,56 @@ window.updateGlobalText = function(lang) {
 // Global function to update blog specific texts
 window.updateBlogText = function(lang) {
     const t = translations[lang];
+    if (!t) return; // Safety check
 
     const blogPageTitle = document.getElementById('blog-page-title');
-    if (blogPageTitle) blogPageTitle.textContent = t.blogPageTitle;
+    if (blogPageTitle && t.blogPageTitle) blogPageTitle.textContent = t.blogPageTitle;
 
     const blogPageDescription = document.getElementById('blog-page-description');
-    if (blogPageDescription) blogPageDescription.content = t.blogPageDescription; // Update meta description
+    if (blogPageDescription && t.blogPageDescription) blogPageDescription.content = t.blogPageDescription;
 
     const navHome = document.getElementById('nav-home');
-    if (navHome) navHome.textContent = t.navHome;
-    const navFortuneBlog = document.getElementById('nav-fortune'); // For blog.html nav
-    if (navFortuneBlog) navFortuneBlog.textContent = t.navFortune;
-
+    if (navHome && t.navHome) navHome.textContent = t.navHome;
+    const navFortuneBlog = document.getElementById('nav-fortune');
+    if (navFortuneBlog && t.navFortune) navFortuneBlog.textContent = t.navFortune;
 
     const blogHeaderTitle = document.getElementById('blog-header-title');
-    if (blogHeaderTitle) blogHeaderTitle.textContent = t.blogHeaderTitle;
+    if (blogHeaderTitle && t.blogHeaderTitle) blogHeaderTitle.textContent = t.blogHeaderTitle;
 
     const blogHeaderSubtitle = document.getElementById('blog-header-subtitle');
-    if (blogHeaderSubtitle) blogHeaderSubtitle.textContent = t.blogHeaderSubtitle;
+    if (blogHeaderSubtitle && t.blogHeaderSubtitle) blogHeaderSubtitle.textContent = t.blogHeaderSubtitle;
 
-    // Article 1
-    const article1Title = document.getElementById('article1-title');
-    if (article1Title) article1Title.innerHTML = t.article1.title;
-    const article1Meta = document.getElementById('article1-meta');
-    if (article1Meta) article1Meta.textContent = t.article1.meta;
-    const article1Content = document.getElementById('article1-content');
-    if (article1Content) article1Content.innerHTML = `
-        <p>${t.article1.p1}</p>
-        <h3 id="article1-h3-1">${t.article1.h3_1}</h3>
-        <p>${t.article1.p2}</p>
-        <h3 id="article1-h3-2">${t.article1.h3_2}</h3>
-        <p>${t.article1.p3}</p>
-    `;
+    // Helper for articles to avoid repetitive null checks
+    const updateArticle = (prefix, data) => {
+        if (!data) return;
+        const titleEl = document.getElementById(`${prefix}-title`);
+        const metaEl = document.getElementById(`${prefix}-meta`);
+        const contentEl = document.getElementById(`${prefix}-content`);
 
-    // Article 2
-    const article2Title = document.getElementById('article2-title');
-    if (article2Title) article2Title.innerHTML = t.article2.title;
-    const article2Meta = document.getElementById('article2-meta');
-    if (article2Meta) article2Meta.textContent = t.article2.meta;
-    const article2Content = document.getElementById('article2-content');
-    if (article2Content) article2Content.innerHTML = `
-        <p>${t.article2.p1}</p>
-        <h3 id="article2-h3-1">${t.article2.h3_1}</h3>
-        <p>${t.article2.p2}</p>
-        <h3 id="article2-h3-2">${t.article2.h3_2}</h3>
-        <p>${t.article2.p3}</p>
-        <h3 id="article2-h3-3">${t.article2.h3_3}</h3>
-        <p>${t.article2.p4}</p>
-        <h3 id="article2-h3-4">${t.article2.h3_4}</h3>
-        <p>${t.article2.p5}</p>
-    `;
+        if (titleEl) titleEl.innerHTML = data.title;
+        if (metaEl) metaEl.textContent = data.meta;
+        if (contentEl) {
+            // Construct HTML safely
+            let html = '';
+            if (data.p1) html += `<p>${data.p1}</p>`;
+            if (data.h3_1) html += `<h3 id="${prefix}-h3-1">${data.h3_1}</h3>`;
+            if (data.p2) html += `<p>${data.p2}</p>`;
+            if (data.h3_2) html += `<h3 id="${prefix}-h3-2">${data.h3_2}</h3>`;
+            if (data.p3) html += `<p>${data.p3}</p>`;
+            if (data.h3_3) html += `<h3 id="${prefix}-h3-3">${data.h3_3}</h3>`;
+            if (data.p4) html += `<p>${data.p4}</p>`;
+            if (data.h3_4) html += `<h3 id="${prefix}-h3-4">${data.h3_4}</h3>`;
+            if (data.p5) html += `<p>${data.p5}</p>`;
+            contentEl.innerHTML = html;
+        }
+    };
 
-    // Article 3
-    const article3Title = document.getElementById('article3-title');
-    if (article3Title) article3Title.innerHTML = t.article3.title;
-    const article3Meta = document.getElementById('article3-meta');
-    if (article3Meta) article3Meta.textContent = t.article3.meta;
-    const article3Content = document.getElementById('article3-content');
-    if (article3Content) article3Content.innerHTML = `
-        <p>${t.article3.p1}</p>
-        <h3 id="article3-h3-1">${t.article3.h3_1}</h3>
-        <p>${t.article3.p2}</p>
-        <h3 id="article3-h3-2">${t.article3.h3_2}</h3>
-        <p>${t.article3.p3}</p>
-        <h3 id="article3-h3-3">${t.article3.h3_3}</h3>
-        <p>${t.article3.p4}</p>
-    `;
+    updateArticle('article1', t.article1);
+    updateArticle('article2', t.article2);
+    updateArticle('article3', t.article3);
 
     const backHomeLink = document.getElementById('back-home-link');
-    if (backHomeLink) backHomeLink.textContent = t.backHomeLink;
+    if (backHomeLink && t.backHomeLink) backHomeLink.textContent = t.backHomeLink;
 }
 
 // Global function to update quote

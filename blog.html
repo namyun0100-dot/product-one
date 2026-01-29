@@ -25,6 +25,13 @@
                     <li><a href="index.html" id="nav-home">Home</a></li>
                     <li><a href="index.html#main-content" id="nav-fortune">Fortune</a></li>
                 </ul>
+                <div class="controls-container" style="display: flex; gap: 10px; align-items: center; margin-left: 1rem;">
+                    <button id="lang-btn" class="lang-btn">KO</button>
+                    <label class="theme-switch">
+                      <input type="checkbox" id="theme-toggle">
+                      <span class="slider"></span>
+                    </label>
+                </div>
             </nav>
         </div>
     </header>
@@ -98,13 +105,37 @@
 
     <script src="main.v3.js"></script>
     <script>
-        // Simple Theme Check and Language update for blog page
         document.addEventListener('DOMContentLoaded', () => {
+            // 1. Initial Setup
+            let lang = localStorage.getItem('lang') || 'ko';
             const savedTheme = localStorage.getItem('theme') || 'dark';
+            
             document.body.dataset.theme = savedTheme;
+            updateGlobalText(lang); // Initial text update
 
-            const lang = localStorage.getItem('lang') || 'ko';
-            updateGlobalText(lang); // This will now also call updateBlogText if blog elements are present
+            // 2. Control Elements
+            const themeToggle = document.getElementById('theme-toggle');
+            const langBtn = document.getElementById('lang-btn');
+
+            // 3. Initialize Controls State
+            if (themeToggle) {
+                themeToggle.checked = savedTheme === 'dark';
+                themeToggle.addEventListener('change', () => {
+                    const newTheme = themeToggle.checked ? 'dark' : 'light';
+                    document.body.dataset.theme = newTheme;
+                    localStorage.setItem('theme', newTheme);
+                });
+            }
+
+            if (langBtn) {
+                langBtn.textContent = lang === 'en' ? '한국어' : 'English';
+                langBtn.addEventListener('click', () => {
+                    lang = lang === 'en' ? 'ko' : 'en';
+                    localStorage.setItem('lang', lang);
+                    langBtn.textContent = lang === 'en' ? '한국어' : 'English';
+                    updateGlobalText(lang);
+                });
+            }
         });
     </script>
 </body>
