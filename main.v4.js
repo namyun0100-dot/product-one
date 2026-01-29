@@ -39,6 +39,9 @@ const translations = {
         navHome: "Home",
         blogHeaderTitle: "Cosmic Wisdom",
         blogHeaderSubtitle: "Universe, Stars, and You. Exploring the hidden connections.",
+        sectionInsight: "🌌 Cosmic Insight",
+        sectionPsychology: "🔮 Mystic Psychology",
+        sectionAncient: "✋ Ancient Wisdom",
         article1: {
             title: "🌟 2026: The Year of Spiritual Awakening?",
             meta: "February 1, 2026 | Astrology Trend",
@@ -71,6 +74,17 @@ const translations = {
             p3: "If it ends under the middle finger, you might be more practical or even a bit selfish in love. You need your freedom.",
             h3_3: "Broken Line?",
             p4: "Don't worry, it doesn't mean a broken heart forever. It often indicates a major emotional stress or change that you have overcome."
+        },
+        article4: {
+            title: "🧠 Palmistry 102: The Head Line",
+            meta: "February 5, 2026 | Ancient Arts",
+            p1: "Located just below the Heart Line, the Head Line represents your intellect, mentality, and how you process information. It's not about how smart you are, but *how* you think.",
+            h3_1: "Long & Deep?",
+            p2: "You have a clear focus and good concentration. You tend to think things through thoroughly before acting. A true strategist.",
+            h3_2: "Curved Downwards?",
+            p3: "A curve towards the wrist indicates a creative and imaginative mind. You might be an artist, writer, or dreamer who relies on intuition.",
+            h3_3: "Straight Across?",
+            p4: "A straight line suggests a practical, logical, and analytical approach. You prefer facts over feelings and excel in math, science, or business."
         },
         backHomeLink: "← Back to Cosmic Fortune"
 
@@ -114,6 +128,9 @@ const translations = {
         navHome: "홈",
         blogHeaderTitle: "코스믹 지혜",
         blogHeaderSubtitle: "우주, 별, 그리고 당신. 숨겨진 연결고리를 탐험하세요.",
+        sectionInsight: "🌌 우주의 통찰",
+        sectionPsychology: "🔮 신비 심리학",
+        sectionAncient: "✋ 고대의 지혜",
         article1: {
             title: "🌟 2026: 영적 각성의 해가 될까?",
             meta: "2026년 2월 1일 | 점성술 트렌드",
@@ -146,6 +163,17 @@ const translations = {
             p3: "만약 중지 아래에서 끝난다면, 당신은 사랑에 있어서 더 실용적이거나 심지어 이기적일 수 있습니다. 당신은 자유가 필요합니다.",
             h3_3: "끊어진 선인가요?",
             p4: "걱정하지 마세요. 영원히 깨진 마음을 의미하는 것은 아닙니다. 종종 당신이 극복한 주요한 감정적 스트레스나 변화를 나타냅니다."
+        },
+        article4: {
+            title: "🧠 손금 102: 두뇌선",
+            meta: "2026년 2월 5일 | 고대 예술",
+            p1: "감정선 바로 아래에 위치한 두뇌선은 당신의 지성, 사고방식, 정보 처리 능력을 나타냅니다. 머리가 얼마나 좋은지가 아니라, *어떻게* 생각하는지를 보여줍니다.",
+            h3_1: "길고 깊은 선?",
+            p2: "명확한 집중력과 사고력을 가졌습니다. 행동하기 전에 깊이 생각하는 전략가 타입입니다.",
+            h3_2: "아래로 휜 선?",
+            p3: "손목 쪽으로 휘어진다면 창의적이고 상상력이 풍부합니다. 직관을 중시하는 예술가나 작가 기질이 있습니다.",
+            h3_3: "일자로 뻗은 선?",
+            p4: "실용적이고 논리적인 분석가입니다. 감정보다는 사실을 중시하며 수학, 과학, 비즈니스 분야에 강점이 있습니다."
         },
         backHomeLink: "← 코스믹 포춘으로 돌아가기"
     }
@@ -1685,6 +1713,16 @@ window.updateBlogText = function(lang) {
     const blogHeaderSubtitle = document.getElementById('blog-header-subtitle');
     if (blogHeaderSubtitle && t.blogHeaderSubtitle) blogHeaderSubtitle.textContent = t.blogHeaderSubtitle;
 
+    // Update Section Titles
+    const sectionInsight = document.getElementById('section-title-insight');
+    if (sectionInsight && t.sectionInsight) sectionInsight.textContent = t.sectionInsight;
+
+    const sectionPsychology = document.getElementById('section-title-psychology');
+    if (sectionPsychology && t.sectionPsychology) sectionPsychology.textContent = t.sectionPsychology;
+
+    const sectionAncient = document.getElementById('section-title-ancient');
+    if (sectionAncient && t.sectionAncient) sectionAncient.textContent = t.sectionAncient;
+
     // Helper for articles to avoid repetitive null checks
     const updateArticle = (prefix, data) => {
         if (!data) return;
@@ -1713,6 +1751,7 @@ window.updateBlogText = function(lang) {
     updateArticle('article1', t.article1);
     updateArticle('article2', t.article2);
     updateArticle('article3', t.article3);
+    updateArticle('article4', t.article4);
 
     const backHomeLink = document.getElementById('back-home-link');
     if (backHomeLink && t.backHomeLink) backHomeLink.textContent = t.backHomeLink;

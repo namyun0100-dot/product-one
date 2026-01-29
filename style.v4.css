@@ -1286,6 +1286,28 @@ body[data-theme="light"] .footer-links a:hover {
     margin-bottom: 4rem;
 }
 
+.blog-section {
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-color-dark);
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary-glow-dark);
+    padding-left: 1rem;
+    display: inline-block;
+    text-shadow: 0 0 5px rgba(var(--glow-rgb-dark), 0.5);
+}
+
+body[data-theme="light"] .section-title {
+    color: var(--text-color-light);
+    border-left-color: var(--primary-glow-light);
+    text-shadow: 0 0 5px rgba(var(--glow-rgb-light), 0.5);
+}
+
 .blog-title {
     font-family: 'Orbitron', sans-serif;
     font-size: 2.5rem;
