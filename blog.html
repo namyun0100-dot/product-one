@@ -108,39 +108,5 @@
     </footer>
 
     <script src="main.v4.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // 1. Initial Setup
-            let lang = localStorage.getItem('lang') || 'ko';
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-            
-            document.body.dataset.theme = savedTheme;
-            updateGlobalText(lang); // Initial text update
-
-            // 2. Control Elements
-            const themeToggle = document.getElementById('theme-toggle');
-            const langBtn = document.getElementById('lang-btn');
-
-            // 3. Initialize Controls State
-            if (themeToggle) {
-                themeToggle.checked = savedTheme === 'dark';
-                themeToggle.addEventListener('change', () => {
-                    const newTheme = themeToggle.checked ? 'dark' : 'light';
-                    document.body.dataset.theme = newTheme;
-                    localStorage.setItem('theme', newTheme);
-                });
-            }
-
-            if (langBtn) {
-                langBtn.textContent = lang === 'en' ? '한국어' : 'English';
-                langBtn.addEventListener('click', () => {
-                    lang = lang === 'en' ? 'ko' : 'en';
-                    localStorage.setItem('lang', lang);
-                    langBtn.textContent = lang === 'en' ? '한국어' : 'English';
-                    updateGlobalText(lang);
-                });
-            }
-        });
-    </script>
 </body>
 </html>

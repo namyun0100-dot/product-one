@@ -29,6 +29,7 @@ const translations = {
         navChemistry: "Chemistry",
         navFace: "Dog Face Test",
         dogUpload: "Click or Drag Photo Here",
+        dogLoading: "Scanning Cosmic Energy...",
         // Zodiac Modal Tabs
         tabPersonality: "Personality",
         tabMonthly: "Monthly Forecast",
@@ -103,6 +104,7 @@ const translations = {
         navChemistry: "궁합",
         navFace: "댕댕이상 테스트",
         dogUpload: "사진을 클릭하거나 드래그하세요",
+        dogLoading: "우주의 기운을 스캔 중입니다...",
         // Zodiac Modal Tabs
         tabPersonality: "성격 분석",
         tabMonthly: "이달의 운세",
@@ -1798,12 +1800,19 @@ window.updateGlobalText = function(lang) {
     if (dSubtitle) dSubtitle.textContent = dogTitles[lang].subtitle;
     if (btnDog) btnDog.textContent = dogTitles[lang].btn;
     if (dogUploadText) dogUploadText.textContent = t.dogUpload;
+    
+    const dogLoadingText = document.querySelector('#dog-loading p');
+    if (dogLoadingText) dogLoadingText.textContent = t.dogLoading;
 
     // Update Zodiac Cards & Modal
-    ZodiacManager.updateUI();
+    if (document.getElementById('zodiac-grid')) {
+        ZodiacManager.updateUI();
+    }
     
     // Update Chemistry Selects
-    ChemistryManager.updateText();
+    if (document.getElementById('sign-1')) {
+        ChemistryManager.updateText();
+    }
 
     // Update Blog Text if on blog.html
     updateBlogText(lang);
@@ -1837,4 +1846,46 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initial Quote
     updateQuote(lang);
+
+    // Initialize Global Controls (for pages without CosmicOracle component, e.g., blog.html)
+    const globalThemeToggle = document.getElementById('theme-toggle');
+    const globalLangBtn = document.getElementById('lang-btn');
+
+    if (globalThemeToggle) {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        globalThemeToggle.checked = savedTheme === 'dark'; // Sync checkbox state
+        globalThemeToggle.addEventListener('change', () => {
+            const newTheme = globalThemeToggle.checked ? 'dark' : 'light';
+            document.body.dataset.theme = newTheme;
+            localStorage.setItem('theme', newTheme);
+             // Inform Disqus about the theme change
+            if (typeof DISQUS !== 'undefined') {
+                setTimeout(() => {
+                    DISQUS.reset({
+                        reload: true,
+                        config: function () {
+                            this.page.url = window.location.href;
+                            this.page.identifier = 'cosmic-fortune-page';
+                        }
+                    });
+                }, 200);
+            }
+        });
+    }
+
+    if (globalLangBtn) {
+        globalLangBtn.textContent = lang === 'en' ? '한국어' : 'English'; // Initial label
+        globalLangBtn.addEventListener('click', () => {
+            const currentLang = localStorage.getItem('lang') || 'ko';
+            const newLang = currentLang === 'en' ? 'ko' : 'en';
+            localStorage.setItem('lang', newLang);
+            
+            // Update button label
+            globalLangBtn.textContent = newLang === 'en' ? '한국어' : 'English';
+            
+            // Update all texts
+            updateGlobalText(newLang);
+            updateQuote(newLang);
+        });
+    }
 });

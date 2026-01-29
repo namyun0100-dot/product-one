@@ -92,6 +92,10 @@ body[data-theme="light"] #main-header {
     transition: color 0.3s ease;
 }
 
+.hidden {
+    display: none !important;
+}
+
 body[data-theme="light"] .nav-links li a {
     color: var(--text-color-light);
 }
