@@ -28,7 +28,10 @@ const translations = {
         navZodiac: "Zodiac",
         navChemistry: "Chemistry",
         navFace: "Dog Face Test",
-        dogUpload: "Click or Drag Photo Here"
+        dogUpload: "Click or Drag Photo Here",
+        // Zodiac Modal Tabs
+        tabPersonality: "Personality",
+        tabMonthly: "Monthly Forecast"
     },
     ko: {
         title: "오늘의 우주 운세",
@@ -58,9 +61,13 @@ const translations = {
         navZodiac: "별자리",
         navChemistry: "궁합",
         navFace: "댕댕이상 테스트",
-        dogUpload: "사진을 클릭하거나 드래그하세요"
+        dogUpload: "사진을 클릭하거나 드래그하세요",
+        // Zodiac Modal Tabs
+        tabPersonality: "성격 분석",
+        tabMonthly: "이달의 운세"
     }
 };
+
 // Global Quotes Data
 const quotes = {
     en: [
@@ -89,6 +96,87 @@ const quotes = {
     ]
 };
 
+// Monthly Fortune Phrases
+const monthlyPhrases = {
+    general: {
+        ko: [
+            "새로운 시작을 위한 에너지가 가득합니다. 망설이던 일이 있다면 지금이 기회입니다.",
+            "잠시 멈춰 서서 재충전하는 시간이 필요합니다. 무리한 질주는 독이 될 수 있습니다.",
+            "예상치 못한 변화가 찾아옵니다. 유연하게 대처하면 오히려 큰 기회가 됩니다.",
+            "주변 사람들과의 협력이 중요한 시기입니다. 혼자 짊어지려 하지 마세요.",
+            "과거의 노력이 결실을 맺는 달입니다. 자신을 믿고 즐기세요.",
+            "작은 실수들이 반복될 수 있습니다. 꼼꼼하게 점검하는 습관이 필요합니다.",
+            "창의력이 폭발하는 시기입니다. 예술적인 활동이나 새로운 취미를 시작해보세요.",
+            "인내심이 시험받는 일이 생길 수 있습니다. 감정보다는 이성을 앞세우세요.",
+            "여행이나 이동수가 보입니다. 낯선 곳에서 행운을 만날 수 있습니다.",
+            "건강 관리에 유의해야 합니다. 규칙적인 생활 패턴을 되찾으세요."
+        ],
+        en: [
+            "Energy for new beginnings is high. If you've been hesitating, now is the time.",
+            "It's time to pause and recharge. Pushing too hard could be toxic.",
+            "Unexpected changes are coming. Be flexible, and they will turn into opportunities.",
+            "Collaboration is key this month. Don't try to carry everything alone.",
+            "Past efforts are coming to fruition. Believe in yourself and enjoy.",
+            "Small mistakes may occur repeatedly. Double-check everything.",
+            "Creativity is exploding. Start an artistic activity or a new hobby.",
+            "Your patience may be tested. Prioritize reason over emotion.",
+            "Travel or movement is in the stars. You may find luck in strange places.",
+            "Watch your health. Regain a regular lifestyle pattern."
+        ]
+    },
+    love: {
+        ko: [
+            "새로운 인연이 다가오고 있습니다. 마음의 문을 열어두세요.",
+            "기존의 관계가 더욱 깊어지는 시기입니다. 진솔한 대화를 나눠보세요.",
+            "사소한 오해로 다툼이 생길 수 있습니다. 자존심을 조금만 내려놓으세요.",
+            "매력이 상승하여 주변의 시선을 한 몸에 받습니다. 자신감을 가지세요.",
+            "혼자만의 시간이 필요할 수도 있습니다. 나 자신을 먼저 사랑해주세요.",
+            "과거의 연인이 연락 올 수 있습니다. 현명한 판단이 필요합니다.",
+            "친구에서 연인으로 발전할 가능성이 있습니다. 주변을 잘 살펴보세요.",
+            "너무 상대방에게 맞추려 하지 마세요. 자신의 주관을 지키는 것이 매력입니다.",
+            "함께 여행을 떠나면 관계가 급진전될 수 있습니다.",
+            "소개팅이나 모임 제안이 들어오면 거절하지 마세요."
+        ],
+        en: [
+            "A new connection is approaching. Keep your heart open.",
+            "Existing relationships deepen. Have honest conversations.",
+            "Minor misunderstandings may cause conflict. Let go of your pride a bit.",
+            "Your charm is rising, attracting attention. Be confident.",
+            "You might need some alone time. Love yourself first.",
+            "An ex-lover might contact you. Wise judgment is needed.",
+            "A friend could turn into a lover. Look around you.",
+            "Don't try too hard to please others. Your independence is attractive.",
+            "Traveling together could fast-track your relationship.",
+            "Don't say no to blind dates or party invitations."
+        ]
+    },
+    wealth: {
+        ko: [
+            "뜻밖의 용돈이나 수익이 생길 수 있습니다. 하지만 지출도 늘어나니 주의하세요.",
+            "투자에 신중해야 할 시기입니다. 남의 말만 믿고 움직이지 마세요.",
+            "성실함이 최고의 무기입니다. 꾸준히 저축하면 큰 보상이 따릅니다.",
+            "새로운 부업이나 수익원을 찾을 수 있는 아이디어가 떠오릅니다.",
+            "충동구매 욕구가 강해집니다. 지갑을 열기 전에 세 번 생각하세요.",
+            "빌려준 돈을 받거나 잊고 있던 돈을 찾을 수 있습니다.",
+            "자기 계발에 투자하는 것이 가장 큰 수익으로 돌아옵니다.",
+            "계약이나 문서 관련 운이 좋습니다. 꼼꼼히 살펴보면 이득을 봅니다.",
+            "주변 사람들에게 베푸는 것이 나중에 더 큰 복으로 돌아옵니다.",
+            "지금은 현금을 확보하고 관망하는 것이 유리합니다."
+        ],
+        en: [
+            "Unexpected income is likely, but spending may also increase. Be careful.",
+            "Be cautious with investments. Don't just follow others' words.",
+            "Diligence is your weapon. Steady saving brings big rewards.",
+            "Ideas for a new side hustle or income source will emerge.",
+            "Impulse buying urges are strong. Think three times before opening your wallet.",
+            "You might receive money back or find forgotten funds.",
+            "Investing in self-development brings the biggest returns.",
+            "Luck with contracts or documents is good. Review carefully for profit.",
+            "Generosity to others will return as greater blessings later.",
+            "It is advantageous to secure cash and wait and see for now."
+        ]
+    }
+};
 
 class CosmicOracle extends HTMLElement {
   constructor() {
@@ -807,6 +895,33 @@ const zodiacElements = {
     cancer: 'water', scorpio: 'water', pisces: 'water'
 };
 
+// Monthly Fortune Logic
+function getMonthlyFortune(signId, monthIndex, year, lang) {
+    // Simple LCG PRNG
+    const seed = year * 12 + monthIndex + signId.charCodeAt(0) + signId.charCodeAt(1);
+    let state = seed;
+    const nextRandom = () => {
+        state = (state * 1664525 + 1013904223) % 4294967296;
+        return state;
+    };
+
+    // Pick indices
+    const genLen = monthlyPhrases.general[lang].length;
+    const loveLen = monthlyPhrases.love[lang].length;
+    const wealthLen = monthlyPhrases.wealth[lang].length;
+
+    const genIdx = nextRandom() % genLen;
+    const loveIdx = nextRandom() % loveLen;
+    const wealthIdx = nextRandom() % wealthLen;
+
+    return {
+        general: monthlyPhrases.general[lang][genIdx],
+        love: monthlyPhrases.love[lang][loveIdx],
+        wealth: monthlyPhrases.wealth[lang][wealthIdx]
+    };
+}
+
+
 const compatibilityData = {
     // Fire Combinations
     "fire-fire": {
@@ -975,7 +1090,7 @@ const compatibilityData = {
         score: 95,
         ko: {
             title: "말없이 흐르는 깊은 강물",
-            desc: "눈빛만 봐도 기분을 아는 텔레파시 커플입니다. 감정적 교류가 깊고 서로를 끔찍이 아끼지만, 둘 다 기분이 다운되면 끝도 없이 우울해질 수 있습니다.",
+            desc: "눈빛만 봐도 기분을 아는 텔레파시 커플입니다. 감정적 교류가 깊고 서로의 끔찍이 아끼지만, 둘 다 기분이 다운되면 끝도 없이 우울해질 수 있습니다.",
             tip: "서로의 감정 쓰레기통이 되지 않도록 주의하세요. 밝은 데이트가 필요합니다."
         },
         en: {
@@ -1033,6 +1148,7 @@ const ZodiacManager = {
         this.modalBody = document.getElementById('modal-body');
         this.closeBtn = document.querySelector('.close-modal');
         this.currentSignId = null; 
+        this.currentTab = 'personality'; // 'personality' or 'monthly'
 
         if (!this.grid || !this.modal) return;
 
@@ -1064,6 +1180,7 @@ const ZodiacManager = {
 
     openModal(signId) {
         this.currentSignId = signId;
+        this.currentTab = 'personality'; // Reset tab
         this.updateModalContent();
         this.modal.classList.add('active');
         this.modal.classList.remove('hidden');
@@ -1079,18 +1196,108 @@ const ZodiacManager = {
         }, 300); 
     },
 
+    switchTab(tab) {
+        this.currentTab = tab;
+        this.updateModalContent();
+    },
+
     updateModalContent() {
         if (!this.currentSignId) return;
 
         const lang = localStorage.getItem('lang') || 'ko';
         const data = zodiacData[this.currentSignId];
         const content = data[lang];
+        const t = translations[lang];
 
-        const labels = {
-            en: { personality: "Cosmic Personality", shadow: "Shadow Side", love: "Love Style", match: "Best Match", lucky: "Lucky Item" },
-            ko: { personality: "기본 성격", shadow: "숨겨진 단점 (팩폭)", love: "연애 스타일", match: "베스트 궁합", lucky: "행운 아이템" }
-        };
-        const label = labels[lang];
+        // Tabs HTML
+        const tabsHtml = `
+            <div class="modal-tabs">
+                <button class="tab-btn ${this.currentTab === 'personality' ? 'active' : ''}" onclick="ZodiacManager.switchTab('personality')">
+                    ${t.tabPersonality}
+                </button>
+                <button class="tab-btn ${this.currentTab === 'monthly' ? 'active' : ''}" onclick="ZodiacManager.switchTab('monthly')">
+                    ${t.tabMonthly}
+                </button>
+            </div>
+        `;
+
+        let contentHtml = '';
+
+        if (this.currentTab === 'personality') {
+            const labels = {
+                en: { personality: "Cosmic Personality", shadow: "Shadow Side", love: "Love Style", match: "Best Match", lucky: "Lucky Item" },
+                ko: { personality: "기본 성격", shadow: "숨겨진 단점 (팩폭)", love: "연애 스타일", match: "베스트 궁합", lucky: "행운 아이템" }
+            };
+            const label = labels[lang];
+
+            contentHtml = `
+                <div class="zodiac-detail-catchphrase">${content.catchphrase}</div>
+                
+                <div class="zodiac-info-block">
+                    <div class="zodiac-info-label">✨ ${label.personality}</div>
+                    <div class="zodiac-info-text">${content.desc}</div>
+                </div>
+
+                <div class="zodiac-info-block">
+                    <div class="zodiac-info-label">🌑 ${label.shadow}</div>
+                    <div class="zodiac-info-text">${content.shadow}</div>
+                </div>
+
+                <div class="zodiac-info-block">
+                    <div class="zodiac-info-label">💘 ${label.love}</div>
+                    <div class="zodiac-info-text">${content.love}</div>
+                </div>
+
+                <div class="zodiac-info-block">
+                    <div class="zodiac-info-label">💞 ${label.match}</div>
+                    <div class="zodiac-info-text">${content.match}</div>
+                </div>
+
+                <div class="zodiac-info-block">
+                    <div class="zodiac-info-label">🍀 ${label.lucky}</div>
+                    <div class="zodiac-info-text">${content.lucky}</div>
+                </div>
+            `;
+        } else {
+            // Monthly Forecast Logic
+            const date = new Date();
+            const month = date.getMonth(); // 0-11
+            const year = date.getFullYear();
+            const monthNames = {
+                ko: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+                en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+            };
+            const currentMonthName = monthNames[lang][month];
+            
+            const fortune = getMonthlyFortune(this.currentSignId, month, year, lang);
+
+            const labels = {
+                en: { general: "Monthly Vibe", love: "Love Luck", wealth: "Wealth Luck" },
+                ko: { general: "이번 달의 기운", love: "연애운", wealth: "재물운" }
+            };
+            const label = labels[lang];
+
+            contentHtml = `
+                <div class="zodiac-detail-catchphrase" style="margin-bottom: 2rem;">
+                    📅 ${currentMonthName} ${year}
+                </div>
+
+                <div class="zodiac-info-block">
+                    <div class="zodiac-info-label">🌌 ${label.general}</div>
+                    <div class="zodiac-info-text">${fortune.general}</div>
+                </div>
+
+                <div class="zodiac-info-block">
+                    <div class="zodiac-info-label">💖 ${label.love}</div>
+                    <div class="zodiac-info-text">${fortune.love}</div>
+                </div>
+
+                <div class="zodiac-info-block">
+                    <div class="zodiac-info-label">💰 ${label.wealth}</div>
+                    <div class="zodiac-info-text">${fortune.wealth}</div>
+                </div>
+            `;
+        }
 
         this.modalBody.innerHTML = `
             <div class="zodiac-detail-header">
@@ -1100,32 +1307,8 @@ const ZodiacManager = {
                     <div class="zodiac-detail-date">${data.date}</div>
                 </div>
             </div>
-            <div class="zodiac-detail-catchphrase">${content.catchphrase}</div>
-            
-            <div class="zodiac-info-block">
-                <div class="zodiac-info-label">✨ ${label.personality}</div>
-                <div class="zodiac-info-text">${content.desc}</div>
-            </div>
-
-            <div class="zodiac-info-block">
-                <div class="zodiac-info-label">🌑 ${label.shadow}</div>
-                <div class="zodiac-info-text">${content.shadow}</div>
-            </div>
-
-            <div class="zodiac-info-block">
-                <div class="zodiac-info-label">💘 ${label.love}</div>
-                <div class="zodiac-info-text">${content.love}</div>
-            </div>
-
-             <div class="zodiac-info-block">
-                <div class="zodiac-info-label">💞 ${label.match}</div>
-                <div class="zodiac-info-text">${content.match}</div>
-            </div>
-
-             <div class="zodiac-info-block">
-                <div class="zodiac-info-label">🍀 ${label.lucky}</div>
-                <div class="zodiac-info-text">${content.lucky}</div>
-            </div>
+            ${tabsHtml}
+            ${contentHtml}
         `;
     },
 
