@@ -81,6 +81,7 @@
 만약 GitHub Pages가 다시 불안정해지면 언제든 Firebase Hosting으로 전환할 수 있도록 준비합니다.
 
 ### 4.3. 완료된 작업
+*   **블로그 페이지 수정 (Friend Site Fix):** `blog.html`의 CSS 연결 오류(`style.v3.css` -> `style.v4.css`)를 수정하고, 메인 페이지와 동일한 Footer(개인정보처리방침, 이용약관 링크)를 적용했습니다.
 *   **모바일 반응형 및 UI 개선:** 가로 스크롤 제거, 배경 고정, 박스 모델 안정화.
 *   **시각 효과 복구:** Orb z-index 수정.
 *   **다국어 지원:** KO/EN 전환 및 설정 유지.
