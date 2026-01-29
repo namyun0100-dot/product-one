@@ -81,7 +81,7 @@ const translations = {
         },
         article4: {
             title: "🧠 Palmistry 102: The Head Line",
-            meta: "February 5, 2026 | Ancient Arts",
+            meta: "January 29, 2026 | Ancient Arts",
             p1: "Located just below the Heart Line, the Head Line represents your intellect, mentality, and how you process information. It's not about how smart you are, but *how* you think.",
             h3_1: "Long & Deep?",
             p2: "You have a clear focus and good concentration. You tend to think things through thoroughly before acting. A true strategist.",
@@ -92,7 +92,7 @@ const translations = {
         },
         article5: {
             title: "✋ Palmistry 103: The Life Line",
-            meta: "February 7, 2026 | Ancient Arts",
+            meta: "January 30, 2026 | Ancient Arts",
             p1: "Perhaps the most famous of all palm lines, the Life Line curves around the base of your thumb. Despite popular belief, its length doesn't predict how long you'll live, but rather your vitality, enthusiasm for life, and major life changes.",
             h3_1: "Long & Deep?",
             p2: "A prominent, well-defined Life Line indicates strong vitality, good health, and a robust constitution. You likely have abundant energy and can bounce back quickly from challenges.",
@@ -103,7 +103,7 @@ const translations = {
         },
         article6: {
             title: "🐾 Pet Zodiac Encyclopedia: Why is My Pet Like This?",
-            meta: "February 10, 2026 | Pet Astrology",
+            meta: "January 30, 2026 | Pet Astrology",
             p1: "Have you ever wondered why your furry friend acts the way they do? Just like humans, pets are influenced by the stars! Knowing their zodiac sign can unlock the secrets to their unique personality.",
             h3_1: "Aries Pet (March 21 - April 19): The Energetic Pioneer",
             p2: "Aries pets are born leaders! Full of energy, they love to explore and can be a bit mischievous. Be ready for playful antics and lots of adventure.",
@@ -196,7 +196,7 @@ const translations = {
         },
         article4: {
             title: "🧠 손금 102: 두뇌선",
-            meta: "2026년 2월 5일 | 고대 예술",
+            meta: "2026년 1월 29일 | 고대 예술",
             p1: "감정선 바로 아래에 위치한 두뇌선은 당신의 지성, 사고방식, 정보 처리 능력을 나타냅니다. 머리가 얼마나 좋은지가 아니라, *어떻게* 생각하는지를 보여줍니다.",
             h3_1: "길고 깊은 선?",
             p2: "명확한 집중력과 사고력을 가졌습니다. 행동하기 전에 깊이 생각하는 전략가 타입입니다.",
@@ -207,7 +207,7 @@ const translations = {
         },
         article5: {
             title: "✋ 손금 103: 생명선",
-            meta: "2026년 2월 7일 | 고대 예술",
+            meta: "2026년 1월 30일 | 고대 예술",
             p1: "아마도 가장 유명한 손금인 생명선은 엄지손가락 밑부분을 따라 굽어 흐릅니다. 흔히 알려진 것과 달리, 생명선의 길이는 수명을 예측하는 것이 아니라 당신의 활력, 삶에 대한 열정, 그리고 주요한 삶의 변화를 나타냅니다.",
             h3_1: "길고 깊은 선?",
             p2: "뚜렷하고 깊은 생명선은 강한 활력, 좋은 건강, 그리고 튼튼한 체질을 의미합니다. 당신은 풍부한 에너지를 가지고 있으며 어려움으로부터 빠르게 회복할 수 있습니다.",
@@ -218,7 +218,7 @@ const translations = {
         },
         article6: {
             title: "🐾 반려동물 별자리 사전: 우리 아이 성격이 왜 이럴까?",
-            meta: "2026년 2월 10일 | 반려동물 점성술",
+            meta: "2026년 1월 30일 | 반려동물 점성술",
             p1: "혹시 우리 집 귀여운 동물 친구들이 왜 그런 행동을 하는지 궁금했던 적 없으신가요? 사람처럼 반려동물도 별의 영향을 받는답니다! 아이들의 별자리를 알면 숨겨진 개성을 파악할 수 있어요.",
             h3_1: "양자리 펫 (3월 21일 - 4월 19일): 에너제틱 개척자",
             p2: "양자리 펫은 타고난 리더입니다! 에너지가 넘치고 탐험을 좋아하며, 장난기가 많을 수 있어요. 놀이와 모험을 위한 준비가 필요합니다.",
