@@ -86,6 +86,17 @@ const translations = {
             h3_3: "Straight Across?",
             p4: "A straight line suggests a practical, logical, and analytical approach. You prefer facts over feelings and excel in math, science, or business."
         },
+        article5: {
+            title: "✋ Palmistry 103: The Life Line",
+            meta: "February 7, 2026 | Ancient Arts",
+            p1: "Perhaps the most famous of all palm lines, the Life Line curves around the base of your thumb. Despite popular belief, its length doesn't predict how long you'll live, but rather your vitality, enthusiasm for life, and major life changes.",
+            h3_1: "Long & Deep?",
+            p2: "A prominent, well-defined Life Line indicates strong vitality, good health, and a robust constitution. You likely have abundant energy and can bounce back quickly from challenges.",
+            h3_2: "Short or Faint?",
+            p3: "A shorter or fainter line doesn't mean a short life! It can suggest less physical energy or a need to be more mindful of your health and well-being. It might also indicate a more sedentary lifestyle.",
+            h3_3: "Broken or Chained?",
+            p4: "Breaks or chains in the Life Line often signify periods of significant change, stress, or health transitions. These aren't necessarily negative, but mark points where you've had to adapt or overcome difficulties."
+        },
         backHomeLink: "← Back to Cosmic Fortune"
 
     },
@@ -174,6 +185,17 @@ const translations = {
             p3: "손목 쪽으로 휘어진다면 창의적이고 상상력이 풍부합니다. 직관을 중시하는 예술가나 작가 기질이 있습니다.",
             h3_3: "일자로 뻗은 선?",
             p4: "실용적이고 논리적인 분석가입니다. 감정보다는 사실을 중시하며 수학, 과학, 비즈니스 분야에 강점이 있습니다."
+        },
+        article5: {
+            title: "✋ 손금 103: 생명선",
+            meta: "2026년 2월 7일 | 고대 예술",
+            p1: "아마도 가장 유명한 손금인 생명선은 엄지손가락 밑부분을 따라 굽어 흐릅니다. 흔히 알려진 것과 달리, 생명선의 길이는 수명을 예측하는 것이 아니라 당신의 활력, 삶에 대한 열정, 그리고 주요한 삶의 변화를 나타냅니다.",
+            h3_1: "길고 깊은 선?",
+            p2: "뚜렷하고 깊은 생명선은 강한 활력, 좋은 건강, 그리고 튼튼한 체질을 의미합니다. 당신은 풍부한 에너지를 가지고 있으며 어려움으로부터 빠르게 회복할 수 있습니다.",
+            h3_2: "짧거나 희미한 선?",
+            p3: "짧거나 희미한 선이 짧은 수명을 의미하는 것은 아닙니다! 이는 신체 에너지가 적거나 건강과 웰빙에 더 주의를 기울일 필요가 있음을 시사할 수 있습니다. 또한 좀 더 정적인 생활 방식을 나타낼 수도 있습니다.",
+            h3_3: "끊어지거나 사슬 모양?",
+            p4: "생명선의 끊어짐이나 사슬 모양은 종종 중요한 변화, 스트레스 또는 건강상의 전환기를 의미합니다. 이는 반드시 부정적인 것은 아니지만, 당신이 적응하거나 어려움을 극복해야 했던 시점을 나타냅니다."
         },
         backHomeLink: "← 코스믹 포춘으로 돌아가기"
     }
@@ -1752,6 +1774,7 @@ window.updateBlogText = function(lang) {
     updateArticle('article2', t.article2);
     updateArticle('article3', t.article3);
     updateArticle('article4', t.article4);
+    updateArticle('article5', t.article5);
 
     const backHomeLink = document.getElementById('back-home-link');
     if (backHomeLink && t.backHomeLink) backHomeLink.textContent = t.backHomeLink;
