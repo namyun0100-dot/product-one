@@ -24,10 +24,11 @@ const translations = {
         formInstructions: "We usually respond to cosmic signals within 24 light-hours.",
         disqusTitle: "Cosmic Discussions",
         // Navigation
-        navFortune: "Daily Fortune",
+        navDailyFortune: "Daily Fortune",
         navZodiac: "Zodiac",
         navChemistry: "Chemistry",
         navFace: "Dog Face Test",
+        navBlog: "Blog",
         dogUpload: "Click or Drag Photo Here",
         dogLoading: "Scanning Cosmic Energy...",
         // Zodiac Modal Tabs
@@ -127,10 +128,11 @@ const translations = {
         formInstructions: "우주 신호는 보통 24광시(시간) 내에 응답해 드립니다.",
         disqusTitle: "우주 토론",
         // Navigation
-        navFortune: "오늘의 운세",
+        navDailyFortune: "오늘의 운세",
         navZodiac: "별자리",
         navChemistry: "궁합",
         navFace: "댕댕이상 테스트",
+        navBlog: "블로그",
         dogUpload: "사진을 클릭하거나 드래그하세요",
         dogLoading: "우주의 기운을 스캔 중입니다...",
         // Zodiac Modal Tabs
@@ -1822,15 +1824,17 @@ window.updateGlobalText = function(lang) {
     if (disqusTitle) disqusTitle.textContent = t.disqusTitle;
 
     // Navigation Bar
-    const navFortune = document.getElementById('nav-fortune');
+    const navDailyFortune = document.getElementById('nav-fortune');
     const navZodiac = document.getElementById('nav-zodiac');
     const navChemistry = document.getElementById('nav-chemistry');
     const navFace = document.getElementById('nav-face');
+    const navBlog = document.getElementById('nav-blog');
 
-    if (navFortune) navFortune.textContent = t.navFortune;
+    if (navDailyFortune) navDailyFortune.textContent = t.navDailyFortune;
     if (navZodiac) navZodiac.textContent = t.navZodiac;
     if (navChemistry) navChemistry.textContent = t.navChemistry;
     if (navFace) navFace.textContent = t.navFace;
+    if (navBlog) navBlog.textContent = t.navBlog;
 
     // Zodiac Section Titles
     const zodiacTitles = {
