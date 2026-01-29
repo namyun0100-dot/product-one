@@ -42,6 +42,9 @@ const translations = {
         sectionInsight: "🌌 Cosmic Insight",
         sectionPsychology: "🔮 Mystic Psychology",
         sectionAncient: "✋ Ancient Wisdom",
+        navInsight: "Cosmic Insight",
+        navPsychology: "Mystic Psychology",
+        navAncient: "Ancient Wisdom",
         article1: {
             title: "🌟 2026: The Year of Spiritual Awakening?",
             meta: "February 1, 2026 | Astrology Trend",
@@ -142,6 +145,9 @@ const translations = {
         sectionInsight: "🌌 우주의 통찰",
         sectionPsychology: "🔮 신비 심리학",
         sectionAncient: "✋ 고대의 지혜",
+        navInsight: "우주의 통찰",
+        navPsychology: "신비 심리학",
+        navAncient: "고대의 지혜",
         article1: {
             title: "🌟 2026: 영적 각성의 해가 될까?",
             meta: "2026년 2월 1일 | 점성술 트렌드",
@@ -1728,6 +1734,15 @@ window.updateBlogText = function(lang) {
     if (navHome && t.navHome) navHome.textContent = t.navHome;
     const navFortuneBlog = document.getElementById('nav-fortune');
     if (navFortuneBlog && t.navFortune) navFortuneBlog.textContent = t.navFortune;
+
+    const navInsight = document.getElementById('nav-insight');
+    if (navInsight && t.navInsight) navInsight.textContent = t.navInsight;
+
+    const navPsychology = document.getElementById('nav-psychology');
+    if (navPsychology && t.navPsychology) navPsychology.textContent = t.navPsychology;
+
+    const navAncient = document.getElementById('nav-ancient');
+    if (navAncient && t.navAncient) navAncient.textContent = t.navAncient;
 
     const blogHeaderTitle = document.getElementById('blog-header-title');
     if (blogHeaderTitle && t.blogHeaderTitle) blogHeaderTitle.textContent = t.blogHeaderTitle;
