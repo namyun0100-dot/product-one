@@ -1,18 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosmic Fortune</title>
-    <meta name="description" content="Cosmic Fortune: Discover your daily cosmic forecast for wealth and bonds. A personalized fortune-telling experience with a touch of the universe.">
-    <meta name="keywords" content="운세, 오늘의 운세, 우주 운세, 재물운, 인연운, 점성술, 별자리 운세, fortune, cosmic fortune, daily horoscope, wealth fortune, relationship fortune, astrology, horoscope">
+    <title>우주 운세 - Cosmic Fortune</title>
+    <meta name="description" content="오늘의 우주 운세, 별자리, 궁합, 그리고 AI 관상 테스트까지. 당신의 하루를 우주의 기운으로 채워보세요.">
+    
+    <!-- Google AdSense -->
     <meta name="google-adsense-account" content="ca-pub-2250980960704364">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2250980960704364"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2250980960704364" crossorigin="anonymous"></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-26181B8TV3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-26181B8TV3');
+    </script>
+
+    <!-- Fonts: Kalam (Handwriting), Orbitron (Space), Noto Sans KR (Korean) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Kalam:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.v4.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Noto+Sans+KR:wght@300;400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS with Cache Buster (Version 5) -->
+    <link rel="stylesheet" href="style.v4.css?v=final_fix_v4">
+    
+    <!-- AI Models -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 </head>
@@ -22,39 +37,43 @@
             <div class="logo" onclick="location.href='index.html'">Cosmic</div>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#main-content" id="nav-fortune">Daily Fortune</a></li>
-                    <li><a href="#zodiac-section" id="nav-zodiac">Zodiac</a></li>
-                    <li><a href="#chemistry-section" id="nav-chemistry">Chemistry</a></li>
-                    <li><a href="#dog-face-section" id="nav-face">AI Face</a></li>
-                    <li><a href="blog.html" id="nav-blog">Blog</a></li>
+                    <li><a href="#main-content" id="nav-fortune">오늘의 운세</a></li>
+                    <li><a href="#zodiac-section" id="nav-zodiac">별자리</a></li>
+                    <li><a href="#chemistry-section" id="nav-chemistry">궁합</a></li>
+                    <li><a href="#dog-face-section" id="nav-face">댕댕이 관상 테스트</a></li>
+                    <li><a href="blog.html" id="nav-blog">블로그</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main id="main-content">
+        <!-- Cosmic Oracle Component -->
         <cosmic-oracle></cosmic-oracle>
+        
+        <!-- Quote -->
         <p id="quote-of-the-day"></p>
     </main>
 
+    <!-- Zodiac Section -->
     <section id="zodiac-section">
-        <h2 id="zodiac-title">Cosmic Constellations</h2>
-        <p id="zodiac-subtitle">Discover the secrets of the stars</p>
+        <h2 id="zodiac-title">우주의 별자리</h2>
+        <p id="zodiac-subtitle" class="subtitle">당신의 별이 속삭이는 비밀을 들어보세요</p>
         <div id="zodiac-grid" class="zodiac-grid">
-            <!-- Zodiac cards will be injected here by JS -->
+            <!-- Cards injected by JS -->
         </div>
     </section>
 
+    <!-- Chemistry Section -->
     <section id="chemistry-section">
-        <h2 id="chemistry-title">Cosmic Chemistry</h2>
-        <p id="chemistry-subtitle">Do your stars align?</p>
+        <h2 id="chemistry-title">우주 궁합</h2>
+        <p id="chemistry-subtitle" class="subtitle">우리의 별들은 얼마나 잘 맞을까요?</p>
         
         <div class="chemistry-container">
             <div class="chem-input-group">
-                <label for="sign-1" id="label-sign-1">Me</label>
+                <label for="sign-1" id="label-sign-1">나</label>
                 <select id="sign-1" class="zodiac-select-main">
-                    <option value="" disabled selected>Select Sign</option>
-                    <!-- Options injected by JS -->
+                    <option value="" disabled selected>별자리 선택</option>
                 </select>
             </div>
             
@@ -63,67 +82,64 @@
             </div>
 
             <div class="chem-input-group">
-                <label for="sign-2" id="label-sign-2">Partner</label>
+                <label for="sign-2" id="label-sign-2">상대방</label>
                 <select id="sign-2" class="zodiac-select-main">
-                    <option value="" disabled selected>Select Sign</option>
-                    <!-- Options injected by JS -->
+                    <option value="" disabled selected>별자리 선택</option>
                 </select>
             </div>
         </div>
         
-        <button id="btn-check-chemistry">Calculate Compatibility</button>
+        <button id="btn-check-chemistry">궁합 확인하기</button>
         
-        <div id="chemistry-result" class="chemistry-result hidden">
-            <!-- Result injected here -->
-        </div>
+        <div id="chemistry-result" class="chemistry-result hidden"></div>
     </section>
 
+    <!-- Dog Face Section -->
     <section id="dog-face-section">
-        <h2 id="dog-title">Cosmic Dog Face</h2>
-        <p id="dog-subtitle">Which space puppy are you?</p>
+        <h2 id="dog-title">우주 댕댕이상 테스트</h2>
+        <p id="dog-subtitle" class="subtitle">나는 우주의 어떤 강아지를 닮았을까요?</p>
         
-        <div class="dog-upload-area" id="dog-upload-area">
+        <div class="dog-upload-container" id="dog-upload-area">
             <input type="file" id="dog-image-upload" accept="image/*" hidden>
             <div class="upload-placeholder" id="upload-placeholder">
                 <span class="upload-icon">📸</span>
-                <p>Click or Drag Photo Here</p>
+                <p>사진을 이곳에 끌어다 놓거나 클릭하세요</p>
             </div>
+            <!-- Ensure image fits within box -->
             <img id="dog-preview-image" class="hidden" alt="Face Preview">
             <div id="dog-loading" class="hidden">
                 <div class="spinner"></div>
-                <p>Scanning Cosmic Energy...</p>
+                <p>우주의 기운을 스캔 중입니다...</p>
             </div>
         </div>
 
-        <button id="btn-analyze-dog" class="hidden">Analyze Face</button>
+        <button id="btn-analyze-dog" class="hidden">얼굴 분석하기</button>
         
-        <div id="dog-result" class="dog-result hidden">
-            <!-- Result injected here -->
-        </div>
+        <div id="dog-result" class="dog-result hidden"></div>
     </section>
 
-    <!-- Cosmic Wisdom (SEO Content) -->
+    <!-- Cosmic Wisdom (Blog) Section -->
     <section id="cosmic-wisdom-section">
         <h2 id="wisdom-title">Cosmic Wisdom</h2>
-        <p id="wisdom-subtitle">Unlock the secrets of the universe.</p>
+        <p id="wisdom-subtitle" class="subtitle">Universe, Stars, and You.</p>
         
         <div class="wisdom-grid">
             <div class="wisdom-card">
-                <h3>🌌 2026 별자리 행운 가이드</h3>
-                <p>2026년, 당신의 별자리는 어떤 기운을 받을까요? 목성과 토성의 이동이 당신의 재물운과 연애운에 미치는 영향을 분석해 드립니다. 불의 별자리(양, 사자, 사수)는 새로운 도전을, 흙의 별자리(황소, 처녀, 염소)는 안정을 찾게 될 것입니다...</p>
+                <h3 id="home-wisdom-1-title">🌌 2026 Astrology Trends</h3>
+                <p id="home-wisdom-1-desc">Pluto in Aquarius marks a new era of spiritual technology. Discover what 2026 holds for your zodiac sign.</p>
             </div>
             <div class="wisdom-card">
-                <h3>🧠 MBTI와 별자리의 연결고리</h3>
-                <p>ENFP와 쌍둥이자리, INFJ와 물고기자리... 과연 과학적인 근거가 있을까요? 점성술의 4원소(불, 물, 흙, 공기)와 MBTI의 4가지 지표를 비교 분석하여 나만의 '우주적 성격 유형'을 찾아보세요.</p>
+                <h3 id="home-wisdom-2-title">🧠 MBTI & The 4 Elements</h3>
+                <p id="home-wisdom-2-desc">Did you know NF types align with Fire signs? Explore the hidden connection between modern psychology and ancient elements.</p>
             </div>
             <div class="wisdom-card">
-                <h3>🐶 관상학으로 보는 동물상</h3>
-                <p>강아지상, 고양이상, 공룡상... 단순히 귀여운 것이 아닙니다. 관상학적으로 '강아지상'은 사람을 끌어당기는 도화살을, '고양이상'은 독립적인 성공운을 상징합니다. 당신의 얼굴에 숨겨진 운명을 AI로 확인해보세요.</p>
+                <h3 id="home-wisdom-3-title">🐶 Pet Zodiac & Physiology</h3>
+                <p id="home-wisdom-3-desc">Why does your dog act like that? It might be their star sign. Decode your pet's cosmic personality.</p>
             </div>
         </div>
 
-        <div style="margin-top: 2rem;">
-            <a href="blog.html" class="blog-link-btn">Read More Cosmic Stories →</a>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="blog.html" class="blog-link-btn" id="btn-read-more">Read More Stories →</a>
         </div>
     </section>
 
@@ -131,53 +147,49 @@
     <div id="zodiac-modal" class="modal-overlay hidden">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
-            <div id="modal-body">
-                <!-- Dynamic Content -->
-            </div>
+            <div id="modal-body"></div>
         </div>
     </div>
 
-    <script src="main.v4.js"></script>
+    <!-- Scripts -->
+    <script src="main.v4.js?v=final_fix_v3"></script>
 
+    <!-- Contact Form -->
     <section id="contact-form-section">
-        <h2 id="contact-title">Cosmic Collaboration Inquiry</h2>
+        <h2 id="contact-title">우주 협력 문의</h2>
         <form action="https://formspree.io/f/mqeenoja" method="POST" id="cosmic-form">
             <div class="form-group">
-                <label for="name" id="label-name">Your Name:</label>
+                <label for="name" id="label-name">이름</label>
                 <input type="text" id="name" name="name" required>
             </div>
 
             <div class="form-group">
-                <label for="email" id="label-email">Your Email:</label>
+                <label for="email" id="label-email">이메일</label>
                 <input type="email" id="email" name="_replyto" required>
             </div>
 
             <div class="form-group">
-                <label for="message" id="label-message">Your Message:</label>
+                <label for="message" id="label-message">메시지</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
             </div>
 
-            <button type="submit" id="form-submit-btn">Send Signal</button>
+            <button type="submit" id="form-submit-btn">신호 보내기</button>
         </form>
         <p class="form-instructions" id="form-instructions-text">
-            We usually respond to cosmic signals within 24 light-hours.
+            우주 신호는 보통 24광시(시간) 내에 응답해 드립니다.
         </p>
     </section>
 
+    <!-- Disqus -->
     <section id="disqus-comments-section">
-        <h2 id="disqus-title">Cosmic Discussions</h2>
+        <h2 id="disqus-title">우주 토론</h2>
         <div id="disqus_thread"></div>
         <script>
-            /**
-            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-            
             var disqus_config = function () {
-            this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = 'cosmic-fortune-page'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            this.page.url = window.location.href;
+            this.page.identifier = 'cosmic-fortune-page';
             };
-            
-            (function() { // DON'T EDIT BELOW THIS LINE
+            (function() {
             var d = document, s = d.createElement('script');
             s.src = 'https://product-one-3.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
@@ -189,8 +201,8 @@
 
     <footer>
         <div class="footer-links">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
+            <a href="privacy.html">개인정보처리방침</a>
+            <a href="terms.html">이용약관</a>
         </div>
         <p>&copy; 2026 Cosmic Fortune. All rights reserved.</p>
     </footer>
