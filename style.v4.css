@@ -621,6 +621,223 @@ cosmic-oracle {
     font-weight: 700;
 }
 
+/* Pet Tarot Styles */
+#section-pet-tarot {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 3rem 1rem;
+    margin-top: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+[data-theme='light'] #section-pet-tarot {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+[data-theme='light'] #pet-tarot-title,
+[data-theme='light'] #pet-tarot-subtitle {
+    color: #2d3436;
+    text-shadow: none;
+}
+
+.tarot-container {
+    perspective: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 2rem;
+}
+.tarot-card-scene {
+    width: 220px;
+    height: 340px;
+}
+.tarot-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+.tarot-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+.tarot-card.flipped {
+    transform: rotateY(180deg);
+}
+.tarot-card-inner {
+    width: 100%;
+    height: 100%;
+}
+.tarot-card-front, .tarot-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+/* Card Back Design (Cosmic Paw) */
+.tarot-card-front {
+    background: radial-gradient(circle at center, #2b1055, #7597de);
+    border: 2px solid var(--neon-purple);
+    overflow: hidden;
+}
+.tarot-card-front::before {
+    content: "🐾";
+    font-size: 5rem;
+    filter: drop-shadow(0 0 10px var(--neon-blue));
+    animation: floatPaw 3s infinite ease-in-out;
+}
+.tarot-card-front::after {
+    content: "";
+    position: absolute;
+    top: 10px; left: 10px; right: 10px; bottom: 10px;
+    border: 1px dashed rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+@keyframes floatPaw {
+    0%, 100% { transform: translateY(0); opacity: 0.8; }
+    50% { transform: translateY(-5px); opacity: 1; }
+}
+
+.card-pattern {
+    display: none; /* Hide old question mark */
+}
+
+/* Card Front Design (Result) */
+.tarot-card-back {
+    background: #fff;
+    color: #333;
+    transform: rotateY(180deg);
+    padding: 15px;
+    border: 6px double var(--neon-blue);
+    background-image: radial-gradient(#f0f0f0 10%, transparent 10%);
+    background-size: 20px 20px;
+}
+.card-image-placeholder {
+    font-size: 6rem;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2));
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@keyframes popIn {
+    0% { transform: scale(0); }
+    80% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+#tarot-card-name {
+    font-family: var(--font-main);
+    font-size: 1.4rem;
+    color: #333;
+    margin: 0;
+    text-align: center;
+    border-bottom: 2px solid var(--neon-purple);
+    padding-bottom: 5px;
+    width: 80%;
+}
+.result-box {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--neon-blue);
+    border-radius: 15px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in;
+    backdrop-filter: blur(10px);
+}
+[data-theme='light'] .result-box {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--neon-purple);
+    color: #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.result-desc {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+    font-weight: 500;
+}
+.tarot-lucky-item {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--neon-blue);
+    font-weight: bold;
+    background: rgba(0, 191, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+}
+[data-theme='light'] .tarot-lucky-item {
+    color: #6a11cb;
+    background: rgba(106, 17, 203, 0.1);
+}
+
+/* Black Hole Styles */
+.blackhole-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.blackhole-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.blackhole {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background: #000;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 30px 10px rgba(138, 43, 226, 0.8), inset 0 0 20px #fff;
+    z-index: 0;
+    animation: pulseBlackhole 3s infinite ease-in-out;
+}
+@keyframes pulseBlackhole {
+    0% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 30px 10px rgba(138, 43, 226, 0.8); }
+    50% { transform: translate(-50%, -50%) scale(1.1); box-shadow: 0 0 50px 20px rgba(75, 0, 130, 0.9); }
+    100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 30px 10px rgba(138, 43, 226, 0.8); }
+}
+#worry-input {
+    width: 80%;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--neon-purple);
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px;
+    z-index: 1;
+    margin-bottom: 10px;
+    resize: none;
+}
+#btn-throw-worry {
+    z-index: 1;
+    background: var(--neon-purple);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
 @media (max-width: 640px) {
     .blog-container {
         margin-top: 110px;

@@ -1,0 +1,14 @@
+{
+  "name": "dog-face-app",
+  "version": "1.0.0",
+  "description": "A simple dog face classification app.",
+  "main": "main.v4.js",
+  "scripts": {
+    "dev": "firebase serve --only hosting"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase-tools": "^13.11.2"
+  }
+}

@@ -1,91 +1,19 @@
-# 프로젝트 블루프린트
 
-## 1. 프로젝트 개요
-이 프로젝트는 웹 기반의 간단한 게임들을 개발하는 것을 목표로 합니다. 현재는 "Cosmic Fortune"이라는 이름의 "오늘의 운세" 게임이 구현되어 있으며, 사용자의 피드백을 반영하여 지속적으로 개선하고 있습니다.
+# Project Blueprint
 
-## 2. 구현된 기능 및 디자인
+## Overview
 
-### 2.1. 오늘의 운세 게임 (Cosmic Fortune)
-사용자가 하루에 한 번 오늘의 운세 점수를 확인하고, 그 점수에 따라 격려의 메시지와 시각적인 피드백을 받는 웹 컴포넌트 기반 게임입니다.
+This project is a web application that uses a machine learning model to identify and classify dog faces in real-time through a webcam. It is built with HTML, CSS, and JavaScript, and it utilizes the Teachable Machine platform for the image classification model. The application will be deployed on Firebase Hosting.
 
-*   **핵심 기술:** 순수 JavaScript, CSS, HTML을 사용하며, 재사용성을 위해 웹 컴포넌트로 모듈화되어 있습니다.
-*   **주요 기능:** 금전운/인간관계운 제공, 하루 한 번 제한, 상태 유지, 동적 점수 애니메이션 등.
-*   **"Bold" 디자인 시스템 적용:** 과감한 타이포그래피, 생동감 있는 색상/배경, 입체적 카드 디자인, 직관적 아이콘, 반응형 레이아웃, 라이트/다크 테마.
+## Implemented Features
 
-### 2.3. 별자리 백과사전 (Cosmic Constellations) - 업데이트
-12개의 별자리 성격, 특징, 연애 스타일 등을 재미있게 풀어낸 콘텐츠 섹션입니다. **2026년 2월 업데이트로 '이달의 운세' 기능이 통합되었습니다.**
+*   **Image File Upload**: The application allows users to upload an image file (JPG, PNG, etc.) instead of requiring a webcam.
+*   **Dog Face Classification**: It uses a pre-trained Teachable Machine model to classify dog faces in the uploaded image and display the predicted probabilities.
+*   **Firebase Integration**: The project is set up with Firebase for future scalability and feature additions.
 
-*   **구조:** 메인 페이지 하단에 반응형 그리드 형태로 12개 별자리 아이콘 배치.
-*   **기능:**
-    *   카드를 클릭하면 상세 모달(Modal) 팝업 등장.
-    *   **탭(Tab) 기능 추가:** '성격 분석' vs '이달의 운세' 탭을 전환하여 확인 가능.
-*   **콘텐츠:**
-    *   **탭 1 (성격):** 캐치프레이즈, 기본 성격, 팩폭(Shadow Side), 연애 스타일, 행운 아이템.
-    *   **탭 2 (이달의 운세):** 매달 자동으로 갱신되는 총운, 연애운, 금전운 메시지 (알고리즘 생성).
-    *   **다국어 지원:** 한국어/영어 완벽 지원.
+## Current Plan
 
-### 2.4. 별자리 궁합 보기 (Cosmic Chemistry) - 신규
-별자리 상세 모달 내부가 아닌, **메인 화면의 독립된 섹션**에서 제공되는 궁합 확인 기능입니다.
-
-*   **위치:** 별자리 백과사전 하단.
-*   **구조:** "나의 별자리"와 "상대방 별자리"를 선택하는 2개의 드롭다운 메뉴와 계산 버튼.
-*   **디자인:** 하트 비트 애니메이션과 함께 사랑스러운 분위기 연출.
-*   **콘텐츠:** 단순 점수뿐만 아니라, **관계 정의(Title), 상세 분석, 연애 팁**을 포함한 풍성한 결과 제공.
-*   **로직:** 16가지 원소 조합(4x4) 기반의 디테일한 시나리오 데이터 적용.
-
-### 2.5. 우주 댕댕이 관상 (Cosmic Dog Face) - 신규 (AI)
-사용자의 얼굴 사진을 분석하여 닮은 강아지상(관상)을 찾아주는 AI 기능입니다.
-
-*   **기술:** Google Teachable Machine + TensorFlow.js.
-*   **기능:**
-    *   사진 업로드 및 미리보기.
-    *   AI 분석 로딩 애니메이션.
-    *   가장 닮은 강아지 종류와 우주적 해석(성격, 특징) 제공.
-    *   닮은꼴 확률(%) 그래프 표시.
-*   **지원 견종:** 리트리버, 치와와, 허스키, 말티즈, 불독, 시바견.
-
-### 2.6. 상단 고정 내비게이션 (Sticky Navbar) - 신규
-사용자 편의성을 위해 주요 기능으로 바로 이동할 수 있는 상단 메뉴바를 추가했습니다.
-
-*   **메뉴:** Daily Fortune, Zodiac, Chemistry, Dog Face AI (한글: 오늘의 운세, 별자리, 궁합, 댕댕이 관상).
-*   **디자인:** Glassmorphism 효과, 모바일 반응형 레이아웃.
-
-### 2.7. Google AdSense 연동 - 신규
-사이트 수익화를 위해 Google AdSense 자동 광고 스크립트를 추가했습니다.
-
-*   **기능:** AdSense가 페이지 콘텐츠와 레이아웃을 분석하여 최적의 위치에 자동으로 광고를 배치합니다.
-*   **클라이언트 ID:** `ca-pub-2250980960704364`
-*   **보안:** `ads.txt` 파일을 루트 디렉토리에 추가하여 광고 인벤토리 소유권을 증명했습니다.
-*   **인증:** `<meta name="google-adsense-account">` 태그를 추가하여 사이트 소유권 확인을 강화했습니다.
-
-### 2.8. 사이트 신뢰도 및 콘텐츠 강화 (애드센스 최적화) - 업데이트
-애드센스 심사 통과를 위해 필수 페이지를 생성하고 텍스트 콘텐츠를 보강했습니다.
-
-*   **필수 페이지:** 개인정보처리방침(`privacy.html`), 이용약관(`terms.html`) 생성.
-*   **Footer:** 하단 영역에 저작권 표시 및 필수 페이지 링크 추가.
-*   **Cosmic Wisdom (블로그):** `blog.html` 페이지를 신규 생성하여 별자리, MBTI, 관상 관련 정보성 텍스트 콘텐츠 (3개 기사)를 추가했습니다. 메인 페이지 하단의 버튼을 통해 접근 가능합니다. (SEO 강화 및 애드센스 승인 콘텐츠 볼륨 증대)
-    *   **다국어 지원:** 한국어/영어를 완벽하게 지원하며, `main.v3.js`의 공통 번역 로직을 통해 동적으로 콘텐츠가 변경됩니다.
-
-## 3. 현재 직면한 핵심 문제
-
-*   **GitHub Pages 배포 실패 (`523` 에러):** 최신 코드가 `git push`로 성공적으로 반영되었음에도 불구하고, 실제 웹사이트에는 적용되지 않는 문제가 지속되고 있습니다. 사용자가 직접 확인한 결과, 배포 과정에서 **Cloudflare `523` 에러(Origin Unreachable)**가 발생했으며, 이는 우리 코드가 아닌 GitHub Pages 서버 인프라의 문제임을 시사합니다.
-*   **마지막 시도:** 이 문제를 해결하기 위해, `blueprint.md` 파일을 수정하여 강제로 재배포를 유도하는 '노크' 작전을 실행하고 `push`를 완료했습니다.
-*   **상태 업데이트:** 사용자가 "노크" 작전 후 사이트가 정상 작동함을 확인했습니다.
-
-## 4. 내일을 위한 작업 계획
-
-### 4.1. 1단계: SEO 콘텐츠 강화 (진행 예정)
-별자리 외에도 간단한 운세 관련 텍스트 콘텐츠를 늘려서 검색 유입을 유도합니다.
-
-### 4.2. 2단계: 차선책 (Firebase Hosting) 준비
-만약 GitHub Pages가 다시 불안정해지면 언제든 Firebase Hosting으로 전환할 수 있도록 준비합니다.
-
-### 4.3. 완료된 작업
-*   **블로그 페이지 수정 (Friend Site Fix):** `blog.html`의 CSS 연결 오류(`style.v3.css` -> `style.v4.css`)를 수정하고, 메인 페이지와 동일한 Footer(개인정보처리방침, 이용약관 링크)를 적용했습니다.
-*   **모바일 반응형 및 UI 개선:** 가로 스크롤 제거, 배경 고정, 박스 모델 안정화.
-*   **시각 효과 복구:** Orb z-index 수정.
-*   **다국어 지원:** KO/EN 전환 및 설정 유지.
-*   **제휴 폼 추가:** Formspree 연동.
-*   **댓글 기능:** Disqus 연동.
-*   **별자리 백과사전:** 12 별자리 정보 및 모달 팝업 구현.
-*   **별자리 궁합 보기:** 모달 내 상대방 별자리 선택 및 궁합 점수 확인 기능.
+1.  **Restored Site Functionality**: Temporarily disabled Firebase Analytics tags in `index.html` to resolve the "firebase is not defined" error.
+2.  **Switch to File Upload**: (Completed) Refactored the application to use file upload instead of webcam.
+3.  **Analytics Integration**: (Completed) Replaced the problematic Firebase Analytics script with the standard Google Analytics (GA4) tag (`G-26181B8TV3`) to ensure tracking works in all environments (preview & production).
+4.  **Refine the User Interface**: Continue improving the visual layout and user experience.

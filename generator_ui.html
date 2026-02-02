@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ 나만의 블로그 생성기 (SEO Master)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Pretendard', sans-serif;
+        }
+        .main-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            font-weight: 800;
+        }
+        .btn-generate {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #4285F4, #34A853); /* Google colors */
+            border: none;
+            transition: transform 0.2s;
+        }
+        .btn-generate:hover {
+            transform: scale(1.02);
+        }
+        .result-area {
+            margin-top: 30px;
+            border: 2px dashed #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            min-height: 200px;
+            background: #fafafa;
+            position: relative;
+        }
+        .loading-spinner {
+            display: none;
+            text-align: center;
+            padding: 50px;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: none;
+        }
+        .mode-badge {
+            background-color: #e8f4ff;
+            color: #4285F4; /* Google blue */
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        .api-key-input {
+            font-size: 0.8rem;
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container main-container">
+    <h1 class="header-title">✨ SEO 블로그 포스팅 생성기</h1>
+    
+    <div class="mb-3">
+        <label for="apiKeyInput" class="form-label fw-bold">Google Gemini API Key 입력 (필수)</label>
+        <input type="password" class="form-control api-key-input" id="apiKeyInput" placeholder="AIzaSy...YOUR_GEMINI_API_KEY_HERE">
+        <div class="form-text">API 키는 브라우저에 저장되며, 외부에 전송되지 않습니다.</div>
+    </div>
+
+    <div class="mb-4">
+        <label for="topicInput" class="form-label fw-bold">주제 (키워드) 입력</label>
+        <input type="text" class="form-control form-control-lg" id="topicInput" placeholder="예: 2026년 기초연금과 개인연금 차이점">
+    </div>
+
+    <div class="mb-4">
+        <label class="form-label fw-bold">플랫폼 선택 (스타일 적용)</label>
+        <div class="d-flex gap-3">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="platform" id="platformWP" value="wp" checked>
+                <label class="form-check-label" for="platformWP">
+                    워드프레스/블로그스팟 (수익형/정보성)
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="platform" id="platformNaver" value="naver">
+                <label class="form-check-label" for="platformNaver">
+                    네이버/티스토리 (유입형/친근함)
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary btn-generate text-white rounded-pill" onclick="generatePost()">
+        🚀 AI 글쓰기 시작 (자동 검색 + SEO 적용)
+    </button>
+
+    <div id="loading" class="loading-spinner">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-3 fw-bold text-secondary">최신 정보를 검색하고 글을 작성 중입니다...<br>(약 1~2분 소요)</p>
+    </div>
+
+    <div id="resultArea" class="result-area hidden">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <span class="mode-badge" id="resultModeBadge">워드프레스/블로그스팟 모드</span>
+            <button class="btn btn-sm btn-outline-secondary copy-btn" id="copyBtn" onclick="copyResult()">📋 HTML 복사</button>
+        </div>
+        <textarea class="form-control" id="postContent" rows="15" readonly style="background: white;"></textarea>
+    </div>
+</div>
+
+<script type="module"> // module 타입으로 변경
+    import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
+
+    const SEO_MASTER_GUIDE = `
+# 📌 SEO 최적화 글쓰기 지침 (Master Guidelines) - HTML 출력
+                            
+## 【SEO 최우선 체크리스트】
+*   **메인 키워드:** {topic}
+*   **제목(h1):** 30자 이내, 메인 키워드 포함, 클릭 유도 (예: "사과 보관법 3개월 신선하게").
+*   **소제목(h2):** 7~8개 중 2~3개만 메인 키워드 포함. 나머지는 LSI/세부 키워드.
+*   **키워드 밀도:** 첫 문단 2회, 본문 300자마다 1회, 마지막 문단 1회, FAQ 4/8개 포함.
+*   **LSI 키워드:** 연관 검색어 자연스럽게 녹이기.
+                            
+## 【구조 및 분량】
+*   **총 분량:** 주제의 깊이에 따라 **4000~6000자** 사이로 유연하게 조절. 무리한 늘리기보다는 알찬 정보 위주.
+*   **구성:** 
+    1.  **H1 (제목)**
+    2.  **인트로:** 2-3문장. "제공하겠습니다" 식의 선언형 금지. **"함께 알아봐요", "살펴볼게요"** 등 청유형/공감형으로 작성.
+    3.  **스타일(CSS):** TOC, Table 등 디자인 정의 (문서 내 1회).
+    4.  **목차(TOC):** 5~8개 항목 + FAQ. 연한 하늘색 박스 스타일.
+    5.  **본문(Body):** 5~8개 섹션.
+        *   정보성: 도입 -> 블릿포인트(핵심) -> 보충설명.
+        *   가독성: 3문장마다 줄바꿈.
+        *   **표(Table):** 핵심 정보를 담은 주력 섹션 위주로 **유연하게 2~3개 배치**. (스니펫 노출 및 가독성 최적화)
+    6.  **관련 정보 더 보기:** 외부 링크 영역.
+    7.  **FAQ:** 질문 8개 / 답변 8개 필수.
+    8.  **면책 조항:** FAQ 뒤에 배치.
+    9.  **태그:** #없이 콤마로 구분.
+                            
+## 【스타일 및 제약사항】
+*   **어조:** 부드러운 구어체 ("해요", "합니다" 혼용). 전문 용어 풀이.
+*   **HTML:** `data-ke-size` 및 인라인 `style` 속성 사용 금지. 모든 스타일링은 CSS 클래스나 `<style>` 블록으로 처리한다.
+*   **TOC 스타일:** 목차 링크에 `hover` 시 링크 텍스트의 색상 변경 및 밑줄, 그리고 `<li>` 항목 전체의 배경색 변화 등을 통해 시각적으로 명확하고 동적인 느낌을 주되, JavaScript 없이 CSS만으로 구현. SEO 친화적인 범위 내에서 최적의 사용자 경험을 제공한다.
+*   **금지어:** "결론적으로", "마지막으로", "하지만", "또한", "놀라운", "충격적인", "대박".
+*   **형식:** **전체 HTML을 하나의 `copycode` 코드 블록으로 출력.** (이는 AI 모델이 코드 블록 안에 출력하라는 지시로 사용되며, 실제 복사 시에는 내부 HTML만 사용해야 함)
+*   **텍스트:** `**` (볼드) 문법 금지. `<strong>` 태그 사용.
+*   **이미지:** 텍스트로만 출력 (이미지 출력 오류 방지).
+                            
+## 【주제 집중 및 내용 확장】
+*   **주제 집중:** 메인 키워드와 직접적인 LSI 키워드에만 집중하여 글 작성. 연관성이 떨어지는 정보는 최대한 배제하여 **미래의 다른 포스팅과 내용 중복이 발생하지 않도록 한다.**
+*   **내용 확장:** 4000~6000자를 채우기 위해 불필요한 반복이 아닌, **해당 주제의 깊이와 폭을 확장하는 방향**으로 내용을 구성. 독자가 정말 궁금해할 만한 심화 정보를 제공.
+                            
+## 【작성 프로세스】
+1.  **검색 (Search):** 2026년 최신 데이터 구글 검색 필수. (이 부분은 AI 모델이 자체 지식을 활용하도록 유도)
+2.  **설계:** H1, H2, 목차 구성.
+3.  **작성:** 섹션별로 내용을 풍부하게 작성 (Chaining).
+4.  **출력:** 최종 HTML 코드로 변환하여 출력.
+
+---
+`;
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const storedApiKey = localStorage.getItem('geminiApiKey');
+        if (storedApiKey) {
+            document.getElementById('apiKeyInput').value = storedApiKey;
+        }
+    });
+
+    async function generatePost() {
+        const apiKey = document.getElementById('apiKeyInput').value;
+        const topic = document.getElementById('topicInput').value;
+        const platform = document.querySelector('input[name="platform"]:checked').value;
+
+        if (!apiKey) {
+            alert("Google Gemini API Key를 입력해주세요!");
+            return;
+        }
+        if (!topic) {
+            alert("주제를 입력해주세요!");
+            return;
+        }
+
+        // API 키 로컬 저장
+        localStorage.setItem('geminiApiKey', apiKey);
+
+        // UI 상태 변경
+        document.getElementById('loading').style.display = 'block';
+        document.getElementById('resultArea').style.display = 'none';
+        document.querySelector('.btn-generate').disabled = true;
+        document.getElementById('resultModeBadge').textContent = platform === 'wp' ? '워드프레스/블로그스팟 모드' : '네이버/티스토리 모드';
+
+        const loadingTextElement = document.querySelector('#loading p');
+        loadingTextElement.innerHTML = `최신 정보를 검색하고 글을 작성 중입니다...<br>(플랫폼: <strong>${platform === 'wp' ? '워드프레스/블로그스팟' : '네이버/티스토리'}</strong>, 주제: <strong>${topic}</strong>)<br>이 과정은 약 1~3분 소요될 수 있습니다.`; // 시간 변경
+
+        try {
+            const genAI = new GoogleGenerativeAI(apiKey);
+            const model = genAI.getGenerativeModel({ model: "gemini-pro" }); // gemini-pro 모델 사용
+
+            const platform_style_prompt = platform === 'wp' ? `
+            워드프레스/블로그스팟 (수익형/정보성) 스타일:
+            - 핵심 로직: E-E-A-T (전문성, 경험, 권위, 신뢰) + 체류시간
+            - 전문적이고 깊이 있는 정보 제공 (논문이나 뉴스 기사 톤과 블로그 톤의 중간).
+            - 서론-본론-결론 구조가 매우 뚜렷해야 함.
+            - 이미지: 고화질 3장 이상. alt 태그 필수. (텍스트로만 표시)
+            - 포맷팅: <h2>, <h3> 태그로 목차 구조화 필수. 핵심 키워드 <strong>볼드체</strong> 처리.
+            - 목차(Table of Contents): 상단에 목차 리스트 제공.
+            ` : `
+            네이버/티스토리 (유입형/친근함) 스타일:
+            - 핵심 로직: C-Rank (맥락) + D.I.A+ (선호도) -> "Next N Search" (AI 신뢰도)
+            - 진정성: "내가 직접 겪은 척"하는 후기성 말투나, 독자에게 말을 거는 소통형 말투 선호.
+            - 친근한 '해요체' 사용 (단, 주제와 상황에 맞게 톤 조절 필수. 무조건적인 가벼움 지양).
+            - 문단은 짧게 (모바일 가독성). 3~4줄 넘어가면 엔터.
+            - 이미지: 글 중간중간 계속 배치 (텍스트 지루함 방지). (텍스트로만 표시)
+            - 스티커/이모지: 절제할 것. 섹션당 최대 1개. 제목에는 사용 금지.
+            - 체류시간 방어: 앞부분에 결론(낚시성 금지)을 살짝 보여주어 이탈 방지.
+            `;
+
+            const prompt_content = SEO_MASTER_GUIDE.replace('{topic}', topic) + platform_style_prompt + `\n\n"${topic}"에 대한 SEO 최적화 블로그 포스팅을 요청합니다. 최종 결과물은 모든 CSS 포함하여 HTML 코드 블럭 형태로 제공해야 합니다.`;
+            
+            const result = await model.generateContent(prompt_content);
+            const response = await result.response;
+            const text = response.text();
+
+            // AI가 생성한 HTML이 코드 블럭 안에 있을 경우 처리 (```html ... ```)
+            const htmlMatch = text.match(/```html\n([\s\S]*?)\n```/);
+            const finalContent = htmlMatch ? htmlMatch[1] : text; // 코드블록 없으면 전체 텍스트
+
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('resultArea').style.display = 'block';
+            document.getElementById('postContent').value = finalContent;
+            document.querySelector('.btn-generate').disabled = false;
+
+        } catch (error) {
+            console.error("Error generating post:", error);
+            let errorMessage = "❌ 글 생성 중 오류가 발생했습니다. API 키를 확인하거나 잠시 후 다시 시도해주세요.";
+            if (error.message.includes("API Key not valid")) {
+                errorMessage = "❌ API 키가 유효하지 않습니다. 올바른 Google Gemini API Key를 입력해주세요.";
+            } else if (error.message.includes("Rate Limit exceeded")) {
+                errorMessage = "❌ API 호출 한도를 초과했습니다. 잠시 후 다시 시도해주세요.";
+            }
+            alert(errorMessage + "\n개발자 콘솔(F12)을 확인하세요.");
+            document.getElementById('loading').style.display = 'none';
+            document.querySelector('.btn-generate').disabled = false;
+        }
+    }
+
+    function copyResult() {
+        const content = document.getElementById('postContent');
+        content.select();
+        document.execCommand('copy');
+        alert("✅ 글 내용이 복사되었습니다! 블로그 에디터에 붙여넣으세요.");
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

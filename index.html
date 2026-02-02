@@ -36,13 +36,13 @@
         <div class="header-container">
             <div class="logo" onclick="location.href='index.html'">Cosmic</div>
             <nav>
-                <ul class="nav-links">
-                    <li><a href="#main-content" id="nav-fortune">오늘의 운세</a></li>
-                    <li><a href="#zodiac-section" id="nav-zodiac">별자리</a></li>
-                    <li><a href="#chemistry-section" id="nav-chemistry">궁합</a></li>
-                    <li><a href="#dog-face-section" id="nav-face">댕댕이 관상 테스트</a></li>
-                    <li><a href="blog.html" id="nav-blog">블로그</a></li>
-                </ul>
+            <div class="nav-links">
+                <a href="#section-fortune" class="nav-link" onclick="showSection('fortune')" id="nav-fortune">오늘의 운세</a>
+                <a href="#section-zodiac" class="nav-link" onclick="showSection('zodiac')" id="nav-zodiac">별자리</a>
+                <a href="#section-chemistry" class="nav-link" onclick="showSection('chemistry')" id="nav-chemistry">궁합</a>
+                <a href="#section-pet-tarot" class="nav-link" onclick="showSection('pet-tarot')" id="nav-pet-tarot">펫 타로</a>
+                <a href="blog.html" class="nav-link" id="nav-blog">블로그</a>
+            </div>
             </nav>
         </div>
     </header>
@@ -94,28 +94,46 @@
         <div id="chemistry-result" class="chemistry-result hidden"></div>
     </section>
 
-    <!-- Dog Face Section -->
-    <section id="dog-face-section">
-        <h2 id="dog-title">우주 댕댕이상 테스트</h2>
-        <p id="dog-subtitle" class="subtitle">나는 우주의 어떤 강아지를 닮았을까요?</p>
+    <!-- Section 4: Cosmic Pet Tarot -->
+    <section id="section-pet-tarot" class="content-section hidden">
+        <h1 class="section-title" id="pet-tarot-title">Cosmic Pet Tarot</h1>
+        <p class="section-subtitle" id="pet-tarot-subtitle">What does your pet want to tell you today?</p>
         
-        <div class="dog-upload-container" id="dog-upload-area">
-            <input type="file" id="dog-image-upload" accept="image/*" hidden>
-            <div class="upload-placeholder" id="upload-placeholder">
-                <span class="upload-icon">📸</span>
-                <p>사진을 이곳에 끌어다 놓거나 클릭하세요</p>
+        <div class="tarot-container">
+            <div class="tarot-card-scene">
+                <div class="tarot-card" id="tarot-card">
+                    <div class="tarot-card-inner">
+                        <div class="tarot-card-front">
+                            <div class="card-pattern">?</div>
+                        </div>
+                        <div class="tarot-card-back">
+                            <div class="card-image-placeholder" id="tarot-image">🔮</div>
+                            <h3 id="tarot-card-name">The Fool</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- Ensure image fits within box -->
-            <img id="dog-preview-image" class="hidden" alt="Face Preview">
-            <div id="dog-loading" class="hidden">
-                <div class="spinner"></div>
-                <p>우주의 기운을 스캔 중입니다...</p>
+            
+            <button class="action-btn" id="btn-draw-tarot">Draw a Card</button>
+            
+            <div id="tarot-result" class="result-box hidden">
+                <h3 id="tarot-result-title">Today's Message</h3>
+                <p id="tarot-result-desc" class="result-desc">...</p>
+                <div class="tarot-lucky-item">
+                    <span id="tarot-lucky-label">Lucky Treat:</span> <span id="tarot-lucky-value">Snack</span>
+                </div>
             </div>
         </div>
+    </section>
 
-        <button id="btn-analyze-dog" class="hidden">얼굴 분석하기</button>
-        
-        <div id="dog-result" class="dog-result hidden"></div>
+    <!-- Black Hole Worry Disposal -->
+    <section id="section-blackhole" class="blackhole-section">
+        <h2 style="color:var(--text-color); margin-bottom:1rem; text-align:center;">🌌 Cosmic Worry Disposal</h2>
+        <div class="blackhole-container">
+            <div class="blackhole"></div>
+            <textarea id="worry-input" placeholder="Throw your worries into the black hole... (Anonymous)"></textarea>
+            <button id="btn-throw-worry">Release to Space</button>
+        </div>
     </section>
 
     <!-- Cosmic Wisdom (Blog) Section -->

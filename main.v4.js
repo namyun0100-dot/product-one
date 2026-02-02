@@ -101,12 +101,17 @@ const translations = {
         navDailyFortune: "Daily Fortune",
         navZodiac: "Zodiac",
         navChemistry: "Chemistry",
-        navFace: "Dog Face Test",
+        navPetTarot: "Pet Tarot",
         navBlog: "Blog",
-        dogUpload: "Click or Drag Photo Here",
-        dogLoading: "Scanning Cosmic Energy...",
+        petTarotTitle: "Cosmic Pet Tarot",
+        petTarotSubtitle: "What does your pet want to tell you today?",
+        btnDrawTarot: "Draw a Card",
+        tarotLuckyLabel: "Lucky Treat:",
         tabPersonality: "Personality",
         tabMonthly: "Monthly Forecast",
+        blackHoleTitle: "🌌 Cosmic Worry Disposal",
+        worryPlaceholder: "Throw your worries into the black hole... (Anonymous)",
+        btnThrowWorry: "Release to Space",
         blogPageTitle: "Cosmic Blog - Unlock the Universe",
         blogPageDescription: "Explore deep cosmic wisdom, astrology insights, and spiritual guides. Your journey to understanding the stars starts here.",
         navHome: "Home",
@@ -128,14 +133,8 @@ const translations = {
             title: "🧠 MBTI & The 4 Elements: Are They Connected?",
             meta: "January 28, 2026 | Psychology & Stars",
             p1: "We love MBTI. We love Zodiac signs. But did you know they share a common root in ancient elemental theory? Let's break down the 4 Elements (Fire, Earth, Air, Water) and how they map to modern personality types.",
-            h3_1: "🔥 Fire (Aries, Leo, Sagittarius) ≈ NF Types",
-            p2: "Fire signs are driven by intuition and feeling. They are the 'Idealists' (ENFP, INFJ, INFP, ENFJ). They burn with passion and are often the ones starting new movements.",
-            h3_2: "🌍 Earth (Taurus, Virgo, Capricorn) ≈ SJ Types",
-            p3: "Earth signs ground us. They correspond to the 'Guardians' (ISTJ, ISFJ, ESTJ, ESFJ). Practical, reliable, and focused on the tangible world.",
-            h3_3: "🌬️ Air (Gemini, Libra, Aquarius) ≈ NT Types",
-            p4: "Air represents the intellect. The 'Rationals' (INTJ, INTP, ENTJ, ENTP) fit here perfectly. They analyze, communicate, and innovate.",
-            h3_4: "💧 Water (Cancer, Scorpio, Pisces) ≈ SP Types?",
-            p5: "Actually, Water is unique. While often linked to 'Feeling', its adaptability also mirrors the 'Artisans' (ISFP, ESFP, ISTP, ESTP) who flow with the moment. Water signs feel deeply and react instinctively."
+            linkText: "📖 Read Full Analysis (Click Here) →",
+            linkUrl: "blog_posts/mbti-zodiac.html"
         },
         article3: {
             title: "✋ Palmistry 101: The Heart Line",
@@ -174,12 +173,9 @@ const translations = {
             title: "🐾 Pet Zodiac Encyclopedia: Why is My Pet Like This?",
             meta: "January 30, 2026 | Pet Astrology",
             p1: "Have you ever wondered why your furry friend acts the way they do? Just like humans, pets are influenced by the stars! Knowing their zodiac sign can unlock the secrets to their unique personality.",
-            h3_1: "Aries Pet (March 21 - April 19): The Energetic Pioneer",
-            p2: "Aries pets are born leaders! Full of energy, they love to explore and can be a bit mischievous. Be ready for playful antics and lots of adventure.",
-            h3_2: "Taurus Pet (April 20 - May 20): The Gentle Foodie",
-            p3: "Taurus pets love comfort, food, and affection. They can be stubborn but are incredibly loyal. A comfy bed and tasty treats are the keys to their heart.",
-            h3_3: "Gemini Pet (May 21 - June 20): The Curious Communicator",
-            p4: "Gemini pets are intelligent and curious. They love to 'talk' (bark, meow, chirp) and need constant mental stimulation. Boredom is their worst enemy!"
+            p2: "We have prepared a comprehensive guide covering all zodiac signs for your dogs and cats.",
+            linkText: "📖 Read Full Encyclopedia (Click Here) →",
+            linkUrl: "blog_posts/pet-zodiac.html"
         },
         article7: {
             title: "🐾 Pet Zodiac Encyclopedia (Part 2): Deeper into the Stars",
@@ -191,6 +187,13 @@ const translations = {
             p3: "Leo pets love attention and praise. They are confident and expressive, often acting like the star of the house. Playful applause goes a long way.",
             h3_3: "Virgo Pet (August 23 - September 22): The Neat Observer",
             p4: "Virgo pets are observant and a bit picky. They notice small changes and prefer clean, orderly spaces. Gentle consistency makes them shine."
+        },
+        article9: {
+            title: "✋ Palm Reading Master Guide (2026 Edition)",
+            meta: "February 2, 2026 | Ancient Arts",
+            p1: "Unlock the secrets of your hands. A comprehensive guide to the Life Line, Heart Line, Head Line, and Fate Line. Discover what your palms say about your destiny.",
+            linkText: "📖 Read Full Guide (Click Here) →",
+            linkUrl: "blog_posts/palm-reading.html"
         },
         backHomeLink: "← Back to Cosmic Fortune"
     },
@@ -231,12 +234,17 @@ const translations = {
         navDailyFortune: "오늘의 운세",
         navZodiac: "별자리",
         navChemistry: "궁합",
-        navFace: "댕댕이상 테스트",
+        navPetTarot: "펫 타로",
         navBlog: "블로그",
-        dogUpload: "사진을 클릭하거나 드래그하세요",
-        dogLoading: "우주의 기운을 스캔 중입니다...",
+        petTarotTitle: "우주 펫 타로",
+        petTarotSubtitle: "오늘 우리 아이가 하고 싶은 말은?",
+        btnDrawTarot: "카드 뽑기",
+        tarotLuckyLabel: "행운의 간식:",
         tabPersonality: "성격 분석",
         tabMonthly: "이달의 운세",
+        blackHoleTitle: "🌌 우주 고민 처리장",
+        worryPlaceholder: "고민을 블랙홀에 던져버리세요... (익명 보장)",
+        btnThrowWorry: "우주로 방출하기",
         blogPageTitle: "코스믹 블로그 - 우주를 탐험하다",
         blogPageDescription: "깊은 우주의 지혜, 점성술 인사이트, 영적 가이드를 탐험해보세요. 별을 이해하는 당신의 여정이 여기에서 시작됩니다.",
         navHome: "홈",
@@ -258,17 +266,11 @@ const translations = {
             p3: "8월의 일식에 주목하세요. 이는 당신의 경력과 대중적 이미지와 관련된 의도를 설정하는 데 강력한 시간이 될 것입니다. 크게 꿈꾸는 것을 두려워하지 마세요."
         },
         article2: {
-            title: "🧠 MBTI & 4원소: 과연 연결되어 있을까?",
-            meta: "2026년 1월 28일 | 심리학 & 별",
-            p1: "우리는 MBTI를 좋아합니다. 우리는 별자리를 좋아합니다. 하지만 고대 원소 이론에서 공통된 뿌리를 공유한다는 사실을 알고 계셨나요? 4원소(불, 흙, 공기, 물)와 현대 성격 유형이 어떻게 매핑되는지 살펴보겠습니다.",
-            h3_1: "🔥 불 (양자리, 사자자리, 사수자리) ≈ NF 유형",
-            p2: "불의 별자리는 직관과 감정에 의해 움직입니다. 그들은 '이상주의자' (ENFP, INFJ, INFP, ENFJ). 그들은 열정으로 불타오르며 종종 새로운 움직임을 시작하는 사람들입니다.",
-            h3_2: "🌍 흙 (황소자리, 처녀자리, 염소자리) ≈ SJ 유형",
-            p3: "흙의 별자리는 우리를 안정시킵니다. 그들은 '수호자' (ISTJ, ISFJ, ESTJ, ESFJ)에 완벽하게 해당합니다. 실용적이고 신뢰할 수 있으며, 실제 세계에 집중합니다.",
-            h3_3: "🌬️ 공기 (쌍둥이자리, 천칭자리, 물병자리) ≈ NT 유형",
-            p4: "공기는 지성을 나타냅니다. '합리주의자' (INTJ, INTP, ENTJ, ENTP)는 여기에 완벽하게 들어맞습니다. 그들은 분석하고, 소통하며, 혁신합니다.",
-            h3_4: "💧 물 (게자리, 전갈자리, 물고기자리) ≈ SP 유형?",
-            p5: "실제로 물은 독특합니다. 종종 '감정'과 연결되지만, 그들의 적응력은 또한 순간에 따라 흐르는 '예술가' (ISFP, ESFP, ISTP, ESTP)를 반영합니다. 물의 별자리는 깊이 느끼고 본능적으로 반응합니다."
+            title: "🧠 MBTI와 별자리의 소름 돋는 평행이론",
+            meta: "2026년 2월 2일 | 심리학 & 별",
+            p1: "MBTI와 별자리, 과연 과학적인 근거가 있을까요? 고대 원소 이론(불, 흙, 공기, 물)과 현대 심리학이 만나는 놀라운 지점을 탐험해 봅니다.",
+            linkText: "📖 전체 분석 읽기 (클릭) →",
+            linkUrl: "blog_posts/mbti-zodiac.html"
         },
         article3: {
             title: "✋ 손금 101: 감정선",
@@ -305,14 +307,11 @@ const translations = {
         },
         article6: {
             title: "🐾 반려동물 별자리 백과: 우리 아이는 왜 그럴까?",
-            meta: "2026년 1월 30일 | 반려동물 점성",
+            meta: "2026년 2월 2일 | 반려동물 점성",
             p1: "우리 아이가 왜 그렇게 행동하는지 궁금했던 적 있나요? 사람처럼 반려동물도 별의 영향을 받아요. 별자리를 알면 성격의 비밀이 풀릴지도 몰라요.",
-            h3_1: "양자리 펫 (3/21 - 4/19): 에너지 넘치는 개척자",
-            p2: "양자리 펫은 타고난 리더예요! 에너지가 넘쳐 탐험을 좋아하고 장난기가 많을 수 있어요. 뛰어놀 시간과 모험을 준비하세요.",
-            h3_2: "황소자리 펫 (4/20 - 5/20): 다정한 미식가",
-            p3: "황소자리 펫은 편안함과 먹을 것, 애정을 좋아해요. 고집이 있을 수 있지만 충성심이 깊습니다. 포근한 침대와 간식이 최고의 선물!",
-            h3_3: "쌍둥이자리 펫 (5/21 - 6/20): 호기심 많은 소통가",
-            p4: "쌍둥이자리 펫은 똑똑하고 호기심이 많아요. '말하기'(짖기, 야옹, 지저귀기)를 좋아하고 정신적 자극이 꼭 필요합니다. 지루함은 최악의 적이에요."
+            p2: "강아지와 고양이의 모든 별자리 성격을 다룬 완벽 가이드를 준비했습니다.",
+            linkText: "📖 전체 백과사전 읽기 (클릭) →",
+            linkUrl: "blog_posts/pet-zodiac.html"
         },
         article7: {
             title: "🐾 반려동물 별자리 백과 (2): 더 깊은 별의 이야기",
@@ -335,6 +334,13 @@ const translations = {
             p3: "중요한 전환점이나 진로 변화가 있었음을 암시합니다. 변화는 불안이 아니라 성장의 신호일 수 있어요.",
             h3_3: "희미하거나 짧은 선?",
             p4: "자유롭게 흐름을 택하는 성향일 수 있습니다. 고정된 길보다는 다양한 경험에서 의미를 찾는 타입이에요."
+        },
+        article9: {
+            title: "✋ 손바닥 안의 소우주: 별의 언덕과 운명의 지도",
+            meta: "2026년 2월 2일 | 고대 예술",
+            p1: "당신의 손바닥 안에 작은 우주가 있다는 사실을 아시나요? 고대인들은 손의 언덕을 행성의 이름으로 불렀습니다. 내 손안의 우주 지도를 읽는 법을 소개합니다.",
+            linkText: "📖 전체 가이드 읽기 (클릭) →",
+            linkUrl: "blog_posts/palm-reading.html"
         },
         backHomeLink: "← 코스믹 포춘으로 돌아가기"
     }
@@ -951,6 +957,113 @@ const DogFaceManager = {
     }
 };
 
+const PetTarotManager = {
+    cards: [
+        { id: 0, name: "The Fool", ko: "바보 (The Fool)", desc: { en: "I'm going on an adventure! Don't know where, don't care!", ko: "난 모험을 떠날 거야! 어디로 가는지는 몰라, 신경 안 써!" }, lucky: { en: "New Toy", ko: "새 장난감" }, icon: "🤡" },
+        { id: 1, name: "The Magician", ko: "마법사 (The Magician)", desc: { en: "I can make treats appear with my mind. Watch me!", ko: "난 생각만으로 간식을 만들어낼 수 있어. 잘 봐!" }, lucky: { en: "Training Clicker", ko: "훈련용 클리커" }, icon: "🪄" },
+        { id: 2, name: "The High Priestess", ko: "여사제 (The High Priestess)", desc: { en: "I know you're hiding snacks. My intuition is never wrong.", ko: "네가 간식 숨긴 거 다 알아. 내 직감은 틀리지 않지." }, lucky: { en: "Hidden Snack", ko: "숨겨진 간식" }, icon: "🌙" },
+        { id: 3, name: "The Empress", ko: "여황제 (The Empress)", desc: { en: "Pamper me. I deserve the best cushion in the house.", ko: "나를 모셔라. 난 이 집에서 제일 좋은 쿠션을 가질 자격이 있어." }, lucky: { en: "Soft Blanket", ko: "부드러운 담요" }, icon: "👑" },
+        { id: 4, name: "The Emperor", ko: "황제 (The Emperor)", desc: { en: "I am the boss here. My territory, my rules.", ko: "여긴 내 구역이야. 내 규칙을 따르라." }, lucky: { en: "Big Bone", ko: "왕 뼈다귀" }, icon: "🤴" },
+        { id: 5, name: "The Hierophant", ko: "교황 (The Hierophant)", desc: { en: "I follow the routine strictly. Dinner at 6 PM sharp!", ko: "난 규칙을 준수해. 저녁 6시 정각에 밥 줘!" }, lucky: { en: "Clock", ko: "시계 (칼퇴근)" }, icon: "📜" },
+        { id: 6, name: "The Lovers", ko: "연인 (The Lovers)", desc: { en: "I love you so much! Let's cuddle forever.", ko: "너를 너무 사랑해! 평생 껴안고 있을래." }, lucky: { en: "Hug", ko: "포옹" }, icon: "❤️" },
+        { id: 7, name: "The Chariot", ko: "전차 (The Chariot)", desc: { en: "Zoomies! Out of my way!", ko: "우다다 타임! 다 비켜!" }, lucky: { en: "Running Shoes", ko: "러닝화" }, icon: "🏎️" },
+        { id: 8, name: "Strength", ko: "힘 (Strength)", desc: { en: "I am gentle but mighty. I can resist the urge to steal food (maybe).", ko: "난 부드럽지만 강해. 음식 훔쳐 먹고 싶은 충동을 참을 수 있어 (아마도)." }, lucky: { en: "Chew Toy", ko: "개껌" }, icon: "🦁" },
+        { id: 9, name: "The Hermit", ko: "은둔자 (The Hermit)", desc: { en: "Leave me alone. I need my me-time in my crate.", ko: "혼자 있고 싶어. 내 집에서 사색할 시간이 필요해." }, lucky: { en: "Quiet Corner", ko: "조용한 구석" }, icon: "🕯️" },
+        { id: 10, name: "Wheel of Fortune", ko: "운명의 수레바퀴", desc: { en: "Anything can happen! Maybe a walk? Maybe a bath? (Hope not bath)", ko: "무슨 일이든 일어날 수 있어! 산책일까? 목욕일까? (목욕은 제발)" }, lucky: { en: "Random Treat", ko: "랜덤 간식" }, icon: "🎡" }
+    ],
+    init() {
+        this.card = document.getElementById('tarot-card');
+        this.btnDraw = document.getElementById('btn-draw-tarot');
+        this.resultBox = document.getElementById('tarot-result');
+        this.imagePlaceholder = document.getElementById('tarot-image');
+        this.cardName = document.getElementById('tarot-card-name');
+        this.resultTitle = document.getElementById('tarot-result-title');
+        this.resultDesc = document.getElementById('tarot-result-desc');
+        this.luckyLabel = document.getElementById('tarot-lucky-label');
+        this.luckyValue = document.getElementById('tarot-lucky-value');
+
+        if(this.btnDraw) {
+            this.btnDraw.addEventListener('click', () => this.drawCard());
+        }
+    },
+    drawCard() {
+        if(this.card.classList.contains('flipped')) return;
+        
+        // Animation
+        this.card.classList.add('flipped');
+        this.btnDraw.disabled = true;
+        this.btnDraw.textContent = "...";
+
+        setTimeout(() => {
+            const lang = localStorage.getItem('lang') || 'ko';
+            const randomCard = this.cards[Math.floor(Math.random() * this.cards.length)];
+            
+            this.imagePlaceholder.textContent = randomCard.icon;
+            this.cardName.textContent = lang === 'en' ? randomCard.name : randomCard.ko;
+            
+            this.resultDesc.textContent = randomCard.desc[lang];
+            this.luckyValue.textContent = randomCard.lucky[lang];
+            
+            this.resultBox.classList.remove('hidden');
+            this.btnDraw.textContent = lang === 'en' ? "Draw Again" : "다시 뽑기";
+            this.btnDraw.disabled = false;
+            
+            // Allow reset
+            this.btnDraw.onclick = () => this.resetCard();
+        }, 600);
+    },
+    resetCard() {
+        this.card.classList.remove('flipped');
+        this.resultBox.classList.add('hidden');
+        this.btnDraw.onclick = () => this.drawCard();
+        const lang = localStorage.getItem('lang') || 'ko';
+        this.btnDraw.textContent = lang === 'en' ? "Draw a Card" : "카드 뽑기";
+    }
+};
+
+const BlackHoleManager = {
+    init() {
+        this.btnThrow = document.getElementById('btn-throw-worry');
+        this.input = document.getElementById('worry-input');
+        this.blackhole = document.querySelector('.blackhole');
+        
+        if(this.btnThrow) {
+            this.btnThrow.addEventListener('click', () => this.throwWorry());
+        }
+    },
+    throwWorry() {
+        const text = this.input.value;
+        if(!text.trim()) return;
+
+        // Create a floating text element
+        const floater = document.createElement('div');
+        floater.textContent = text;
+        floater.style.position = 'absolute';
+        floater.style.left = '50%';
+        floater.style.top = '50%';
+        floater.style.transform = 'translate(-50%, -50%)';
+        floater.style.color = '#fff';
+        floater.style.transition = 'all 1s ease-in';
+        floater.style.pointerEvents = 'none';
+        
+        document.querySelector('.blackhole-container').appendChild(floater);
+        
+        // Animate into blackhole
+        requestAnimationFrame(() => {
+            floater.style.transform = 'translate(-50%, -50%) scale(0.1) rotate(720deg)';
+            floater.style.opacity = '0';
+        });
+
+        // Clear input
+        this.input.value = '';
+        
+        setTimeout(() => {
+            floater.remove();
+            alert("Your worry has been consumed by the void. / 당신의 고민이 우주 저 편으로 사라졌습니다.");
+        }, 1000);
+    }
+};
+
 window.updateBlogText = function(lang) {
     const t = translations[lang];
     if (!t) return;
@@ -996,6 +1109,9 @@ window.updateBlogText = function(lang) {
             if (data.p4) html += `<p>${data.p4}</p>`;
             if (data.h3_4) html += `<h3 id="${prefix}-h3-4">${data.h3_4}</h3>`;
             if (data.p5) html += `<p>${data.p5}</p>`;
+            if (data.linkText && data.linkUrl) {
+                html += `<div style="margin-top: 15px;"><a href="${data.linkUrl}" style="color: var(--neon-blue); text-decoration: none; font-weight: bold; font-size: 1.1rem;">${data.linkText}</a></div>`;
+            }
             contentEl.innerHTML = html;
         }
     };
@@ -1007,6 +1123,7 @@ window.updateBlogText = function(lang) {
     updateArticle('article6', t.article6);
     updateArticle('article7', t.article7);
     updateArticle('article8', t.article8);
+    updateArticle('article9', t.article9);
     const backHomeLink = document.getElementById('back-home-link');
     if (backHomeLink) backHomeLink.textContent = t.backHomeLink;
 }
@@ -1030,12 +1147,12 @@ window.updateGlobalText = function(lang) {
     const navDailyFortune = document.getElementById('nav-fortune');
     const navZodiac = document.getElementById('nav-zodiac');
     const navChemistry = document.getElementById('nav-chemistry');
-    const navFace = document.getElementById('nav-face');
+    const navPetTarot = document.getElementById('nav-pet-tarot');
     const navBlog = document.getElementById('nav-blog');
     if (navDailyFortune) navDailyFortune.textContent = t.navDailyFortune;
     if (navZodiac) navZodiac.textContent = t.navZodiac;
     if (navChemistry) navChemistry.textContent = t.navChemistry;
-    if (navFace) navFace.textContent = t.navFace;
+    if (navPetTarot) navPetTarot.textContent = t.navPetTarot;
     if (navBlog) navBlog.textContent = t.navBlog;
     const h1t = document.getElementById('home-wisdom-1-title');
     const h1d = document.getElementById('home-wisdom-1-desc');
@@ -1067,21 +1184,47 @@ window.updateGlobalText = function(lang) {
     if (lSign1) lSign1.textContent = chemTitles[lang].me;
     if (lSign2) lSign2.textContent = chemTitles[lang].partner;
     if (btnCalc) btnCalc.textContent = chemTitles[lang].btn;
-    const dogTitles = { en: { title: "Cosmic Dog Face", subtitle: "Which space puppy are you?", btn: "Analyze Face" }, ko: { title: "우주 댕댕이상 테스트", subtitle: "나는 어떤 우주 강아지일까요?", btn: "얼굴 분석하기" } };
-    const dTitle = document.getElementById('dog-title');
-    const dSubtitle = document.getElementById('dog-subtitle');
-    const btnDog = document.getElementById('btn-analyze-dog');
-    const dogUploadText = document.querySelector('#upload-placeholder p');
-    if (dTitle) dTitle.textContent = dogTitles[lang].title;
-    if (dSubtitle) dSubtitle.textContent = dogTitles[lang].subtitle;
-    if (btnDog) btnDog.textContent = dogTitles[lang].btn;
-    if (dogUploadText) dogUploadText.textContent = t.dogUpload;
-    const dogLoadingText = document.querySelector('#dog-loading p');
-    if (dogLoadingText) dogLoadingText.textContent = t.dogLoading;
+    
+    // Pet Tarot Update
+    const ptTitle = document.getElementById('pet-tarot-title');
+    const ptSubtitle = document.getElementById('pet-tarot-subtitle');
+    const ptBtn = document.getElementById('btn-draw-tarot');
+    const ptLuckyLabel = document.getElementById('tarot-lucky-label');
+    if (ptTitle) ptTitle.textContent = t.petTarotTitle;
+    if (ptSubtitle) ptSubtitle.textContent = t.petTarotSubtitle;
+    if (ptBtn) ptBtn.textContent = t.btnDrawTarot;
+    if (ptLuckyLabel) ptLuckyLabel.textContent = t.tarotLuckyLabel;
+
+    // Black Hole Update
+    const bhTitle = document.querySelector('#section-blackhole h2');
+    const bhInput = document.getElementById('worry-input');
+    const bhBtn = document.getElementById('btn-throw-worry');
+    if (bhTitle) bhTitle.textContent = t.blackHoleTitle;
+    if (bhInput) bhInput.placeholder = t.worryPlaceholder;
+    if (bhBtn) bhBtn.textContent = t.btnThrowWorry;
+
     if (document.getElementById('zodiac-grid')) { ZodiacManager.updateUI(); }
     if (document.getElementById('sign-1')) { ChemistryManager.updateText(); }
     updateBlogText(lang);
 }
+
+window.showSection = function(sectionId) {
+    // Hide all content sections
+    document.querySelectorAll('.content-section').forEach(el => {
+        el.classList.add('hidden');
+    });
+    
+    // Show the target section
+    const target = document.getElementById('section-' + sectionId);
+    if (target) {
+        target.classList.remove('hidden');
+    }
+
+    // Scroll smoothly to the section
+    if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+};
 
 window.updateQuote = function(lang) {
     const list = quotes[lang] || quotes['en'];
@@ -1097,7 +1240,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const lang = localStorage.getItem('lang') || 'ko';
     ZodiacManager.init();
     ChemistryManager.init();
-    DogFaceManager.init();
+    PetTarotManager.init();
+    BlackHoleManager.init();
     updateGlobalText(lang);
     updateQuote(lang);
     const globalThemeToggle = document.getElementById('theme-toggle');
