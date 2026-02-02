@@ -978,7 +978,21 @@ const PetTarotManager = {
         { id: 16, name: "The Tower", ko: "탑 (The Tower)", desc: { en: "Oh no! The cat pushed over my toy tower! Time for a new one?", ko: "이런! 고양이가 내 장난감 탑을 밀쳤어! 새 거 살 시간?" }, lucky: { en: "Durable Toy", ko: "튼튼한 장난감" }, image: "assets/images/16번.jpg" },
         { id: 17, name: "The Star", ko: "별 (The Star)", desc: { en: "Wishing upon a star for endless belly rubs and treats!", ko: "끝없는 배 만져주기와 간식을 위해 별에 소원을 빌어!" }, lucky: { en: "Lucky Charm", ko: "행운의 부적" }, image: "assets/images/17번.jpg" },
         { id: 18, name: "The Moon", ko: "달 (The Moon)", desc: { en: "Mysteries lurk in the shadows... Is that a treat monster under the bed?", ko: "그림자 속에 미스터리가 숨어 있어... 침대 밑에 간식 괴물인가?" }, lucky: { en: "Night Light", ko: "수면등" }, image: "assets/images/18번.jpg" },
-        { id: 19, "The Sun": ko: "태양 (The Sun)", desc: { en: "It's a beautiful day for zoomies and sunbathing!", ko: "우다다와 일광욕하기에 정말 아름다운 날이야!" }, lucky: { en: "Sunny Spot", ko: "햇볕 드는 자리" }, image: "assets/images/19번.jpg" },
+        {
+            id: 19,
+            name: "The Sun",
+            ko: "태양 (The Sun)",
+            desc: {
+              en: "It's a beautiful day for zoomies and sunbathing!",
+              ko: "우다다와 일광욕하기에 정말 아름다운 날이야!"
+            },
+            lucky: {
+              en: "Sunny Spot",
+              ko: "햇볕 드는 자리"
+            },
+            image: "assets/images/19번.jpg"
+          },
+          
         { id: 20, name: "Judgement", ko: "심판 (Judgement)", desc: { en: "Have I been a good boy/girl? I think so! Time for rewards!", ko: "난 착한 강아지였을까? 물론이지! 보상받을 시간이야!" }, lucky: { en: "Praise & Hugs", ko: "칭찬과 포옹" }, image: "assets/images/20번.jpg" },
         { id: 21, name: "The World", ko: "세계 (The World)", desc: { en: "I've explored every corner of the house! What's next?", ko: "집안 모든 구석을 탐험했어! 다음은 어디지?" }, lucky: { en: "New Adventure", ko: "새로운 모험" }, image: "assets/images/21번.jpg" }
     ],
@@ -1005,11 +1019,12 @@ const PetTarotManager = {
         this.btnDraw.disabled = true;
         this.btnDraw.textContent = "...";
 
+        const randomCard = this.cards[Math.floor(Math.random() * this.cards.length)]; // randomCard를 setTimeout 밖으로 이동
+        this.imagePlaceholder.src = randomCard.image; // 이미지를 카드가 뒤집히는 즉시 로드
+
         setTimeout(() => {
             const lang = localStorage.getItem('lang') || 'ko';
-            const randomCard = this.cards[Math.floor(Math.random() * this.cards.length)];
             
-            this.imagePlaceholder.src = randomCard.image; // Set image src
             this.cardName.textContent = lang === 'en' ? randomCard.name : randomCard.ko;
             
             this.resultDesc.textContent = randomCard.desc[lang];
@@ -1221,7 +1236,7 @@ window.updateGlobalText = function(lang) {
 
 window.showSection = function(sectionId) {
     // Hide all content sections
-    document.querySelectorAll('.content-section').forEach(el => {
+    document.querySelectorAll('#main-content .content-section').forEach(el => {
         el.classList.add('hidden');
     });
     
@@ -1229,6 +1244,12 @@ window.showSection = function(sectionId) {
     const target = document.getElementById('section-' + sectionId);
     if (target) {
         target.classList.remove('hidden');
+    }
+    
+    // Ensure main-content is visible as well
+    const mainContent = document.getElementById('main-content');
+    if (mainContent) {
+        mainContent.classList.remove('hidden');
     }
 
     // Scroll smoothly to the section
@@ -1255,6 +1276,10 @@ document.addEventListener('DOMContentLoaded', () => {
     BlackHoleManager.init();
     updateGlobalText(lang);
     updateQuote(lang);
+    
+    // Initialize View (Default to Fortune)
+    window.showSection('fortune');
+
     const globalThemeToggle = document.getElementById('theme-toggle');
     const globalLangBtn = document.getElementById('lang-btn');
     if (globalThemeToggle) {

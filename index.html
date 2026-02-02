@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>우주 운세 - Cosmic Fortune</title>
-    <meta name="description" content="오늘의 우주 운세, 별자리, 궁합, 그리고 AI 관상 테스트까지. 당신의 하루를 우주의 기운으로 채워보세요.">
+    <meta name="description" content="오늘의 우주 운세, 별자리, 궁합, 그리고 펫 타로까지. 당신의 하루를 우주의 기운으로 채워보세요.">
     
     <!-- Google AdSense -->
     <meta name="google-adsense-account" content="ca-pub-2250980960704364">
@@ -19,114 +19,103 @@
       gtag('config', 'G-26181B8TV3');
     </script>
 
-    <!-- Fonts: Kalam (Handwriting), Orbitron (Space), Noto Sans KR (Korean) -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Noto+Sans+KR:wght@300;400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     
-    <!-- CSS with Cache Buster (Version 5) -->
-    <link rel="stylesheet" href="style.v4.css?v=final_fix_v4">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.v4.css?v=final_fix_v7">
     
-    <!-- AI Models -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <!-- AI Models (For future use) -->
 </head>
 <body data-theme="dark">
+    <!-- Header & Navigation -->
     <header id="main-header">
         <div class="header-container">
             <div class="logo" onclick="location.href='index.html'">Cosmic</div>
             <nav>
-            <div class="nav-links">
-                <a href="#section-fortune" class="nav-link" onclick="showSection('fortune')" id="nav-fortune">오늘의 운세</a>
-                <a href="#section-zodiac" class="nav-link" onclick="showSection('zodiac')" id="nav-zodiac">별자리</a>
-                <a href="#section-chemistry" class="nav-link" onclick="showSection('chemistry')" id="nav-chemistry">궁합</a>
-                <a href="#section-pet-tarot" class="nav-link" onclick="showSection('pet-tarot')" id="nav-pet-tarot">펫 타로</a>
-                <a href="blog.html" class="nav-link" id="nav-blog">블로그</a>
-            </div>
+                <div class="nav-links">
+                    <a href="javascript:void(0)" class="nav-link" onclick="showSection('fortune')" id="nav-fortune">오늘의 운세</a>
+                    <a href="javascript:void(0)" class="nav-link" onclick="showSection('zodiac')" id="nav-zodiac">별자리</a>
+                    <a href="javascript:void(0)" class="nav-link" onclick="showSection('chemistry')" id="nav-chemistry">궁합</a>
+                    <a href="javascript:void(0)" class="nav-link" onclick="showSection('pet-tarot')" id="nav-pet-tarot">펫 타로</a>
+                    <a href="blog.html" class="nav-link" id="nav-blog">블로그</a>
+                </div>
             </nav>
         </div>
     </header>
 
     <main id="main-content">
-        <!-- Cosmic Oracle Component -->
-        <cosmic-oracle></cosmic-oracle>
-        
-        <!-- Quote -->
-        <p id="quote-of-the-day"></p>
-    </main>
+        <!-- Section 1: Daily Fortune -->
+        <section id="section-fortune" class="content-section">
+            <cosmic-oracle></cosmic-oracle>
+            <p id="quote-of-the-day"></p>
+        </section>
 
-    <!-- Zodiac Section -->
-    <section id="zodiac-section">
-        <h2 id="zodiac-title">우주의 별자리</h2>
-        <p id="zodiac-subtitle" class="subtitle">당신의 별이 속삭이는 비밀을 들어보세요</p>
-        <div id="zodiac-grid" class="zodiac-grid">
-            <!-- Cards injected by JS -->
-        </div>
-    </section>
-
-    <!-- Chemistry Section -->
-    <section id="chemistry-section">
-        <h2 id="chemistry-title">우주 궁합</h2>
-        <p id="chemistry-subtitle" class="subtitle">우리의 별들은 얼마나 잘 맞을까요?</p>
-        
-        <div class="chemistry-container">
-            <div class="chem-input-group">
-                <label for="sign-1" id="label-sign-1">나</label>
-                <select id="sign-1" class="zodiac-select-main">
-                    <option value="" disabled selected>별자리 선택</option>
-                </select>
+        <!-- Section 2: Zodiac -->
+        <section id="section-zodiac" class="content-section hidden">
+            <h2 id="zodiac-title">우주의 별자리</h2>
+            <p id="zodiac-subtitle" class="subtitle">당신의 별이 속삭이는 비밀을 들어보세요</p>
+            <div id="zodiac-grid" class="zodiac-grid">
+                <!-- Cards injected by JS -->
             </div>
-            
-            <div class="chem-divider">
-                <span class="heart-icon">❤️</span>
-            </div>
+        </section>
 
-            <div class="chem-input-group">
-                <label for="sign-2" id="label-sign-2">상대방</label>
-                <select id="sign-2" class="zodiac-select-main">
-                    <option value="" disabled selected>별자리 선택</option>
-                </select>
+        <!-- Section 3: Chemistry -->
+        <section id="section-chemistry" class="content-section hidden">
+            <h2 id="chemistry-title">우주 궁합</h2>
+            <p id="chemistry-subtitle" class="subtitle">우리의 별들은 얼마나 잘 맞을까요?</p>
+            <div class="chemistry-container">
+                <div class="chem-input-group">
+                    <label for="sign-1" id="label-sign-1">나</label>
+                    <select id="sign-1" class="zodiac-select-main">
+                        <option value="" disabled selected>별자리 선택</option>
+                    </select>
+                </div>
+                <div class="chem-divider"><span class="heart-icon">❤️</span></div>
+                <div class="chem-input-group">
+                    <label for="sign-2" id="label-sign-2">상대방</label>
+                    <select id="sign-2" class="zodiac-select-main">
+                        <option value="" disabled selected>별자리 선택</option>
+                    </select>
+                </div>
             </div>
-        </div>
-        
-        <button id="btn-check-chemistry">궁합 확인하기</button>
-        
-        <div id="chemistry-result" class="chemistry-result hidden"></div>
-    </section>
+            <button id="btn-check-chemistry">궁합 확인하기</button>
+            <div id="chemistry-result" class="chemistry-result hidden"></div>
+        </section>
 
-    <!-- Section 4: Cosmic Pet Tarot -->
-    <section id="section-pet-tarot" class="content-section hidden">
-        <h1 class="section-title" id="pet-tarot-title">Cosmic Pet Tarot</h1>
-        <p class="section-subtitle" id="pet-tarot-subtitle">What does your pet want to tell you today?</p>
-        
-        <div class="tarot-container">
-            <div class="tarot-card-scene">
-                <div class="tarot-card" id="tarot-card">
-                    <div class="tarot-card-inner">
-                        <div class="tarot-card-front">
-                            <div class="card-pattern">?</div>
-                        </div>
-                        <div class="tarot-card-back">
-                            <img class="card-image-placeholder" id="tarot-image" src="" alt="Tarot Card Image">
-                            <h3 id="tarot-card-name">The Fool</h3>
+        <!-- Section 4: Cosmic Pet Tarot -->
+        <section id="section-pet-tarot" class="content-section hidden">
+            <h1 class="section-title" id="pet-tarot-title">Cosmic Pet Tarot</h1>
+            <p class="section-subtitle" id="pet-tarot-subtitle">What does your pet want to tell you today?</p>
+            <div class="tarot-container">
+                <div class="tarot-card-scene">
+                    <div class="tarot-card" id="tarot-card">
+                        <div class="tarot-card-inner">
+                            <div class="tarot-card-front">
+                                <div class="card-pattern"></div>
+                            </div>
+                            <div class="tarot-card-back">
+                                <img class="card-image-placeholder" id="tarot-image" src="" alt="Tarot Card Image">
+                                <h3 id="tarot-card-name">The Fool</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <button class="action-btn" id="btn-draw-tarot">Draw a Card</button>
-            
-            <div id="tarot-result" class="result-box hidden">
-                <h3 id="tarot-result-title">Today's Message</h3>
-                <p id="tarot-result-desc" class="result-desc">...</p>
-                <div class="tarot-lucky-item">
-                    <span id="tarot-lucky-label">Lucky Treat:</span> <span id="tarot-lucky-value">Snack</span>
+                <button class="action-btn" id="btn-draw-tarot">Draw a Card</button>
+                <div id="tarot-result" class="result-box hidden">
+                    <h3 id="tarot-result-title">Today's Message</h3>
+                    <p id="tarot-result-desc" class="result-desc">...</p>
+                    <div class="tarot-lucky-item">
+                        <span id="tarot-lucky-label">Lucky Treat:</span> <span id="tarot-lucky-value">Snack</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Black Hole Worry Disposal -->
+    <!-- Black Hole Section (Always Visible) -->
     <section id="section-blackhole" class="blackhole-section">
         <h2 style="color:var(--text-color); margin-bottom:1rem; text-align:center;">🌌 Cosmic Worry Disposal</h2>
         <div class="blackhole-container">
@@ -136,11 +125,10 @@
         </div>
     </section>
 
-    <!-- Cosmic Wisdom (Blog) Section -->
+    <!-- Cosmic Wisdom (Blog Preview) -->
     <section id="cosmic-wisdom-section">
         <h2 id="wisdom-title">Cosmic Wisdom</h2>
         <p id="wisdom-subtitle" class="subtitle">Universe, Stars, and You.</p>
-        
         <div class="wisdom-grid">
             <div class="wisdom-card">
                 <h3 id="home-wisdom-1-title">🌌 2026 Astrology Trends</h3>
@@ -155,22 +143,10 @@
                 <p id="home-wisdom-3-desc">Why does your dog act like that? It might be their star sign. Decode your pet's cosmic personality.</p>
             </div>
         </div>
-
         <div style="text-align: center; margin-top: 2rem;">
             <a href="blog.html" class="blog-link-btn" id="btn-read-more">Read More Stories →</a>
         </div>
     </section>
-
-    <!-- Zodiac Modal -->
-    <div id="zodiac-modal" class="modal-overlay hidden">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div id="modal-body"></div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="main.v4.js?v=final_fix_v3"></script>
 
     <!-- Contact Form -->
     <section id="contact-form-section">
@@ -180,22 +156,17 @@
                 <label for="name" id="label-name">이름</label>
                 <input type="text" id="name" name="name" required>
             </div>
-
             <div class="form-group">
                 <label for="email" id="label-email">이메일</label>
                 <input type="email" id="email" name="_replyto" required>
             </div>
-
             <div class="form-group">
                 <label for="message" id="label-message">메시지</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
             </div>
-
             <button type="submit" id="form-submit-btn">신호 보내기</button>
         </form>
-        <p class="form-instructions" id="form-instructions-text">
-            우주 신호는 보통 24광시(시간) 내에 응답해 드립니다.
-        </p>
+        <p class="form-instructions" id="form-instructions-text">우주 신호는 보통 24광시(시간) 내에 응답해 드립니다.</p>
     </section>
 
     <!-- Disqus -->
@@ -224,5 +195,16 @@
         </div>
         <p>&copy; 2026 Cosmic Fortune. All rights reserved.</p>
     </footer>
+
+    <!-- Zodiac Modal -->
+    <div id="zodiac-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Main Script -->
+    <script src="main.v4.js?v=final_fix_v7"></script>
 </body>
 </html>
