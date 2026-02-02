@@ -723,8 +723,11 @@ cosmic-oracle {
     background-size: 20px 20px;
 }
 .card-image-placeholder {
-    font-size: 6rem;
-    margin-bottom: 15px;
+    width: 80%; /* Adjust as needed */
+    height: auto;
+    max-height: 80%;
+    object-fit: contain;
+    border-radius: 8px;
     filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2));
     animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }

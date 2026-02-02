@@ -134,7 +134,7 @@ const translations = {
             meta: "January 28, 2026 | Psychology & Stars",
             p1: "We love MBTI. We love Zodiac signs. But did you know they share a common root in ancient elemental theory? Let's break down the 4 Elements (Fire, Earth, Air, Water) and how they map to modern personality types.",
             linkText: "📖 Read Full Analysis (Click Here) →",
-            linkUrl: "blog_posts/mbti-zodiac.html"
+            linkUrl: "blog_posts/mbti-zodiac-en.html"
         },
         article3: {
             title: "✋ Palmistry 101: The Heart Line",
@@ -175,7 +175,7 @@ const translations = {
             p1: "Have you ever wondered why your furry friend acts the way they do? Just like humans, pets are influenced by the stars! Knowing their zodiac sign can unlock the secrets to their unique personality.",
             p2: "We have prepared a comprehensive guide covering all zodiac signs for your dogs and cats.",
             linkText: "📖 Read Full Encyclopedia (Click Here) →",
-            linkUrl: "blog_posts/pet-zodiac.html"
+            linkUrl: "blog_posts/pet-zodiac-en.html"
         },
         article7: {
             title: "🐾 Pet Zodiac Encyclopedia (Part 2): Deeper into the Stars",
@@ -193,7 +193,7 @@ const translations = {
             meta: "February 2, 2026 | Ancient Arts",
             p1: "Unlock the secrets of your hands. A comprehensive guide to the Life Line, Heart Line, Head Line, and Fate Line. Discover what your palms say about your destiny.",
             linkText: "📖 Read Full Guide (Click Here) →",
-            linkUrl: "blog_posts/palm-reading.html"
+            linkUrl: "blog_posts/palm-reading-en.html"
         },
         backHomeLink: "← Back to Cosmic Fortune"
     },
@@ -959,17 +959,28 @@ const DogFaceManager = {
 
 const PetTarotManager = {
     cards: [
-        { id: 0, name: "The Fool", ko: "바보 (The Fool)", desc: { en: "I'm going on an adventure! Don't know where, don't care!", ko: "난 모험을 떠날 거야! 어디로 가는지는 몰라, 신경 안 써!" }, lucky: { en: "New Toy", ko: "새 장난감" }, icon: "🤡" },
-        { id: 1, name: "The Magician", ko: "마법사 (The Magician)", desc: { en: "I can make treats appear with my mind. Watch me!", ko: "난 생각만으로 간식을 만들어낼 수 있어. 잘 봐!" }, lucky: { en: "Training Clicker", ko: "훈련용 클리커" }, icon: "🪄" },
-        { id: 2, name: "The High Priestess", ko: "여사제 (The High Priestess)", desc: { en: "I know you're hiding snacks. My intuition is never wrong.", ko: "네가 간식 숨긴 거 다 알아. 내 직감은 틀리지 않지." }, lucky: { en: "Hidden Snack", ko: "숨겨진 간식" }, icon: "🌙" },
-        { id: 3, name: "The Empress", ko: "여황제 (The Empress)", desc: { en: "Pamper me. I deserve the best cushion in the house.", ko: "나를 모셔라. 난 이 집에서 제일 좋은 쿠션을 가질 자격이 있어." }, lucky: { en: "Soft Blanket", ko: "부드러운 담요" }, icon: "👑" },
-        { id: 4, name: "The Emperor", ko: "황제 (The Emperor)", desc: { en: "I am the boss here. My territory, my rules.", ko: "여긴 내 구역이야. 내 규칙을 따르라." }, lucky: { en: "Big Bone", ko: "왕 뼈다귀" }, icon: "🤴" },
-        { id: 5, name: "The Hierophant", ko: "교황 (The Hierophant)", desc: { en: "I follow the routine strictly. Dinner at 6 PM sharp!", ko: "난 규칙을 준수해. 저녁 6시 정각에 밥 줘!" }, lucky: { en: "Clock", ko: "시계 (칼퇴근)" }, icon: "📜" },
-        { id: 6, name: "The Lovers", ko: "연인 (The Lovers)", desc: { en: "I love you so much! Let's cuddle forever.", ko: "너를 너무 사랑해! 평생 껴안고 있을래." }, lucky: { en: "Hug", ko: "포옹" }, icon: "❤️" },
-        { id: 7, name: "The Chariot", ko: "전차 (The Chariot)", desc: { en: "Zoomies! Out of my way!", ko: "우다다 타임! 다 비켜!" }, lucky: { en: "Running Shoes", ko: "러닝화" }, icon: "🏎️" },
-        { id: 8, name: "Strength", ko: "힘 (Strength)", desc: { en: "I am gentle but mighty. I can resist the urge to steal food (maybe).", ko: "난 부드럽지만 강해. 음식 훔쳐 먹고 싶은 충동을 참을 수 있어 (아마도)." }, lucky: { en: "Chew Toy", ko: "개껌" }, icon: "🦁" },
-        { id: 9, name: "The Hermit", ko: "은둔자 (The Hermit)", desc: { en: "Leave me alone. I need my me-time in my crate.", ko: "혼자 있고 싶어. 내 집에서 사색할 시간이 필요해." }, lucky: { en: "Quiet Corner", ko: "조용한 구석" }, icon: "🕯️" },
-        { id: 10, name: "Wheel of Fortune", ko: "운명의 수레바퀴", desc: { en: "Anything can happen! Maybe a walk? Maybe a bath? (Hope not bath)", ko: "무슨 일이든 일어날 수 있어! 산책일까? 목욕일까? (목욕은 제발)" }, lucky: { en: "Random Treat", ko: "랜덤 간식" }, icon: "🎡" }
+        { id: 0, name: "The Fool", ko: "바보 (The Fool)", desc: { en: "I'm going on an adventure! Don't know where, don't care!", ko: "난 모험을 떠날 거야! 어디로 가는지는 몰라, 신경 안 써!" }, lucky: { en: "New Toy", ko: "새 장난감" }, image: "assets/images/0번.jpg" },
+        { id: 1, name: "The Magician", ko: "마법사 (The Magician)", desc: { en: "I can make treats appear with my mind. Watch me!", ko: "난 생각만으로 간식을 만들어낼 수 있어. 잘 봐!" }, lucky: { en: "Training Clicker", ko: "훈련용 클리커" }, image: "assets/images/1번.jpg" },
+        { id: 2, name: "The High Priestess", ko: "여사제 (The High Priestess)", desc: { en: "I know you're hiding snacks. My intuition is never wrong.", ko: "네가 간식 숨긴 거 다 알아. 내 직감은 틀리지 않지." }, lucky: { en: "Hidden Snack", ko: "숨겨진 간식" }, image: "assets/images/2번.jpg" },
+        { id: 3, name: "The Empress", ko: "여황제 (The Empress)", desc: { en: "Pamper me. I deserve the best cushion in the house.", ko: "나를 모셔라. 난 이 집에서 제일 좋은 쿠션을 가질 자격이 있어." }, lucky: { en: "Soft Blanket", ko: "부드러운 담요" }, image: "assets/images/3번.jpg" },
+        { id: 4, name: "The Emperor", ko: "황제 (The Emperor)", desc: { en: "I am the boss here. My territory, my rules.", ko: "여긴 내 구역이야. 내 규칙을 따르라." }, lucky: { en: "Big Bone", ko: "왕 뼈다귀" }, image: "assets/images/4번.jpg" },
+        { id: 5, name: "The Hierophant", ko: "교황 (The Hierophant)", desc: { en: "I follow the routine strictly. Dinner at 6 PM sharp!", ko: "난 규칙을 준수해. 저녁 6시 정각에 밥 줘!" }, lucky: { en: "Clock", ko: "시계 (칼퇴근)" }, image: "assets/images/5번.jpg" },
+        { id: 6, name: "The Lovers", ko: "연인 (The Lovers)", desc: { en: "I love you so much! Let's cuddle forever.", ko: "너를 너무 사랑해! 평생 껴안고 있을래." }, lucky: { en: "Hug", ko: "포옹" }, image: "assets/images/6번.jpg" },
+        { id: 7, name: "The Chariot", ko: "전차 (The Chariot)", desc: { en: "Zoomies! Out of my way!", ko: "우다다 타임! 다 비켜!" }, lucky: { en: "Running Shoes", ko: "러닝화" }, image: "assets/images/7번.jpg" },
+        { id: 8, name: "Strength", ko: "힘 (Strength)", desc: { en: "I am gentle but mighty. I can resist the urge to steal food (maybe).", ko: "난 부드럽지만 강해. 음식 훔쳐 먹고 싶은 충동을 참을 수 있어 (아마도)." }, lucky: { en: "Chew Toy", ko: "개껌" }, image: "assets/images/8번.jpg" },
+        { id: 9, name: "The Hermit", ko: "은둔자 (The Hermit)", desc: { en: "Leave me alone. I need my me-time in my crate.", ko: "혼자 있고 싶어. 내 집에서 사색할 시간이 필요해." }, lucky: { en: "Quiet Corner", ko: "조용한 구석" }, image: "assets/images/9번.jpg" },
+        { id: 10, name: "Wheel of Fortune", ko: "운명의 수레바퀴", desc: { en: "Anything can happen! Maybe a walk? Maybe a bath? (Hope not bath)", ko: "무슨 일이든 일어날 수 있어! 산책일까? 목욕일까? (목욕은 제발)" }, lucky: { en: "Random Treat", ko: "랜덤 간식" }, image: "assets/images/10번.jpg" },
+        { id: 11, name: "Justice", ko: "정의 (Justice)", desc: { en: "I judge fairly. Treats for all good boys and girls!", ko: "난 공정하게 판단해. 착한 강아지들에겐 간식을!" }, lucky: { en: "Balanced Meal", ko: "균형 잡힌 식사" }, image: "assets/images/11번.jpg" },
+        { id: 12, name: "The Hanged Man", ko: "매달린 사람 (The Hanged Man)", desc: { en: "Sometimes I just chill upside down. Perspective is everything.", ko: "가끔은 그냥 거꾸로 매달려 쉬는 게 좋아. 관점이 중요하거든." }, lucky: { en: "Comfy Hammock", ko: "편안한 해먹" }, image: "assets/images/12번.jpg" },
+        { id: 13, name: "Death", ko: "죽음 (Death)", desc: { en: "Don't be scared! It's just a new beginning. Maybe a new flavor of food?", ko: "무서워 마! 새로운 시작일 뿐이야. 혹시 새로운 맛 간식?" }, lucky: { en: "New Food Bag", ko: "새 사료 봉투" }, image: "assets/images/13번.jpg" },
+        { id: 14, name: "Temperance", ko: "절제 (Temperance)", desc: { en: "I am perfectly balanced. Not too much zoomies, not too little naps.", ko: "난 완벽하게 균형 잡혀 있어. 과한 우다다도, 부족한 낮잠도 없어." }, lucky: { en: "Calm Environment", ko: "평온한 환경" }, image: "assets/images/14번.jpg" },
+        { id: 15, name: "The Devil", ko: "악마 (The Devil)", desc: { en: "Those forbidden treats... they call to me! I must resist!", ko: "저 금지된 간식들... 날 유혹해! 저항해야 해!" }, lucky: { en: "Willpower", ko: "강한 의지" }, image: "assets/images/15번.jpg" },
+        { id: 16, name: "The Tower", ko: "탑 (The Tower)", desc: { en: "Oh no! The cat pushed over my toy tower! Time for a new one?", ko: "이런! 고양이가 내 장난감 탑을 밀쳤어! 새 거 살 시간?" }, lucky: { en: "Durable Toy", ko: "튼튼한 장난감" }, image: "assets/images/16번.jpg" },
+        { id: 17, name: "The Star", ko: "별 (The Star)", desc: { en: "Wishing upon a star for endless belly rubs and treats!", ko: "끝없는 배 만져주기와 간식을 위해 별에 소원을 빌어!" }, lucky: { en: "Lucky Charm", ko: "행운의 부적" }, image: "assets/images/17번.jpg" },
+        { id: 18, name: "The Moon", ko: "달 (The Moon)", desc: { en: "Mysteries lurk in the shadows... Is that a treat monster under the bed?", ko: "그림자 속에 미스터리가 숨어 있어... 침대 밑에 간식 괴물인가?" }, lucky: { en: "Night Light", ko: "수면등" }, image: "assets/images/18번.jpg" },
+        { id: 19, "The Sun": ko: "태양 (The Sun)", desc: { en: "It's a beautiful day for zoomies and sunbathing!", ko: "우다다와 일광욕하기에 정말 아름다운 날이야!" }, lucky: { en: "Sunny Spot", ko: "햇볕 드는 자리" }, image: "assets/images/19번.jpg" },
+        { id: 20, name: "Judgement", ko: "심판 (Judgement)", desc: { en: "Have I been a good boy/girl? I think so! Time for rewards!", ko: "난 착한 강아지였을까? 물론이지! 보상받을 시간이야!" }, lucky: { en: "Praise & Hugs", ko: "칭찬과 포옹" }, image: "assets/images/20번.jpg" },
+        { id: 21, name: "The World", ko: "세계 (The World)", desc: { en: "I've explored every corner of the house! What's next?", ko: "집안 모든 구석을 탐험했어! 다음은 어디지?" }, lucky: { en: "New Adventure", ko: "새로운 모험" }, image: "assets/images/21번.jpg" }
     ],
     init() {
         this.card = document.getElementById('tarot-card');
@@ -998,7 +1009,7 @@ const PetTarotManager = {
             const lang = localStorage.getItem('lang') || 'ko';
             const randomCard = this.cards[Math.floor(Math.random() * this.cards.length)];
             
-            this.imagePlaceholder.textContent = randomCard.icon;
+            this.imagePlaceholder.src = randomCard.image; // Set image src
             this.cardName.textContent = lang === 'en' ? randomCard.name : randomCard.ko;
             
             this.resultDesc.textContent = randomCard.desc[lang];
