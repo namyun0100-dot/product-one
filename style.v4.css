@@ -1027,6 +1027,7 @@ footer {
     justify-content: center;
     gap: 8px;
     padding: 0.95rem 1.6rem;
+    min-height: 48px;
     border-radius: 999px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     background: linear-gradient(135deg, #4b21c2, #d946ef);
