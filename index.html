@@ -33,8 +33,6 @@
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "vbhvctwgdu");
     </script>
-    <!-- Kakao SDK -->
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -150,10 +148,6 @@
                     </div>
                     <div class="tarot-share">
                         <button class="action-btn" id="btn-share-tarot">공유하기</button>
-                        <button class="share-btn" data-share="kakao" id="btn-share-kakao">카카오</button>
-                        <button class="share-btn" data-share="facebook" id="btn-share-facebook">Facebook</button>
-                        <button class="share-btn" data-share="twitter" id="btn-share-twitter">X</button>
-                        <button class="share-btn" data-share="threads" id="btn-share-threads">Threads</button>
                         <button class="share-btn" data-share="reddit" id="btn-share-reddit">Reddit</button>
                         <button class="share-btn" data-share="copy" id="btn-share-copy">링크 복사</button>
                         <button class="share-btn" data-share="image" id="btn-share-image">이미지 저장</button>
@@ -259,5 +253,16 @@
 
     <!-- Main Script -->
     <script src="main.v4.js?v=final_fix_v8"></script>
+    <!-- Userback Feedback -->
+    <script>
+      window.Userback = window.Userback || {};
+      Userback.access_token = "A-uKQAnzgyK6zvTgfIeN5PyfSyq";
+      (function(d) {
+        var s = d.createElement('script');
+        s.async = true;
+        s.src = 'https://static.userback.io/widget/v1.js';
+        (d.head || d.body).appendChild(s);
+      })(document);
+    </script>
 </body>
 </html>
