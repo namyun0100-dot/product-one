@@ -556,11 +556,11 @@ class CosmicOracle extends HTMLElement {
       }
       .scores-container { display: flex; justify-content: space-around; gap: 1.5rem; margin: 2rem 0; flex-wrap: wrap; }
       .score-section { flex: 1; min-width: 150px; padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 15px; transition: all 0.3s ease; }
-      .score-section h2 { font-family: var(--font-main); font-size: 1.5rem; font-weight: 400; display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 0; margin-bottom: 1rem; color: var(--text-color); }
+      .score-section h2 { font-family: var(--font-main); font-size: 1.5rem; font-weight: 400; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 0; margin-bottom: 1rem; color: var(--text-color); white-space: nowrap; }
       .score-value { font-family: var(--font-main); font-size: 3.5rem; font-weight: 700; margin: 0; color: var(--glow-color); text-shadow: 0 0 8px var(--glow-color); }
       .score-message { margin-top: 1rem; min-height: 2.5em; font-size: 0.9rem; opacity: 0.8; }
-      button { background: linear-gradient(135deg, #4b21c2, #d946ef); color: white; padding: 0.95rem 1.6rem; min-height: 48px; border: 1px solid rgba(255,255,255,0.2); border-radius: 999px; cursor: pointer; font-family: var(--font-main); font-size: 1.05rem; font-weight: 800; transition: all 0.3s ease; box-shadow: 0 10px 22px rgba(75, 33, 194, 0.35); margin-top: 1rem; }
-      button:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(75, 33, 194, 0.45); }
+      button { background: linear-gradient(45deg, var(--glow-color), #4e54c8); color: white; padding: 0.95rem 1.6rem; min-height: 48px; min-width: 220px; border: none; border-radius: 999px; cursor: pointer; font-family: var(--font-main); font-size: 1.05rem; font-weight: 800; transition: all 0.3s ease; box-shadow: 0 0 10px var(--glow-color); margin-top: 1rem; }
+      button:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 0 15px var(--glow-color); }
       button:disabled { background: #555; cursor: not-allowed; box-shadow: none; opacity: 0.6; }
       .controls-container { display: flex; justify-content: flex-end; align-items: center; gap: 10px; width: 100%; margin-bottom: 0.5rem; position: relative; }
       @media (max-width: 600px) { .controls-container { justify-content: center; margin-bottom: 1rem; } }

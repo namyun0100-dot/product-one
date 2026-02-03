@@ -662,6 +662,9 @@ cosmic-oracle {
     gap: 12px;
     justify-content: center;
 }
+.hero-cta-actions .action-btn {
+    min-width: 220px;
+}
 .hero-cta #home-cta-text {
     font-size: 1rem;
     opacity: 0.85;
@@ -676,6 +679,12 @@ cosmic-oracle {
     background: linear-gradient(45deg, var(--primary-glow-dark), #4e54c8);
     border: none;
     box-shadow: 0 0 10px var(--primary-glow-dark);
+}
+[data-theme="light"] .action-btn.fortune-match {
+    background: linear-gradient(45deg, var(--primary-glow-light), #4e54c8);
+    border: none;
+    box-shadow: 0 0 10px var(--primary-glow-light);
+    color: #fff;
 }
 [data-theme="dark"] .action-btn.fortune-match:hover {
     transform: translateY(-2px);
