@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>우주 운세 - Cosmic Fortune</title>
     <meta name="description" content="오늘의 우주 운세, 별자리, 궁합, 그리고 펫 타로까지. 당신의 하루를 우주의 기운으로 채워보세요.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon.ico" sizes="any">
     
     <!-- Google AdSense -->
     <meta name="google-adsense-account" content="ca-pub-2250980960704364">
@@ -18,6 +20,15 @@
       gtag('js', new Date());
       gtag('config', 'G-26181B8TV3');
     </script>
+    
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "vbhvctwgdu");
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,9 +36,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Noto+Sans+KR:wght@300;400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="style.v4.css?v=final_fix_v7">
+    <link rel="stylesheet" href="style.v4.css?v=final_fix_v8">
     
     <!-- AI Models (For future use) -->
+    <link rel="canonical" href="https://cosmicpaw.net/">
+    <meta property="og:title" content="우주 운세 - Cosmic Fortune">
+    <meta property="og:description" content="오늘의 우주 운세, 별자리, 궁합, 그리고 펫 타로까지. 당신의 하루를 우주의 기운으로 채워보세요.">
+    <meta property="og:url" content="https://cosmicpaw.net/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Cosmic Fortune">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:image" content="https://cosmicpaw.net/assets/images/wTNr9ANj.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="우주 운세 - Cosmic Fortune">
+    <meta name="twitter:description" content="오늘의 우주 운세, 별자리, 궁합, 그리고 펫 타로까지. 당신의 하루를 우주의 기운으로 채워보세요.">
+    <meta name="twitter:image" content="https://cosmicpaw.net/assets/images/wTNr9ANj.jpg">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Cosmic Fortune", "url": "https://cosmicpaw.net/", "inLanguage": "ko", "publisher": {"@type": "Organization", "name": "Cosmic Fortune", "url": "https://cosmicpaw.net/", "logo": {"@type": "ImageObject", "url": "https://cosmicpaw.net/favicon.svg"}}}</script>
 </head>
 <body data-theme="dark">
     <!-- Header & Navigation -->
@@ -51,6 +75,13 @@
         <section id="section-fortune" class="content-section">
             <cosmic-oracle></cosmic-oracle>
             <p id="quote-of-the-day"></p>
+            <div class="hero-cta">
+                <p id="home-cta-text">지금 바로 오늘의 운세를 확인해보세요</p>
+                <div class="hero-cta-actions">
+                    <button class="action-btn" id="home-cta-fortune" onclick="showSection('fortune')">오늘의 운세 보기</button>
+                    <button class="action-btn secondary" id="home-cta-pet" onclick="showSection('pet-tarot')">펫 타로 뽑기</button>
+                </div>
+            </div>
         </section>
 
         <!-- Section 2: Zodiac -->
@@ -81,7 +112,7 @@
                     </select>
                 </div>
             </div>
-            <button id="btn-check-chemistry">궁합 확인하기</button>
+            <button class="action-btn" id="btn-check-chemistry">궁합 확인하기</button>
             <div id="chemistry-result" class="chemistry-result hidden"></div>
         </section>
 
@@ -110,6 +141,10 @@
                     <div class="tarot-lucky-item">
                         <span id="tarot-lucky-label">Lucky Treat:</span> <span id="tarot-lucky-value">Snack</span>
                     </div>
+                    <div class="tarot-share">
+                        <button class="action-btn secondary" id="btn-share-tarot">결과 공유하기</button>
+                        <button class="action-btn secondary" id="btn-copy-tarot">결과 복사</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -121,9 +156,11 @@
         <div class="blackhole-container">
             <div class="blackhole"></div>
             <textarea id="worry-input" placeholder="Throw your worries into the black hole... (Anonymous)"></textarea>
-            <button id="btn-throw-worry">Release to Space</button>
+            <button class="action-btn" id="btn-throw-worry">Release to Space</button>
         </div>
     </section>
+
+    <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
 
     <!-- Cosmic Wisdom (Blog Preview) -->
     <section id="cosmic-wisdom-section">
@@ -164,7 +201,7 @@
                 <label for="message" id="label-message">메시지</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
             </div>
-            <button type="submit" id="form-submit-btn">신호 보내기</button>
+            <button type="submit" class="action-btn" id="form-submit-btn">신호 보내기</button>
         </form>
         <p class="form-instructions" id="form-instructions-text">우주 신호는 보통 24광시(시간) 내에 응답해 드립니다.</p>
     </section>
@@ -205,6 +242,6 @@
     </div>
 
     <!-- Main Script -->
-    <script src="main.v4.js?v=final_fix_v7"></script>
+    <script src="main.v4.js?v=final_fix_v8"></script>
 </body>
 </html>

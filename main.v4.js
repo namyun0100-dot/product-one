@@ -73,6 +73,9 @@ const translations = {
         msgWait: "Press the button to see your forecast.",
         msgFinancial: "Press the button to see your financial forecast.",
         msgRelationship: "Press the button to see your relationship forecast.",
+        homeCtaText: "Start your cosmic journey now.",
+        homeCtaFortune: "See Today's Fortune",
+        homeCtaPet: "Draw Pet Tarot",
         fortunes: {
             81: "🌟 <strong>Cosmic alignment!</strong> A universe of opportunities awaits!",
             61: "✨ <strong>Starlight favor!</strong> Good vibes are flowing your way.",
@@ -106,6 +109,8 @@ const translations = {
         petTarotTitle: "Cosmic Pet Tarot",
         petTarotSubtitle: "What does your pet want to tell you today?",
         btnDrawTarot: "Draw a Card",
+        btnShareTarot: "Share Result",
+        btnCopyTarot: "Copy Result",
         tarotLuckyLabel: "Lucky Treat:",
         tabPersonality: "Personality",
         tabMonthly: "Monthly Forecast",
@@ -206,6 +211,9 @@ const translations = {
         msgWait: "버튼을 눌러 오늘의 운세를 확인하세요.",
         msgFinancial: "버튼을 눌러 금전운을 확인하세요.",
         msgRelationship: "버튼을 눌러 인연운을 확인하세요.",
+        homeCtaText: "지금 바로 우주 운세를 시작해보세요.",
+        homeCtaFortune: "오늘의 운세 보기",
+        homeCtaPet: "펫 타로 뽑기",
         fortunes: {
             81: "🌟 <strong>우주의 축복!</strong> 엄청난 기회가 기다리고 있어요!",
             61: "✨ <strong>별빛의 가호!</strong> 좋은 기운이 흐르고 있네요!",
@@ -239,6 +247,8 @@ const translations = {
         petTarotTitle: "우주 펫 타로",
         petTarotSubtitle: "오늘 우리 아이가 하고 싶은 말은?",
         btnDrawTarot: "카드 뽑기",
+        btnShareTarot: "결과 공유하기",
+        btnCopyTarot: "결과 복사",
         tarotLuckyLabel: "행운의 간식:",
         tabPersonality: "성격 분석",
         tabMonthly: "이달의 운세",
@@ -959,25 +969,25 @@ const DogFaceManager = {
 
 const PetTarotManager = {
     cards: [
-        { id: 0, name: "The Fool", ko: "바보 (The Fool)", desc: { en: "I'm going on an adventure! Don't know where, don't care!", ko: "난 모험을 떠날 거야! 어디로 가는지는 몰라, 신경 안 써!" }, lucky: { en: "New Toy", ko: "새 장난감" }, image: "assets/images/0번.jpg" },
-        { id: 1, name: "The Magician", ko: "마법사 (The Magician)", desc: { en: "I can make treats appear with my mind. Watch me!", ko: "난 생각만으로 간식을 만들어낼 수 있어. 잘 봐!" }, lucky: { en: "Training Clicker", ko: "훈련용 클리커" }, image: "assets/images/1번.jpg" },
-        { id: 2, name: "The High Priestess", ko: "여사제 (The High Priestess)", desc: { en: "I know you're hiding snacks. My intuition is never wrong.", ko: "네가 간식 숨긴 거 다 알아. 내 직감은 틀리지 않지." }, lucky: { en: "Hidden Snack", ko: "숨겨진 간식" }, image: "assets/images/2번.jpg" },
-        { id: 3, name: "The Empress", ko: "여황제 (The Empress)", desc: { en: "Pamper me. I deserve the best cushion in the house.", ko: "나를 모셔라. 난 이 집에서 제일 좋은 쿠션을 가질 자격이 있어." }, lucky: { en: "Soft Blanket", ko: "부드러운 담요" }, image: "assets/images/3번.jpg" },
-        { id: 4, name: "The Emperor", ko: "황제 (The Emperor)", desc: { en: "I am the boss here. My territory, my rules.", ko: "여긴 내 구역이야. 내 규칙을 따르라." }, lucky: { en: "Big Bone", ko: "왕 뼈다귀" }, image: "assets/images/4번.jpg" },
-        { id: 5, name: "The Hierophant", ko: "교황 (The Hierophant)", desc: { en: "I follow the routine strictly. Dinner at 6 PM sharp!", ko: "난 규칙을 준수해. 저녁 6시 정각에 밥 줘!" }, lucky: { en: "Clock", ko: "시계 (칼퇴근)" }, image: "assets/images/5번.jpg" },
-        { id: 6, name: "The Lovers", ko: "연인 (The Lovers)", desc: { en: "I love you so much! Let's cuddle forever.", ko: "너를 너무 사랑해! 평생 껴안고 있을래." }, lucky: { en: "Hug", ko: "포옹" }, image: "assets/images/6번.jpg" },
-        { id: 7, name: "The Chariot", ko: "전차 (The Chariot)", desc: { en: "Zoomies! Out of my way!", ko: "우다다 타임! 다 비켜!" }, lucky: { en: "Running Shoes", ko: "러닝화" }, image: "assets/images/7번.jpg" },
-        { id: 8, name: "Strength", ko: "힘 (Strength)", desc: { en: "I am gentle but mighty. I can resist the urge to steal food (maybe).", ko: "난 부드럽지만 강해. 음식 훔쳐 먹고 싶은 충동을 참을 수 있어 (아마도)." }, lucky: { en: "Chew Toy", ko: "개껌" }, image: "assets/images/8번.jpg" },
-        { id: 9, name: "The Hermit", ko: "은둔자 (The Hermit)", desc: { en: "Leave me alone. I need my me-time in my crate.", ko: "혼자 있고 싶어. 내 집에서 사색할 시간이 필요해." }, lucky: { en: "Quiet Corner", ko: "조용한 구석" }, image: "assets/images/9번.jpg" },
-        { id: 10, name: "Wheel of Fortune", ko: "운명의 수레바퀴", desc: { en: "Anything can happen! Maybe a walk? Maybe a bath? (Hope not bath)", ko: "무슨 일이든 일어날 수 있어! 산책일까? 목욕일까? (목욕은 제발)" }, lucky: { en: "Random Treat", ko: "랜덤 간식" }, image: "assets/images/10번.jpg" },
-        { id: 11, name: "Justice", ko: "정의 (Justice)", desc: { en: "I judge fairly. Treats for all good boys and girls!", ko: "난 공정하게 판단해. 착한 강아지들에겐 간식을!" }, lucky: { en: "Balanced Meal", ko: "균형 잡힌 식사" }, image: "assets/images/11번.jpg" },
-        { id: 12, name: "The Hanged Man", ko: "매달린 사람 (The Hanged Man)", desc: { en: "Sometimes I just chill upside down. Perspective is everything.", ko: "가끔은 그냥 거꾸로 매달려 쉬는 게 좋아. 관점이 중요하거든." }, lucky: { en: "Comfy Hammock", ko: "편안한 해먹" }, image: "assets/images/12번.jpg" },
-        { id: 13, name: "Death", ko: "죽음 (Death)", desc: { en: "Don't be scared! It's just a new beginning. Maybe a new flavor of food?", ko: "무서워 마! 새로운 시작일 뿐이야. 혹시 새로운 맛 간식?" }, lucky: { en: "New Food Bag", ko: "새 사료 봉투" }, image: "assets/images/13번.jpg" },
-        { id: 14, name: "Temperance", ko: "절제 (Temperance)", desc: { en: "I am perfectly balanced. Not too much zoomies, not too little naps.", ko: "난 완벽하게 균형 잡혀 있어. 과한 우다다도, 부족한 낮잠도 없어." }, lucky: { en: "Calm Environment", ko: "평온한 환경" }, image: "assets/images/14번.jpg" },
-        { id: 15, name: "The Devil", ko: "악마 (The Devil)", desc: { en: "Those forbidden treats... they call to me! I must resist!", ko: "저 금지된 간식들... 날 유혹해! 저항해야 해!" }, lucky: { en: "Willpower", ko: "강한 의지" }, image: "assets/images/15번.jpg" },
-        { id: 16, name: "The Tower", ko: "탑 (The Tower)", desc: { en: "Oh no! The cat pushed over my toy tower! Time for a new one?", ko: "이런! 고양이가 내 장난감 탑을 밀쳤어! 새 거 살 시간?" }, lucky: { en: "Durable Toy", ko: "튼튼한 장난감" }, image: "assets/images/16번.jpg" },
-        { id: 17, name: "The Star", ko: "별 (The Star)", desc: { en: "Wishing upon a star for endless belly rubs and treats!", ko: "끝없는 배 만져주기와 간식을 위해 별에 소원을 빌어!" }, lucky: { en: "Lucky Charm", ko: "행운의 부적" }, image: "assets/images/17번.jpg" },
-        { id: 18, name: "The Moon", ko: "달 (The Moon)", desc: { en: "Mysteries lurk in the shadows... Is that a treat monster under the bed?", ko: "그림자 속에 미스터리가 숨어 있어... 침대 밑에 간식 괴물인가?" }, lucky: { en: "Night Light", ko: "수면등" }, image: "assets/images/18번.jpg" },
+        { id: 0, name: "The Fool", ko: "바보 (The Fool)", desc: { en: "I'm going on an adventure! Don't know where, don't care!", ko: "난 모험을 떠날 거야! 어디로 가는지는 몰라, 신경 안 써!" }, lucky: { en: "New Toy", ko: "새 장난감" }, image: "assets/images/tarot-00.jpg" },
+        { id: 1, name: "The Magician", ko: "마법사 (The Magician)", desc: { en: "I can make treats appear with my mind. Watch me!", ko: "난 생각만으로 간식을 만들어낼 수 있어. 잘 봐!" }, lucky: { en: "Training Clicker", ko: "훈련용 클리커" }, image: "assets/images/tarot-01.jpg" },
+        { id: 2, name: "The High Priestess", ko: "여사제 (The High Priestess)", desc: { en: "I know you're hiding snacks. My intuition is never wrong.", ko: "네가 간식 숨긴 거 다 알아. 내 직감은 틀리지 않지." }, lucky: { en: "Hidden Snack", ko: "숨겨진 간식" }, image: "assets/images/tarot-02.jpg" },
+        { id: 3, name: "The Empress", ko: "여황제 (The Empress)", desc: { en: "Pamper me. I deserve the best cushion in the house.", ko: "나를 모셔라. 난 이 집에서 제일 좋은 쿠션을 가질 자격이 있어." }, lucky: { en: "Soft Blanket", ko: "부드러운 담요" }, image: "assets/images/tarot-03.jpg" },
+        { id: 4, name: "The Emperor", ko: "황제 (The Emperor)", desc: { en: "I am the boss here. My territory, my rules.", ko: "여긴 내 구역이야. 내 규칙을 따르라." }, lucky: { en: "Big Bone", ko: "왕 뼈다귀" }, image: "assets/images/tarot-04.jpg" },
+        { id: 5, name: "The Hierophant", ko: "교황 (The Hierophant)", desc: { en: "I follow the routine strictly. Dinner at 6 PM sharp!", ko: "난 규칙을 준수해. 저녁 6시 정각에 밥 줘!" }, lucky: { en: "Clock", ko: "시계 (칼퇴근)" }, image: "assets/images/tarot-05.jpg" },
+        { id: 6, name: "The Lovers", ko: "연인 (The Lovers)", desc: { en: "I love you so much! Let's cuddle forever.", ko: "너를 너무 사랑해! 평생 껴안고 있을래." }, lucky: { en: "Hug", ko: "포옹" }, image: "assets/images/tarot-06.jpg" },
+        { id: 7, name: "The Chariot", ko: "전차 (The Chariot)", desc: { en: "Zoomies! Out of my way!", ko: "우다다 타임! 다 비켜!" }, lucky: { en: "Running Shoes", ko: "러닝화" }, image: "assets/images/tarot-07.jpg" },
+        { id: 8, name: "Strength", ko: "힘 (Strength)", desc: { en: "I am gentle but mighty. I can resist the urge to steal food (maybe).", ko: "난 부드럽지만 강해. 음식 훔쳐 먹고 싶은 충동을 참을 수 있어 (아마도)." }, lucky: { en: "Chew Toy", ko: "개껌" }, image: "assets/images/tarot-08.jpg" },
+        { id: 9, name: "The Hermit", ko: "은둔자 (The Hermit)", desc: { en: "Leave me alone. I need my me-time in my crate.", ko: "혼자 있고 싶어. 내 집에서 사색할 시간이 필요해." }, lucky: { en: "Quiet Corner", ko: "조용한 구석" }, image: "assets/images/tarot-09.jpg" },
+        { id: 10, name: "Wheel of Fortune", ko: "운명의 수레바퀴", desc: { en: "Anything can happen! Maybe a walk? Maybe a bath? (Hope not bath)", ko: "무슨 일이든 일어날 수 있어! 산책일까? 목욕일까? (목욕은 제발)" }, lucky: { en: "Random Treat", ko: "랜덤 간식" }, image: "assets/images/tarot-10.jpg" },
+        { id: 11, name: "Justice", ko: "정의 (Justice)", desc: { en: "I judge fairly. Treats for all good boys and girls!", ko: "난 공정하게 판단해. 착한 강아지들에겐 간식을!" }, lucky: { en: "Balanced Meal", ko: "균형 잡힌 식사" }, image: "assets/images/tarot-11.jpg" },
+        { id: 12, name: "The Hanged Man", ko: "매달린 사람 (The Hanged Man)", desc: { en: "Sometimes I just chill upside down. Perspective is everything.", ko: "가끔은 그냥 거꾸로 매달려 쉬는 게 좋아. 관점이 중요하거든." }, lucky: { en: "Comfy Hammock", ko: "편안한 해먹" }, image: "assets/images/tarot-12.jpg" },
+        { id: 13, name: "Death", ko: "죽음 (Death)", desc: { en: "Don't be scared! It's just a new beginning. Maybe a new flavor of food?", ko: "무서워 마! 새로운 시작일 뿐이야. 혹시 새로운 맛 간식?" }, lucky: { en: "New Food Bag", ko: "새 사료 봉투" }, image: "assets/images/tarot-13.jpg" },
+        { id: 14, name: "Temperance", ko: "절제 (Temperance)", desc: { en: "I am perfectly balanced. Not too much zoomies, not too little naps.", ko: "난 완벽하게 균형 잡혀 있어. 과한 우다다도, 부족한 낮잠도 없어." }, lucky: { en: "Calm Environment", ko: "평온한 환경" }, image: "assets/images/tarot-14.jpg" },
+        { id: 15, name: "The Devil", ko: "악마 (The Devil)", desc: { en: "Those forbidden treats... they call to me! I must resist!", ko: "저 금지된 간식들... 날 유혹해! 저항해야 해!" }, lucky: { en: "Willpower", ko: "강한 의지" }, image: "assets/images/tarot-15.jpg" },
+        { id: 16, name: "The Tower", ko: "탑 (The Tower)", desc: { en: "Oh no! The cat pushed over my toy tower! Time for a new one?", ko: "이런! 고양이가 내 장난감 탑을 밀쳤어! 새 거 살 시간?" }, lucky: { en: "Durable Toy", ko: "튼튼한 장난감" }, image: "assets/images/tarot-16.jpg" },
+        { id: 17, name: "The Star", ko: "별 (The Star)", desc: { en: "Wishing upon a star for endless belly rubs and treats!", ko: "끝없는 배 만져주기와 간식을 위해 별에 소원을 빌어!" }, lucky: { en: "Lucky Charm", ko: "행운의 부적" }, image: "assets/images/tarot-17.jpg" },
+        { id: 18, name: "The Moon", ko: "달 (The Moon)", desc: { en: "Mysteries lurk in the shadows... Is that a treat monster under the bed?", ko: "그림자 속에 미스터리가 숨어 있어... 침대 밑에 간식 괴물인가?" }, lucky: { en: "Night Light", ko: "수면등" }, image: "assets/images/tarot-18.jpg" },
         {
             id: 19,
             name: "The Sun",
@@ -990,11 +1000,11 @@ const PetTarotManager = {
               en: "Sunny Spot",
               ko: "햇볕 드는 자리"
             },
-            image: "assets/images/19번.jpg"
+            image: "assets/images/tarot-19.jpg"
           },
           
-        { id: 20, name: "Judgement", ko: "심판 (Judgement)", desc: { en: "Have I been a good boy/girl? I think so! Time for rewards!", ko: "난 착한 강아지였을까? 물론이지! 보상받을 시간이야!" }, lucky: { en: "Praise & Hugs", ko: "칭찬과 포옹" }, image: "assets/images/20번.jpg" },
-        { id: 21, name: "The World", ko: "세계 (The World)", desc: { en: "I've explored every corner of the house! What's next?", ko: "집안 모든 구석을 탐험했어! 다음은 어디지?" }, lucky: { en: "New Adventure", ko: "새로운 모험" }, image: "assets/images/21번.jpg" }
+        { id: 20, name: "Judgement", ko: "심판 (Judgement)", desc: { en: "Have I been a good boy/girl? I think so! Time for rewards!", ko: "난 착한 강아지였을까? 물론이지! 보상받을 시간이야!" }, lucky: { en: "Praise & Hugs", ko: "칭찬과 포옹" }, image: "assets/images/tarot-20.jpg" },
+        { id: 21, name: "The World", ko: "세계 (The World)", desc: { en: "I've explored every corner of the house! What's next?", ko: "집안 모든 구석을 탐험했어! 다음은 어디지?" }, lucky: { en: "New Adventure", ko: "새로운 모험" }, image: "assets/images/tarot-21.jpg" }
     ],
     init() {
         this.card = document.getElementById('tarot-card');
@@ -1006,9 +1016,17 @@ const PetTarotManager = {
         this.resultDesc = document.getElementById('tarot-result-desc');
         this.luckyLabel = document.getElementById('tarot-lucky-label');
         this.luckyValue = document.getElementById('tarot-lucky-value');
+        this.shareBtn = document.getElementById('btn-share-tarot');
+        this.copyBtn = document.getElementById('btn-copy-tarot');
 
         if(this.btnDraw) {
             this.btnDraw.addEventListener('click', () => this.drawCard());
+        }
+        if (this.shareBtn) {
+            this.shareBtn.addEventListener('click', () => this.shareResult());
+        }
+        if (this.copyBtn) {
+            this.copyBtn.addEventListener('click', () => this.copyResult());
         }
     },
     drawCard() {
@@ -1045,6 +1063,39 @@ const PetTarotManager = {
         const lang = localStorage.getItem('lang') || 'ko';
         this.btnDraw.textContent = lang === 'en' ? "Draw a Card" : "카드 뽑기";
     }
+    ,
+    shareResult() {
+        const lang = localStorage.getItem('lang') || 'ko';
+        const cardTitle = this.cardName.textContent || (lang === 'en' ? "Pet Tarot" : "펫 타로");
+        const message = this.resultDesc.textContent || "";
+        const lucky = `${this.luckyLabel.textContent} ${this.luckyValue.textContent}`;
+        const text = `${cardTitle}\\n${message}\\n${lucky}`.trim();
+        const url = window.location.href;
+        if (navigator.share) {
+            navigator.share({ title: cardTitle, text, url }).catch(() => {});
+            return;
+        }
+        this.copyResult(true);
+    },
+    copyResult(includeUrl = false) {
+        const lang = localStorage.getItem('lang') || 'ko';
+        const cardTitle = this.cardName.textContent || (lang === 'en' ? "Pet Tarot" : "펫 타로");
+        const message = this.resultDesc.textContent || "";
+        const lucky = `${this.luckyLabel.textContent} ${this.luckyValue.textContent}`;
+        const url = window.location.href;
+        const text = includeUrl
+            ? `${cardTitle}\\n${message}\\n${lucky}\\n${url}`.trim()
+            : `${cardTitle}\\n${message}\\n${lucky}`.trim();
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert(lang === 'en' ? "Copied to clipboard!" : "클립보드에 복사했어요!");
+            }).catch(() => {
+                alert(lang === 'en' ? "Copy failed." : "복사에 실패했어요.");
+            });
+        } else {
+            alert(lang === 'en' ? "Copy not supported here." : "이 브라우저에서는 복사를 지원하지 않아요.");
+        }
+    }
 };
 
 const BlackHoleManager = {
@@ -1052,10 +1103,22 @@ const BlackHoleManager = {
         this.btnThrow = document.getElementById('btn-throw-worry');
         this.input = document.getElementById('worry-input');
         this.blackhole = document.querySelector('.blackhole');
+        this.toast = document.getElementById('toast');
         
         if(this.btnThrow) {
             this.btnThrow.addEventListener('click', () => this.throwWorry());
         }
+    },
+    showToast(message) {
+        if (!this.toast) return;
+        this.toast.textContent = message;
+        this.toast.classList.remove('hidden');
+        this.toast.classList.add('show');
+        clearTimeout(this.toastTimer);
+        this.toastTimer = setTimeout(() => {
+            this.toast.classList.remove('show');
+            this.toast.classList.add('hidden');
+        }, 2200);
     },
     throwWorry() {
         const text = this.input.value;
@@ -1085,7 +1148,11 @@ const BlackHoleManager = {
         
         setTimeout(() => {
             floater.remove();
-            alert("Your worry has been consumed by the void. / 당신의 고민이 우주 저 편으로 사라졌습니다.");
+            const lang = localStorage.getItem('lang') || 'ko';
+            const msg = lang === 'en'
+                ? "Your worry is safely drifting away. Good things are on their way."
+                : "고민은 우주로 흘러갔어요. 좋은 일들이 찾아올 거예요.";
+            this.showToast(msg);
         }, 1000);
     }
 };
@@ -1180,6 +1247,12 @@ window.updateGlobalText = function(lang) {
     if (navChemistry) navChemistry.textContent = t.navChemistry;
     if (navPetTarot) navPetTarot.textContent = t.navPetTarot;
     if (navBlog) navBlog.textContent = t.navBlog;
+    const homeCtaText = document.getElementById('home-cta-text');
+    const homeCtaFortune = document.getElementById('home-cta-fortune');
+    const homeCtaPet = document.getElementById('home-cta-pet');
+    if (homeCtaText) homeCtaText.textContent = t.homeCtaText;
+    if (homeCtaFortune) homeCtaFortune.textContent = t.homeCtaFortune;
+    if (homeCtaPet) homeCtaPet.textContent = t.homeCtaPet;
     const h1t = document.getElementById('home-wisdom-1-title');
     const h1d = document.getElementById('home-wisdom-1-desc');
     const h2t = document.getElementById('home-wisdom-2-title');
@@ -1215,10 +1288,14 @@ window.updateGlobalText = function(lang) {
     const ptTitle = document.getElementById('pet-tarot-title');
     const ptSubtitle = document.getElementById('pet-tarot-subtitle');
     const ptBtn = document.getElementById('btn-draw-tarot');
+    const ptShareBtn = document.getElementById('btn-share-tarot');
+    const ptCopyBtn = document.getElementById('btn-copy-tarot');
     const ptLuckyLabel = document.getElementById('tarot-lucky-label');
     if (ptTitle) ptTitle.textContent = t.petTarotTitle;
     if (ptSubtitle) ptSubtitle.textContent = t.petTarotSubtitle;
     if (ptBtn) ptBtn.textContent = t.btnDrawTarot;
+    if (ptShareBtn) ptShareBtn.textContent = t.btnShareTarot;
+    if (ptCopyBtn) ptCopyBtn.textContent = t.btnCopyTarot;
     if (ptLuckyLabel) ptLuckyLabel.textContent = t.tarotLuckyLabel;
 
     // Black Hole Update

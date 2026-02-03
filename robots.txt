@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /generator_ui.html
+
+Sitemap: https://cosmicpaw.net/sitemap.xml
