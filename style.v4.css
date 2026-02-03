@@ -637,6 +637,17 @@ cosmic-oracle {
     gap: 30px;
     margin-top: 2rem;
 }
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    white-space: nowrap;
+}
 .hero-cta {
     margin-top: 1.5rem;
     display: flex;
@@ -918,6 +929,12 @@ footer {
     font-size: 0.8rem;
     color: var(--text-color);
     opacity: 0.6;
+}
+.site-geo {
+    display: block;
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    opacity: 0.75;
 }
 
 /* --- Modal & Tabs (Pretty Buttons) --- */

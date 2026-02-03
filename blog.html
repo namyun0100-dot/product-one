@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="geo.region" content="KR">
+    <meta name="geo.placename" content="Seoul">
+    <meta name="geo.position" content="37.5665;126.9780">
+    <meta name="ICBM" content="37.5665, 126.9780">
     <title id="blog-page-title">Cosmic Blog - Unlock the Universe</title>
     <meta name="description" id="blog-page-description" content="Explore deep cosmic wisdom, astrology insights, and spiritual guides. Your journey to understanding the stars starts here.">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -33,7 +37,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Noto+Sans+KR:wght@300;400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.v4.css?v=final_fix_v9">
+        <link rel="preload" href="style.v4.css?v=final_fix_v9" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.v4.css?v=final_fix_v9"></noscript>
     <link rel="canonical" href="https://cosmicpaw.net/blog.html">
     <meta property="og:title" content="Cosmic Blog - Unlock the Universe">
     <meta property="og:description" content="Explore deep cosmic wisdom, astrology insights, and spiritual guides. Your journey to understanding the stars starts here.">
@@ -71,6 +76,7 @@
     </header>
 
     <div class="blog-container">
+        <h1 class="visually-hidden">Cosmic Blog - Astrology, Tarot, Pet Zodiac</h1>
         <header class="blog-header">
             <h1 class="blog-title" id="blog-header-title">Cosmic Wisdom</h1>
             <p class="blog-subtitle" id="blog-header-subtitle">Universe, Stars, and You. Exploring the hidden connections.</p>
@@ -219,6 +225,7 @@
             <a href="privacy.html">Privacy Policy</a>
             <a href="terms.html">Terms of Service</a>
         </div>
+        <address class="site-geo">Operating region: Republic of Korea · Base city: Seoul</address>
         <p>&copy; 2026 Cosmic Fortune. All rights reserved.</p>
     </footer>
 

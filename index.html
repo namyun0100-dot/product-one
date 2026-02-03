@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="geo.region" content="KR">
+    <meta name="geo.placename" content="Seoul">
+    <meta name="geo.position" content="37.5665;126.9780">
+    <meta name="ICBM" content="37.5665, 126.9780">
     <title>우주 운세 - Cosmic Fortune</title>
     <meta name="description" content="오늘의 우주 운세, 별자리, 궁합, 그리고 펫 타로까지. 당신의 하루를 우주의 기운으로 채워보세요.">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -36,7 +40,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Noto+Sans+KR:wght@300;400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="style.v4.css?v=final_fix_v8">
+        <link rel="preload" href="style.v4.css?v=final_fix_v8" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.v4.css?v=final_fix_v8"></noscript>
     
     <!-- AI Models (For future use) -->
     <link rel="canonical" href="https://cosmicpaw.net/">
@@ -71,6 +76,7 @@
     </header>
 
     <main id="main-content">
+        <h1 class="visually-hidden">우주 운세, 별자리, 궁합, 펫 타로 - Cosmic Fortune</h1>
         <!-- Section 1: Daily Fortune -->
         <section id="section-fortune" class="content-section">
             <cosmic-oracle></cosmic-oracle>
@@ -78,8 +84,7 @@
             <div class="hero-cta">
                 <p id="home-cta-text">지금 바로 오늘의 운세를 확인해보세요</p>
                 <div class="hero-cta-actions">
-                    <button class="action-btn" id="home-cta-fortune" onclick="showSection('fortune')">오늘의 운세 보기</button>
-                    <button class="action-btn secondary" id="home-cta-pet" onclick="showSection('pet-tarot')">펫 타로 뽑기</button>
+                    <button class="action-btn" id="home-cta-pet" onclick="showSection('pet-tarot')">펫 타로 보러가기</button>
                 </div>
             </div>
         </section>
@@ -214,6 +219,8 @@
             var disqus_config = function () {
             this.page.url = window.location.href;
             this.page.identifier = 'cosmic-fortune-page';
+            const lang = localStorage.getItem('lang') || 'ko';
+            this.language = lang === 'en' ? 'en' : 'ko';
             };
             (function() {
             var d = document, s = d.createElement('script');
@@ -227,9 +234,10 @@
 
     <footer>
         <div class="footer-links">
-            <a href="privacy.html">개인정보처리방침</a>
-            <a href="terms.html">이용약관</a>
+            <a href="privacy.html" id="footer-privacy">개인정보처리방침</a>
+            <a href="terms.html" id="footer-terms">이용약관</a>
         </div>
+        <address class="site-geo" id="footer-geo">운영 지역: 대한민국 · 기준 도시: 서울</address>
         <p>&copy; 2026 Cosmic Fortune. All rights reserved.</p>
     </footer>
 

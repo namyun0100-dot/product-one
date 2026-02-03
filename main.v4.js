@@ -73,9 +73,8 @@ const translations = {
         msgWait: "Press the button to see your forecast.",
         msgFinancial: "Press the button to see your financial forecast.",
         msgRelationship: "Press the button to see your relationship forecast.",
-        homeCtaText: "Start your cosmic journey now.",
-        homeCtaFortune: "See Today's Fortune",
-        homeCtaPet: "Draw Pet Tarot",
+        homeCtaText: "Want a message from your pet? Try the Pet Tarot.",
+        homeCtaPet: "Go to Pet Tarot",
         fortunes: {
             81: "🌟 <strong>Cosmic alignment!</strong> A universe of opportunities awaits!",
             61: "✨ <strong>Starlight favor!</strong> Good vibes are flowing your way.",
@@ -89,6 +88,9 @@ const translations = {
         labelMessage: "Your Message:",
         btnSendSignal: "Send Signal",
         formInstructions: "We usually respond to cosmic signals within 24 light-hours.",
+        footerPrivacy: "Privacy Policy",
+        footerTerms: "Terms of Service",
+        footerGeo: "Operating region: Republic of Korea · Base city: Seoul",
         disqusTitle: "Cosmic Discussions",
         navInsight: "Cosmic Insight",
         navPsychology: "Mystic Psychology",
@@ -211,9 +213,8 @@ const translations = {
         msgWait: "버튼을 눌러 오늘의 운세를 확인하세요.",
         msgFinancial: "버튼을 눌러 금전운을 확인하세요.",
         msgRelationship: "버튼을 눌러 인연운을 확인하세요.",
-        homeCtaText: "지금 바로 우주 운세를 시작해보세요.",
-        homeCtaFortune: "오늘의 운세 보기",
-        homeCtaPet: "펫 타로 뽑기",
+        homeCtaText: "지금 펫 타로로 우리 아이의 메시지를 확인해보세요.",
+        homeCtaPet: "펫 타로 보러가기",
         fortunes: {
             81: "🌟 <strong>우주의 축복!</strong> 엄청난 기회가 기다리고 있어요!",
             61: "✨ <strong>별빛의 가호!</strong> 좋은 기운이 흐르고 있네요!",
@@ -227,6 +228,9 @@ const translations = {
         labelMessage: "메시지:",
         btnSendSignal: "신호 보내기",
         formInstructions: "우주 신호는 보통 24광시(시간) 내에 응답해 드립니다.",
+        footerPrivacy: "개인정보처리방침",
+        footerTerms: "이용약관",
+        footerGeo: "운영 지역: 대한민국 · 기준 도시: 서울",
         disqusTitle: "우주 토론",
         navInsight: "우주의 통찰",
         navPsychology: "신비 심리학",
@@ -1222,6 +1226,7 @@ window.updateBlogText = function(lang) {
 }
 
 window.updateGlobalText = function(lang) {
+    document.documentElement.lang = lang;
     const t = translations[lang];
     const contactTitle = document.getElementById('contact-title');
     if (contactTitle) contactTitle.textContent = t.contactTitle;
@@ -1237,6 +1242,12 @@ window.updateGlobalText = function(lang) {
     if (inst) inst.textContent = t.formInstructions;
     const disqusTitle = document.getElementById('disqus-title');
     if (disqusTitle) disqusTitle.textContent = t.disqusTitle;
+    const footerPrivacy = document.getElementById('footer-privacy');
+    const footerTerms = document.getElementById('footer-terms');
+    const footerGeo = document.getElementById('footer-geo');
+    if (footerPrivacy) footerPrivacy.textContent = t.footerPrivacy;
+    if (footerTerms) footerTerms.textContent = t.footerTerms;
+    if (footerGeo) footerGeo.textContent = t.footerGeo;
     const navDailyFortune = document.getElementById('nav-fortune');
     const navZodiac = document.getElementById('nav-zodiac');
     const navChemistry = document.getElementById('nav-chemistry');
@@ -1248,10 +1259,8 @@ window.updateGlobalText = function(lang) {
     if (navPetTarot) navPetTarot.textContent = t.navPetTarot;
     if (navBlog) navBlog.textContent = t.navBlog;
     const homeCtaText = document.getElementById('home-cta-text');
-    const homeCtaFortune = document.getElementById('home-cta-fortune');
     const homeCtaPet = document.getElementById('home-cta-pet');
     if (homeCtaText) homeCtaText.textContent = t.homeCtaText;
-    if (homeCtaFortune) homeCtaFortune.textContent = t.homeCtaFortune;
     if (homeCtaPet) homeCtaPet.textContent = t.homeCtaPet;
     const h1t = document.getElementById('home-wisdom-1-title');
     const h1d = document.getElementById('home-wisdom-1-desc');
@@ -1359,6 +1368,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const globalThemeToggle = document.getElementById('theme-toggle');
     const globalLangBtn = document.getElementById('lang-btn');
+    const resetDisqus = (langOverride) => {
+        if (typeof DISQUS === 'undefined') return;
+        const lang = langOverride || (localStorage.getItem('lang') || 'ko');
+        setTimeout(() => {
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.url = window.location.href;
+                    this.page.identifier = 'cosmic-fortune-page';
+                    this.language = lang === 'en' ? 'en' : 'ko';
+                }
+            });
+        }, 200);
+    };
+
     if (globalThemeToggle) {
         const savedTheme = localStorage.getItem('theme') || 'dark';
         document.body.dataset.theme = savedTheme;
@@ -1367,17 +1391,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const newTheme = globalThemeToggle.checked ? 'dark' : 'light';
             document.body.dataset.theme = newTheme;
             localStorage.setItem('theme', newTheme);
-            if (typeof DISQUS !== 'undefined') {
-                setTimeout(() => {
-                    DISQUS.reset({
-                        reload: true,
-                        config: function () {
-                            this.page.url = window.location.href;
-                            this.page.identifier = 'cosmic-fortune-page';
-                        }
-                    });
-                }, 200);
-            }
+            resetDisqus();
         });
     }
     if (globalLangBtn) {
@@ -1389,6 +1403,7 @@ document.addEventListener('DOMContentLoaded', () => {
             globalLangBtn.textContent = newLang === 'en' ? '한국어' : 'English';
             updateGlobalText(newLang);
             updateQuote(newLang);
+            resetDisqus(newLang);
         });
     }
 });
