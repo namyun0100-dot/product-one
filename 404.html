@@ -2,6 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <script>
+      (function() {
+        try {
+          var theme = localStorage.getItem('theme') || 'dark';
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {}
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>404 - 페이지를 찾을 수 없어요 | Cosmic Fortune</title>
 
