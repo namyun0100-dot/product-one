@@ -113,6 +113,13 @@ const translations = {
         btnDrawTarot: "Draw a Card",
         btnShareTarot: "Share Result",
         btnCopyTarot: "Copy Result",
+        btnShareFacebook: "Facebook",
+        btnShareTwitter: "X",
+        btnShareThreads: "Threads",
+        btnShareReddit: "Reddit",
+        btnShareKakao: "Kakao",
+        btnShareCopy: "Copy Link",
+        btnShareImage: "Save Image",
         tarotLuckyLabel: "Lucky Treat:",
         tabPersonality: "Personality",
         tabMonthly: "Monthly Forecast",
@@ -253,6 +260,13 @@ const translations = {
         btnDrawTarot: "카드 뽑기",
         btnShareTarot: "결과 공유하기",
         btnCopyTarot: "결과 복사",
+        btnShareFacebook: "페이스북",
+        btnShareTwitter: "엑스",
+        btnShareThreads: "스레드",
+        btnShareReddit: "레딧",
+        btnShareKakao: "카카오",
+        btnShareCopy: "링크 복사",
+        btnShareImage: "이미지 저장",
         tarotLuckyLabel: "행운의 간식:",
         tabPersonality: "성격 분석",
         tabMonthly: "이달의 운세",
@@ -1021,7 +1035,13 @@ const PetTarotManager = {
         this.luckyLabel = document.getElementById('tarot-lucky-label');
         this.luckyValue = document.getElementById('tarot-lucky-value');
         this.shareBtn = document.getElementById('btn-share-tarot');
-        this.copyBtn = document.getElementById('btn-copy-tarot');
+        this.copyBtn = document.getElementById('btn-share-copy');
+        this.shareKakao = document.getElementById('btn-share-kakao');
+        this.shareFacebook = document.getElementById('btn-share-facebook');
+        this.shareTwitter = document.getElementById('btn-share-twitter');
+        this.shareThreads = document.getElementById('btn-share-threads');
+        this.shareReddit = document.getElementById('btn-share-reddit');
+        this.shareImage = document.getElementById('btn-share-image');
 
         if(this.btnDraw) {
             this.btnDraw.addEventListener('click', () => this.drawCard());
@@ -1031,6 +1051,24 @@ const PetTarotManager = {
         }
         if (this.copyBtn) {
             this.copyBtn.addEventListener('click', () => this.copyResult());
+        }
+        if (this.shareKakao) {
+            this.shareKakao.addEventListener('click', () => this.shareTo('kakao'));
+        }
+        if (this.shareFacebook) {
+            this.shareFacebook.addEventListener('click', () => this.shareTo('facebook'));
+        }
+        if (this.shareTwitter) {
+            this.shareTwitter.addEventListener('click', () => this.shareTo('twitter'));
+        }
+        if (this.shareThreads) {
+            this.shareThreads.addEventListener('click', () => this.shareTo('threads'));
+        }
+        if (this.shareReddit) {
+            this.shareReddit.addEventListener('click', () => this.shareTo('reddit'));
+        }
+        if (this.shareImage) {
+            this.shareImage.addEventListener('click', () => this.shareImageResult());
         }
     },
     drawCard() {
@@ -1099,8 +1137,156 @@ const PetTarotManager = {
         } else {
             alert(lang === 'en' ? "Copy not supported here." : "이 브라우저에서는 복사를 지원하지 않아요.");
         }
+    },
+    shareTo(platform) {
+        const lang = localStorage.getItem('lang') || 'ko';
+        const cardTitle = this.cardName.textContent || (lang === 'en' ? "Pet Tarot" : "펫 타로");
+        const message = this.resultDesc.textContent || "";
+        const lucky = `${this.luckyLabel.textContent} ${this.luckyValue.textContent}`;
+        const url = window.location.href;
+        const text = `${cardTitle} - ${message} (${lucky})`;
+        if (platform === 'facebook') {
+            const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+            window.open(shareUrl, '_blank', 'noopener,noreferrer');
+            return;
+        }
+        if (platform === 'twitter') {
+            const shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+            window.open(shareUrl, '_blank', 'noopener,noreferrer');
+            return;
+        }
+        if (platform === 'threads') {
+            const shareUrl = `https://www.threads.net/intent/post?text=${encodeURIComponent(text + ' ' + url)}`;
+            window.open(shareUrl, '_blank', 'noopener,noreferrer');
+            return;
+        }
+        if (platform === 'reddit') {
+            const shareUrl = `https://www.reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(text)}`;
+            window.open(shareUrl, '_blank', 'noopener,noreferrer');
+            return;
+        }
+        if (platform === 'kakao') {
+            if (typeof Kakao === 'undefined') {
+                alert(lang === 'en' ? 'Kakao SDK not loaded.' : '카카오 SDK가 로드되지 않았어요.');
+                return;
+            }
+            if (!Kakao.isInitialized()) {
+                Kakao.init('e9bfb46b68d02fb5c21077f20d5ec36c');
+            }
+            const imageUrl = this.imagePlaceholder && this.imagePlaceholder.src
+                ? new URL(this.imagePlaceholder.src, window.location.origin).href
+                : 'https://cosmicpaw.net/assets/images/pet-zodiac-thumb.jpg';
+            Kakao.Share.sendDefault({
+                objectType: 'feed',
+                content: {
+                    title: cardTitle,
+                    description: `${message}\n${lucky}`.trim(),
+                    imageUrl,
+                    link: {
+                        mobileWebUrl: url,
+                        webUrl: url
+                    }
+                }
+            });
+            return;
+        }
+    }
+    ,
+    async shareImageResult() {
+        const lang = localStorage.getItem('lang') || 'ko';
+        const cardTitle = this.cardName.textContent || (lang === 'en' ? "Pet Tarot" : "펫 타로");
+        if (!this.imagePlaceholder || !this.imagePlaceholder.src) {
+            alert(lang === 'en' ? 'Draw a card first.' : '먼저 카드를 뽑아주세요.');
+            return;
+        }
+        try {
+            const { blob } = await this.renderShareImage();
+            const file = new File([blob], 'pet-tarot.png', { type: 'image/png' });
+            if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                await navigator.share({ files: [file], title: cardTitle });
+                return;
+            }
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'pet-tarot.png';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            URL.revokeObjectURL(url);
+        } catch (e) {
+            console.error(e);
+            alert(lang === 'en' ? 'Image export failed.' : '이미지 저장에 실패했어요.');
+        }
+    },
+    renderShareImage() {
+        const lang = localStorage.getItem('lang') || 'ko';
+        const cardTitle = this.cardName.textContent || (lang === 'en' ? "Pet Tarot" : "펫 타로");
+        const message = this.resultDesc.textContent || "";
+        const lucky = `${this.luckyLabel.textContent} ${this.luckyValue.textContent}`;
+        const imgSrc = this.imagePlaceholder.src;
+
+        return new Promise((resolve, reject) => {
+            const canvas = document.createElement('canvas');
+            const size = 1080;
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext('2d');
+
+            const grad = ctx.createLinearGradient(0, 0, size, size);
+            grad.addColorStop(0, '#0b1020');
+            grad.addColorStop(1, '#2b0f3a');
+            ctx.fillStyle = grad;
+            ctx.fillRect(0, 0, size, size);
+
+            ctx.fillStyle = 'rgba(255,255,255,0.08)';
+            ctx.fillRect(60, 60, size - 120, size - 120);
+
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            img.onload = () => {
+                const imgSize = 520;
+                ctx.drawImage(img, (size - imgSize) / 2, 140, imgSize, imgSize);
+
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 48px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText(cardTitle, size / 2, 80);
+
+                ctx.font = '28px sans-serif';
+                wrapText(ctx, message, size / 2, 720, 840, 38);
+
+                ctx.font = 'bold 30px sans-serif';
+                ctx.fillStyle = '#a78bfa';
+                ctx.fillText(lucky, size / 2, 980);
+
+                canvas.toBlob((blob) => {
+                    if (!blob) return reject(new Error('No blob'));
+                    resolve({ blob });
+                }, 'image/png');
+            };
+            img.onerror = reject;
+            img.src = imgSrc;
+        });
     }
 };
+
+function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+    const words = text.split(' ');
+    let line = '';
+    for (let i = 0; i < words.length; i++) {
+        const testLine = line + words[i] + ' ';
+        const metrics = ctx.measureText(testLine);
+        if (metrics.width > maxWidth && i > 0) {
+            ctx.fillText(line.trim(), x, y);
+            line = words[i] + ' ';
+            y += lineHeight;
+        } else {
+            line = testLine;
+        }
+    }
+    if (line.trim()) ctx.fillText(line.trim(), x, y);
+}
 
 const BlackHoleManager = {
     init() {
@@ -1298,13 +1484,27 @@ window.updateGlobalText = function(lang) {
     const ptSubtitle = document.getElementById('pet-tarot-subtitle');
     const ptBtn = document.getElementById('btn-draw-tarot');
     const ptShareBtn = document.getElementById('btn-share-tarot');
-    const ptCopyBtn = document.getElementById('btn-copy-tarot');
+    const ptCopyBtn = document.getElementById('btn-share-copy');
+    const ptShareKakao = document.getElementById('btn-share-kakao');
+    const ptShareFacebook = document.getElementById('btn-share-facebook');
+    const ptShareTwitter = document.getElementById('btn-share-twitter');
+    const ptShareThreads = document.getElementById('btn-share-threads');
+    const ptShareReddit = document.getElementById('btn-share-reddit');
+    const ptShareImage = document.getElementById('btn-share-image');
+    const ptShareCopy = document.getElementById('btn-share-copy');
     const ptLuckyLabel = document.getElementById('tarot-lucky-label');
     if (ptTitle) ptTitle.textContent = t.petTarotTitle;
     if (ptSubtitle) ptSubtitle.textContent = t.petTarotSubtitle;
     if (ptBtn) ptBtn.textContent = t.btnDrawTarot;
     if (ptShareBtn) ptShareBtn.textContent = t.btnShareTarot;
-    if (ptCopyBtn) ptCopyBtn.textContent = t.btnCopyTarot;
+    if (ptCopyBtn) ptCopyBtn.textContent = t.btnShareCopy;
+    if (ptShareKakao) ptShareKakao.textContent = t.btnShareKakao;
+    if (ptShareFacebook) ptShareFacebook.textContent = t.btnShareFacebook;
+    if (ptShareTwitter) ptShareTwitter.textContent = t.btnShareTwitter;
+    if (ptShareThreads) ptShareThreads.textContent = t.btnShareThreads;
+    if (ptShareReddit) ptShareReddit.textContent = t.btnShareReddit;
+    if (ptShareImage) ptShareImage.textContent = t.btnShareImage;
+    if (ptShareCopy) ptShareCopy.textContent = t.btnShareCopy;
     if (ptLuckyLabel) ptLuckyLabel.textContent = t.tarotLuckyLabel;
 
     // Black Hole Update
