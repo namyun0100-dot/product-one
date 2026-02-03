@@ -672,6 +672,15 @@ cosmic-oracle {
     color: #fff;
     box-shadow: none;
 }
+[data-theme="dark"] .action-btn.fortune-match {
+    background: linear-gradient(45deg, var(--primary-glow-dark), #4e54c8);
+    border: none;
+    box-shadow: 0 0 10px var(--primary-glow-dark);
+}
+[data-theme="dark"] .action-btn.fortune-match:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px var(--primary-glow-dark);
+}
 [data-theme="light"] .action-btn.secondary {
     border-color: rgba(0, 0, 0, 0.2);
     color: #2d3748;
