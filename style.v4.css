@@ -601,6 +601,35 @@ cosmic-oracle {
     font-weight: 800 !important;
 }
 
+/* Blog post pages: improve light mode readability */
+[data-theme="light"] .blog-post-content h1 {
+    color: #0f172a !important;
+}
+[data-theme="light"] .blog-post-content h2 {
+    color: #1e3a8a !important;
+}
+[data-theme="light"] .blog-post-content h3 {
+    color: #0f172a !important;
+}
+[data-theme="light"] .blog-post-content p,
+[data-theme="light"] .blog-post-content li {
+    color: #1f2937 !important;
+}
+[data-theme="light"] .blog-post-content .toc-box,
+[data-theme="light"] .blog-post-content .type-box,
+[data-theme="light"] .blog-post-content .faq-section,
+[data-theme="light"] .blog-post-content .summary-list li,
+[data-theme="light"] .blog-post-content .keyword-box {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(15, 23, 42, 0.12);
+}
+[data-theme="light"] .blog-post-content .toc-list a {
+    color: #334155;
+}
+[data-theme="light"] .blog-post-content .toc-list a:hover {
+    color: #1e3a8a;
+}
+
 .back-home {
     display: inline-block;
     margin-top: 0.5rem;
@@ -834,6 +863,15 @@ cosmic-oracle {
     justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
+}
+.share-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.share-options.hidden {
+    display: none;
 }
 .share-btn {
     display: inline-flex;

@@ -115,6 +115,7 @@ const translations = {
         btnCopyTarot: "Copy Result",
         btnShareCopy: "Copy Link",
         btnShareImage: "Save Image",
+        btnShareSns: "SNS Share",
         btnShareReddit: "Reddit",
         tarotLuckyLabel: "Lucky Treat:",
         tabPersonality: "Personality",
@@ -145,6 +146,20 @@ const translations = {
             p1: "We love MBTI. We love Zodiac signs. But did you know they share a common root in ancient elemental theory? Let's break down the 4 Elements (Fire, Earth, Air, Water) and how they map to modern personality types.",
             linkText: "📖 Read Full Analysis (Click Here) →",
             linkUrl: "blog_posts/mbti-zodiac-en.html"
+        },
+        article10: {
+            title: "💸 Early February Money Outlook by Zodiac (One-Line Summary)",
+            meta: "February 4, 2026 | Cosmic Insight",
+            p1: "A quick money-flow check for early February. Keep spending light and focus on small habits that stabilize your week.",
+            linkText: "📖 Read Summary (Click Here) →",
+            linkUrl: "blog_posts/feb-money-zodiac-en.html"
+        },
+        article11: {
+            title: "🧭 Weekly Fortune Keywords (Feb 9–15)",
+            meta: "February 9–15, 2026 | Cosmic Insight",
+            p1: "Seven keywords and practical actions for next week. Short, clear, and easy to apply.",
+            linkText: "📖 Read Weekly Keywords (Click Here) →",
+            linkUrl: "blog_posts/weekly-keywords-en.html"
         },
         article3: {
             title: "✋ Palmistry 101: The Heart Line",
@@ -186,6 +201,13 @@ const translations = {
             p2: "We have prepared a comprehensive guide covering all zodiac signs for your dogs and cats.",
             linkText: "📖 Read Full Encyclopedia (Click Here) →",
             linkUrl: "blog_posts/pet-zodiac-en.html"
+        },
+        article12: {
+            title: "✨ MBTI × Zodiac Compatibility: Why Similar Temperaments Click",
+            meta: "February 4, 2026 | Mystic Psychology",
+            p1: "Overlay MBTI temperaments with the four zodiac elements and the compatibility logic becomes clear. Similar rhythms tend to feel effortless.",
+            linkText: "📖 Read Compatibility (Click Here) →",
+            linkUrl: "blog_posts/mbti-zodiac-compat-en.html"
         },
         article7: {
             title: "🐾 Pet Zodiac Encyclopedia (Part 2): Deeper into the Stars",
@@ -258,6 +280,7 @@ const translations = {
         btnCopyTarot: "결과 복사",
         btnShareCopy: "링크 복사",
         btnShareImage: "이미지 저장",
+        btnShareSns: "SNS 공유",
         btnShareReddit: "레딧",
         tarotLuckyLabel: "행운의 간식:",
         tabPersonality: "성격 분석",
@@ -291,6 +314,20 @@ const translations = {
             p1: "MBTI와 별자리, 과연 과학적인 근거가 있을까요? 고대 원소 이론(불, 흙, 공기, 물)과 현대 심리학이 만나는 놀라운 지점을 탐험해 봅니다.",
             linkText: "📖 전체 분석 읽기 (클릭) →",
             linkUrl: "blog_posts/mbti-zodiac.html"
+        },
+        article10: {
+            title: "💸 2월 초 별자리 금전운 한 줄 요약",
+            meta: "2026년 2월 4일 | 우주의 통찰",
+            p1: "2월 초 금전 흐름을 빠르게 체크합니다. 큰 결정보다는 작은 지출 습관을 정돈하는 게 포인트예요.",
+            linkText: "📖 요약 읽기 (클릭) →",
+            linkUrl: "blog_posts/feb-money-zodiac.html"
+        },
+        article11: {
+            title: "🧭 이번 주 운세 키워드 7가지 (2월 9–15일)",
+            meta: "2026년 2월 9–15일 | 우주의 통찰",
+            p1: "다음 주 흐름을 위한 7가지 키워드와 실전 팁. 짧고 선명하게 정리했어요.",
+            linkText: "📖 이번 주 키워드 읽기 (클릭) →",
+            linkUrl: "blog_posts/weekly-keywords.html"
         },
         article3: {
             title: "✋ 손금 101: 감정선",
@@ -332,6 +369,13 @@ const translations = {
             p2: "강아지와 고양이의 모든 별자리 성격을 다룬 완벽 가이드를 준비했습니다.",
             linkText: "📖 전체 백과사전 읽기 (클릭) →",
             linkUrl: "blog_posts/pet-zodiac.html"
+        },
+        article12: {
+            title: "✨ MBTI × 별자리 조합: 같은 기질끼리 잘 맞는 이유",
+            meta: "2026년 2월 4일 | 신비 심리학",
+            p1: "MBTI 4기질과 별자리 4원소를 겹쳐보면 궁합의 논리가 보입니다. 비슷한 리듬은 더 편하게 느껴져요.",
+            linkText: "📖 궁합 읽기 (클릭) →",
+            linkUrl: "blog_posts/mbti-zodiac-compat.html"
         },
         article7: {
             title: "🐾 반려동물 별자리 백과 (2): 더 깊은 별의 이야기",
@@ -612,12 +656,14 @@ class CosmicOracle extends HTMLElement {
   }
   _applyInitialTheme() {
     const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.dataset.theme = savedTheme;
     document.body.dataset.theme = savedTheme;
     this.dataset.theme = savedTheme;
     this.themeToggle.checked = savedTheme === 'dark';
   }
   _toggleTheme() {
     const newTheme = this.themeToggle.checked ? 'dark' : 'light';
+    document.documentElement.dataset.theme = newTheme;
     document.body.dataset.theme = newTheme;
     this.dataset.theme = newTheme;
     localStorage.setItem('theme', newTheme);
@@ -1030,12 +1076,20 @@ const PetTarotManager = {
         this.copyBtn = document.getElementById('btn-share-copy');
         this.shareImage = document.getElementById('btn-share-image');
         this.shareReddit = document.getElementById('btn-share-reddit');
+        this.shareSns = document.getElementById('btn-share-sns');
+        this.shareOptions = document.getElementById('share-options');
 
         if(this.btnDraw) {
             this.btnDraw.addEventListener('click', () => this.drawCard());
         }
         if (this.shareBtn) {
-            this.shareBtn.addEventListener('click', () => this.shareResult());
+            this.shareBtn.addEventListener('click', () => {
+                if (this.shareOptions) {
+                    this.shareOptions.classList.toggle('hidden');
+                } else {
+                    this.shareResult();
+                }
+            });
         }
         if (this.copyBtn) {
             this.copyBtn.addEventListener('click', () => this.copyResult());
@@ -1045,6 +1099,9 @@ const PetTarotManager = {
         }
         if (this.shareReddit) {
             this.shareReddit.addEventListener('click', () => this.shareTo('reddit'));
+        }
+        if (this.shareSns) {
+            this.shareSns.addEventListener('click', () => this.shareResult());
         }
     },
     drawCard() {
@@ -1315,7 +1372,12 @@ window.updateBlogText = function(lang) {
         const titleEl = document.getElementById(`${prefix}-title`);
         const metaEl = document.getElementById(`${prefix}-meta`);
         const contentEl = document.getElementById(`${prefix}-content`);
-        if (titleEl) titleEl.innerHTML = data.title;
+        if (titleEl) {
+            titleEl.innerHTML = data.title;
+            if (data.linkUrl && titleEl.tagName === 'A') {
+                titleEl.setAttribute('href', data.linkUrl);
+            }
+        }
         if (metaEl) metaEl.textContent = data.meta;
         if (contentEl) {
             let html = '';
@@ -1343,6 +1405,9 @@ window.updateBlogText = function(lang) {
     updateArticle('article7', t.article7);
     updateArticle('article8', t.article8);
     updateArticle('article9', t.article9);
+    updateArticle('article10', t.article10);
+    updateArticle('article11', t.article11);
+    updateArticle('article12', t.article12);
     const backHomeLink = document.getElementById('back-home-link');
     if (backHomeLink) backHomeLink.textContent = t.backHomeLink;
 }
@@ -1424,6 +1489,7 @@ window.updateGlobalText = function(lang) {
     const ptShareImage = document.getElementById('btn-share-image');
     const ptShareCopy = document.getElementById('btn-share-copy');
     const ptShareReddit = document.getElementById('btn-share-reddit');
+    const ptShareSns = document.getElementById('btn-share-sns');
     const ptLuckyLabel = document.getElementById('tarot-lucky-label');
     if (ptTitle) ptTitle.textContent = t.petTarotTitle;
     if (ptSubtitle) ptSubtitle.textContent = t.petTarotSubtitle;
@@ -1432,6 +1498,7 @@ window.updateGlobalText = function(lang) {
     if (ptCopyBtn) ptCopyBtn.textContent = t.btnShareCopy;
     if (ptShareReddit) ptShareReddit.textContent = t.btnShareReddit;
     if (ptShareImage) ptShareImage.textContent = t.btnShareImage;
+    if (ptShareSns) ptShareSns.textContent = t.btnShareSns;
     if (ptShareCopy) ptShareCopy.textContent = t.btnShareCopy;
     if (ptLuckyLabel) ptLuckyLabel.textContent = t.tarotLuckyLabel;
 
@@ -1512,11 +1579,13 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     if (globalThemeToggle) {
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        document.body.dataset.theme = savedTheme;
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.dataset.theme = savedTheme;
+    document.body.dataset.theme = savedTheme;
         globalThemeToggle.checked = savedTheme === 'dark'; 
         globalThemeToggle.addEventListener('change', () => {
             const newTheme = globalThemeToggle.checked ? 'dark' : 'light';
+            document.documentElement.dataset.theme = newTheme;
             document.body.dataset.theme = newTheme;
             localStorage.setItem('theme', newTheme);
             resetDisqus();

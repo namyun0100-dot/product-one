@@ -11,6 +11,10 @@
         } catch (e) {}
       })();
     </script>
+    <style>
+      html { background: #1a202c; color: #cbd5e0; }
+      html[data-theme="light"] { background: #e2e8f0; color: #2d3748; }
+    </style>
     <meta name="geo.region" content="KR">
     <meta name="geo.placename" content="Seoul">
     <meta name="geo.position" content="37.5665;126.9780">
@@ -156,9 +160,12 @@
                     </div>
                     <div class="tarot-share">
                         <button class="action-btn" id="btn-share-tarot">공유하기</button>
-                        <button class="share-btn" data-share="reddit" id="btn-share-reddit">Reddit</button>
-                        <button class="share-btn" data-share="copy" id="btn-share-copy">링크 복사</button>
-                        <button class="share-btn" data-share="image" id="btn-share-image">이미지 저장</button>
+                        <div class="share-options hidden" id="share-options">
+                            <button class="share-btn" data-share="sns" id="btn-share-sns">SNS 공유</button>
+                            <button class="share-btn" data-share="reddit" id="btn-share-reddit">Reddit</button>
+                            <button class="share-btn" data-share="copy" id="btn-share-copy">링크 복사</button>
+                            <button class="share-btn" data-share="image" id="btn-share-image">이미지 저장</button>
+                        </div>
                     </div>
                 </div>
             </div>
