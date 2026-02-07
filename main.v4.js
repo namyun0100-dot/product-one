@@ -110,6 +110,8 @@ const translations = {
         navBlog: "Blog",
         petTarotTitle: "Cosmic Pet Tarot",
         petTarotSubtitle: "What does your pet want to tell you today?",
+        petTarotLinkText: "Why is my dog like this? →",
+        petTarotLinkUrl: "blog_posts/pet-zodiac-en.html",
         btnDrawTarot: "Draw a Card",
         btnShareTarot: "Share Result",
         btnCopyTarot: "Copy Result",
@@ -128,6 +130,11 @@ const translations = {
         navHome: "Home",
         blogHeaderTitle: "Cosmic Wisdom",
         blogHeaderSubtitle: "Universe, Stars, and You. Exploring the hidden connections.",
+        blogQuickLabel: "Quick Links",
+        blogQuickWeeklyText: "Weekly Keywords",
+        blogQuickWeeklyUrl: "blog_posts/weekly-keywords-en.html",
+        blogQuickMoneyText: "Money Highlights",
+        blogQuickMoneyUrl: "blog_posts/feb-money-zodiac-en.html",
         sectionInsight: "🌌 Cosmic Insight",
         sectionPsychology: "🔮 Mystic Psychology",
         sectionAncient: "✋ Ancient Wisdom",
@@ -148,57 +155,46 @@ const translations = {
             linkUrl: "blog_posts/mbti-zodiac-en.html"
         },
         article10: {
-            title: "💸 Early February Money Outlook by Zodiac (One-Line Summary)",
-            meta: "February 4, 2026 | Cosmic Insight",
-            p1: "A quick money-flow check for early February. Keep spending light and focus on small habits that stabilize your week.",
+            title: "💸 Feb 1–10 Money Outlook by Zodiac",
+            meta: "Feb 1–10, 2026 | Cosmic Insight",
+            p1: "Keywords, action points, and cautions for each sign. A compact money-flow check for Feb 1–10.",
             linkText: "📖 Read Summary (Click Here) →",
             linkUrl: "blog_posts/feb-money-zodiac-en.html"
         },
         article11: {
-            title: "🧭 Weekly Fortune Keywords (Feb 9–15)",
+            title: "🧭 Weekly Zodiac Keywords (Feb 9–15)",
             meta: "February 9–15, 2026 | Cosmic Insight",
-            p1: "Seven keywords and practical actions for next week. Short, clear, and easy to apply.",
+            p1: "12 signs in one view: keyword, action, and caution for each. Dense and easy to apply.",
             linkText: "📖 Read Weekly Keywords (Click Here) →",
             linkUrl: "blog_posts/weekly-keywords-en.html"
         },
         article3: {
             title: "✋ Palmistry 101: The Heart Line",
-            meta: "January 15, 2026 | Ancient Arts",
-            p1: "Look at your dominant hand. See the top horizontal line running from under your pinky finger towards your index finger? That's your Heart Line. It reveals your emotional style, not just your romantic future.",
-            h3_1: "Long & Curved?",
-            p2: "If it curves up towards your index finger, you are a romantic at heart. You express feelings openly and love deeply.",
-            h3_2: "Straight & Short?",
-            p3: "If it ends under the middle finger, you might be more practical or even a bit selfish in love. You need your freedom.",
-            h3_3: "Broken Line?",
-            p4: "Don't worry, it doesn't mean a broken heart forever. It often indicates a major emotional stress or change that you have overcome."
+            meta: "February 6, 2026 | Ancient Arts",
+            p1: "Length, depth, end point, breaks, and islands. A focused guide to emotional rhythm and relationship patterns.",
+            linkText: "📖 Read Heart Line Guide (Click Here) →",
+            linkUrl: "blog_posts/palm-101-heart-en.html"
         },
         article4: {
             title: "🧠 Palmistry 102: The Head Line",
-            meta: "January 31, 2026 | Ancient Arts",
-            p1: "Located just below the Heart Line, the Head Line represents your intellect, mentality, and how you process information. It's not about how smart you are, but *how* you think.",
-            h3_1: "Long & Deep?",
-            p2: "You have a clear focus and good concentration. You tend to think things through thoroughly before acting. A true strategist.",
-            h3_2: "Curved Downwards?",
-            p3: "A curve towards the wrist indicates a creative and imaginative mind. You might be an artist, writer, or dreamer who relies on intuition.",
-            h3_3: "Straight Across?",
-            p4: "A straight line suggests a practical, logical, and analytical approach. You prefer facts over feelings and excel in math, science, or business."
+            meta: "February 6, 2026 | Ancient Arts",
+            p1: "Length, angle, forks, breaks, and islands. A deep dive into thinking style and concentration.",
+            linkText: "📖 Read Head Line Guide (Click Here) →",
+            linkUrl: "blog_posts/palm-102-head-en.html"
         },
         article5: {
             title: "✋ Palmistry 103: The Life Line",
-            meta: "January 31, 2026 | Ancient Arts",
-            p1: "Perhaps the most famous of all palm lines, the Life Line curves around the base of your thumb. Despite popular belief, its length doesn't predict how long you'll live, but rather your vitality, enthusiasm for life, and major life changes.",
-            h3_1: "Long & Deep?",
-            p2: "A prominent, well-defined Life Line indicates strong vitality, good health, and a robust constitution. You likely have abundant energy and can bounce back quickly from challenges.",
-            h3_2: "Short or Faint?",
-            p3: "A shorter or fainter line doesn't mean a short life! It can suggest less physical energy or a need to be more mindful of your health and well-being. It might also indicate a more sedentary lifestyle.",
-            h3_3: "Broken or Chained?",
-            p4: "Breaks or chains in the Life Line often signify periods of significant change, stress, or health transitions. These aren't necessarily negative, but mark points where you've had to adapt or overcome difficulties."
+            meta: "February 6, 2026 | Ancient Arts",
+            p1: "Length, breaks, double lines, and travel branches. A practical guide to vitality and life rhythm.",
+            linkText: "📖 Read Life Line Guide (Click Here) →",
+            linkUrl: "blog_posts/palm-103-life-en.html"
         },
         article6: {
             title: "🐾 Pet Zodiac Encyclopedia: Why is My Pet Like This?",
             meta: "January 30, 2026 | Pet Astrology",
-            p1: "Have you ever wondered why your furry friend acts the way they do? Just like humans, pets are influenced by the stars! Knowing their zodiac sign can unlock the secrets to their unique personality.",
-            p2: "We have prepared a comprehensive guide covering all zodiac signs for your dogs and cats.",
+            p1: "<a class=\"pet-cta\" href=\"index.html#section-pet-tarot\">Go to Pet Tarot →</a>",
+            p2: "Have you ever wondered why your furry friend acts the way they do? Just like humans, pets are influenced by the stars! Knowing their zodiac sign can unlock the secrets to their unique personality.",
+            p3: "We have prepared a comprehensive guide covering all zodiac signs for your dogs and cats.",
             linkText: "📖 Read Full Encyclopedia (Click Here) →",
             linkUrl: "blog_posts/pet-zodiac-en.html"
         },
@@ -219,6 +215,20 @@ const translations = {
             p3: "Leo pets love attention and praise. They are confident and expressive, often acting like the star of the house. Playful applause goes a long way.",
             h3_3: "Virgo Pet (August 23 - September 22): The Neat Observer",
             p4: "Virgo pets are observant and a bit picky. They notice small changes and prefer clean, orderly spaces. Gentle consistency makes them shine."
+        },
+        article8: {
+            title: "✋ Palmistry 104: The Fate Line",
+            meta: "February 6, 2026 | Ancient Arts",
+            p1: "Start point, depth, breaks, and shifts. A focused guide to career flow and responsibility patterns.",
+            linkText: "📖 Read Fate Line Guide (Click Here) →",
+            linkUrl: "blog_posts/palm-104-fate-en.html"
+        },
+        article13: {
+            title: "☀️ Palmistry 105: The Sun Line",
+            meta: "February 6, 2026 | Ancient Arts",
+            p1: "Thickness, branches, and interference lines. A clear guide to recognition and results.",
+            linkText: "📖 Read Sun Line Guide (Click Here) →",
+            linkUrl: "blog_posts/palm-105-sun-en.html"
         },
         article9: {
             title: "✋ Palm Reading Master Guide (2026 Edition)",
@@ -275,6 +285,8 @@ const translations = {
         navBlog: "블로그",
         petTarotTitle: "우주 펫 타로",
         petTarotSubtitle: "오늘 우리 아이가 하고 싶은 말은?",
+        petTarotLinkText: "우리댕댕이가 왜 이럴까? →",
+        petTarotLinkUrl: "blog_posts/pet-zodiac.html",
         btnDrawTarot: "카드 뽑기",
         btnShareTarot: "결과 공유하기",
         btnCopyTarot: "결과 복사",
@@ -293,6 +305,11 @@ const translations = {
         navHome: "홈",
         blogHeaderTitle: "코스믹 지혜",
         blogHeaderSubtitle: "우주, 별, 그리고 당신. 숨겨진 연결고리를 탐험하세요.",
+        blogQuickLabel: "바로가기",
+        blogQuickWeeklyText: "이번 주 키워드",
+        blogQuickWeeklyUrl: "blog_posts/weekly-keywords.html",
+        blogQuickMoneyText: "별님 금전운",
+        blogQuickMoneyUrl: "blog_posts/feb-money-zodiac.html",
         sectionInsight: "🌌 우주의 통찰",
         sectionPsychology: "🔮 신비 심리학",
         sectionAncient: "✋ 고대의 지혜",
@@ -316,57 +333,46 @@ const translations = {
             linkUrl: "blog_posts/mbti-zodiac.html"
         },
         article10: {
-            title: "💸 2월 초 별자리 금전운 한 줄 요약",
-            meta: "2026년 2월 4일 | 우주의 통찰",
-            p1: "2월 초 금전 흐름을 빠르게 체크합니다. 큰 결정보다는 작은 지출 습관을 정돈하는 게 포인트예요.",
-            linkText: "📖 요약 읽기 (클릭) →",
+            title: "💸 2월 1–10일 별자리 금전운 요약",
+            meta: "2026년 2월 1–10일 | 우주의 통찰",
+            p1: "키워드, 포인트, 주의점을 한 줄씩 정리한 금전운 요약입니다. 2월 1–10일 흐름을 가볍게 체크해요.",
+            linkText: "📖 요약 보기 (클릭) →",
             linkUrl: "blog_posts/feb-money-zodiac.html"
         },
         article11: {
-            title: "🧭 이번 주 운세 키워드 7가지 (2월 9–15일)",
+            title: "🧭 별자리별 이번 주 운세 키워드 12 (2월 9–15일)",
             meta: "2026년 2월 9–15일 | 우주의 통찰",
-            p1: "다음 주 흐름을 위한 7가지 키워드와 실전 팁. 짧고 선명하게 정리했어요.",
-            linkText: "📖 이번 주 키워드 읽기 (클릭) →",
+            p1: "2월 9–15일 흐름을 별자리별로 압축했습니다. 이번 주는 정돈·확인·루틴이 핵심이에요.",
+            linkText: "📖 이번 주 키워드 보기 (클릭) →",
             linkUrl: "blog_posts/weekly-keywords.html"
         },
         article3: {
             title: "✋ 손금 101: 감정선",
-            meta: "2026년 1월 15일 | 고대 예술",
-            p1: "지배적인 손을 보세요. 새끼손가락 아래에서 집게손가락 쪽으로 이어지는 맨 위 가로선을 보세요? 그것이 바로 감정선입니다. 이것은 당신의 감정적인 스타일을 나타내며, 단지 당신의 로맨틱한 미래만을 나타내는 것은 아닙니다.",
-            h3_1: "길고 구부러져 있나요?",
-            p2: "만약 감정선이 집게손가락 쪽으로 구부러져 있다면, 당신은 타고난 로맨티스트입니다. 감정을 솔직하게 표현하고 깊이 사랑합니다.",
-            h3_2: "직선이고 짧나요?",
-            p3: "만약 중지 아래에서 끝난다면, 당신은 사랑에 있어서 더 실용적이거나 심지어 이기적일 수 있습니다. 당신은 자유가 필요합니다.",
-            h3_3: "끊어진 선인가요?",
-            p4: "걱정하지 마세요. 영원히 깨진 마음을 의미하는 것은 아닙니다. 종종 당신이 극복한 주요한 감정적 스트레스나 변화를 나타냅니다."
+            meta: "2026년 2월 6일 | 고대 예술",
+            p1: "길이, 굵기, 끝지점, 끊김, 섬 모양까지. 감정 리듬과 관계 패턴을 읽는 심화 가이드.",
+            linkText: "📖 감정선 가이드 보기 (클릭) →",
+            linkUrl: "blog_posts/palm-101-heart.html"
         },
         article4: {
             title: "🧠 손금 102: 두뇌선",
-            meta: "2026년 1월 31일 | 고대 예술",
-            p1: "감정선 바로 아래에 위치한 두뇌선은 당신의 지성, 사고방식, 정보 처리 능력을 나타냅니다. 머리가 얼마나 좋은지가 아니라, *어떻게* 생각하는지를 보여줍니다.",
-            h3_1: "길고 깊은 선?",
-            p2: "명확한 집중력과 사고력을 가졌습니다. 행동하기 전에 깊이 생각하는 전략가 타입입니다.",
-            h3_2: "아래로 휜 선?",
-            p3: "손목 쪽으로 휘어진다면 창의적이고 상상력이 풍부합니다. 직관을 중시하는 예술가나 작가 기질이 있습니다.",
-            h3_3: "일자로 뻗은 선?",
-            p4: "실용적이고 논리적인 분석가입니다. 감정보다는 사실을 중시하며 수학, 과학, 비즈니스 분야에 강점이 있습니다."
+            meta: "2026년 2월 6일 | 고대 예술",
+            p1: "길이, 각도, 갈라짐, 섬/끊김까지. 사고방식과 집중력을 해석하는 심화 가이드.",
+            linkText: "📖 두뇌선 가이드 보기 (클릭) →",
+            linkUrl: "blog_posts/palm-102-head.html"
         },
         article5: {
             title: "✋ 손금 103: 생명선",
-            meta: "2026년 1월 31일 | 고대 예술",
-            p1: "아마도 가장 유명한 손금인 생명선은 엄지손가락 밑부분을 따라 굽어 흐릅니다. 흔히 알려진 것과 달리, 생명선의 길이는 수명을 예측하는 것이 아니라 당신의 활력, 삶에 대한 열정, 그리고 주요한 삶의 변화를 나타냅니다.",
-            h3_1: "길고 깊은 선?",
-            p2: "뚜렷하고 깊은 생명선은 강한 활력, 좋은 건강, 그리고 튼튼한 체질을 의미합니다. 당신은 풍부한 에너지를 가지고 있으며 어려움으로부터 빠르게 회복할 수 있습니다.",
-            h3_2: "짧거나 희미한 선?",
-            p3: "짧거나 희미한 선이 짧은 수명을 의미하는 것은 아닙니다! 이는 신체 에너지가 적거나 건강과 웰빙에 더 주의를 기울일 필요가 있음을 시사할 수 있습니다. 또한 좀 더 정적인 생활 방식을 나타낼 수도 있습니다.",
-            h3_3: "끊어지거나 사슬 모양?",
-            p4: "생명선의 끊어짐이나 사슬 모양은 종종 중요한 변화, 스트레스 또는 건강상의 전환기를 의미합니다. 이는 반드시 부정적인 것은 아니지만, 당신이 적응하거나 어려움을 극복해야 했던 시점을 나타냅니다."
+            meta: "2026년 2월 6일 | 고대 예술",
+            p1: "길이, 굵기, 끊김, 이중선, 여행선까지. 체력 리듬과 굴곡을 읽는 심화 가이드.",
+            linkText: "📖 생명선 가이드 보기 (클릭) →",
+            linkUrl: "blog_posts/palm-103-life.html"
         },
         article6: {
-            title: "🐾 반려동물 별자리 백과: 우리 아이는 왜 그럴까?",
+            title: "🐾 반려동물 별자리 백과: 우리댕댕이가 왜 이럴까?",
             meta: "2026년 2월 2일 | 반려동물 점성",
-            p1: "우리 아이가 왜 그렇게 행동하는지 궁금했던 적 있나요? 사람처럼 반려동물도 별의 영향을 받아요. 별자리를 알면 성격의 비밀이 풀릴지도 몰라요.",
-            p2: "강아지와 고양이의 모든 별자리 성격을 다룬 완벽 가이드를 준비했습니다.",
+            p1: "<a class=\"pet-cta\" href=\"index.html#section-pet-tarot\">펫 타로 바로가기 →</a>",
+            p2: "우리 아이가 왜 그렇게 행동하는지 궁금했던 적 있나요? 사람처럼 반려동물도 별의 영향을 받아요. 별자리를 알면 성격의 비밀이 풀릴지도 몰라요.",
+            p3: "강아지와 고양이의 모든 별자리 성격을 다룬 완벽 가이드를 준비했습니다.",
             linkText: "📖 전체 백과사전 읽기 (클릭) →",
             linkUrl: "blog_posts/pet-zodiac.html"
         },
@@ -390,14 +396,17 @@ const translations = {
         },
         article8: {
             title: "✋ 손금 104: 운명선",
-            meta: "2026년 1월 31일 | 고대 예술",
-            p1: "운명선은 삶의 방향, 책임감, 전환점을 어떻게 받아들이는지를 보여주는 선입니다. 모든 사람에게 뚜렷하지는 않지만, 보인다면 의미가 큽니다.",
-            h3_1: "굵고 길게 이어진 선?",
-            p2: "자기 주도적이고 목적 의식이 분명한 타입입니다. 목표를 향해 꾸준히 나아가는 힘이 있어요.",
-            h3_2: "끊기거나 방향이 바뀌는 선?",
-            p3: "중요한 전환점이나 진로 변화가 있었음을 암시합니다. 변화는 불안이 아니라 성장의 신호일 수 있어요.",
-            h3_3: "희미하거나 짧은 선?",
-            p4: "자유롭게 흐름을 택하는 성향일 수 있습니다. 고정된 길보다는 다양한 경험에서 의미를 찾는 타입이에요."
+            meta: "2026년 2월 6일 | 고대 예술",
+            p1: "시작점, 굵기, 끊김, 방향 변화까지. 목표와 커리어 흐름을 읽는 심화 가이드.",
+            linkText: "📖 운명선 가이드 보기 (클릭) →",
+            linkUrl: "blog_posts/palm-104-fate.html"
+        },
+        article13: {
+            title: "☀️ 손금 105: 태양선",
+            meta: "2026년 2월 6일 | 고대 예술",
+            p1: "굵기, 분기, 방해선까지. 명예와 성과 흐름을 읽는 태양선 가이드.",
+            linkText: "📖 태양선 가이드 보기 (클릭) →",
+            linkUrl: "blog_posts/palm-105-sun.html"
         },
         article9: {
             title: "✋ 손바닥 안의 소우주: 별의 언덕과 운명의 지도",
@@ -1361,6 +1370,18 @@ window.updateBlogText = function(lang) {
     if (blogHeaderTitle) blogHeaderTitle.textContent = t.blogHeaderTitle;
     const blogHeaderSubtitle = document.getElementById('blog-header-subtitle');
     if (blogHeaderSubtitle) blogHeaderSubtitle.textContent = t.blogHeaderSubtitle;
+    const quickLabel = document.getElementById('quicklinks-label');
+    if (quickLabel) quickLabel.textContent = t.blogQuickLabel;
+    const quickWeekly = document.getElementById('quicklink-weekly');
+    if (quickWeekly) {
+        quickWeekly.textContent = t.blogQuickWeeklyText;
+        if (t.blogQuickWeeklyUrl) quickWeekly.setAttribute('href', t.blogQuickWeeklyUrl);
+    }
+    const quickMoney = document.getElementById('quicklink-money');
+    if (quickMoney) {
+        quickMoney.textContent = t.blogQuickMoneyText;
+        if (t.blogQuickMoneyUrl) quickMoney.setAttribute('href', t.blogQuickMoneyUrl);
+    }
     const sectionInsight = document.getElementById('section-title-insight');
     if (sectionInsight) sectionInsight.textContent = t.sectionInsight;
     const sectionPsychology = document.getElementById('section-title-psychology');
@@ -1405,6 +1426,7 @@ window.updateBlogText = function(lang) {
     updateArticle('article7', t.article7);
     updateArticle('article8', t.article8);
     updateArticle('article9', t.article9);
+    updateArticle('article13', t.article13);
     updateArticle('article10', t.article10);
     updateArticle('article11', t.article11);
     updateArticle('article12', t.article12);
@@ -1493,6 +1515,11 @@ window.updateGlobalText = function(lang) {
     const ptLuckyLabel = document.getElementById('tarot-lucky-label');
     if (ptTitle) ptTitle.textContent = t.petTarotTitle;
     if (ptSubtitle) ptSubtitle.textContent = t.petTarotSubtitle;
+    const ptLink = document.getElementById('pet-tarot-link');
+    if (ptLink) {
+        ptLink.textContent = t.petTarotLinkText;
+        if (t.petTarotLinkUrl) ptLink.setAttribute('href', t.petTarotLinkUrl);
+    }
     if (ptBtn) ptBtn.textContent = t.btnDrawTarot;
     if (ptShareBtn) ptShareBtn.textContent = t.btnShareTarot;
     if (ptCopyBtn) ptCopyBtn.textContent = t.btnShareCopy;
@@ -1513,6 +1540,9 @@ window.updateGlobalText = function(lang) {
     if (document.getElementById('zodiac-grid')) { ZodiacManager.updateUI(); }
     if (document.getElementById('sign-1')) { ChemistryManager.updateText(); }
     updateBlogText(lang);
+    if (document.body && document.body.classList.contains('blog-page')) {
+        document.body.classList.add('lang-ready');
+    }
 }
 
 window.showSection = function(sectionId) {
@@ -1558,8 +1588,17 @@ document.addEventListener('DOMContentLoaded', () => {
     updateGlobalText(lang);
     updateQuote(lang);
     
-    // Initialize View (Default to Fortune)
-    window.showSection('fortune');
+    // Initialize View (Default to Fortune or deep-link section)
+    const params = new URLSearchParams(window.location.search);
+    const sectionParam = params.get('section');
+    const hashSection = window.location.hash.replace('#', '');
+    if (sectionParam) {
+        window.showSection(sectionParam);
+    } else if (hashSection) {
+        window.showSection(hashSection.replace('section-', ''));
+    } else {
+        window.showSection('fortune');
+    }
 
     const globalThemeToggle = document.getElementById('theme-toggle');
     const globalLangBtn = document.getElementById('lang-btn');

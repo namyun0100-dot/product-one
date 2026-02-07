@@ -64,6 +64,51 @@
     <meta name="twitter:description" content="Explore deep cosmic wisdom, astrology insights, and spiritual guides. Your journey to understanding the stars starts here.">
     <meta name="twitter:image" content="https://cosmicpaw.net/assets/images/2026-astrology-trends.jpg">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Blog", "name": "Cosmic Blog", "url": "https://cosmicpaw.net/blog.html", "inLanguage": "en", "publisher": {"@type": "Organization", "name": "Cosmic Fortune", "url": "https://cosmicpaw.net/", "logo": {"@type": "ImageObject", "url": "https://cosmicpaw.net/favicon.svg"}}}</script>
+    <style>
+      body.blog-page { opacity: 0; }
+      body.blog-page.lang-ready { opacity: 1; transition: opacity 0.2s ease; }
+      .blog-quicklinks {
+        margin-top: 16px;
+        background: rgba(0, 191, 255, 0.08);
+        border: 1px solid rgba(0, 191, 255, 0.35);
+        border-radius: 12px;
+        padding: 12px 16px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .blog-quicklinks span {
+        color: var(--neon-blue);
+        font-weight: 600;
+      }
+      .blog-quicklinks a {
+        color: var(--neon-purple);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .pet-cta {
+        display: inline-block;
+        margin-bottom: 6px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #ff5f7a, #ff3d6e);
+        border: 1px solid rgba(255, 95, 122, 0.9);
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.95rem;
+        box-shadow: 0 6px 14px rgba(255, 61, 110, 0.28);
+        transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+      }
+      .pet-cta:hover {
+        transform: translateY(-1px);
+        background: linear-gradient(135deg, #ff6b83, #ff4a79);
+        box-shadow: 0 8px 18px rgba(255, 61, 110, 0.36);
+      }
+    </style>
 </head>
 <body data-theme="dark" class="blog-page">
     <header id="main-header">
@@ -92,38 +137,17 @@
         <header class="blog-header">
             <h1 class="blog-title" id="blog-header-title">Cosmic Wisdom</h1>
             <p class="blog-subtitle" id="blog-header-subtitle">Universe, Stars, and You. Exploring the hidden connections.</p>
+            <div class="blog-quicklinks">
+                <span id="quicklinks-label">바로가기</span>
+                <a id="quicklink-weekly" href="blog_posts/weekly-keywords.html">이번 주 키워드</a>
+                <a id="quicklink-money" href="blog_posts/feb-money-zodiac.html">별님 금전운</a>
+            </div>
         </header>
 
         <!-- Section 1: Cosmic Insight -->
         <section class="blog-section">
             <h2 class="section-title" id="section-title-insight">🌌 Cosmic Insight</h2>
 
-            <!-- New Article: February Money Flow -->
-            <article class="article-card">
-                <h2 class="article-title"><a href="blog_posts/feb-money-zodiac.html" id="article10-title" style="text-decoration: none; color: inherit;">💸 Early February Money Outlook by Zodiac (One-Line Summary)</a></h2>
-                <div class="article-meta" id="article10-meta">February 4, 2026 | Cosmic Insight</div>
-                <img class="article-thumb" src="assets/images/2026-astrology-trends.jpg" alt="February Money Zodiac">
-                <div class="article-content" id="article10-content">
-                    <p>A quick money-flow check for early February. Keep spending light and focus on small habits that stabilize your week.</p>
-                    <div style="margin-top: 15px;">
-                        <a href="blog_posts/feb-money-zodiac.html" style="color: var(--neon-blue); text-decoration: none; font-weight: bold; font-size: 1.1rem;">📖 Read Summary (Click Here) →</a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- New Article: Weekly Keywords -->
-            <article class="article-card">
-                <h2 class="article-title"><a href="blog_posts/weekly-keywords.html" id="article11-title" style="text-decoration: none; color: inherit;">🧭 Weekly Fortune Keywords (Feb 9–15)</a></h2>
-                <div class="article-meta" id="article11-meta">February 9–15, 2026 | Cosmic Insight</div>
-                <img class="article-thumb" src="assets/images/tarot-03.jpg" alt="Weekly Fortune Keywords">
-                <div class="article-content" id="article11-content">
-                    <p>Seven keywords and practical actions for next week. Short, clear, and easy to apply.</p>
-                    <div style="margin-top: 15px;">
-                        <a href="blog_posts/weekly-keywords.html" style="color: var(--neon-blue); text-decoration: none; font-weight: bold; font-size: 1.1rem;">📖 Read Weekly Keywords (Click Here) →</a>
-                    </div>
-                </div>
-            </article>
-            
             <!-- Article 1 -->
             <article class="article-card">
                 <h2 class="article-title" id="article1-title">🌟 2026: The Year of Spiritual Awakening?</h2>
@@ -137,6 +161,32 @@
                     
                     <h3 id="article1-h3-2">Key Dates to Watch</h3>
                     <p>Keep an eye on the Solar Eclipse in August. It will be a powerful time for setting intentions related to your career and public image. Don't be afraid to dream big.</p>
+                </div>
+            </article>
+
+            <!-- New Article: Weekly Keywords -->
+            <article class="article-card">
+                <h2 class="article-title"><a href="blog_posts/weekly-keywords.html" id="article11-title" style="text-decoration: none; color: inherit;">🧭 Weekly Zodiac Keywords (Feb 9–15)</a></h2>
+                <div class="article-meta" id="article11-meta">February 9–15, 2026 | Cosmic Insight</div>
+                <img class="article-thumb" src="assets/images/tarot-03.jpg" alt="Weekly Fortune Keywords">
+                <div class="article-content" id="article11-content">
+                    <p>12 signs in one view: keyword, action, and caution for each. Dense and easy to apply.</p>
+                    <div style="margin-top: 15px;">
+                        <a href="blog_posts/weekly-keywords.html" style="color: var(--neon-blue); text-decoration: none; font-weight: bold; font-size: 1.1rem;">📖 Read Weekly Keywords (Click Here) →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- New Article: February Money Flow -->
+            <article class="article-card">
+                <h2 class="article-title"><a href="blog_posts/feb-money-zodiac.html" id="article10-title" style="text-decoration: none; color: inherit;">💸 Feb 1–10 Money Outlook by Zodiac</a></h2>
+                <div class="article-meta" id="article10-meta">Feb 1–10, 2026 | Cosmic Insight</div>
+                <img class="article-thumb" src="assets/images/2026-astrology-trends.jpg" alt="February Money Zodiac">
+                <div class="article-content" id="article10-content">
+                    <p>Keywords, action points, and cautions for each sign. A compact money-flow check for Feb 1–10.</p>
+                    <div style="margin-top: 15px;">
+                        <a href="blog_posts/feb-money-zodiac.html" style="color: var(--neon-blue); text-decoration: none; font-weight: bold; font-size: 1.1rem;">📖 Read Summary (Click Here) →</a>
+                    </div>
                 </div>
             </article>
         </section>
@@ -158,6 +208,21 @@
                 </div>
             </article>
 
+            <!-- Article 6 (Updated) -->
+            <article class="article-card">
+                <h2 class="article-title"><a href="blog_posts/pet-zodiac.html" id="article6-title" style="text-decoration: none; color: inherit;">🐾 Pet Zodiac Encyclopedia: Why is My Pet Like This?</a></h2>
+                <div class="article-meta" id="article6-meta">January 30, 2026 | Pet Astrology</div>
+                <img class="article-thumb" src="assets/images/pet-zodiac-thumb.jpg" alt="Pet Zodiac Illustration">
+                <div class="article-content" id="article6-content">
+                    <p><a class="pet-cta" href="index.html#section-pet-tarot">펫 타로 바로가기 →</a></p>
+                    <p>Have you ever wondered why your furry friend acts the way they do? Just like humans, pets are influenced by the stars! Knowing their zodiac sign can unlock the secrets to their unique personality.</p>
+                    <p>We have prepared a comprehensive guide covering all zodiac signs for your dogs and cats.</p>
+                    <div style="margin-top: 15px;">
+                        <a href="blog_posts/pet-zodiac.html" style="color: var(--neon-blue); text-decoration: none; font-weight: bold; font-size: 1.1rem;">📖 Read Full Encyclopedia (Click Here) →</a>
+                    </div>
+                </div>
+            </article>
+
             <!-- Article 2 (Updated) -->
             <article class="article-card">
                 <h2 class="article-title"><a href="blog_posts/mbti-zodiac.html" id="article2-title" style="text-decoration: none; color: inherit;">🧠 MBTI & The 4 Elements: Are They Connected?</a></h2>
@@ -167,20 +232,6 @@
                     <p>We love MBTI. We love Zodiac signs. But did you know they share a common root in ancient elemental theory? Let's break down the 4 Elements (Fire, Earth, Air, Water) and how they map to modern personality types.</p>
                     <div style="margin-top: 15px;">
                         <a href="blog_posts/mbti-zodiac.html" style="color: var(--neon-blue); text-decoration: none; font-weight: bold; font-size: 1.1rem;">📖 Read Full Analysis (Click Here) →</a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Article 6 (Updated) -->
-            <article class="article-card">
-                <h2 class="article-title"><a href="blog_posts/pet-zodiac.html" id="article6-title" style="text-decoration: none; color: inherit;">🐾 Pet Zodiac Encyclopedia: Why is My Pet Like This?</a></h2>
-                <div class="article-meta" id="article6-meta">January 30, 2026 | Pet Astrology</div>
-                <img class="article-thumb" src="assets/images/pet-zodiac-thumb.jpg" alt="Pet Zodiac Illustration">
-                <div class="article-content" id="article6-content">
-                    <p>Have you ever wondered why your furry friend acts the way they do? Just like humans, pets are influenced by the stars! Knowing their zodiac sign can unlock the secrets to their unique personality.</p>
-                    <p>We have prepared a comprehensive guide covering all zodiac signs for your dogs and cats.</p>
-                    <div style="margin-top: 15px;">
-                        <a href="blog_posts/pet-zodiac.html" style="color: var(--neon-blue); text-decoration: none; font-weight: bold; font-size: 1.1rem;">📖 Read Full Encyclopedia (Click Here) →</a>
                     </div>
                 </div>
             </article>
@@ -206,64 +257,61 @@
 
             <!-- Article 3 -->
             <article class="article-card">
-                <h2 class="article-title" id="article3-title">✋ Palmistry 101: The Heart Line</h2>
-                <div class="article-meta" id="article3-meta">January 15, 2026 | Ancient Arts</div>
+                <h2 class="article-title"><a href="blog_posts/palm-101-heart.html" id="article3-title" style="text-decoration: none; color: inherit;">✋ Palmistry 101: The Heart Line</a></h2>
+                <div class="article-meta" id="article3-meta">February 6, 2026 | Ancient Arts</div>
                 <div class="article-content" id="article3-content">
-                    <p>Look at your dominant hand. See the top horizontal line running from under your pinky finger towards your index finger? That's your Heart Line. It reveals your emotional style, not just your romantic future.</p>
-
-                    <h3 id="article3-h3-1">Long & Curved?</h3>
-                    <p>If it curves up towards your index finger, you are a romantic at heart. You express feelings openly and love deeply.</p>
-
-                    <h3 id="article3-h3-2">Straight & Short?</h3>
-                    <p>If it ends under the middle finger, you might be more practical or even a bit selfish in love. You need your freedom.</p>
-                    
-                    <h3 id="article3-h3-3">Broken Line?</h3>
-                    <p>Don't worry, it doesn't mean a broken heart forever. It often indicates a major emotional stress or change that you have overcome.</p>
+                    <p>Length, depth, end point, breaks, and islands. A focused guide to emotional rhythm and relationship patterns.</p>
+                    <div style="margin-top: 15px;">
+                        <a href="blog_posts/palm-101-heart.html" style="color: var(--neon-blue); text-decoration: none; font-weight: bold; font-size: 1.1rem;">📖 Read Heart Line Guide (Click Here) →</a>
+                    </div>
                 </div>
             </article>
 
             <!-- Article 4 (New) -->
             <article class="article-card">
-                <h2 class="article-title" id="article4-title">🧠 Palmistry 102: The Head Line</h2>
-                <div class="article-meta" id="article4-meta">January 31, 2026 | Ancient Arts</div>
+                <h2 class="article-title"><a href="blog_posts/palm-102-head.html" id="article4-title" style="text-decoration: none; color: inherit;">🧠 Palmistry 102: The Head Line</a></h2>
+                <div class="article-meta" id="article4-meta">February 6, 2026 | Ancient Arts</div>
                 <div class="article-content" id="article4-content">
-                    <p>Located just below the Heart Line, the Head Line represents your intellect, mentality, and how you process information. It's not about how smart you are, but *how* you think.</p>
-
-                    <h3 id="article4-h3-1">Long & Deep?</h3>
-                    <p>You have a clear focus and good concentration. You tend to think things through thoroughly before acting. A true strategist.</p>
-
-                    <h3 id="article4-h3-2">Curved Downwards?</h3>
-                    <p>A curve towards the wrist indicates a creative and imaginative mind. You might be an artist, writer, or dreamer who relies on intuition.</p>
-                    
-                    <h3 id="article4-h3-3">Straight Across?</h3>
-                    <p>A straight line suggests a practical, logical, and analytical approach. You prefer facts over feelings and excel in math, science, or business.</p>
+                    <p>Length, angle, forks, breaks, and islands. A deep dive into thinking style and concentration.</p>
+                    <div style="margin-top: 15px;">
+                        <a href="blog_posts/palm-102-head.html" style="color: var(--neon-blue); text-decoration: none; font-weight: bold; font-size: 1.1rem;">📖 Read Head Line Guide (Click Here) →</a>
+                    </div>
                 </div>
             </article>
 
             <!-- Article 5 (New) -->
             <article class="article-card">
-                <h2 class="article-title" id="article5-title">✋ Palmistry 103: The Life Line</h2>
-                <div class="article-meta" id="article5-meta">January 31, 2026 | Ancient Arts</div>
+                <h2 class="article-title"><a href="blog_posts/palm-103-life.html" id="article5-title" style="text-decoration: none; color: inherit;">✋ Palmistry 103: The Life Line</a></h2>
+                <div class="article-meta" id="article5-meta">February 6, 2026 | Ancient Arts</div>
                 <div class="article-content" id="article5-content">
-                    <p>Perhaps the most famous of all palm lines, the Life Line curves around the base of your thumb. Despite popular belief, its length doesn't predict how long you'll live, but rather your vitality, enthusiasm for life, and major life changes.</p>
-
-                    <h3 id="article5-h3-1">Long & Deep?</h3>
-                    <p>A prominent, well-defined Life Line indicates strong vitality, good health, and a robust constitution. You likely have abundant energy and can bounce back quickly from challenges.</p>
-
-                    <h3 id="article5-h3-2">Short or Faint?</h3>
-                    <p>A shorter or fainter line doesn't mean a short life! It can suggest less physical energy or a need to be more mindful of your health and well-being. It might also indicate a more sedentary lifestyle.</p>
-                    
-                    <h3 id="article5-h3-3">Broken or Chained?</h3>
-                    <p>Breaks or chains in the Life Line often signify periods of significant change, stress, or health transitions. These aren't necessarily negative, but mark points where you've had to adapt or overcome difficulties.</p>
+                    <p>Length, breaks, double lines, and travel branches. A practical guide to vitality and life rhythm.</p>
+                    <div style="margin-top: 15px;">
+                        <a href="blog_posts/palm-103-life.html" style="color: var(--neon-blue); text-decoration: none; font-weight: bold; font-size: 1.1rem;">📖 Read Life Line Guide (Click Here) →</a>
+                    </div>
                 </div>
             </article>
 
             <!-- Article 8 (New) -->
             <article class="article-card">
-                <h2 class="article-title" id="article8-title">✋ Palmistry 104: The Fate Line</h2>
-                <div class="article-meta" id="article8-meta">January 31, 2026 | Ancient Arts</div>
+                <h2 class="article-title"><a href="blog_posts/palm-104-fate.html" id="article8-title" style="text-decoration: none; color: inherit;">✋ Palmistry 104: The Fate Line</a></h2>
+                <div class="article-meta" id="article8-meta">February 6, 2026 | Ancient Arts</div>
                 <div class="article-content" id="article8-content">
-                    <p>The Fate Line explores purpose, direction, and how you respond to turning points.</p>
+                    <p>Start point, depth, breaks, and shifts. A focused guide to career flow and responsibility patterns.</p>
+                    <div style="margin-top: 15px;">
+                        <a href="blog_posts/palm-104-fate.html" style="color: var(--neon-blue); text-decoration: none; font-weight: bold; font-size: 1.1rem;">📖 Read Fate Line Guide (Click Here) →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 13 (New) -->
+            <article class="article-card">
+                <h2 class="article-title"><a href="blog_posts/palm-105-sun.html" id="article13-title" style="text-decoration: none; color: inherit;">☀️ Palmistry 105: The Sun Line</a></h2>
+                <div class="article-meta" id="article13-meta">February 6, 2026 | Ancient Arts</div>
+                <div class="article-content" id="article13-content">
+                    <p>Thickness, branches, and interference lines. A clear guide to recognition and results.</p>
+                    <div style="margin-top: 15px;">
+                        <a href="blog_posts/palm-105-sun.html" style="color: var(--neon-blue); text-decoration: none; font-weight: bold; font-size: 1.1rem;">📖 Read Sun Line Guide (Click Here) →</a>
+                    </div>
                 </div>
             </article>
         </section>
