@@ -205,6 +205,20 @@ const translations = {
             linkText: "📖 Read Compatibility (Click Here) →",
             linkUrl: "blog_posts/mbti-zodiac-compat-en.html"
         },
+        article14: {
+            title: "💞 How to Read Compatibility: 7 Myths and Truths",
+            meta: "February 7, 2026 | Mystic Psychology",
+            p1: "Compatibility is not a verdict. It is a map of rhythm and style. Seven myths and the practical truths behind them.",
+            linkText: "📖 Read Compatibility Guide (Click Here) →",
+            linkUrl: "blog_posts/compatibility-faq-en.html"
+        },
+        article15: {
+            title: "💸 Feb 11–20 Money Outlook by Zodiac",
+            meta: "Feb 11–20, 2026 | Cosmic Insight",
+            p1: "Mid-February favors cleanup and clarity. One-line money flow hints for Feb 11–20.",
+            linkText: "📖 Read Summary (Click Here) →",
+            linkUrl: "blog_posts/feb-money-zodiac-11-20-en.html"
+        },
         article7: {
             title: "🐾 Pet Zodiac Encyclopedia (Part 2): Deeper into the Stars",
             meta: "January 31, 2026 | Pet Astrology",
@@ -382,6 +396,20 @@ const translations = {
             p1: "MBTI 4기질과 별자리 4원소를 겹쳐보면 궁합의 논리가 보입니다. 비슷한 리듬은 더 편하게 느껴져요.",
             linkText: "📖 궁합 읽기 (클릭) →",
             linkUrl: "blog_posts/mbti-zodiac-compat.html"
+        },
+        article14: {
+            title: "💞 궁합은 어떻게 읽어야 할까? 오해와 진실 7가지",
+            meta: "2026년 2월 7일 | 신비 심리학",
+            p1: "궁합은 관계의 정답이 아니라 리듬을 이해하는 지도에 가깝습니다. 과몰입을 줄이는 7가지 오해를 정리했어요.",
+            linkText: "📖 궁합 해석법 읽기 (클릭) →",
+            linkUrl: "blog_posts/compatibility-faq.html"
+        },
+        article15: {
+            title: "💸 2월 11–20일 별자리 금전운 10일 요약",
+            meta: "2026년 2월 10일 | Cosmic Insight",
+            p1: "2월 중순은 정리와 확인의 흐름. 11–20일 금전운을 한 줄로 정리했어요.",
+            linkText: "📖 10일 요약 읽기 (클릭) →",
+            linkUrl: "blog_posts/feb-money-zodiac-11-20.html"
         },
         article7: {
             title: "🐾 반려동물 별자리 백과 (2): 더 깊은 별의 이야기",
@@ -1430,6 +1458,8 @@ window.updateBlogText = function(lang) {
     updateArticle('article10', t.article10);
     updateArticle('article11', t.article11);
     updateArticle('article12', t.article12);
+    updateArticle('article14', t.article14);
+    updateArticle('article15', t.article15);
     const backHomeLink = document.getElementById('back-home-link');
     if (backHomeLink) backHomeLink.textContent = t.backHomeLink;
 }

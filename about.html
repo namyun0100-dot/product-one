@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+      (function() {
+        try {
+          var theme = localStorage.getItem('theme') || 'dark';
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {}
+      })();
+    </script>
+    <style>
+      html { background: #1a202c; color: #cbd5e0; }
+      html[data-theme="light"] { background: #e2e8f0; color: #2d3748; }
+    </style>
+    <meta name="geo.region" content="KR">
+    <meta name="geo.placename" content="Seoul">
+    <meta name="geo.position" content="37.5665;126.9780">
+    <meta name="ICBM" content="37.5665, 126.9780">
+    <title>About Cosmic Fortune</title>
+    <meta name="description" content="Cosmic Fortune 소개 페이지입니다. 우주 운세, 별자리, 궁합, 펫 타로 콘텐츠의 방향과 운영 원칙을 안내합니다.">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon.ico" sizes="any">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Noto+Sans+KR:wght@300;400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="style.v4.css?v=final_fix_v9" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.v4.css?v=final_fix_v9"></noscript>
+    <style>
+        body { padding: 2rem 1.5rem; max-width: 880px; margin: 0 auto; font-family: 'Noto Sans KR', sans-serif; line-height: 1.8; }
+        h1 { color: var(--neon-blue); margin-bottom: 0.6rem; }
+        h2 { color: var(--neon-purple); margin-top: 2rem; margin-bottom: 0.6rem; }
+        p { margin-bottom: 0.9rem; color: #d1d5db; }
+        .section-note { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 14px 16px; }
+        .back-link { display: inline-block; margin-bottom: 1.5rem; color: var(--neon-blue); text-decoration: none; font-weight: 700; }
+    </style>
+
+    <link rel="canonical" href="https://cosmicpaw.net/about.html">
+    <meta property="og:title" content="About Cosmic Fortune">
+    <meta property="og:description" content="Cosmic Fortune 소개 페이지입니다. 콘텐츠 방향과 운영 원칙을 안내합니다.">
+    <meta property="og:url" content="https://cosmicpaw.net/about.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Cosmic Fortune">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:image" content="https://cosmicpaw.net/favicon.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Cosmic Fortune">
+    <meta name="twitter:description" content="Cosmic Fortune 소개 페이지입니다. 콘텐츠 방향과 운영 원칙을 안내합니다.">
+    <meta name="twitter:image" content="https://cosmicpaw.net/favicon.svg">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "About Cosmic Fortune", "url": "https://cosmicpaw.net/about.html", "inLanguage": "ko"}</script>
+</head>
+<body data-theme="dark">
+    <a href="index.html" class="back-link">← 홈으로 돌아가기</a>
+
+    <h1>Cosmic Fortune 소개</h1>
+    <p>Cosmic Fortune는 우주 운세, 별자리, 궁합, 펫 타로 등 <strong>엔터테인먼트 기반의 점성 콘텐츠</strong>를 제공합니다. 일상에 작은 재미와 리듬을 더하기 위한 가이드로 활용해 주세요.</p>
+
+    <h2>콘텐츠 방향</h2>
+    <div class="section-note">
+        <p>콘텐츠는 심리적 통찰과 자기 성찰을 돕는 방향으로 구성됩니다. 과장된 확정 표현이나 전문 조언처럼 보이는 문구는 지양합니다.</p>
+    </div>
+
+    <h2>운영 원칙</h2>
+    <p>모든 콘텐츠는 재미와 영감을 위한 정보이며, 의료·법률·재무 등 전문 분야의 조언을 대체하지 않습니다.</p>
+
+    <h2>EN Version</h2>
+    <p>Cosmic Fortune provides entertainment-focused astrology content, including daily fortunes, zodiac insights, compatibility, and pet tarot. Use it as a light guide to add rhythm and inspiration to everyday life.</p>
+    <div class="section-note">
+        <p>Our content is designed to encourage reflection and curiosity. We avoid exaggerated claims or statements that sound like professional advice.</p>
+    </div>
+    <p>All content is for entertainment only and does not replace professional medical, legal, or financial guidance.</p>
+</body>
+</html>
