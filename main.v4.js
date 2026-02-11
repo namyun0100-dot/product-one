@@ -162,8 +162,8 @@ const translations = {
             linkUrl: "blog_posts/feb-money-zodiac-en.html"
         },
         article11: {
-            title: "🧭 Weekly Zodiac Keywords (Feb 9–15)",
-            meta: "February 9–15, 2026 | Cosmic Insight",
+            title: "🧭 Weekly Zodiac Keywords (Feb 16–22)",
+            meta: "February 16–22, 2026 | Cosmic Insight",
             p1: "12 signs in one view: keyword, action, and caution for each. Dense and easy to apply.",
             linkText: "📖 Read Weekly Keywords (Click Here) →",
             linkUrl: "blog_posts/weekly-keywords-en.html"
@@ -204,6 +204,13 @@ const translations = {
             p1: "Overlay MBTI temperaments with the four zodiac elements and the compatibility logic becomes clear. Similar rhythms tend to feel effortless.",
             linkText: "📖 Read Compatibility (Click Here) →",
             linkUrl: "blog_posts/mbti-zodiac-compat-en.html"
+        },
+        article16: {
+            title: "🧩 Why Connect MBTI with the 4 Zodiac Elements?",
+            meta: "February 11, 2026 | Mystic Psychology",
+            p1: "A clear explainer on why MBTI temperaments and zodiac elements can be read as one symbolic rhythm map.",
+            linkText: "📖 Read the Explainer (Click Here) →",
+            linkUrl: "blog_posts/mbti-zodiac-elements-en.html"
         },
         article14: {
             title: "💞 How to Read Compatibility: 7 Myths and Truths",
@@ -354,9 +361,9 @@ const translations = {
             linkUrl: "blog_posts/feb-money-zodiac.html"
         },
         article11: {
-            title: "🧭 별자리별 이번 주 운세 키워드 12 (2월 9–15일)",
-            meta: "2026년 2월 9–15일 | 우주의 통찰",
-            p1: "2월 9–15일 흐름을 별자리별로 압축했습니다. 이번 주는 정돈·확인·루틴이 핵심이에요.",
+            title: "🧭 별자리별 이번 주 운세 키워드 12 (2월 16–22일)",
+            meta: "2026년 2월 16–22일 | 우주의 통찰",
+            p1: "2월 16–22일 흐름을 별자리별로 압축했습니다. 이번 주는 속도조절·경계·회복이 핵심이에요.",
             linkText: "📖 이번 주 키워드 보기 (클릭) →",
             linkUrl: "blog_posts/weekly-keywords.html"
         },
@@ -396,6 +403,13 @@ const translations = {
             p1: "MBTI 4기질과 별자리 4원소를 겹쳐보면 궁합의 논리가 보입니다. 비슷한 리듬은 더 편하게 느껴져요.",
             linkText: "📖 궁합 읽기 (클릭) →",
             linkUrl: "blog_posts/mbti-zodiac-compat.html"
+        },
+        article16: {
+            title: "🧩 MBTI와 별자리 4원소, 왜 연결해서 볼까?",
+            meta: "2026년 2월 11일 | 신비 심리학",
+            p1: "MBTI 4기질과 4원소를 왜 연결해서 보는지, 상징과 리듬의 언어로 쉽게 풀어낸 설명서입니다.",
+            linkText: "📖 설명 글 읽기 (클릭) →",
+            linkUrl: "blog_posts/mbti-zodiac-elements.html"
         },
         article14: {
             title: "💞 궁합은 어떻게 읽어야 할까? 오해와 진실 7가지",
@@ -1458,6 +1472,7 @@ window.updateBlogText = function(lang) {
     updateArticle('article10', t.article10);
     updateArticle('article11', t.article11);
     updateArticle('article12', t.article12);
+    updateArticle('article16', t.article16);
     updateArticle('article14', t.article14);
     updateArticle('article15', t.article15);
     const backHomeLink = document.getElementById('back-home-link');
