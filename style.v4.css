@@ -188,6 +188,34 @@ section > p {
     font-family: var(--font-kr);
 }
 
+.blog-post-content .summary-box {
+    background: rgba(0, 191, 255, 0.08);
+    border: 1px solid rgba(0, 191, 255, 0.2);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin: 1rem 0 1.8rem 0;
+}
+
+.blog-post-content .summary-box p {
+    margin: 0;
+    color: #e5e7eb;
+}
+
+.blog-post-content .related-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.6rem 0;
+}
+
+.blog-post-content .related-links li {
+    margin-bottom: 8px;
+}
+
+.blog-post-content .related-links a {
+    color: var(--neon-blue);
+    text-decoration: none;
+}
+
 /* --- Cosmic Oracle (Daily Fortune) --- */
 cosmic-oracle {
     display: block;

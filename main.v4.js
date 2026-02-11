@@ -140,16 +140,16 @@ const translations = {
         sectionAncient: "✋ Ancient Wisdom",
         article1: {
             title: "🌟 2026: The Year of Spiritual Awakening?",
-            meta: "January 31, 2026 | Astrology Trend",
+            meta: "Jan 31, 2026 | Astrology Trend",
             p1: "Welcome to 2026. As Pluto settles deeply into Aquarius, we are witnessing a massive shift in how humanity connects. It's no longer just about technology; it's about 'Spiritual Technology.'",
             h3_1: "Why 2026 is Special",
             p2: "This year, the alignment of Jupiter and Neptune suggests a surge in collective empathy. You might find yourself feeling more connected to nature, the stars, and even strangers. It's not a coincidence; it's the cosmic weather.",
             h3_2: "Key Dates to Watch",
-            p3: "Keep an eye on the Solar Eclipse in August. It will be a powerful time for setting intentions related to your career and public image. Don't be afraid to dream big."
+            p3: "Keep an eye on the Solar Eclipse in Aug. It will be a powerful time for setting intentions related to your career and public image. Don't be afraid to dream big."
         },
         article2: {
             title: "🧠 MBTI & The 4 Elements: Are They Connected?",
-            meta: "January 28, 2026 | Psychology & Stars",
+            meta: "Jan 28, 2026 | Psychology & Stars",
             p1: "We love MBTI. We love Zodiac signs. But did you know they share a common root in ancient elemental theory? Let's break down the 4 Elements (Fire, Earth, Air, Water) and how they map to modern personality types.",
             linkText: "📖 Read Full Analysis (Click Here) →",
             linkUrl: "blog_posts/mbti-zodiac-en.html"
@@ -163,35 +163,35 @@ const translations = {
         },
         article11: {
             title: "🧭 Weekly Zodiac Keywords (Feb 16–22)",
-            meta: "February 16–22, 2026 | Cosmic Insight",
+            meta: "Feb 16–22, 2026 | Cosmic Insight",
             p1: "12 signs in one view: keyword, action, and caution for each. Dense and easy to apply.",
             linkText: "📖 Read Weekly Keywords (Click Here) →",
             linkUrl: "blog_posts/weekly-keywords-en.html"
         },
         article3: {
             title: "✋ Palmistry 101: The Heart Line",
-            meta: "February 6, 2026 | Ancient Arts",
+            meta: "Feb 6, 2026 | Ancient Arts",
             p1: "Length, depth, end point, breaks, and islands. A focused guide to emotional rhythm and relationship patterns.",
             linkText: "📖 Read Heart Line Guide (Click Here) →",
             linkUrl: "blog_posts/palm-101-heart-en.html"
         },
         article4: {
             title: "🧠 Palmistry 102: The Head Line",
-            meta: "February 6, 2026 | Ancient Arts",
+            meta: "Feb 6, 2026 | Ancient Arts",
             p1: "Length, angle, forks, breaks, and islands. A deep dive into thinking style and concentration.",
             linkText: "📖 Read Head Line Guide (Click Here) →",
             linkUrl: "blog_posts/palm-102-head-en.html"
         },
         article5: {
             title: "✋ Palmistry 103: The Life Line",
-            meta: "February 6, 2026 | Ancient Arts",
+            meta: "Feb 6, 2026 | Ancient Arts",
             p1: "Length, breaks, double lines, and travel branches. A practical guide to vitality and life rhythm.",
             linkText: "📖 Read Life Line Guide (Click Here) →",
             linkUrl: "blog_posts/palm-103-life-en.html"
         },
         article6: {
             title: "🐾 Pet Zodiac Encyclopedia: Why is My Pet Like This?",
-            meta: "January 30, 2026 | Pet Astrology",
+            meta: "Jan 30, 2026 | Pet Astrology",
             p1: "<a class=\"pet-cta\" href=\"index.html#section-pet-tarot\">Go to Pet Tarot →</a>",
             p2: "Have you ever wondered why your furry friend acts the way they do? Just like humans, pets are influenced by the stars! Knowing their zodiac sign can unlock the secrets to their unique personality.",
             p3: "We have prepared a comprehensive guide covering all zodiac signs for your dogs and cats.",
@@ -200,21 +200,21 @@ const translations = {
         },
         article12: {
             title: "✨ MBTI × Zodiac Compatibility: Why Similar Temperaments Click",
-            meta: "February 4, 2026 | Mystic Psychology",
+            meta: "Feb 4, 2026 | Mystic Psychology",
             p1: "Overlay MBTI temperaments with the four zodiac elements and the compatibility logic becomes clear. Similar rhythms tend to feel effortless.",
             linkText: "📖 Read Compatibility (Click Here) →",
             linkUrl: "blog_posts/mbti-zodiac-compat-en.html"
         },
         article16: {
             title: "🧩 Why Connect MBTI with the 4 Zodiac Elements?",
-            meta: "February 11, 2026 | Mystic Psychology",
+            meta: "Feb 11, 2026 | Mystic Psychology",
             p1: "A clear explainer on why MBTI temperaments and zodiac elements can be read as one symbolic rhythm map.",
             linkText: "📖 Read the Explainer (Click Here) →",
             linkUrl: "blog_posts/mbti-zodiac-elements-en.html"
         },
         article14: {
             title: "💞 How to Read Compatibility: 7 Myths and Truths",
-            meta: "February 7, 2026 | Mystic Psychology",
+            meta: "Feb 7, 2026 | Mystic Psychology",
             p1: "Compatibility is not a verdict. It is a map of rhythm and style. Seven myths and the practical truths behind them.",
             linkText: "📖 Read Compatibility Guide (Click Here) →",
             linkUrl: "blog_posts/compatibility-faq-en.html"
@@ -222,38 +222,38 @@ const translations = {
         article15: {
             title: "💸 Feb 11–20 Money Outlook by Zodiac",
             meta: "Feb 11–20, 2026 | Cosmic Insight",
-            p1: "Mid-February favors cleanup and clarity. One-line money flow hints for Feb 11–20.",
+            p1: "Mid-Feb favors cleanup and clarity. One-line money flow hints for Feb 11–20.",
             linkText: "📖 Read Summary (Click Here) →",
             linkUrl: "blog_posts/feb-money-zodiac-11-20-en.html"
         },
         article7: {
             title: "🐾 Pet Zodiac Encyclopedia (Part 2): Deeper into the Stars",
-            meta: "January 31, 2026 | Pet Astrology",
+            meta: "Jan 31, 2026 | Pet Astrology",
             p1: "Let’s continue our pet zodiac story. Each sign has a unique rhythm, and knowing it helps you care and connect better.",
-            h3_1: "Cancer Pet (June 21 - July 22): The Gentle Guardian",
+            h3_1: "Cancer Pet (Jun 21 - Jul 22): The Gentle Guardian",
             p2: "Cancer pets are sensitive and protective. They bond deeply and seek a safe, cozy space. Soft voices and steady routines calm them.",
-            h3_2: "Leo Pet (July 23 - August 22): The Proud Performer",
+            h3_2: "Leo Pet (Jul 23 - Aug 22): The Proud Performer",
             p3: "Leo pets love attention and praise. They are confident and expressive, often acting like the star of the house. Playful applause goes a long way.",
-            h3_3: "Virgo Pet (August 23 - September 22): The Neat Observer",
+            h3_3: "Virgo Pet (Aug 23 - Sep 22): The Neat Observer",
             p4: "Virgo pets are observant and a bit picky. They notice small changes and prefer clean, orderly spaces. Gentle consistency makes them shine."
         },
         article8: {
             title: "✋ Palmistry 104: The Fate Line",
-            meta: "February 6, 2026 | Ancient Arts",
+            meta: "Feb 6, 2026 | Ancient Arts",
             p1: "Start point, depth, breaks, and shifts. A focused guide to career flow and responsibility patterns.",
             linkText: "📖 Read Fate Line Guide (Click Here) →",
             linkUrl: "blog_posts/palm-104-fate-en.html"
         },
         article13: {
             title: "☀️ Palmistry 105: The Sun Line",
-            meta: "February 6, 2026 | Ancient Arts",
+            meta: "Feb 6, 2026 | Ancient Arts",
             p1: "Thickness, branches, and interference lines. A clear guide to recognition and results.",
             linkText: "📖 Read Sun Line Guide (Click Here) →",
             linkUrl: "blog_posts/palm-105-sun-en.html"
         },
         article9: {
             title: "✋ Palm Reading Master Guide (2026 Edition)",
-            meta: "February 2, 2026 | Ancient Arts",
+            meta: "Feb 2, 2026 | Ancient Arts",
             p1: "Unlock the secrets of your hands. A comprehensive guide to the Life Line, Heart Line, Head Line, and Fate Line. Discover what your palms say about your destiny.",
             linkText: "📖 Read Full Guide (Click Here) →",
             linkUrl: "blog_posts/palm-reading-en.html"
@@ -412,7 +412,7 @@ const translations = {
             linkUrl: "blog_posts/mbti-zodiac-elements.html"
         },
         article14: {
-            title: "💞 궁합은 어떻게 읽어야 할까? 오해와 진실 7가지",
+            title: "💞 별자리 궁합을 읽는 법: 오해와 진실 7가지",
             meta: "2026년 2월 7일 | 신비 심리학",
             p1: "궁합은 관계의 정답이 아니라 리듬을 이해하는 지도에 가깝습니다. 과몰입을 줄이는 7가지 오해를 정리했어요.",
             linkText: "📖 궁합 해석법 읽기 (클릭) →",
@@ -913,7 +913,7 @@ const ZodiacManager = {
             const date = new Date();
             const month = date.getMonth(); 
             const year = date.getFullYear();
-            const monthNames = { ko: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"], en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] };
+            const monthNames = { ko: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"], en: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] };
             const currentMonthName = monthNames[lang][month];
             const fortune = getMonthlyFortune(this.currentSignId, month, year, lang);
             const labels = { en: { general: "Monthly Vibe", love: "Love Luck", wealth: "Wealth Luck" }, ko: { general: "이번 달의 기운", love: "연애운", wealth: "재물운" } };
