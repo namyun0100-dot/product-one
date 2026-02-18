@@ -100,8 +100,8 @@ const translations = {
         homeWisdom1Desc: "Pluto in Aquarius marks a new era of spiritual technology. Discover what 2026 holds for your zodiac sign.",
         homeWisdom2Title: "🧠 MBTI & The 4 Elements",
         homeWisdom2Desc: "Did you know NF types align with Fire signs? Explore the hidden connection between modern psychology and ancient elements.",
-        homeWisdom3Title: "🐶 Pet Zodiac & Physiology",
-        homeWisdom3Desc: "Why does your dog act like that? It might be their star sign. Decode your pet's cosmic personality.",
+        homeWisdom3Title: "🐾 Pet Tarot Message",
+        homeWisdom3Desc: "Tap to see your pet’s message for today with the Pet Tarot.",
         readMore: "Read More Stories →",
         navDailyFortune: "Daily Fortune",
         navZodiac: "Zodiac",
@@ -133,8 +133,8 @@ const translations = {
         blogQuickLabel: "Quick Links",
         blogQuickWeeklyText: "Weekly Keywords",
         blogQuickWeeklyUrl: "blog_posts/weekly-keywords-en.html",
-        blogQuickMoneyText: "Money Highlights",
-        blogQuickMoneyUrl: "blog_posts/feb-money-zodiac-en.html",
+        blogQuickMoneyText: "Weekly Money",
+        blogQuickMoneyUrl: "blog_posts/money-zodiac-en.html",
         sectionInsight: "🌌 Cosmic Insight",
         sectionPsychology: "🔮 Mystic Psychology",
         sectionAncient: "✋ Ancient Wisdom",
@@ -162,8 +162,8 @@ const translations = {
             linkUrl: "blog_posts/feb-money-zodiac-en.html"
         },
         article11: {
-            title: "🧭 Weekly Zodiac Keywords (Feb 16–22)",
-            meta: "Feb 16–22, 2026 | Cosmic Insight",
+            title: "🧭 Weekly Zodiac Keywords (Feb 23–Mar 1)",
+            meta: "Feb 23–Mar 1, 2026 | Cosmic Insight",
             p1: "12 signs in one view: keyword, action, and caution for each. Dense and easy to apply.",
             linkText: "📖 Read Weekly Keywords (Click Here) →",
             linkUrl: "blog_posts/weekly-keywords-en.html"
@@ -220,11 +220,11 @@ const translations = {
             linkUrl: "blog_posts/compatibility-faq-en.html"
         },
         article15: {
-            title: "💸 Feb 11–20 Money Outlook by Zodiac",
-            meta: "Feb 11–20, 2026 | Cosmic Insight",
-            p1: "Mid-Feb favors cleanup and clarity. One-line money flow hints for Feb 11–20.",
-            linkText: "📖 Read Summary (Click Here) →",
-            linkUrl: "blog_posts/feb-money-zodiac-11-20-en.html"
+            title: "💸 Weekly Money Outlook Archive",
+            meta: "Updated Feb 18, 2026 | Cosmic Insight",
+            p1: "Weekly money outlook posts in one place. Start with the latest, then browse older windows.",
+            linkText: "📖 Open Weekly Money Archive (Click Here) →",
+            linkUrl: "blog_posts/money-zodiac-en.html"
         },
         article7: {
             title: "🐾 Pet Zodiac Encyclopedia (Part 2): Deeper into the Stars",
@@ -296,8 +296,8 @@ const translations = {
         homeWisdom1Desc: "2026년, 당신의 별자리는 어떤 기운을 받을까요? 목성과 토성의 이동이 당신의 재물운과 연애운에 미치는 영향을 분석해 드립니다.",
         homeWisdom2Title: "🧠 MBTI와 별자리의 연결고리",
         homeWisdom2Desc: "ENFP와 쌍둥이자리, INFJ와 물고기자리... 과연 과학적인 근거가 있을까요? 점성술의 4원소와 MBTI의 4가지 지표를 비교 분석합니다.",
-        homeWisdom3Title: "🐶 관상학으로 보는 동물상",
-        homeWisdom3Desc: "강아지상, 고양이상, 공룡상... 단순히 귀여운 것이 아닙니다. 관상학적으로 '강아지상'은 사람을 끌어당기는 도화살을 상징합니다.",
+        homeWisdom3Title: "🐾 펫 타로 오늘의 메시지",
+        homeWisdom3Desc: "펫 타로로 오늘 우리 아이가 전하고 싶은 메시지를 확인해보세요.",
         readMore: "더 많은 이야기 읽기 →",
         navDailyFortune: "오늘의 운세",
         navZodiac: "별자리",
@@ -329,8 +329,8 @@ const translations = {
         blogQuickLabel: "바로가기",
         blogQuickWeeklyText: "이번 주 키워드",
         blogQuickWeeklyUrl: "blog_posts/weekly-keywords.html",
-        blogQuickMoneyText: "별님 금전운",
-        blogQuickMoneyUrl: "blog_posts/feb-money-zodiac.html",
+        blogQuickMoneyText: "주간 금전운",
+        blogQuickMoneyUrl: "blog_posts/money-zodiac.html",
         sectionInsight: "🌌 우주의 통찰",
         sectionPsychology: "🔮 신비 심리학",
         sectionAncient: "✋ 고대의 지혜",
@@ -361,9 +361,9 @@ const translations = {
             linkUrl: "blog_posts/feb-money-zodiac.html"
         },
         article11: {
-            title: "🧭 별자리별 이번 주 운세 키워드 12 (2월 16–22일)",
-            meta: "2026년 2월 16–22일 | 우주의 통찰",
-            p1: "2월 16–22일 흐름을 별자리별로 압축했습니다. 이번 주는 속도조절·경계·회복이 핵심이에요.",
+            title: "🧭 별자리별 이번 주 운세 키워드 12 (2월 23–3월 1일)",
+            meta: "2026년 2월 23–3월 1일 | 우주의 통찰",
+            p1: "2월 23–3월 1일 흐름을 별자리별로 압축했습니다. 이번 주는 숨고르기·예산선·회복이 핵심이에요.",
             linkText: "📖 이번 주 키워드 보기 (클릭) →",
             linkUrl: "blog_posts/weekly-keywords.html"
         },
@@ -419,11 +419,11 @@ const translations = {
             linkUrl: "blog_posts/compatibility-faq.html"
         },
         article15: {
-            title: "💸 2월 11–20일 별자리 금전운 10일 요약",
-            meta: "2026년 2월 10일 | Cosmic Insight",
-            p1: "2월 중순은 정리와 확인의 흐름. 11–20일 금전운을 한 줄로 정리했어요.",
-            linkText: "📖 10일 요약 읽기 (클릭) →",
-            linkUrl: "blog_posts/feb-money-zodiac-11-20.html"
+            title: "💸 별자리 주간 금전운 모음",
+            meta: "2026년 2월 18일 | 우주의 통찰",
+            p1: "주간 금전운 글을 한 곳에 모았습니다. 최신 글부터 확인하세요.",
+            linkText: "📖 주간 금전운 모음 보기 (클릭) →",
+            linkUrl: "blog_posts/money-zodiac.html"
         },
         article7: {
             title: "🐾 반려동물 별자리 백과 (2): 더 깊은 별의 이야기",
