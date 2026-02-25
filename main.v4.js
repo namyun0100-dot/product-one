@@ -162,11 +162,18 @@ const translations = {
             linkUrl: "blog_posts/feb-money-zodiac-en.html"
         },
         article11: {
-            title: "🧭 Weekly Zodiac Keywords (Feb 23–Mar 1)",
-            meta: "Feb 23–Mar 1, 2026 | Cosmic Insight",
-            p1: "12 signs in one view: keyword, action, and caution for each. Dense and easy to apply.",
+            title: "🧭 Weekly Zodiac Keywords (Mar 2–Mar 8)",
+            meta: "Mar 2–Mar 8, 2026 | Cosmic Insight",
+            p1: "A 7-keyword snapshot for Mar 2–Mar 8 with clear action cues.",
             linkText: "📖 Read Weekly Keywords (Click Here) →",
             linkUrl: "blog_posts/weekly-keywords-en.html"
+        },
+        article17: {
+            title: "💸 Weekly Money Outlook (Mar 2–Mar 8)",
+            meta: "Mar 2–Mar 8, 2026 | Cosmic Insight",
+            p1: "Next week’s money rhythm with sign-by-sign cues and a practical checklist.",
+            linkText: "📖 Read Weekly Money Outlook (Click Here) →",
+            linkUrl: "blog_posts/weekly-money-zodiac-en.html"
         },
         article3: {
             title: "✋ Palmistry 101: The Heart Line",
@@ -361,11 +368,18 @@ const translations = {
             linkUrl: "blog_posts/feb-money-zodiac.html"
         },
         article11: {
-            title: "🧭 별자리별 이번 주 운세 키워드 12 (2월 23–3월 1일)",
-            meta: "2026년 2월 23–3월 1일 | 우주의 통찰",
-            p1: "2월 23–3월 1일 흐름을 별자리별로 압축했습니다. 이번 주는 숨고르기·예산선·회복이 핵심이에요.",
+            title: "🧭 별자리별 이번 주 운세 키워드 12 (3월 2–8일)",
+            meta: "2026년 3월 2–8일 | 우주의 통찰",
+            p1: "3월 2–8일 흐름을 별자리별로 압축했습니다. 이번 주는 리듬·예산 재정렬·정리 마감이 핵심이에요.",
             linkText: "📖 이번 주 키워드 보기 (클릭) →",
             linkUrl: "blog_posts/weekly-keywords.html"
+        },
+        article17: {
+            title: "💸 주간 금전운 요약 (3월 2–8일)",
+            meta: "2026년 3월 2–8일 | 우주의 통찰",
+            p1: "다음 주 금전 흐름을 별자리별 한 줄 요약과 체크리스트로 정리했습니다.",
+            linkText: "📖 주간 금전운 읽기 →",
+            linkUrl: "blog_posts/weekly-money-zodiac.html"
         },
         article3: {
             title: "✋ 손금 101: 감정선",
@@ -1471,6 +1485,7 @@ window.updateBlogText = function(lang) {
     updateArticle('article13', t.article13);
     updateArticle('article10', t.article10);
     updateArticle('article11', t.article11);
+    updateArticle('article17', t.article17);
     updateArticle('article12', t.article12);
     updateArticle('article16', t.article16);
     updateArticle('article14', t.article14);
