@@ -175,6 +175,27 @@ const translations = {
             linkText: "📖 Read Weekly Money Outlook (Click Here) →",
             linkUrl: "blog_posts/weekly-money-zodiac-en.html"
         },
+        article18: {
+            title: "✨ 2026 Rhythm Guide by Zodiac Elements",
+            meta: "Feb 25, 2026 | Cosmic Insight",
+            p1: "A practical rhythm guide through fire, earth, air, and water with routines you can use now.",
+            linkText: "📖 Read the Guide →",
+            linkUrl: "blog_posts/astrology-elements-rhythm-2026-en.html"
+        },
+        article19: {
+            title: "🌙 Weekly Routine by Moon Phases",
+            meta: "Feb 25, 2026 | Cosmic Insight",
+            p1: "Design a week with the start–grow–close–recover flow using moon phases as a framework.",
+            linkText: "📖 Read the Routine →",
+            linkUrl: "blog_posts/moon-phases-weekly-routine-en.html"
+        },
+        article20: {
+            title: "🧭 Career Decision Framework by Zodiac Style",
+            meta: "Feb 25, 2026 | Cosmic Insight",
+            p1: "A simple career decision framework using zodiac elements and modalities.",
+            linkText: "📖 Read the Framework →",
+            linkUrl: "blog_posts/zodiac-career-decision-framework-en.html"
+        },
         article3: {
             title: "✋ Palmistry 101: The Heart Line",
             meta: "Feb 6, 2026 | Ancient Arts",
@@ -380,6 +401,27 @@ const translations = {
             p1: "다음 주 금전 흐름을 별자리별 한 줄 요약과 체크리스트로 정리했습니다.",
             linkText: "📖 주간 금전운 읽기 →",
             linkUrl: "blog_posts/weekly-money-zodiac.html"
+        },
+        article18: {
+            title: "✨ 별자리 4원소로 읽는 2026 리듬 가이드",
+            meta: "2026년 2월 25일 | 우주의 통찰",
+            p1: "불·흙·바람·물 4원소로 일과 관계 루틴을 정리한 실전 가이드.",
+            linkText: "📖 글 읽기 →",
+            linkUrl: "blog_posts/astrology-elements-rhythm-2026.html"
+        },
+        article19: {
+            title: "🌙 달의 위상으로 짜는 주간 루틴 가이드",
+            meta: "2026년 2월 25일 | 우주의 통찰",
+            p1: "시작-성장-정리-회복 리듬으로 한 주를 설계하는 방법.",
+            linkText: "📖 글 읽기 →",
+            linkUrl: "blog_posts/moon-phases-weekly-routine.html"
+        },
+        article20: {
+            title: "🧭 별자리 성향으로 보는 커리어 결정 프레임",
+            meta: "2026년 2월 25일 | 우주의 통찰",
+            p1: "4원소와 3가지 방식으로 커리어 결정을 정리하는 프레임.",
+            linkText: "📖 글 읽기 →",
+            linkUrl: "blog_posts/zodiac-career-decision-framework.html"
         },
         article3: {
             title: "✋ 손금 101: 감정선",
@@ -1486,6 +1528,9 @@ window.updateBlogText = function(lang) {
     updateArticle('article10', t.article10);
     updateArticle('article11', t.article11);
     updateArticle('article17', t.article17);
+    updateArticle('article18', t.article18);
+    updateArticle('article19', t.article19);
+    updateArticle('article20', t.article20);
     updateArticle('article12', t.article12);
     updateArticle('article16', t.article16);
     updateArticle('article14', t.article14);
