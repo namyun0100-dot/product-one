@@ -73,7 +73,11 @@ const translations = {
         msgWait: "Press the button to see your forecast.",
         msgFinancial: "Press the button to see your financial forecast.",
         msgRelationship: "Press the button to see your relationship forecast.",
-        homeCtaText: "Want a message from your pet? Try the Pet Tarot.",
+        homeCtaText: "Checked today's score? Continue with your weekly flow.",
+        homeCtaWeekly: "Read Weekly Fortune",
+        homeCtaWeeklyUrl: "blog_posts/weekly-keywords-en.html",
+        homeCtaMoney: "Read Weekly Money Outlook",
+        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-03-16-03-22-en.html",
         homeCtaPet: "Go to Pet Tarot",
         fortunes: {
             81: "🌟 <strong>Cosmic alignment!</strong> A universe of opportunities awaits!",
@@ -297,7 +301,11 @@ const translations = {
         msgWait: "버튼을 눌러 오늘의 운세를 확인하세요.",
         msgFinancial: "버튼을 눌러 금전운을 확인하세요.",
         msgRelationship: "버튼을 눌러 인연운을 확인하세요.",
-        homeCtaText: "지금 펫 타로로 우리 아이의 메시지를 확인해보세요.",
+        homeCtaText: "오늘 점수를 확인했다면, 이번 주 흐름도 이어서 확인해보세요.",
+        homeCtaWeekly: "이번 주 운세 보기",
+        homeCtaWeeklyUrl: "blog_posts/weekly-keywords.html",
+        homeCtaMoney: "주간 금전운 보기",
+        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-03-16-03-22.html",
         homeCtaPet: "펫 타로 보러가기",
         fortunes: {
             81: "🌟 <strong>우주의 축복!</strong> 엄청난 기회가 기다리고 있어요!",
@@ -1573,8 +1581,18 @@ window.updateGlobalText = function(lang) {
     if (navPetTarot) navPetTarot.textContent = t.navPetTarot;
     if (navBlog) navBlog.textContent = t.navBlog;
     const homeCtaText = document.getElementById('home-cta-text');
+    const homeCtaWeekly = document.getElementById('home-cta-weekly');
+    const homeCtaMoney = document.getElementById('home-cta-money');
     const homeCtaPet = document.getElementById('home-cta-pet');
     if (homeCtaText) homeCtaText.textContent = t.homeCtaText;
+    if (homeCtaWeekly) {
+        if (t.homeCtaWeekly) homeCtaWeekly.textContent = t.homeCtaWeekly;
+        if (t.homeCtaWeeklyUrl) homeCtaWeekly.setAttribute('href', t.homeCtaWeeklyUrl);
+    }
+    if (homeCtaMoney) {
+        if (t.homeCtaMoney) homeCtaMoney.textContent = t.homeCtaMoney;
+        if (t.homeCtaMoneyUrl) homeCtaMoney.setAttribute('href', t.homeCtaMoneyUrl);
+    }
     if (homeCtaPet) homeCtaPet.textContent = t.homeCtaPet;
     const h1t = document.getElementById('home-wisdom-1-title');
     const h1d = document.getElementById('home-wisdom-1-desc');
