@@ -162,18 +162,18 @@ const translations = {
             linkUrl: "blog_posts/feb-money-zodiac-en.html"
         },
         article11: {
-            title: "🧭 Weekly Zodiac Keywords (Mar 9–Mar 15)",
-            meta: "Mar 9–Mar 15, 2026 | Cosmic Insight",
-            p1: "A 7-keyword snapshot for Mar 9–Mar 15 with clear action cues.",
-            linkText: "📖 Read Weekly Keywords (Click Here) →",
+            title: "🧭 Zodiac Weekly Fortune Points (Mar 16–Mar 22)",
+            meta: "Mar 16–Mar 22, 2026 | Cosmic Insight",
+            p1: "One-line guidance for all 12 signs plus 7 shared weekly keywords.",
+            linkText: "📖 Read Weekly Fortune Guide (Click Here) →",
             linkUrl: "blog_posts/weekly-keywords-en.html"
         },
         article17: {
-            title: "💸 Weekly Money Outlook (Mar 9–Mar 15)",
-            meta: "Mar 9–Mar 15, 2026 | Cosmic Insight",
+            title: "💸 Weekly Money Outlook (Mar 16–Mar 22)",
+            meta: "Mar 16–Mar 22, 2026 | Cosmic Insight",
             p1: "Next week’s money rhythm with sign-by-sign cues and a practical checklist.",
             linkText: "📖 Read Weekly Money Outlook (Click Here) →",
-            linkUrl: "blog_posts/weekly-money-zodiac-03-09-03-15-en.html"
+            linkUrl: "blog_posts/weekly-money-zodiac-03-16-03-22-en.html"
         },
         article18: {
             title: "✨ 2026 Rhythm Guide by Zodiac Elements",
@@ -389,18 +389,18 @@ const translations = {
             linkUrl: "blog_posts/feb-money-zodiac.html"
         },
         article11: {
-            title: "🧭 별자리별 이번 주 운세 키워드 7가지 (3월 9–15일)",
-            meta: "2026년 3월 9–15일 | 우주의 통찰",
-            p1: "3월 9–15일 흐름을 7가지 키워드로 압축했습니다. 이번 주는 속도 조절과 지출 점검이 핵심이에요.",
-            linkText: "📖 이번 주 키워드 보기 (클릭) →",
+            title: "🧭 별자리별 이번 주 운세 포인트 (3월 16–22일)",
+            meta: "2026년 3월 16–22일 | 우주의 통찰",
+            p1: "12별자리 한 줄 가이드와 공통 키워드 7가지를 한 번에 정리했습니다.",
+            linkText: "📖 이번 주 운세 보기 (클릭) →",
             linkUrl: "blog_posts/weekly-keywords.html"
         },
         article17: {
-            title: "💸 주간 금전운 요약 (3월 9–15일)",
-            meta: "2026년 3월 9–15일 | 우주의 통찰",
+            title: "💸 주간 금전운 요약 (3월 16–22일)",
+            meta: "2026년 3월 16–22일 | 우주의 통찰",
             p1: "다음 주 금전 흐름을 별자리별 한 줄 요약과 체크리스트로 정리했습니다.",
             linkText: "📖 주간 금전운 읽기 →",
-            linkUrl: "blog_posts/weekly-money-zodiac-03-09-03-15.html"
+            linkUrl: "blog_posts/weekly-money-zodiac-03-16-03-22.html"
         },
         article18: {
             title: "✨ 별자리 4원소로 읽는 2026 리듬 가이드",
