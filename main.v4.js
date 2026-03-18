@@ -77,7 +77,7 @@ const translations = {
         homeCtaWeekly: "Read Weekly Fortune",
         homeCtaWeeklyUrl: "blog_posts/weekly-keywords-en.html",
         homeCtaMoney: "Read Weekly Money Outlook",
-        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-03-16-03-22-en.html",
+        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-03-23-03-29-en.html",
         homeCtaPet: "Go to Pet Tarot",
         fortunes: {
             81: "🌟 <strong>Cosmic alignment!</strong> A universe of opportunities awaits!",
@@ -166,18 +166,18 @@ const translations = {
             linkUrl: "blog_posts/feb-money-zodiac-en.html"
         },
         article11: {
-            title: "🧭 Zodiac Weekly Fortune Points (Mar 16–Mar 22)",
-            meta: "Mar 16–Mar 22, 2026 | Cosmic Insight",
+            title: "🧭 Zodiac Weekly Fortune Points (Mar 23–Mar 29)",
+            meta: "Mar 23–Mar 29, 2026 | Cosmic Insight",
             p1: "One-line guidance for all 12 signs plus 7 shared weekly keywords.",
             linkText: "📖 Read Weekly Fortune Guide (Click Here) →",
             linkUrl: "blog_posts/weekly-keywords-en.html"
         },
         article17: {
-            title: "💸 Weekly Money Outlook (Mar 16–Mar 22)",
-            meta: "Mar 16–Mar 22, 2026 | Cosmic Insight",
+            title: "💸 Weekly Money Outlook (Mar 23–Mar 29)",
+            meta: "Mar 23–Mar 29, 2026 | Cosmic Insight",
             p1: "Next week’s money rhythm with sign-by-sign cues and a practical checklist.",
             linkText: "📖 Read Weekly Money Outlook (Click Here) →",
-            linkUrl: "blog_posts/weekly-money-zodiac-03-16-03-22-en.html"
+            linkUrl: "blog_posts/weekly-money-zodiac-03-23-03-29-en.html"
         },
         article18: {
             title: "✨ 2026 Rhythm Guide by Zodiac Elements",
@@ -305,7 +305,7 @@ const translations = {
         homeCtaWeekly: "이번 주 운세 보기",
         homeCtaWeeklyUrl: "blog_posts/weekly-keywords.html",
         homeCtaMoney: "주간 금전운 보기",
-        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-03-16-03-22.html",
+        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-03-23-03-29.html",
         homeCtaPet: "펫 타로 보러가기",
         fortunes: {
             81: "🌟 <strong>우주의 축복!</strong> 엄청난 기회가 기다리고 있어요!",
@@ -397,18 +397,18 @@ const translations = {
             linkUrl: "blog_posts/feb-money-zodiac.html"
         },
         article11: {
-            title: "🧭 별자리별 이번 주 운세 포인트 (3월 16–22일)",
-            meta: "2026년 3월 16–22일 | 우주의 통찰",
+            title: "🧭 별자리별 이번 주 운세 포인트 (3월 23–29일)",
+            meta: "2026년 3월 23–29일 | 우주의 통찰",
             p1: "12별자리 한 줄 가이드와 공통 키워드 7가지를 한 번에 정리했습니다.",
             linkText: "📖 이번 주 운세 보기 (클릭) →",
             linkUrl: "blog_posts/weekly-keywords.html"
         },
         article17: {
-            title: "💸 주간 금전운 요약 (3월 16–22일)",
-            meta: "2026년 3월 16–22일 | 우주의 통찰",
+            title: "💸 주간 금전운 요약 (3월 23–29일)",
+            meta: "2026년 3월 23–29일 | 우주의 통찰",
             p1: "다음 주 금전 흐름을 별자리별 한 줄 요약과 체크리스트로 정리했습니다.",
             linkText: "📖 주간 금전운 읽기 →",
-            linkUrl: "blog_posts/weekly-money-zodiac-03-16-03-22.html"
+            linkUrl: "blog_posts/weekly-money-zodiac-03-23-03-29.html"
         },
         article18: {
             title: "✨ 별자리 4원소로 읽는 2026 리듬 가이드",
