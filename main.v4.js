@@ -1,4 +1,4 @@
-const APP_VERSION = "2026-04-01-2";
+const APP_VERSION = "2026-04-01-10";
 
 function migrateLocalState() {
     const storedVersion = localStorage.getItem('appVersion');
@@ -73,12 +73,17 @@ const translations = {
         msgWait: "Press the button to see your forecast.",
         msgFinancial: "Press the button to see your financial forecast.",
         msgRelationship: "Press the button to see your relationship forecast.",
-        homeCtaText: "Checked today's score? Continue with your weekly flow.",
-        homeCtaWeekly: "Read Weekly Fortune",
+        homeCtaText: "Checked today's score? Keep going with this week's featured reads.",
+        homeCtaWeekly: "Open Weekly Horoscope →",
+        homeCtaWeeklyTitle: "Weekly Horoscope Keywords",
+        homeCtaWeeklyDesc: "Scan next week by zodiac sign in one quick weekly guide.",
+        homeCtaWeeklyBadge: "Apr 6 - Apr 12",
         homeCtaWeeklyUrl: "blog_posts/weekly-keywords-en.html",
-        homeCtaMoney: "Read Weekly Money Outlook",
+        homeCtaMoney: "Open Money Outlook →",
+        homeCtaMoneyTitle: "Weekly Money Outlook",
+        homeCtaMoneyDesc: "Check spending, saving, and payment timing for the coming week.",
+        homeCtaMoneyBadge: "Apr 6 - Apr 12",
         homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-04-06-04-12-en.html",
-        homeCtaPet: "Go to Pet Tarot",
         fortunes: {
             81: "🌟 <strong>Cosmic alignment!</strong> A universe of opportunities awaits!",
             61: "✨ <strong>Starlight favor!</strong> Good vibes are flowing your way.",
@@ -100,13 +105,19 @@ const translations = {
         navPsychology: "Mystic Psychology",
         navAncient: "Ancient Wisdom",
         navBlogLink: "Blog Home",
-        homeWisdom1Title: "🌌 2026 Astrology Trends",
-        homeWisdom1Desc: "Pluto in Aquarius marks a new era of spiritual technology. Discover what 2026 holds for your zodiac sign.",
-        homeWisdom2Title: "🧠 MBTI & The 4 Elements",
-        homeWisdom2Desc: "Did you know NF types align with Fire signs? Explore the hidden connection between modern psychology and ancient elements.",
-        homeWisdom3Title: "🐾 Pet Tarot Message",
-        homeWisdom3Desc: "Tap to see your pet’s message for today with the Pet Tarot.",
-        readMore: "Read More Stories →",
+        wisdomTitle: "This Week at a Glance",
+        wisdomSubtitle: "Go straight to the weekly horoscope and money outlook people check most.",
+        homeWisdom1Badge: "Apr 6 - Apr 12",
+        homeWisdom1Title: "Weekly Horoscope Keywords",
+        homeWisdom1Desc: "Scan next week by zodiac sign in one quick weekly guide.",
+        homeWisdom1Cta: "Open Weekly Horoscope →",
+        homeWisdom1Url: "blog_posts/weekly-keywords-en.html",
+        homeWisdom2Badge: "Apr 6 - Apr 12",
+        homeWisdom2Title: "Weekly Money Outlook",
+        homeWisdom2Desc: "Check spending, saving, and payment timing for the coming week.",
+        homeWisdom2Cta: "Open Money Outlook →",
+        homeWisdom2Url: "blog_posts/weekly-money-zodiac-04-06-04-12-en.html",
+        readMore: "Browse All Posts →",
         navDailyFortune: "Daily Fortune",
         navZodiac: "Zodiac",
         navChemistry: "Chemistry",
@@ -301,12 +312,17 @@ const translations = {
         msgWait: "버튼을 눌러 오늘의 운세를 확인하세요.",
         msgFinancial: "버튼을 눌러 금전운을 확인하세요.",
         msgRelationship: "버튼을 눌러 인연운을 확인하세요.",
-        homeCtaText: "오늘 점수를 확인했다면, 이번 주 흐름도 이어서 확인해보세요.",
-        homeCtaWeekly: "이번 주 운세 보기",
+        homeCtaText: "오늘 점수를 확인했다면, 이번 주 흐름도 보기 좋게 이어서 확인해보세요.",
+        homeCtaWeekly: "이번 주 운세 보기 →",
+        homeCtaWeeklyTitle: "이번 주 운세 키워드",
+        homeCtaWeeklyDesc: "다음 주 흐름을 별자리별 핵심 키워드로 빠르게 확인해보세요.",
+        homeCtaWeeklyBadge: "04.06 - 04.12",
         homeCtaWeeklyUrl: "blog_posts/weekly-keywords.html",
-        homeCtaMoney: "주간 금전운 보기",
+        homeCtaMoney: "금전운 보기 →",
+        homeCtaMoneyTitle: "주간 금전운",
+        homeCtaMoneyDesc: "소비, 저축, 결제 타이밍을 다음 주 기준으로 정리한 금전운입니다.",
+        homeCtaMoneyBadge: "04.06 - 04.12",
         homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-04-06-04-12.html",
-        homeCtaPet: "펫 타로 보러가기",
         fortunes: {
             81: "🌟 <strong>우주의 축복!</strong> 엄청난 기회가 기다리고 있어요!",
             61: "✨ <strong>별빛의 가호!</strong> 좋은 기운이 흐르고 있네요!",
@@ -328,13 +344,19 @@ const translations = {
         navPsychology: "신비 심리학",
         navAncient: "고대의 지혜",
         navBlogLink: "블로그 홈",
-        homeWisdom1Title: "🌌 2026 별자리 행운 가이드",
-        homeWisdom1Desc: "2026년, 당신의 별자리는 어떤 기운을 받을까요? 목성과 토성의 이동이 당신의 재물운과 연애운에 미치는 영향을 분석해 드립니다.",
-        homeWisdom2Title: "🧠 MBTI와 별자리의 연결고리",
-        homeWisdom2Desc: "ENFP와 쌍둥이자리, INFJ와 물고기자리... 과연 과학적인 근거가 있을까요? 점성술의 4원소와 MBTI의 4가지 지표를 비교 분석합니다.",
-        homeWisdom3Title: "🐾 펫 타로 오늘의 메시지",
-        homeWisdom3Desc: "펫 타로로 오늘 우리 아이가 전하고 싶은 메시지를 확인해보세요.",
-        readMore: "더 많은 이야기 읽기 →",
+        wisdomTitle: "이번 주 바로 보기",
+        wisdomSubtitle: "지금 가장 자주 찾는 주간 운세와 금전운을 바로 확인해보세요.",
+        homeWisdom1Badge: "04.06 - 04.12",
+        homeWisdom1Title: "이번 주 운세 키워드",
+        homeWisdom1Desc: "다음 주 흐름을 별자리별 키워드로 빠르게 확인해보세요.",
+        homeWisdom1Cta: "바로 보기 →",
+        homeWisdom1Url: "blog_posts/weekly-keywords.html",
+        homeWisdom2Badge: "04.06 - 04.12",
+        homeWisdom2Title: "주간 금전운",
+        homeWisdom2Desc: "소비, 저축, 결제 타이밍을 이번 주 기준으로 정리했습니다.",
+        homeWisdom2Cta: "금전운 보기 →",
+        homeWisdom2Url: "blog_posts/weekly-money-zodiac-04-06-04-12.html",
+        readMore: "전체 글 보기 →",
         navDailyFortune: "오늘의 운세",
         navZodiac: "별자리",
         navChemistry: "궁합",
@@ -800,6 +822,7 @@ class CosmicOracle extends HTMLElement {
       this._updateText();
       updateGlobalText(this.lang);
       updateQuote(this.lang);
+      startNavPromptRotation(this.lang);
   }
   _updateText() {
       const t = translations[this.lang];
@@ -996,6 +1019,8 @@ const ZodiacManager = {
         if (this.modal.classList.contains('active')) { this.updateModalContent(); }
     }
 };
+
+window.ZodiacManager = ZodiacManager;
 
 const ChemistryManager = {
     init() {
@@ -1547,6 +1572,7 @@ window.updateBlogText = function(lang) {
     if (backHomeLink) backHomeLink.textContent = t.backHomeLink;
 }
 
+
 window.updateGlobalText = function(lang) {
     document.documentElement.lang = lang;
     const t = translations[lang];
@@ -1582,32 +1608,26 @@ window.updateGlobalText = function(lang) {
     if (navBlog) navBlog.textContent = t.navBlog;
     const homeCtaText = document.getElementById('home-cta-text');
     const homeCtaWeekly = document.getElementById('home-cta-weekly');
+    const homeCtaWeeklyTitle = document.getElementById('home-cta-weekly-title');
+    const homeCtaWeeklyDesc = document.getElementById('home-cta-weekly-desc');
+    const homeCtaWeeklyBadge = document.getElementById('home-cta-weekly-badge');
+    const homeCtaWeeklyLink = document.getElementById('home-cta-weekly-link');
     const homeCtaMoney = document.getElementById('home-cta-money');
-    const homeCtaPet = document.getElementById('home-cta-pet');
+    const homeCtaMoneyTitle = document.getElementById('home-cta-money-title');
+    const homeCtaMoneyDesc = document.getElementById('home-cta-money-desc');
+    const homeCtaMoneyBadge = document.getElementById('home-cta-money-badge');
+    const homeCtaMoneyLink = document.getElementById('home-cta-money-link');
     if (homeCtaText) homeCtaText.textContent = t.homeCtaText;
-    if (homeCtaWeekly) {
-        if (t.homeCtaWeekly) homeCtaWeekly.textContent = t.homeCtaWeekly;
-        if (t.homeCtaWeeklyUrl) homeCtaWeekly.setAttribute('href', t.homeCtaWeeklyUrl);
-    }
-    if (homeCtaMoney) {
-        if (t.homeCtaMoney) homeCtaMoney.textContent = t.homeCtaMoney;
-        if (t.homeCtaMoneyUrl) homeCtaMoney.setAttribute('href', t.homeCtaMoneyUrl);
-    }
-    if (homeCtaPet) homeCtaPet.textContent = t.homeCtaPet;
-    const h1t = document.getElementById('home-wisdom-1-title');
-    const h1d = document.getElementById('home-wisdom-1-desc');
-    const h2t = document.getElementById('home-wisdom-2-title');
-    const h2d = document.getElementById('home-wisdom-2-desc');
-    const h3t = document.getElementById('home-wisdom-3-title');
-    const h3d = document.getElementById('home-wisdom-3-desc');
-    const btnReadMore = document.getElementById('btn-read-more');
-    if (h1t) h1t.textContent = t.homeWisdom1Title;
-    if (h1d) h1d.textContent = t.homeWisdom1Desc;
-    if (h2t) h2t.textContent = t.homeWisdom2Title;
-    if (h2d) h2d.textContent = t.homeWisdom2Desc;
-    if (h3t) h3t.textContent = t.homeWisdom3Title;
-    if (h3d) h3d.textContent = t.homeWisdom3Desc;
-    if (btnReadMore) btnReadMore.textContent = t.readMore;
+    if (homeCtaWeekly) homeCtaWeekly.textContent = t.homeCtaWeekly;
+    if (homeCtaWeeklyTitle && t.homeCtaWeeklyTitle) homeCtaWeeklyTitle.textContent = t.homeCtaWeeklyTitle;
+    if (homeCtaWeeklyDesc && t.homeCtaWeeklyDesc) homeCtaWeeklyDesc.textContent = t.homeCtaWeeklyDesc;
+    if (homeCtaWeeklyBadge && t.homeCtaWeeklyBadge) homeCtaWeeklyBadge.textContent = t.homeCtaWeeklyBadge;
+    if (homeCtaWeeklyLink && t.homeCtaWeeklyUrl) homeCtaWeeklyLink.setAttribute('href', t.homeCtaWeeklyUrl);
+    if (homeCtaMoney) homeCtaMoney.textContent = t.homeCtaMoney;
+    if (homeCtaMoneyTitle && t.homeCtaMoneyTitle) homeCtaMoneyTitle.textContent = t.homeCtaMoneyTitle;
+    if (homeCtaMoneyDesc && t.homeCtaMoneyDesc) homeCtaMoneyDesc.textContent = t.homeCtaMoneyDesc;
+    if (homeCtaMoneyBadge && t.homeCtaMoneyBadge) homeCtaMoneyBadge.textContent = t.homeCtaMoneyBadge;
+    if (homeCtaMoneyLink && t.homeCtaMoneyUrl) homeCtaMoneyLink.setAttribute('href', t.homeCtaMoneyUrl);
     const zodiacTitles = { en: { title: "Cosmic Constellations", subtitle: "Discover the secrets of the stars" }, ko: { title: "우주의 별자리", subtitle: "당신의 별이 속삭이는 비밀을 들어보세요" } };
     const zTitle = document.getElementById('zodiac-title');
     const zSubtitle = document.getElementById('zodiac-subtitle');
@@ -1669,24 +1689,28 @@ window.updateGlobalText = function(lang) {
 }
 
 window.showSection = function(sectionId) {
-    // Hide all content sections
     document.querySelectorAll('#main-content .content-section').forEach(el => {
         el.classList.add('hidden');
     });
-    
-    // Show the target section
+
     const target = document.getElementById('section-' + sectionId);
     if (target) {
         target.classList.remove('hidden');
     }
-    
-    // Ensure main-content is visible as well
+
     const mainContent = document.getElementById('main-content');
     if (mainContent) {
         mainContent.classList.remove('hidden');
     }
 
-    // Scroll smoothly to the section
+    document.querySelectorAll('.nav-links .nav-link').forEach((link) => {
+        link.classList.remove('active');
+    });
+    const activeLink = document.getElementById('nav-' + sectionId);
+    if (activeLink) {
+        activeLink.classList.add('active');
+    }
+
     if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -1701,6 +1725,54 @@ window.updateQuote = function(lang) {
     }
 }
 
+function getNavPromptItems(lang) {
+    return lang === 'en'
+        ? [
+            { text: 'Curious about your zodiac vibe? Tap Zodiac above.', target: 'zodiac' },
+            { text: 'Want to see your chemistry with someone? Open Chemistry.', target: 'chemistry' },
+            { text: 'Wondering what your pet is feeling? Tap Pet Tarot.', target: 'pet-tarot' }
+        ]
+        : [
+            { text: '내 별자리 성격이 궁금하다면, 별자리를 눌러보세요.', target: 'zodiac' },
+            { text: '그 사람과 나의 궁합이 궁금하다면, 궁합을 눌러보세요.', target: 'chemistry' },
+            { text: '우리 강쥐의 마음이 궁금하다면, 펫 타로를 눌러보세요.', target: 'pet-tarot' }
+        ];
+}
+
+function startNavPromptRotation(lang) {
+    const button = document.getElementById('nav-prompt-button');
+    if (!button) return;
+
+    const items = getNavPromptItems(lang);
+    if (!items.length) return;
+
+    if (!window.navPromptState) {
+        window.navPromptState = { index: 0, timer: null, target: items[0].target };
+    }
+
+    const state = window.navPromptState;
+    if (state.timer) {
+        clearInterval(state.timer);
+        state.timer = null;
+    }
+    state.index = 0;
+
+    const render = () => {
+        const item = items[state.index % items.length];
+        button.textContent = item.text;
+        button.setAttribute('data-target', item.target);
+        state.target = item.target;
+        state.index = (state.index + 1) % items.length;
+    };
+
+    render();
+    state.timer = window.setInterval(render, 3200);
+
+    button.onclick = () => {
+        window.handleNavSection(state.target || 'fortune');
+    };
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     migrateLocalState();
     const lang = localStorage.getItem('lang') || 'ko';
@@ -1710,6 +1782,7 @@ document.addEventListener('DOMContentLoaded', () => {
     BlackHoleManager.init();
     updateGlobalText(lang);
     updateQuote(lang);
+    startNavPromptRotation(lang);
     
     // Initialize View (Default to Fortune or deep-link section)
     const params = new URLSearchParams(window.location.search);
@@ -1762,6 +1835,7 @@ document.addEventListener('DOMContentLoaded', () => {
             globalLangBtn.textContent = newLang === 'en' ? '한국어' : 'English';
             updateGlobalText(newLang);
             updateQuote(newLang);
+            startNavPromptRotation(newLang);
             resetDisqus(newLang);
         });
     }

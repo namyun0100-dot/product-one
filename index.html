@@ -10,6 +10,30 @@
           document.documentElement.setAttribute('data-theme', theme);
         } catch (e) {}
       })();
+
+      window.handleNavSection = function(sectionId) {
+        if (typeof window.showSection === 'function') {
+          window.showSection(sectionId);
+          return false;
+        }
+
+        document.querySelectorAll('#main-content .content-section').forEach(function(el) {
+          el.classList.add('hidden');
+        });
+
+        var target = document.getElementById('section-' + sectionId);
+        if (target) {
+          target.classList.remove('hidden');
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        var mainContent = document.getElementById('main-content');
+        if (mainContent) {
+          mainContent.classList.remove('hidden');
+        }
+
+        return false;
+      };
     </script>
     <style>
       html { background: #1a202c; color: #cbd5e0; }
@@ -86,15 +110,20 @@
             <div class="logo" onclick="location.href='index.html'">Cosmic</div>
             <nav>
                 <div class="nav-links">
-                    <a href="javascript:void(0)" class="nav-link" onclick="showSection('fortune')" id="nav-fortune">오늘의 운세</a>
-                    <a href="javascript:void(0)" class="nav-link" onclick="showSection('zodiac')" id="nav-zodiac">별자리</a>
-                    <a href="javascript:void(0)" class="nav-link" onclick="showSection('chemistry')" id="nav-chemistry">궁합</a>
-                    <a href="javascript:void(0)" class="nav-link" onclick="showSection('pet-tarot')" id="nav-pet-tarot">펫 타로</a>
+                    <a href="#section-fortune" class="nav-link" onclick="return window.handleNavSection('fortune')" id="nav-fortune">오늘의 운세</a>
+                    <a href="#section-zodiac" class="nav-link" onclick="return window.handleNavSection('zodiac')" id="nav-zodiac">별자리</a>
+                    <a href="#section-chemistry" class="nav-link" onclick="return window.handleNavSection('chemistry')" id="nav-chemistry">궁합</a>
+                    <a href="#section-pet-tarot" class="nav-link" onclick="return window.handleNavSection('pet-tarot')" id="nav-pet-tarot">펫 타로</a>
                     <a href="blog.html" class="nav-link" id="nav-blog">블로그</a>
                 </div>
             </nav>
         </div>
     </header>
+
+    <div class="nav-prompt-bar" aria-live="polite">
+        <span class="nav-prompt-star">✦</span>
+        <button type="button" class="nav-prompt-button" id="nav-prompt-button"></button>
+    </div>
 
     <main id="main-content">
         <h1 class="visually-hidden">우주 운세, 별자리, 궁합, 펫 타로 - Cosmic Fortune</h1>
@@ -102,12 +131,21 @@
         <section id="section-fortune" class="content-section">
             <cosmic-oracle></cosmic-oracle>
             <p id="quote-of-the-day"></p>
-            <div class="hero-cta">
-                <p id="home-cta-text">오늘 점수를 확인했다면, 이번 주 흐름도 이어서 확인해보세요.</p>
-                <div class="hero-cta-actions">
-                    <a class="action-btn fortune-match" id="home-cta-weekly" href="blog_posts/weekly-keywords.html">이번 주 운세 보기</a>
-                    <a class="action-btn secondary" id="home-cta-money" href="blog_posts/weekly-money-zodiac-04-06-04-12.html">주간 금전운 보기</a>
-                    <button class="action-btn secondary" id="home-cta-pet" onclick="showSection('pet-tarot')">펫 타로 보러가기</button>
+            <div class="hero-cta hero-featured-links">
+                <p id="home-cta-text">오늘 점수를 확인했다면, 이번 주 흐름도 보기 좋게 이어서 확인해보세요.</p>
+                <div class="hero-cta-cards">
+                    <a class="hero-link-card hero-link-card-weekly" id="home-cta-weekly-link" href="blog_posts/weekly-keywords.html">
+                        <div class="hero-link-badge" id="home-cta-weekly-badge">04.06 - 04.12</div>
+                        <h3 id="home-cta-weekly-title">이번 주 운세 키워드</h3>
+                        <p id="home-cta-weekly-desc">다음 주 흐름을 별자리별 핵심 키워드로 빠르게 확인해보세요.</p>
+                        <span class="hero-link-cta" id="home-cta-weekly">이번 주 운세 보기 →</span>
+                    </a>
+                    <a class="hero-link-card hero-link-card-money" id="home-cta-money-link" href="blog_posts/weekly-money-zodiac-04-06-04-12.html">
+                        <div class="hero-link-badge" id="home-cta-money-badge">04.06 - 04.12</div>
+                        <h3 id="home-cta-money-title">주간 금전운</h3>
+                        <p id="home-cta-money-desc">소비, 저축, 결제 타이밍을 다음 주 기준으로 정리한 금전운입니다.</p>
+                        <span class="hero-link-cta" id="home-cta-money">금전운 보기 →</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -196,29 +234,6 @@
 
     <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
 
-    <!-- Cosmic Wisdom (Blog Preview) -->
-    <section id="cosmic-wisdom-section">
-        <h2 id="wisdom-title">Cosmic Wisdom</h2>
-        <p id="wisdom-subtitle" class="subtitle">Universe, Stars, and You.</p>
-        <div class="wisdom-grid">
-            <div class="wisdom-card">
-                <h3 id="home-wisdom-1-title">🌌 2026 Astrology Trends</h3>
-                <p id="home-wisdom-1-desc">Pluto in Aquarius marks a new era of spiritual technology. Discover what 2026 holds for your zodiac sign.</p>
-            </div>
-            <div class="wisdom-card">
-                <h3 id="home-wisdom-2-title">🧠 MBTI & The 4 Elements</h3>
-                <p id="home-wisdom-2-desc">Did you know NF types align with Fire signs? Explore the hidden connection between modern psychology and ancient elements.</p>
-            </div>
-            <div class="wisdom-card">
-                <h3 id="home-wisdom-3-title">🐾 Pet Tarot Message</h3>
-                <p id="home-wisdom-3-desc">Tap to see your pet’s message for today with the Pet Tarot.</p>
-            </div>
-        </div>
-        <div style="text-align: center; margin-top: 2rem;">
-            <a href="blog.html" class="blog-link-btn" id="btn-read-more">Read More Stories →</a>
-        </div>
-    </section>
-
     <!-- Contact Form -->
     <section id="contact-form-section">
         <h2 id="contact-title">우주 협력 문의</h2>
@@ -281,7 +296,7 @@
     </div>
 
     <!-- Main Script -->
-    <script src="main.v4.js?v=2026-04-01-2"></script>
+    <script src="main.v4.js?v=2026-04-01-9"></script>
     <!-- Userback Feedback -->
     <script>
       window.Userback = window.Userback || {};
