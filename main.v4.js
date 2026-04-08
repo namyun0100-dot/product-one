@@ -1,4 +1,4 @@
-const APP_VERSION = "2026-04-01-10";
+const APP_VERSION = "2026-04-08-10";
 
 function migrateLocalState() {
     const storedVersion = localStorage.getItem('appVersion');
@@ -77,13 +77,13 @@ const translations = {
         homeCtaWeekly: "Open Weekly Horoscope →",
         homeCtaWeeklyTitle: "Weekly Horoscope Keywords",
         homeCtaWeeklyDesc: "Scan next week by zodiac sign in one quick weekly guide.",
-        homeCtaWeeklyBadge: "Apr 6 - Apr 12",
+        homeCtaWeeklyBadge: "Apr 13 - Apr 19",
         homeCtaWeeklyUrl: "blog_posts/weekly-keywords-en.html",
         homeCtaMoney: "Open Money Outlook →",
         homeCtaMoneyTitle: "Weekly Money Outlook",
         homeCtaMoneyDesc: "Check spending, saving, and payment timing for the coming week.",
-        homeCtaMoneyBadge: "Apr 6 - Apr 12",
-        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-04-06-04-12-en.html",
+        homeCtaMoneyBadge: "Apr 13 - Apr 19",
+        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-04-13-04-19-en.html",
         fortunes: {
             81: "🌟 <strong>Cosmic alignment!</strong> A universe of opportunities awaits!",
             61: "✨ <strong>Starlight favor!</strong> Good vibes are flowing your way.",
@@ -107,16 +107,16 @@ const translations = {
         navBlogLink: "Blog Home",
         wisdomTitle: "This Week at a Glance",
         wisdomSubtitle: "Go straight to the weekly horoscope and money outlook people check most.",
-        homeWisdom1Badge: "Apr 6 - Apr 12",
+        homeWisdom1Badge: "Apr 13 - Apr 19",
         homeWisdom1Title: "Weekly Horoscope Keywords",
         homeWisdom1Desc: "Scan next week by zodiac sign in one quick weekly guide.",
         homeWisdom1Cta: "Open Weekly Horoscope →",
         homeWisdom1Url: "blog_posts/weekly-keywords-en.html",
-        homeWisdom2Badge: "Apr 6 - Apr 12",
+        homeWisdom2Badge: "Apr 13 - Apr 19",
         homeWisdom2Title: "Weekly Money Outlook",
         homeWisdom2Desc: "Check spending, saving, and payment timing for the coming week.",
         homeWisdom2Cta: "Open Money Outlook →",
-        homeWisdom2Url: "blog_posts/weekly-money-zodiac-04-06-04-12-en.html",
+        homeWisdom2Url: "blog_posts/weekly-money-zodiac-04-13-04-19-en.html",
         readMore: "Browse All Posts →",
         navDailyFortune: "Daily Fortune",
         navZodiac: "Zodiac",
@@ -177,18 +177,18 @@ const translations = {
             linkUrl: "blog_posts/feb-money-zodiac-en.html"
         },
         article11: {
-            title: "🧭 Zodiac Weekly Fortune Points (Apr 6–Apr 12)",
-            meta: "Apr 6–Apr 12, 2026 | Cosmic Insight",
+            title: "🧭 Zodiac Weekly Fortune Points (Apr 13–Apr 19)",
+            meta: "Apr 13–Apr 19, 2026 | Cosmic Insight",
             p1: "One-line guidance for all 12 signs plus 7 shared weekly keywords.",
             linkText: "📖 Read Weekly Fortune Guide (Click Here) →",
             linkUrl: "blog_posts/weekly-keywords-en.html"
         },
         article17: {
-            title: "💸 Weekly Money Outlook (Apr 6–Apr 12)",
-            meta: "Apr 6–Apr 12, 2026 | Cosmic Insight",
+            title: "💸 Weekly Money Outlook (Apr 13–Apr 19)",
+            meta: "Apr 13–Apr 19, 2026 | Cosmic Insight",
             p1: "Next week’s money rhythm with sign-by-sign cues and a practical checklist.",
             linkText: "📖 Read Weekly Money Outlook (Click Here) →",
-            linkUrl: "blog_posts/weekly-money-zodiac-04-06-04-12-en.html"
+            linkUrl: "blog_posts/weekly-money-zodiac-04-13-04-19-en.html"
         },
         article18: {
             title: "✨ 2026 Rhythm Guide by Zodiac Elements",
@@ -316,13 +316,13 @@ const translations = {
         homeCtaWeekly: "이번 주 운세 보기 →",
         homeCtaWeeklyTitle: "이번 주 운세 키워드",
         homeCtaWeeklyDesc: "다음 주 흐름을 별자리별 핵심 키워드로 빠르게 확인해보세요.",
-        homeCtaWeeklyBadge: "04.06 - 04.12",
+        homeCtaWeeklyBadge: "04.13 - 04.19",
         homeCtaWeeklyUrl: "blog_posts/weekly-keywords.html",
         homeCtaMoney: "금전운 보기 →",
         homeCtaMoneyTitle: "주간 금전운",
         homeCtaMoneyDesc: "소비, 저축, 결제 타이밍을 다음 주 기준으로 정리한 금전운입니다.",
-        homeCtaMoneyBadge: "04.06 - 04.12",
-        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-04-06-04-12.html",
+        homeCtaMoneyBadge: "04.13 - 04.19",
+        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-04-13-04-19.html",
         fortunes: {
             81: "🌟 <strong>우주의 축복!</strong> 엄청난 기회가 기다리고 있어요!",
             61: "✨ <strong>별빛의 가호!</strong> 좋은 기운이 흐르고 있네요!",
@@ -346,16 +346,16 @@ const translations = {
         navBlogLink: "블로그 홈",
         wisdomTitle: "이번 주 바로 보기",
         wisdomSubtitle: "지금 가장 자주 찾는 주간 운세와 금전운을 바로 확인해보세요.",
-        homeWisdom1Badge: "04.06 - 04.12",
+        homeWisdom1Badge: "04.13 - 04.19",
         homeWisdom1Title: "이번 주 운세 키워드",
         homeWisdom1Desc: "다음 주 흐름을 별자리별 키워드로 빠르게 확인해보세요.",
         homeWisdom1Cta: "바로 보기 →",
         homeWisdom1Url: "blog_posts/weekly-keywords.html",
-        homeWisdom2Badge: "04.06 - 04.12",
+        homeWisdom2Badge: "04.13 - 04.19",
         homeWisdom2Title: "주간 금전운",
         homeWisdom2Desc: "소비, 저축, 결제 타이밍을 이번 주 기준으로 정리했습니다.",
         homeWisdom2Cta: "금전운 보기 →",
-        homeWisdom2Url: "blog_posts/weekly-money-zodiac-04-06-04-12.html",
+        homeWisdom2Url: "blog_posts/weekly-money-zodiac-04-13-04-19.html",
         readMore: "전체 글 보기 →",
         navDailyFortune: "오늘의 운세",
         navZodiac: "별자리",
@@ -419,18 +419,18 @@ const translations = {
             linkUrl: "blog_posts/feb-money-zodiac.html"
         },
         article11: {
-            title: "🧭 별자리별 이번 주 운세 포인트 (4월 6일–12일)",
-            meta: "2026년 4월 6일–12일 | 우주의 통찰",
+            title: "🧭 별자리별 이번 주 운세 포인트 (4월 13일–19일)",
+            meta: "2026년 4월 13일–19일 | 우주의 통찰",
             p1: "12별자리 한 줄 가이드와 공통 키워드 7가지를 한 번에 정리했습니다.",
             linkText: "📖 이번 주 운세 보기 (클릭) →",
             linkUrl: "blog_posts/weekly-keywords.html"
         },
         article17: {
-            title: "💸 주간 금전운 요약 (4월 6일–12일)",
-            meta: "2026년 4월 6일–12일 | 우주의 통찰",
+            title: "💸 주간 금전운 요약 (4월 13일–19일)",
+            meta: "2026년 4월 13일–19일 | 우주의 통찰",
             p1: "다음 주 금전 흐름을 별자리별 한 줄 요약과 체크리스트로 정리했습니다.",
             linkText: "📖 주간 금전운 읽기 →",
-            linkUrl: "blog_posts/weekly-money-zodiac-04-06-04-12.html"
+            linkUrl: "blog_posts/weekly-money-zodiac-04-13-04-19.html"
         },
         article18: {
             title: "✨ 별자리 4원소로 읽는 2026 리듬 가이드",
