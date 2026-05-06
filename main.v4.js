@@ -211,6 +211,13 @@ const translations = {
             linkText: "📖 Read the Framework →",
             linkUrl: "blog_posts/zodiac-career-decision-framework-en.html"
         },
+        article21: {
+            title: "💸 Spending Habits by Zodiac Sign",
+            meta: "May 6, 2026 | Cosmic Insight",
+            p1: "A guide to spending habits by zodiac elements and modalities, with practical ways to slow money leaks.",
+            linkText: "📖 Check Money Habits →",
+            linkUrl: "blog_posts/zodiac-money-leaks-checklist-en.html"
+        },
         article3: {
             title: "✋ Palmistry 101: The Heart Line",
             meta: "Feb 6, 2026 | Ancient Arts",
@@ -452,6 +459,13 @@ const translations = {
             p1: "4원소와 3가지 방식으로 커리어 결정을 정리하는 프레임.",
             linkText: "📖 글 읽기 →",
             linkUrl: "blog_posts/zodiac-career-decision-framework.html"
+        },
+        article21: {
+            title: "💸 별자리 특성별 소비 습관과 돈 새는 패턴",
+            meta: "2026년 5월 6일 | 우주의 통찰",
+            p1: "4원소와 3양식으로 별자리별 소비 습관과 지출이 커지기 쉬운 장면을 정리한 가이드.",
+            linkText: "📖 소비 습관 점검하기 →",
+            linkUrl: "blog_posts/zodiac-money-leaks-checklist.html"
         },
         article3: {
             title: "✋ 손금 101: 감정선",
@@ -1564,6 +1578,7 @@ window.updateBlogText = function(lang) {
     updateArticle('article18', t.article18);
     updateArticle('article19', t.article19);
     updateArticle('article20', t.article20);
+    updateArticle('article21', t.article21);
     updateArticle('article12', t.article12);
     updateArticle('article16', t.article16);
     updateArticle('article14', t.article14);
