@@ -77,13 +77,13 @@ const translations = {
         homeCtaWeekly: "Open Weekly Horoscope →",
         homeCtaWeeklyTitle: "Weekly Horoscope Keywords",
         homeCtaWeeklyDesc: "Use the May 16 new moon and waning-crescent reset to scan next week by sign.",
-        homeCtaWeeklyBadge: "May 11 - May 17",
+        homeCtaWeeklyBadge: "May 18 - May 24",
         homeCtaWeeklyUrl: "blog_posts/weekly-keywords-en.html",
         homeCtaMoney: "Open Money Outlook →",
         homeCtaMoneyTitle: "Weekly Money Outlook",
         homeCtaMoneyDesc: "Review recurring costs, spending, and reset timing for next week.",
-        homeCtaMoneyBadge: "May 11 - May 17",
-        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-05-11-05-17-en.html",
+        homeCtaMoneyBadge: "May 18 - May 24",
+        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-05-18-05-24-en.html",
         fortunes: {
             81: "🌟 <strong>Cosmic alignment!</strong> A universe of opportunities awaits!",
             61: "✨ <strong>Starlight favor!</strong> Good vibes are flowing your way.",
@@ -107,16 +107,16 @@ const translations = {
         navBlogLink: "Blog Home",
         wisdomTitle: "This Week at a Glance",
         wisdomSubtitle: "Go straight to the weekly horoscope and money outlook people check most.",
-        homeWisdom1Badge: "May 11 - May 17",
+        homeWisdom1Badge: "May 18 - May 24",
         homeWisdom1Title: "Weekly Horoscope Keywords",
         homeWisdom1Desc: "Use the May 16 new moon and waning-crescent rhythm to scan next steps by sign.",
         homeWisdom1Cta: "Open Weekly Horoscope →",
         homeWisdom1Url: "blog_posts/weekly-keywords-en.html",
-        homeWisdom2Badge: "May 11 - May 17",
+        homeWisdom2Badge: "May 18 - May 24",
         homeWisdom2Title: "Weekly Money Outlook",
         homeWisdom2Desc: "Review recurring costs, spending, and reset timing for next week.",
         homeWisdom2Cta: "Open Money Outlook →",
-        homeWisdom2Url: "blog_posts/weekly-money-zodiac-05-11-05-17-en.html",
+        homeWisdom2Url: "blog_posts/weekly-money-zodiac-05-18-05-24-en.html",
         readMore: "Browse All Posts →",
         navDailyFortune: "Daily Fortune",
         navZodiac: "Zodiac",
@@ -177,18 +177,18 @@ const translations = {
             linkUrl: "blog_posts/feb-money-zodiac-en.html"
         },
         article11: {
-            title: "🧭 Zodiac Weekly Fortune Points (May 11–May 17)",
-            meta: "May 11–May 17, 2026 | Cosmic Insight",
+            title: "🧭 Zodiac Weekly Fortune Points (May 18–May 24)",
+            meta: "May 18–May 24, 2026 | Cosmic Insight",
             p1: "A waning-crescent reset week with the May 16 new moon and Taurus-season steadiness, mapped across all 12 signs.",
             linkText: "📖 Read Weekly Fortune Guide (Click Here) →",
             linkUrl: "blog_posts/weekly-keywords-en.html"
         },
         article17: {
-            title: "💸 Weekly Money Outlook (May 11–May 17)",
-            meta: "May 11–May 17, 2026 | Cosmic Insight",
+            title: "💸 Weekly Money Outlook (May 18–May 24)",
+            meta: "May 18–May 24, 2026 | Cosmic Insight",
             p1: "A recurring-cost reset for the coming week with sign-by-sign cues and a practical checklist.",
             linkText: "📖 Read Weekly Money Outlook (Click Here) →",
-            linkUrl: "blog_posts/weekly-money-zodiac-05-11-05-17-en.html"
+            linkUrl: "blog_posts/weekly-money-zodiac-05-18-05-24-en.html"
         },
         article18: {
             title: "✨ 2026 Rhythm Guide by Zodiac Elements",
@@ -217,6 +217,13 @@ const translations = {
             p1: "A guide to spending habits by zodiac elements and modalities, with practical ways to slow money leaks.",
             linkText: "📖 Check Money Habits →",
             linkUrl: "blog_posts/zodiac-money-leaks-checklist-en.html"
+        },
+        article22: {
+            title: "🤝 Zodiac Relationship Patterns and Healthy Distance",
+            meta: "May 13, 2026 | Mystic Psychology",
+            p1: "A practical guide to how each sign gets close, gets tired, and adjusts distance without cutting ties.",
+            linkText: "📖 Read Relationship Guide →",
+            linkUrl: "blog_posts/zodiac-relationship-distance-en.html"
         },
         article3: {
             title: "✋ Palmistry 101: The Heart Line",
@@ -319,7 +326,7 @@ const translations = {
         msgWait: "버튼을 눌러 오늘의 운세를 확인하세요.",
         msgFinancial: "버튼을 눌러 금전운을 확인하세요.",
         msgRelationship: "버튼을 눌러 인연운을 확인하세요.",
-        homeCtaText: "오늘 점수를 확인했다면, 다음 주 신월 전후의 정리와 재시작 흐름도 바로 이어서 확인해보세요.",
+        homeCtaText: "오늘 점수를 확인했다면, 다음 주 차오르는 달과 상현달의 선택 흐름도 바로 이어서 확인해보세요.",
         homeCtaWeekly: "이번 주 운세 보기 →",
         homeCtaWeeklyTitle: "이번 주 운세 키워드",
         homeCtaWeeklyDesc: "5월 16일 신월과 그믐달 포인트를 별자리별로 빠르게 확인해보세요.",
@@ -327,9 +334,9 @@ const translations = {
         homeCtaWeeklyUrl: "blog_posts/weekly-keywords.html",
         homeCtaMoney: "금전운 보기 →",
         homeCtaMoneyTitle: "주간 금전운",
-        homeCtaMoneyDesc: "5월 16일 신월과 그믐달 흐름을 반영한 다음 주 금전운입니다.",
+        homeCtaMoneyDesc: "5월 23일 상현달과 쌍둥이자리 시즌 전환을 반영한 다음 주 금전운입니다.",
         homeCtaMoneyBadge: "05.11 - 05.17",
-        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-05-11-05-17.html",
+        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-05-18-05-24.html",
         fortunes: {
             81: "🌟 <strong>우주의 축복!</strong> 엄청난 기회가 기다리고 있어요!",
             61: "✨ <strong>별빛의 가호!</strong> 좋은 기운이 흐르고 있네요!",
@@ -362,7 +369,7 @@ const translations = {
         homeWisdom2Title: "주간 금전운",
         homeWisdom2Desc: "5월 16일 신월과 그믐달 흐름을 반영해 다시 정리했습니다.",
         homeWisdom2Cta: "금전운 보기 →",
-        homeWisdom2Url: "blog_posts/weekly-money-zodiac-05-11-05-17.html",
+        homeWisdom2Url: "blog_posts/weekly-money-zodiac-05-18-05-24.html",
         readMore: "전체 글 보기 →",
         navDailyFortune: "오늘의 운세",
         navZodiac: "별자리",
@@ -426,18 +433,18 @@ const translations = {
             linkUrl: "blog_posts/feb-money-zodiac.html"
         },
         article11: {
-            title: "🧭 별자리별 이번 주 운세 포인트 (5월 11일–17일)",
-            meta: "2026년 5월 11일–17일 | 우주의 통찰",
+            title: "🧭 별자리별 이번 주 운세 포인트 (5월 18일–24일)",
+            meta: "2026년 5월 18일–24일 | 우주의 통찰",
             p1: "5월 16일 신월과 그믐달 흐름, 황소자리 시즌의 현실 감각을 바탕으로 12별자리 포인트를 다시 정리했습니다.",
             linkText: "📖 이번 주 운세 보기 (클릭) →",
             linkUrl: "blog_posts/weekly-keywords.html"
         },
         article17: {
-            title: "💸 주간 금전운 요약 (5월 11일–17일)",
-            meta: "2026년 5월 11일–17일 | 우주의 통찰",
-            p1: "5월 16일 신월과 그믐달 흐름을 반영해 다음 주 예산·구독·저축 리듬을 다시 정리했습니다.",
+            title: "💸 주간 금전운 요약 (5월 18일–24일)",
+            meta: "2026년 5월 18일–24일 | 우주의 통찰",
+            p1: "차오르는 달과 5월 23일 상현달 흐름을 반영해 다음 주 예산·연락·결제 리듬을 다시 정리했습니다.",
             linkText: "📖 주간 금전운 읽기 →",
-            linkUrl: "blog_posts/weekly-money-zodiac-05-11-05-17.html"
+            linkUrl: "blog_posts/weekly-money-zodiac-05-18-05-24.html"
         },
         article18: {
             title: "✨ 별자리 4원소로 읽는 2026 리듬 가이드",
@@ -466,6 +473,13 @@ const translations = {
             p1: "4원소와 3양식으로 별자리별 소비 습관과 지출이 커지기 쉬운 장면을 정리한 가이드.",
             linkText: "📖 소비 습관 점검하기 →",
             linkUrl: "blog_posts/zodiac-money-leaks-checklist.html"
+        },
+        article22: {
+            title: "🤝 별자리 특성별 인간관계 패턴과 거리 조절법",
+            meta: "2026년 5월 13일 | 신비 심리학",
+            p1: "4원소와 3양식으로 가까워지는 방식, 관계에서 지치는 지점, 관계를 끊지 않는 거리 조절법을 정리했습니다.",
+            linkText: "📖 관계 패턴 읽기 →",
+            linkUrl: "blog_posts/zodiac-relationship-distance.html"
         },
         article3: {
             title: "✋ 손금 101: 감정선",
@@ -1579,6 +1593,7 @@ window.updateBlogText = function(lang) {
     updateArticle('article19', t.article19);
     updateArticle('article20', t.article20);
     updateArticle('article21', t.article21);
+    updateArticle('article22', t.article22);
     updateArticle('article12', t.article12);
     updateArticle('article16', t.article16);
     updateArticle('article14', t.article14);
