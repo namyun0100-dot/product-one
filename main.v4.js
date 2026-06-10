@@ -73,17 +73,17 @@ const translations = {
         msgWait: "Press the button to see your forecast.",
         msgFinancial: "Press the button to see your financial forecast.",
         msgRelationship: "Press the button to see your relationship forecast.",
-        homeCtaText: "Checked today's score? Keep going with next week's new-moon reset and waning-crescent rhythm.",
+        homeCtaText: "Checked today's score? Keep going with next week's post-new-moon growth and solstice check-in.",
         homeCtaWeekly: "Open Weekly Horoscope →",
         homeCtaWeeklyTitle: "Weekly Horoscope Keywords",
-        homeCtaWeeklyDesc: "Use the June 8 last quarter moon, Gemini season, and the June 14 new moon reset to scan next week by sign.",
-        homeCtaWeeklyBadge: "June 8 - June 14",
+        homeCtaWeeklyDesc: "Use the June 14 new moon, June 21 first quarter moon, and solstice rhythm to scan next week by sign.",
+        homeCtaWeeklyBadge: "June 15 - June 21",
         homeCtaWeeklyUrl: "blog_posts/weekly-keywords-en.html",
         homeCtaMoney: "Open Money Outlook →",
         homeCtaMoneyTitle: "Weekly Money Outlook",
-        homeCtaMoneyDesc: "Review early-month fixed costs, shared payments, and one repeat expense to reduce next week.",
-        homeCtaMoneyBadge: "June 8 - June 14",
-        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-06-08-06-14-en.html",
+        homeCtaMoneyDesc: "Turn one budget seed into a real spending rule, then review summer costs by the solstice.",
+        homeCtaMoneyBadge: "June 15 - June 21",
+        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-06-15-06-21-en.html",
         fortunes: {
             81: "🌟 <strong>Cosmic alignment!</strong> A universe of opportunities awaits!",
             61: "✨ <strong>Starlight favor!</strong> Good vibes are flowing your way.",
@@ -107,16 +107,16 @@ const translations = {
         navBlogLink: "Blog Home",
         wisdomTitle: "This Week at a Glance",
         wisdomSubtitle: "Go straight to the weekly horoscope and money outlook people check most.",
-        homeWisdom1Badge: "June 8 - June 14",
+        homeWisdom1Badge: "June 15 - June 21",
         homeWisdom1Title: "Weekly Horoscope Keywords",
-        homeWisdom1Desc: "Use the June 8 last quarter moon, Gemini season, and the June 14 new moon reset to scan next steps by sign.",
+        homeWisdom1Desc: "Use the June 14 new moon, June 21 first quarter moon, and solstice rhythm to scan next steps by sign.",
         homeWisdom1Cta: "Open Weekly Horoscope →",
         homeWisdom1Url: "blog_posts/weekly-keywords-en.html",
-        homeWisdom2Badge: "June 8 - June 14",
+        homeWisdom2Badge: "June 15 - June 21",
         homeWisdom2Title: "Weekly Money Outlook",
-        homeWisdom2Desc: "Review early-month fixed costs, shared payments, and one repeat expense to reduce next week.",
+        homeWisdom2Desc: "Turn one budget seed into a real spending rule, then review summer costs by the solstice.",
         homeWisdom2Cta: "Open Money Outlook →",
-        homeWisdom2Url: "blog_posts/weekly-money-zodiac-06-08-06-14-en.html",
+        homeWisdom2Url: "blog_posts/weekly-money-zodiac-06-15-06-21-en.html",
         readMore: "Browse All Posts →",
         navDailyFortune: "Daily Fortune",
         navZodiac: "Zodiac",
@@ -177,18 +177,18 @@ const translations = {
             linkUrl: "blog_posts/feb-money-zodiac-en.html"
         },
         article11: {
-            title: "🧭 Zodiac Weekly Fortune Points (June 8–June 14)",
-            meta: "June 8–June 14, 2026 | Cosmic Insight",
-            p1: "A cleanup-to-restart week shaped by the June 8 last quarter moon, Gemini season, and the June 14 new moon.",
+            title: "🧭 Zodiac Weekly Fortune Points (June 15–June 21)",
+            meta: "June 15–June 21, 2026 | Cosmic Insight",
+            p1: "A post-new-moon growth week shaped by the June 14 new moon, June 21 first quarter moon, and solstice.",
             linkText: "📖 Read Weekly Fortune Guide (Click Here) →",
             linkUrl: "blog_posts/weekly-keywords-en.html"
         },
         article17: {
-            title: "💸 Weekly Money Outlook (June 8–June 14)",
-            meta: "June 8–June 14, 2026 | Cosmic Insight",
+            title: "💸 Weekly Money Outlook (June 15–June 21)",
+            meta: "June 15–June 21, 2026 | Cosmic Insight",
             p1: "A last-quarter-to-new-moon money reset for subscriptions, shared costs, and one small budget rule.",
             linkText: "📖 Read Weekly Money Outlook (Click Here) →",
-            linkUrl: "blog_posts/weekly-money-zodiac-06-08-06-14-en.html"
+            linkUrl: "blog_posts/weekly-money-zodiac-06-15-06-21-en.html"
         },
         article18: {
             title: "✨ 2026 Rhythm Guide by Zodiac Elements",
@@ -224,6 +224,14 @@ const translations = {
             p1: "A practical guide to how each sign gets close, gets tired, and adjusts distance without cutting ties.",
             linkText: "📖 Read Relationship Guide →",
             linkUrl: "blog_posts/zodiac-relationship-distance-en.html"
+        },
+
+        article23: {
+            title: "💍 Palmistry 106: The Marriage Line",
+            meta: "Jun 10, 2026 | Ancient Arts",
+            p1: "Location, length, forks, breaks, and multiple lines. A deep guide to relationship rhythm and commitment style.",
+            linkText: "📖 Read Marriage Line Guide (Click Here) →",
+            linkUrl: "blog_posts/palm-106-marriage-en.html"
         },
         article3: {
             title: "✋ Palmistry 101: The Heart Line",
@@ -326,17 +334,17 @@ const translations = {
         msgWait: "버튼을 눌러 오늘의 운세를 확인하세요.",
         msgFinancial: "버튼을 눌러 금전운을 확인하세요.",
         msgRelationship: "버튼을 눌러 인연운을 확인하세요.",
-        homeCtaText: "오늘 점수를 확인했다면, 다음 주 하현달과 신월의 정리 흐름도 바로 이어서 확인해보세요.",
+        homeCtaText: "오늘 점수를 확인했다면, 다음 주 신월 직후 성장과 하지 점검 흐름도 바로 이어서 확인해보세요.",
         homeCtaWeekly: "이번 주 운세 보기 →",
         homeCtaWeeklyTitle: "이번 주 운세 키워드",
-        homeCtaWeeklyDesc: "6월 8일 하현달과 6월 14일 신월 포인트를 별자리별로 빠르게 확인해보세요.",
-        homeCtaWeeklyBadge: "06.08 - 06.14",
+        homeCtaWeeklyDesc: "6월 14일 신월 직후와 6월 21일 상현달·하지 포인트를 별자리별로 빠르게 확인해보세요.",
+        homeCtaWeeklyBadge: "06.15 - 06.21",
         homeCtaWeeklyUrl: "blog_posts/weekly-keywords.html",
         homeCtaMoney: "금전운 보기 →",
         homeCtaMoneyTitle: "주간 금전운",
-        homeCtaMoneyDesc: "하현달의 지출 정리와 신월 예산 흐름을 반영한 다음 주 금전운입니다.",
-        homeCtaMoneyBadge: "06.08 - 06.14",
-        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-06-08-06-14.html",
+        homeCtaMoneyDesc: "신월 직후 예산 실행과 하지 주말 점검 흐름을 반영한 다음 주 금전운입니다.",
+        homeCtaMoneyBadge: "06.15 - 06.21",
+        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-06-15-06-21.html",
         fortunes: {
             81: "🌟 <strong>우주의 축복!</strong> 엄청난 기회가 기다리고 있어요!",
             61: "✨ <strong>별빛의 가호!</strong> 좋은 기운이 흐르고 있네요!",
@@ -360,16 +368,16 @@ const translations = {
         navBlogLink: "블로그 홈",
         wisdomTitle: "이번 주 바로 보기",
         wisdomSubtitle: "지금 가장 자주 찾는 주간 운세와 금전운을 바로 확인해보세요.",
-        homeWisdom1Badge: "06.08 - 06.14",
+        homeWisdom1Badge: "06.15 - 06.21",
         homeWisdom1Title: "이번 주 운세 키워드",
-        homeWisdom1Desc: "하현달에서 신월로 이어지는 정리와 재시작 포인트를 별자리별 키워드로 확인해보세요.",
+        homeWisdom1Desc: "신월 직후 시작과 상현달·하지 점검 포인트를 별자리별 키워드로 확인해보세요.",
         homeWisdom1Cta: "바로 보기 →",
         homeWisdom1Url: "blog_posts/weekly-keywords.html",
-        homeWisdom2Badge: "06.08 - 06.14",
+        homeWisdom2Badge: "06.15 - 06.21",
         homeWisdom2Title: "주간 금전운",
-        homeWisdom2Desc: "반복 지출 점검과 신월 예산 씨앗을 중심으로 다시 정리했습니다.",
+        homeWisdom2Desc: "새 예산 규칙 실행과 여름 지출 기준을 중심으로 다시 정리했습니다.",
         homeWisdom2Cta: "금전운 보기 →",
-        homeWisdom2Url: "blog_posts/weekly-money-zodiac-06-08-06-14.html",
+        homeWisdom2Url: "blog_posts/weekly-money-zodiac-06-15-06-21.html",
         readMore: "전체 글 보기 →",
         navDailyFortune: "오늘의 운세",
         navZodiac: "별자리",
@@ -433,18 +441,18 @@ const translations = {
             linkUrl: "blog_posts/feb-money-zodiac.html"
         },
         article11: {
-            title: "🧭 별자리별 이번 주 운세 포인트 (6월 8일–14일)",
-            meta: "2026년 6월 8일–14일 | 우주의 통찰",
-            p1: "6월 8일 하현달, 쌍둥이자리 시즌, 6월 14일 신월 흐름을 바탕으로 12별자리 포인트를 다시 정리했습니다.",
+            title: "🧭 별자리별 이번 주 운세 포인트 (6월 15일–21일)",
+            meta: "2026년 6월 15일–21일 | 우주의 통찰",
+            p1: "6월 14일 신월 직후와 6월 21일 상현달·하지 흐름을 바탕으로 12별자리 포인트를 다시 정리했습니다.",
             linkText: "📖 이번 주 운세 보기 (클릭) →",
             linkUrl: "blog_posts/weekly-keywords.html"
         },
         article17: {
-            title: "💸 주간 금전운 요약 (6월 8일–14일)",
-            meta: "2026년 6월 8일–14일 | 우주의 통찰",
-            p1: "하현달의 지출 정리와 신월의 새 예산 씨앗을 반영해 다음 주 예산·구독·결제 리듬을 다시 정리했습니다.",
+            title: "💸 주간 금전운 요약 (6월 15일–21일)",
+            meta: "2026년 6월 15일–21일 | 우주의 통찰",
+            p1: "신월 직후 예산 실행과 하지 주말 점검 흐름을 반영해 다음 주 지출 기준을 다시 정리했습니다.",
             linkText: "📖 주간 금전운 읽기 →",
-            linkUrl: "blog_posts/weekly-money-zodiac-06-08-06-14.html"
+            linkUrl: "blog_posts/weekly-money-zodiac-06-15-06-21.html"
         },
         article18: {
             title: "✨ 별자리 4원소로 읽는 2026 리듬 가이드",
@@ -563,6 +571,14 @@ const translations = {
             p1: "굵기, 분기, 방해선까지. 명예와 성과 흐름을 읽는 태양선 가이드.",
             linkText: "📖 태양선 가이드 보기 (클릭) →",
             linkUrl: "blog_posts/palm-105-sun.html"
+        },
+
+        article23: {
+            title: "💍 손금 106: 결혼선",
+            meta: "2026년 6월 10일 | 고대 예술",
+            p1: "위치, 길이, 갈라짐, 끊김, 여러 줄까지. 관계 리듬과 애정 약속 방식을 읽는 결혼선 심화 가이드.",
+            linkText: "📖 결혼선 가이드 보기 (클릭) →",
+            linkUrl: "blog_posts/palm-106-marriage.html"
         },
         article9: {
             title: "✋ 손바닥 안의 소우주: 별의 언덕과 운명의 지도",
@@ -1594,6 +1610,7 @@ window.updateBlogText = function(lang) {
     updateArticle('article20', t.article20);
     updateArticle('article21', t.article21);
     updateArticle('article22', t.article22);
+    updateArticle('article23', t.article23);
     updateArticle('article12', t.article12);
     updateArticle('article16', t.article16);
     updateArticle('article14', t.article14);
