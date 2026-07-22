@@ -5,6 +5,7 @@
   "main": "main.v4.js",
   "scripts": {
     "dev": "firebase serve --only hosting",
+    "preview": "python3 -m http.server 4173 --bind 0.0.0.0",
     "check:weekly": "python3 scripts/check_weekly_content.py"
   },
   "author": "",
