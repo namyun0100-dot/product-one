@@ -232,6 +232,13 @@ const translations = {
             linkText: "📖 Understand Your Big Three →",
             linkUrl: "blog_posts/sun-moon-rising-sign-guide-en.html"
         },
+        article25: {
+            title: "🌙 How to Find Your Moon Sign When You Don’t Know Your Birth Time",
+            meta: "July 29, 2026 | Astrology Basics",
+            p1: "Learn why birth date, time, and place matter—and how to keep two valid Moon-sign possibilities when the exact time is unknown.",
+            linkText: "📖 Find Your Moon Sign →",
+            linkUrl: "blog_posts/how-to-find-moon-sign-en.html"
+        },
 
         article23: {
             title: "💍 Palmistry 106: The Marriage Line",
@@ -502,6 +509,13 @@ const translations = {
             p1: "생일로 보는 태양 별자리, 달로 보는 달 별자리, 태어난 순간 동쪽에서 떠오르던 상승궁을 쉬운 말과 실제 상황으로 구분합니다.",
             linkText: "📖 세 별자리 차이 읽기 →",
             linkUrl: "blog_posts/sun-moon-rising-sign-guide.html"
+        },
+        article25: {
+            title: "🌙 내 달 별자리 찾는 방법: 출생 시간을 모를 때 확인하는 법",
+            meta: "2026년 7월 29일 | 점성술 입문",
+            p1: "생년월일·출생 시각·장소가 필요한 이유와 출생 시간을 모를 때 두 후보를 확인하는 순서를 설명합니다.",
+            linkText: "📖 내 달 별자리 찾기 →",
+            linkUrl: "blog_posts/how-to-find-moon-sign.html"
         },
         article3: {
             title: "✋ 손금 101: 감정선",
@@ -1625,6 +1639,7 @@ window.updateBlogText = function(lang) {
     updateArticle('article21', t.article21);
     updateArticle('article22', t.article22);
     updateArticle('article24', t.article24);
+    updateArticle('article25', t.article25);
     updateArticle('article23', t.article23);
     updateArticle('article12', t.article12);
     updateArticle('article16', t.article16);
