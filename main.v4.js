@@ -1,4 +1,4 @@
-const APP_VERSION = "2026-04-08-10";
+const APP_VERSION = "2026-08-05-1";
 
 function migrateLocalState() {
     const storedVersion = localStorage.getItem('appVersion');
@@ -73,17 +73,17 @@ const translations = {
         msgWait: "Press the button to see your forecast.",
         msgFinancial: "Press the button to see your financial forecast.",
         msgRelationship: "Press the button to see your relationship forecast.",
-        homeCtaText: "Checked today's score? Continue with next week's full-moon review, closure, and reset.",
+        homeCtaText: "Checked today's score? Continue with next week's New Moon themes of closure, reset, and a small start.",
         homeCtaWeekly: "Open Weekly Horoscope →",
         homeCtaWeeklyTitle: "Weekly Horoscope Keywords",
-        homeCtaWeeklyDesc: "Use the August 6 last-quarter moon to release, rearrange, and choose by sign.",
-        homeCtaWeeklyBadge: "August 3 - 9",
+        homeCtaWeeklyDesc: "Use the August 12 New Moon to close loose ends, reset one rule, and start small.",
+        homeCtaWeeklyBadge: "August 10 - 16",
         homeCtaWeeklyUrl: "blog_posts/weekly-keywords-en.html",
         homeCtaMoney: "Open Money Outlook →",
         homeCtaMoneyTitle: "Weekly Money Outlook",
-        homeCtaMoneyDesc: "Trim fixed costs, sort variable spending, and leave room before payment.",
-        homeCtaMoneyBadge: "August 3 - 9",
-        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-08-03-08-09-en.html",
+        homeCtaMoneyDesc: "Review recurring charges, reset one budget rule, and protect a cash buffer.",
+        homeCtaMoneyBadge: "August 10 - 16",
+        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-08-10-08-16-en.html",
         fortunes: {
             81: "🌟 <strong>Cosmic alignment!</strong> A universe of opportunities awaits!",
             61: "✨ <strong>Starlight favor!</strong> Good vibes are flowing your way.",
@@ -107,16 +107,16 @@ const translations = {
         navBlogLink: "Blog Home",
         wisdomTitle: "This Week at a Glance",
         wisdomSubtitle: "Go straight to the weekly horoscope and money outlook people check most.",
-        homeWisdom1Badge: "August 3 - 9",
+        homeWisdom1Badge: "August 10 - 16",
         homeWisdom1Title: "Weekly Horoscope Keywords",
         homeWisdom1Desc: "Use the last-quarter-moon week to release excess and protect one priority.",
         homeWisdom1Cta: "Open Weekly Horoscope →",
         homeWisdom1Url: "blog_posts/weekly-keywords-en.html",
-        homeWisdom2Badge: "August 3 - 9",
+        homeWisdom2Badge: "August 10 - 16",
         homeWisdom2Title: "Weekly Money Outlook",
         homeWisdom2Desc: "Trim fixed costs, sort variable spending, and preserve a buffer.",
         homeWisdom2Cta: "Open Money Outlook →",
-        homeWisdom2Url: "blog_posts/weekly-money-zodiac-08-03-08-09-en.html",
+        homeWisdom2Url: "blog_posts/weekly-money-zodiac-08-10-08-16-en.html",
         readMore: "Browse All Posts →",
         navDailyFortune: "Daily Fortune",
         navZodiac: "Zodiac",
@@ -177,18 +177,18 @@ const translations = {
             linkUrl: "blog_posts/feb-money-zodiac-en.html"
         },
         article11: {
-            title: "🧭 Zodiac Weekly Fortune Points (August 3–9)",
-            meta: "August 3–9, 2026 | Cosmic Insight",
-            p1: "A last-quarter-moon week for releasing excess, rearranging energy, and protecting one priority.",
+            title: "🧭 Zodiac Weekly Fortune Points (August 10–16)",
+            meta: "August 10–16, 2026 | Cosmic Insight",
+            p1: "A New Moon week for closing loose ends, resetting one rule, and beginning with a small repeatable action.",
             linkText: "📖 Read Weekly Fortune Guide (Click Here) →",
             linkUrl: "blog_posts/weekly-keywords-en.html"
         },
         article17: {
-            title: "💸 Weekly Money Outlook (August 3–9)",
-            meta: "August 3–9, 2026 | Cosmic Insight",
+            title: "💸 Weekly Money Outlook (August 10–16)",
+            meta: "August 10–16, 2026 | Cosmic Insight",
             p1: "A practical money check for fixed costs, variable spending, and a payment buffer.",
             linkText: "📖 Read Weekly Money Outlook (Click Here) →",
-            linkUrl: "blog_posts/weekly-money-zodiac-08-03-08-09-en.html"
+            linkUrl: "blog_posts/weekly-money-zodiac-08-10-08-16-en.html"
         },
         article18: {
             title: "✨ 2026 Rhythm Guide by Zodiac Elements",
@@ -227,19 +227,26 @@ const translations = {
         },
         article24: {
             title: "☀️ Sun, Moon, and Rising Signs: What Is the Difference?",
-            meta: "July 22, 2026 | Astrology Basics",
+            meta: "July 22, 2026 | Astrology Basics 1",
             p1: "A plain-language guide to your birthday Sun sign, the Moon sign based on the Moon’s birth position, and the sign rising in the east.",
             linkText: "📖 Understand Your Big Three →",
             linkUrl: "blog_posts/sun-moon-rising-sign-guide-en.html"
         },
         article25: {
             title: "🌙 How to Find Your Moon Sign When You Don’t Know Your Birth Time",
-            meta: "July 29, 2026 | Astrology Basics",
+            meta: "July 29, 2026 | Astrology Basics 2",
             p1: "Learn why birth date, time, and place matter—and how to keep two valid Moon-sign possibilities when the exact time is unknown.",
             linkText: "📖 Find Your Moon Sign →",
             linkUrl: "blog_posts/how-to-find-moon-sign-en.html"
         },
 
+        article26: {
+            title: "🌙 Moon Signs, Emotions, and What Helps You Feel Safe",
+            meta: "August 5, 2026 | Astrology Basics 3",
+            p1: "A guide to the instinctive emotional response, security needs, care language, and recovery pattern of all 12 Moon signs.",
+            linkText: "📖 Read the Moon Sign Emotions Guide →",
+            linkUrl: "blog_posts/moon-sign-emotions-guide-en.html"
+        },
         article23: {
             title: "💍 Palmistry 106: The Marriage Line",
             meta: "Jun 10, 2026 | Ancient Arts",
@@ -348,17 +355,17 @@ const translations = {
         msgWait: "버튼을 눌러 오늘의 운세를 확인하세요.",
         msgFinancial: "버튼을 눌러 금전운을 확인하세요.",
         msgRelationship: "버튼을 눌러 인연운을 확인하세요.",
-        homeCtaText: "오늘 점수를 확인했다면, 다음 주 보름달의 확인, 정리, 재설정 흐름도 확인해보세요.",
+        homeCtaText: "오늘 점수를 확인했다면, 다음 주 신월의 마감, 재설정, 작은 시작 흐름도 확인해보세요.",
         homeCtaWeekly: "이번 주 운세 보기 →",
         homeCtaWeeklyTitle: "이번 주 운세 키워드",
-        homeCtaWeeklyDesc: "8월 6일 하현달을 기준으로 덜어내기, 재배치, 선택의 포인트를 확인해보세요.",
-        homeCtaWeeklyBadge: "08.03 - 08.09",
+        homeCtaWeeklyDesc: "8월 12일 신월을 기준으로 마감, 재설정, 작은 시작의 포인트를 확인해보세요.",
+        homeCtaWeeklyBadge: "08.10 - 08.16",
         homeCtaWeeklyUrl: "blog_posts/weekly-keywords.html",
         homeCtaMoney: "금전운 보기 →",
         homeCtaMoneyTitle: "주간 금전운",
-        homeCtaMoneyDesc: "고정비 압축, 변동지출 선별, 결제 전 여백을 점검하는 다음 주 금전운입니다.",
-        homeCtaMoneyBadge: "08.03 - 08.09",
-        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-08-03-08-09.html",
+        homeCtaMoneyDesc: "자동결제 정리, 예산 기준 재설정, 현금 여유분을 점검하는 다음 주 금전운입니다.",
+        homeCtaMoneyBadge: "08.10 - 08.16",
+        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-08-10-08-16.html",
         fortunes: {
             81: "🌟 <strong>우주의 축복!</strong> 엄청난 기회가 기다리고 있어요!",
             61: "✨ <strong>별빛의 가호!</strong> 좋은 기운이 흐르고 있네요!",
@@ -382,16 +389,16 @@ const translations = {
         navBlogLink: "블로그 홈",
         wisdomTitle: "이번 주 바로 보기",
         wisdomSubtitle: "지금 가장 자주 찾는 주간 운세와 금전운을 바로 확인해보세요.",
-        homeWisdom1Badge: "08.03 - 08.09",
+        homeWisdom1Badge: "08.10 - 08.16",
         homeWisdom1Title: "이번 주 운세 키워드",
-        homeWisdom1Desc: "보름달 주간의 확인, 정리, 재설정 포인트를 별자리별로 확인해보세요.",
+        homeWisdom1Desc: "신월 주간의 마감, 재설정, 작은 시작 포인트를 별자리별로 확인해보세요.",
         homeWisdom1Cta: "바로 보기 →",
         homeWisdom1Url: "blog_posts/weekly-keywords.html",
-        homeWisdom2Badge: "08.03 - 08.09",
+        homeWisdom2Badge: "08.10 - 08.16",
         homeWisdom2Title: "주간 금전운",
-        homeWisdom2Desc: "고정비 압축, 변동지출 선별, 결제 전 여백을 중심으로 정리했습니다.",
+        homeWisdom2Desc: "자동결제 정리, 예산 기준 재설정, 현금 여유분을 중심으로 정리했습니다.",
         homeWisdom2Cta: "금전운 보기 →",
-        homeWisdom2Url: "blog_posts/weekly-money-zodiac-08-03-08-09.html",
+        homeWisdom2Url: "blog_posts/weekly-money-zodiac-08-10-08-16.html",
         readMore: "전체 글 보기 →",
         navDailyFortune: "오늘의 운세",
         navZodiac: "별자리",
@@ -455,18 +462,18 @@ const translations = {
             linkUrl: "blog_posts/feb-money-zodiac.html"
         },
         article11: {
-            title: "🧭 별자리별 이번 주 운세 포인트 (8월 3일–9일)",
-            meta: "2026년 8월 3일–9일 | 우주의 통찰",
-            p1: "8월 6일 하현달을 기준으로 덜어내기, 재배치, 선택의 12별자리 포인트를 정리했습니다.",
+            title: "🧭 별자리별 이번 주 운세 포인트 (8월 10일–16일)",
+            meta: "2026년 8월 10일–16일 | 우주의 통찰",
+            p1: "8월 12일 신월을 기준으로 마감, 재설정, 작은 시작의 12별자리 포인트를 정리했습니다.",
             linkText: "📖 이번 주 운세 보기 (클릭) →",
             linkUrl: "blog_posts/weekly-keywords.html"
         },
         article17: {
-            title: "💸 주간 금전운 요약 (8월 3일–9일)",
-            meta: "2026년 8월 3일–9일 | 우주의 통찰",
-            p1: "하현달 주간의 고정비 압축, 변동지출 선별, 결제 전 여백을 중심으로 정리했습니다.",
+            title: "💸 주간 금전운 요약 (8월 10일–16일)",
+            meta: "2026년 8월 10일–16일 | 우주의 통찰",
+            p1: "신월 주간의 자동결제 정리, 예산 기준 재설정, 현금 여유분을 중심으로 정리했습니다.",
             linkText: "📖 주간 금전운 읽기 →",
-            linkUrl: "blog_posts/weekly-money-zodiac-08-03-08-09.html"
+            linkUrl: "blog_posts/weekly-money-zodiac-08-10-08-16.html"
         },
         article18: {
             title: "✨ 별자리 4원소로 읽는 2026 리듬 가이드",
@@ -505,17 +512,24 @@ const translations = {
         },
         article24: {
             title: "☀️ 태양 별자리·달 별자리·상승궁은 무엇이 다를까?",
-            meta: "2026년 7월 22일 | 점성술 입문",
+            meta: "2026년 7월 22일 | 별자리 입문 1",
             p1: "생일로 보는 태양 별자리, 달로 보는 달 별자리, 태어난 순간 동쪽에서 떠오르던 상승궁을 쉬운 말과 실제 상황으로 구분합니다.",
             linkText: "📖 세 별자리 차이 읽기 →",
             linkUrl: "blog_posts/sun-moon-rising-sign-guide.html"
         },
         article25: {
             title: "🌙 내 달 별자리 찾는 방법: 출생 시간을 모를 때 확인하는 법",
-            meta: "2026년 7월 29일 | 점성술 입문",
+            meta: "2026년 7월 29일 | 별자리 입문 2",
             p1: "생년월일·출생 시각·장소가 필요한 이유와 출생 시간을 모를 때 두 후보를 확인하는 순서를 설명합니다.",
             linkText: "📖 내 달 별자리 찾기 →",
             linkUrl: "blog_posts/how-to-find-moon-sign.html"
+        },
+        article26: {
+            title: "🌙 달 별자리가 보여주는 감정과 안정감",
+            meta: "2026년 8월 5일 | 별자리 입문 3",
+            p1: "12달 별자리별로 반사적으로 먼저 나오는 감정 반응, 안정 조건, 돌봄 방식과 회복 단서를 설명합니다.",
+            linkText: "📖 달 별자리 감정 가이드 읽기 →",
+            linkUrl: "blog_posts/moon-sign-emotions-guide.html"
         },
         article3: {
             title: "✋ 손금 101: 감정선",
@@ -1640,6 +1654,7 @@ window.updateBlogText = function(lang) {
     updateArticle('article22', t.article22);
     updateArticle('article24', t.article24);
     updateArticle('article25', t.article25);
+    updateArticle('article26', t.article26);
     updateArticle('article23', t.article23);
     updateArticle('article12', t.article12);
     updateArticle('article16', t.article16);
