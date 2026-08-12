@@ -1,4 +1,4 @@
-const APP_VERSION = "2026-08-05-1";
+const APP_VERSION = "2026-08-12-1";
 
 function migrateLocalState() {
     const storedVersion = localStorage.getItem('appVersion');
@@ -73,17 +73,29 @@ const translations = {
         msgWait: "Press the button to see your forecast.",
         msgFinancial: "Press the button to see your financial forecast.",
         msgRelationship: "Press the button to see your relationship forecast.",
-        homeCtaText: "Checked today's score? Continue with next week's New Moon themes of closure, reset, and a small start.",
+        homeEyebrow: "ZODIAC FORECASTS & LIFE GUIDES",
+        homeIdentityTitle: "See next week’s zodiac forecast and plan ahead",
+        homeIdentityDesc: "Read your weekly zodiac and money outlook, then pick one useful action for relationships, work, spending, or daily life.",
+        homeHeroAlt: "Night-sky illustration with a moon, constellations, and a weekly planner",
+        homeAnchorFactLabel: "Dates to note next week",
+        homeAnchorFact: "First Quarter Moon, August 19 · Seasonal turn, August 23",
+        homeAnchorReading: "Try this: start one plan, make a small fix if it feels difficult, and decide over the weekend what you want to continue.",
+        homeWeeklyEyebrow: "NEXT WEEK · AUGUST 17–23",
+        homeWeeklyTitle: "Your August 17–23 forecast",
+        dailyCheckEyebrow: "TODAY’S FORTUNE",
+        dailyCheckTitle: "Check today’s fortune for fun",
+        dailyCheckDesc: "This is a randomized fortune for entertainment. Check real facts and circumstances before making an important decision.",
+        homeCtaText: "Start with the zodiac or money guide that interests you.",
         homeCtaWeekly: "Open Weekly Horoscope →",
         homeCtaWeeklyTitle: "Weekly Horoscope Keywords",
-        homeCtaWeeklyDesc: "Use the August 12 New Moon to close loose ends, reset one rule, and start small.",
-        homeCtaWeeklyBadge: "August 10 - 16",
+        homeCtaWeeklyDesc: "See what each zodiac sign can focus on and what may be better avoided next week.",
+        homeCtaWeeklyBadge: "August 17 - 23",
         homeCtaWeeklyUrl: "blog_posts/weekly-keywords-en.html",
         homeCtaMoney: "Open Money Outlook →",
         homeCtaMoneyTitle: "Weekly Money Outlook",
-        homeCtaMoneyDesc: "Review recurring charges, reset one budget rule, and protect a cash buffer.",
-        homeCtaMoneyBadge: "August 10 - 16",
-        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-08-10-08-16-en.html",
+        homeCtaMoneyDesc: "Review planned spending, verify payment timing, and protect a reserve buffer.",
+        homeCtaMoneyBadge: "August 17 - 23",
+        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-08-17-08-23-en.html",
         fortunes: {
             81: "🌟 <strong>Cosmic alignment!</strong> A universe of opportunities awaits!",
             61: "✨ <strong>Starlight favor!</strong> Good vibes are flowing your way.",
@@ -107,18 +119,18 @@ const translations = {
         navBlogLink: "Blog Home",
         wisdomTitle: "This Week at a Glance",
         wisdomSubtitle: "Go straight to the weekly horoscope and money outlook people check most.",
-        homeWisdom1Badge: "August 10 - 16",
+        homeWisdom1Badge: "August 17 - 23",
         homeWisdom1Title: "Weekly Horoscope Keywords",
         homeWisdom1Desc: "Use the last-quarter-moon week to release excess and protect one priority.",
         homeWisdom1Cta: "Open Weekly Horoscope →",
         homeWisdom1Url: "blog_posts/weekly-keywords-en.html",
-        homeWisdom2Badge: "August 10 - 16",
+        homeWisdom2Badge: "August 17 - 23",
         homeWisdom2Title: "Weekly Money Outlook",
         homeWisdom2Desc: "Trim fixed costs, sort variable spending, and preserve a buffer.",
         homeWisdom2Cta: "Open Money Outlook →",
-        homeWisdom2Url: "blog_posts/weekly-money-zodiac-08-10-08-16-en.html",
+        homeWisdom2Url: "blog_posts/weekly-money-zodiac-08-17-08-23-en.html",
         readMore: "Browse All Posts →",
-        navDailyFortune: "Daily Fortune",
+        navDailyFortune: "Home",
         navZodiac: "Zodiac",
         navChemistry: "Chemistry",
         navPetTarot: "Pet Tarot",
@@ -177,18 +189,18 @@ const translations = {
             linkUrl: "blog_posts/feb-money-zodiac-en.html"
         },
         article11: {
-            title: "🧭 Zodiac Weekly Fortune Points (August 10–16)",
-            meta: "August 10–16, 2026 | Cosmic Insight",
-            p1: "A New Moon week for closing loose ends, resetting one rule, and beginning with a small repeatable action.",
+            title: "🧭 Zodiac Weekly Fortune Points (August 17–23)",
+            meta: "August 17–23, 2026 | Cosmic Insight",
+            p1: "A First Quarter week for closing loose ends, resetting one rule, and beginning with a small repeatable action.",
             linkText: "📖 Read Weekly Fortune Guide (Click Here) →",
             linkUrl: "blog_posts/weekly-keywords-en.html"
         },
         article17: {
-            title: "💸 Weekly Money Outlook (August 10–16)",
-            meta: "August 10–16, 2026 | Cosmic Insight",
+            title: "💸 Weekly Money Outlook (August 17–23)",
+            meta: "August 17–23, 2026 | Cosmic Insight",
             p1: "A practical money check for fixed costs, variable spending, and a payment buffer.",
             linkText: "📖 Read Weekly Money Outlook (Click Here) →",
-            linkUrl: "blog_posts/weekly-money-zodiac-08-10-08-16-en.html"
+            linkUrl: "blog_posts/weekly-money-zodiac-08-17-08-23-en.html"
         },
         article18: {
             title: "✨ 2026 Rhythm Guide by Zodiac Elements",
@@ -355,17 +367,29 @@ const translations = {
         msgWait: "버튼을 눌러 오늘의 운세를 확인하세요.",
         msgFinancial: "버튼을 눌러 금전운을 확인하세요.",
         msgRelationship: "버튼을 눌러 인연운을 확인하세요.",
-        homeCtaText: "오늘 점수를 확인했다면, 다음 주 신월의 마감, 재설정, 작은 시작 흐름도 확인해보세요.",
+        homeEyebrow: "별자리 운세와 생활 가이드",
+        homeIdentityTitle: "다음 주 별자리 운세, 미리 보고 준비해요",
+        homeIdentityDesc: "별자리별 운세와 금전운을 읽고, 다음 주에 무엇을 해보면 좋을지 간단하게 정리해보세요.",
+        homeHeroAlt: "달과 별자리, 주간 계획 노트가 놓인 밤하늘 일러스트",
+        homeAnchorFactLabel: "다음 주 참고 날짜",
+        homeAnchorFact: "8월 19일 상현달 · 8월 23일 처서",
+        homeAnchorReading: "생활에 적용하기: 다음 주에는 계획 하나를 직접 시작해 보세요. 잘 안 되는 부분은 조금씩 고치고, 주말에는 계속할 일과 그만둘 일을 나눠보면 좋습니다.",
+        homeWeeklyEyebrow: "다음 주 · 8월 17–23일",
+        homeWeeklyTitle: "8월 17–23일 운세 미리보기",
+        dailyCheckEyebrow: "오늘의 운세",
+        dailyCheckTitle: "오늘 운세도 가볍게 확인해보세요",
+        dailyCheckDesc: "아래 결과는 재미로 보는 무작위 운세예요. 중요한 일은 실제 상황과 정보를 먼저 확인하세요.",
+        homeCtaText: "별자리 운세와 금전운 중 궁금한 글부터 읽어보세요.",
         homeCtaWeekly: "이번 주 운세 보기 →",
         homeCtaWeeklyTitle: "이번 주 운세 키워드",
-        homeCtaWeeklyDesc: "8월 12일 신월을 기준으로 마감, 재설정, 작은 시작의 포인트를 확인해보세요.",
-        homeCtaWeeklyBadge: "08.10 - 08.16",
+        homeCtaWeeklyDesc: "다음 주에 별자리별로 챙길 일과 피하면 좋은 행동을 정리했어요.",
+        homeCtaWeeklyBadge: "08.17 - 08.23",
         homeCtaWeeklyUrl: "blog_posts/weekly-keywords.html",
         homeCtaMoney: "금전운 보기 →",
         homeCtaMoneyTitle: "주간 금전운",
-        homeCtaMoneyDesc: "자동결제 정리, 예산 기준 재설정, 현금 여유분을 점검하는 다음 주 금전운입니다.",
-        homeCtaMoneyBadge: "08.10 - 08.16",
-        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-08-10-08-16.html",
+        homeCtaMoneyDesc: "계획 지출, 결제 시점, 예비비를 점검하는 다음 주 금전운입니다.",
+        homeCtaMoneyBadge: "08.17 - 08.23",
+        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-08-17-08-23.html",
         fortunes: {
             81: "🌟 <strong>우주의 축복!</strong> 엄청난 기회가 기다리고 있어요!",
             61: "✨ <strong>별빛의 가호!</strong> 좋은 기운이 흐르고 있네요!",
@@ -389,18 +413,18 @@ const translations = {
         navBlogLink: "블로그 홈",
         wisdomTitle: "이번 주 바로 보기",
         wisdomSubtitle: "지금 가장 자주 찾는 주간 운세와 금전운을 바로 확인해보세요.",
-        homeWisdom1Badge: "08.10 - 08.16",
+        homeWisdom1Badge: "08.17 - 08.23",
         homeWisdom1Title: "이번 주 운세 키워드",
-        homeWisdom1Desc: "신월 주간의 마감, 재설정, 작은 시작 포인트를 별자리별로 확인해보세요.",
+        homeWisdom1Desc: "상현달 주간의 실행, 조율, 선별 포인트를 별자리별로 확인해보세요.",
         homeWisdom1Cta: "바로 보기 →",
         homeWisdom1Url: "blog_posts/weekly-keywords.html",
-        homeWisdom2Badge: "08.10 - 08.16",
+        homeWisdom2Badge: "08.17 - 08.23",
         homeWisdom2Title: "주간 금전운",
-        homeWisdom2Desc: "자동결제 정리, 예산 기준 재설정, 현금 여유분을 중심으로 정리했습니다.",
+        homeWisdom2Desc: "계획 지출 점검, 결제일 확인, 예비비 확보를 중심으로 정리했습니다.",
         homeWisdom2Cta: "금전운 보기 →",
-        homeWisdom2Url: "blog_posts/weekly-money-zodiac-08-10-08-16.html",
+        homeWisdom2Url: "blog_posts/weekly-money-zodiac-08-17-08-23.html",
         readMore: "전체 글 보기 →",
-        navDailyFortune: "오늘의 운세",
+        navDailyFortune: "홈",
         navZodiac: "별자리",
         navChemistry: "궁합",
         navPetTarot: "펫 타로",
@@ -462,18 +486,18 @@ const translations = {
             linkUrl: "blog_posts/feb-money-zodiac.html"
         },
         article11: {
-            title: "🧭 별자리별 이번 주 운세 포인트 (8월 10일–16일)",
-            meta: "2026년 8월 10일–16일 | 우주의 통찰",
-            p1: "8월 12일 신월을 기준으로 마감, 재설정, 작은 시작의 12별자리 포인트를 정리했습니다.",
+            title: "🧭 별자리별 이번 주 운세 포인트 (8월 17일–23일)",
+            meta: "2026년 8월 17일–23일 | 우주의 통찰",
+            p1: "8월 19일 상현달을 기준으로 실행, 조율, 선별의 12별자리 포인트를 정리했습니다.",
             linkText: "📖 이번 주 운세 보기 (클릭) →",
             linkUrl: "blog_posts/weekly-keywords.html"
         },
         article17: {
-            title: "💸 주간 금전운 요약 (8월 10일–16일)",
-            meta: "2026년 8월 10일–16일 | 우주의 통찰",
-            p1: "신월 주간의 자동결제 정리, 예산 기준 재설정, 현금 여유분을 중심으로 정리했습니다.",
+            title: "💸 주간 금전운 요약 (8월 17일–23일)",
+            meta: "2026년 8월 17일–23일 | 우주의 통찰",
+            p1: "상현달 주간의 계획 지출 점검, 결제일 확인, 예비비 확보를 중심으로 정리했습니다.",
             linkText: "📖 주간 금전운 읽기 →",
-            linkUrl: "blog_posts/weekly-money-zodiac-08-10-08-16.html"
+            linkUrl: "blog_posts/weekly-money-zodiac-08-17-08-23.html"
         },
         article18: {
             title: "✨ 별자리 4원소로 읽는 2026 리듬 가이드",
@@ -763,7 +787,6 @@ class CosmicOracle extends HTMLElement {
     this.lang = localStorage.getItem('lang') || 'ko'; 
     this._setupUI();
     this.themeToggle.addEventListener('change', () => this._toggleTheme());
-    this.langBtn.addEventListener('click', () => this._toggleLang());
     this.fortuneButton.addEventListener('click', () => this.getFortune());
     this._applyInitialTheme();
     this._updateText(); 
@@ -831,8 +854,6 @@ class CosmicOracle extends HTMLElement {
       button:disabled { background: #555; cursor: not-allowed; box-shadow: none; opacity: 0.6; }
       .controls-container { display: flex; justify-content: flex-end; align-items: center; gap: 10px; width: 100%; margin-bottom: 0.5rem; position: relative; }
       @media (max-width: 600px) { .controls-container { justify-content: center; margin-bottom: 1rem; } }
-      .lang-btn { background: transparent; border: 1px solid var(--text-color); color: var(--text-color); padding: 4px 8px; border-radius: 5px; cursor: pointer; font-family: var(--font-main); font-size: 0.8rem; transition: all 0.3s ease; }
-      .lang-btn:hover { background: var(--glow-color); border-color: var(--glow-color); color: white; }
       .theme-switch { display: inline-block; height: 28px; position: relative; width: 55px; }
       .theme-switch input { display:none; }
       .slider { background-color: #3e445b; bottom: 0; cursor: pointer; left: 0; position: absolute; right: 0; top: 0; transition: .4s; border-radius: 28px; }
@@ -844,7 +865,6 @@ class CosmicOracle extends HTMLElement {
     wrapper.className = 'fortune-card';
     wrapper.innerHTML = `
       <div class="controls-container">
-        <button id="lang-btn" class="lang-btn">KO</button>
         <label class="theme-switch">
           <input type="checkbox" id="theme-toggle">
           <span class="slider"></span>
@@ -867,7 +887,6 @@ class CosmicOracle extends HTMLElement {
     `;
     this.shadowRoot.append(style, wrapper);
     this.themeToggle = this.shadowRoot.getElementById('theme-toggle');
-    this.langBtn = this.shadowRoot.getElementById('lang-btn');
     this.fortuneButton = this.shadowRoot.getElementById('fortune-button');
     this.titleDisplay = this.shadowRoot.getElementById('title');
     this.labelWealth = this.shadowRoot.getElementById('label-wealth');
@@ -902,17 +921,8 @@ class CosmicOracle extends HTMLElement {
         }, 200);
     }
   }
-  _toggleLang() {
-      this.lang = this.lang === 'en' ? 'ko' : 'en';
-      localStorage.setItem('lang', this.lang);
-      this._updateText();
-      updateGlobalText(this.lang);
-      updateQuote(this.lang);
-      startNavPromptRotation(this.lang);
-  }
   _updateText() {
       const t = translations[this.lang];
-      this.langBtn.textContent = this.lang === 'en' ? '한국어' : 'English';
       this.titleDisplay.textContent = t.title;
       this.labelWealth.textContent = t.wealth;
       this.labelBonds.textContent = t.bonds;
@@ -1698,6 +1708,25 @@ window.updateGlobalText = function(lang) {
     if (navChemistry) navChemistry.textContent = t.navChemistry;
     if (navPetTarot) navPetTarot.textContent = t.navPetTarot;
     if (navBlog) navBlog.textContent = t.navBlog;
+    const homeTextBindings = {
+        'home-eyebrow': t.homeEyebrow,
+        'home-identity-title': t.homeIdentityTitle,
+        'home-identity-desc': t.homeIdentityDesc,
+        'home-anchor-fact-label': t.homeAnchorFactLabel,
+        'home-anchor-fact': t.homeAnchorFact,
+        'home-anchor-reading': t.homeAnchorReading,
+        'home-weekly-eyebrow': t.homeWeeklyEyebrow,
+        'home-weekly-title': t.homeWeeklyTitle,
+        'daily-check-eyebrow': t.dailyCheckEyebrow,
+        'daily-check-title': t.dailyCheckTitle,
+        'daily-check-desc': t.dailyCheckDesc
+    };
+    Object.entries(homeTextBindings).forEach(([id, value]) => {
+        const el = document.getElementById(id);
+        if (el && value) el.textContent = value;
+    });
+    const homeHeroImage = document.querySelector('.home-hero-visual img');
+    if (homeHeroImage && t.homeHeroAlt) homeHeroImage.alt = t.homeHeroAlt;
     const homeCtaText = document.getElementById('home-cta-text');
     const homeCtaWeekly = document.getElementById('home-cta-weekly');
     const homeCtaWeeklyTitle = document.getElementById('home-cta-weekly-title');
@@ -1926,6 +1955,11 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('lang', newLang);
             globalLangBtn.textContent = newLang === 'en' ? '한국어' : 'English';
             updateGlobalText(newLang);
+            const oracle = document.querySelector('cosmic-oracle');
+            if (oracle) {
+                oracle.lang = newLang;
+                oracle._updateText();
+            }
             updateQuote(newLang);
             startNavPromptRotation(newLang);
             resetDisqus(newLang);

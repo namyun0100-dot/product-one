@@ -43,8 +43,8 @@
     <meta name="geo.placename" content="Seoul">
     <meta name="geo.position" content="37.5665;126.9780">
     <meta name="ICBM" content="37.5665, 126.9780">
-    <title>우주 운세 - Cosmic Fortune</title>
-    <meta name="description" content="오늘의 우주 운세, 별자리, 궁합, 그리고 펫 타로까지. 당신의 하루를 우주의 기운으로 채워보세요.">
+    <title>CosmicPaw | 별자리와 천체를 생활에 적용하는 실용 점성술 가이드</title>
+    <meta name="description" content="별자리와 천체의 상징을 관계·일·돈·생활 계획에 현실적으로 적용하는 실용 점성술 가이드. 최신 주간 운세와 금전운을 확인하세요.">
     <meta name="naver-site-verification" content="e4ea204158eba182071e0ca0e6e857e6f45bf38f" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="icon" href="favicon.ico" sizes="any">
@@ -85,21 +85,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Noto+Sans+KR:wght@300;400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- CSS -->
-        <link rel="preload" href="style.v4.css?v=final_fix_v8" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="style.v4.css?v=final_fix_v8"></noscript>
+        <link rel="preload" href="style.v4.css?v=hero_copy_balance_20260812" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.v4.css?v=hero_copy_balance_20260812"></noscript>
     
     <!-- AI Models (For future use) -->
     <link rel="canonical" href="https://cosmicpaw.net/">
-    <meta property="og:title" content="우주 운세 - Cosmic Fortune">
-    <meta property="og:description" content="오늘의 우주 운세, 별자리, 궁합, 그리고 펫 타로까지. 당신의 하루를 우주의 기운으로 채워보세요.">
+    <meta property="og:title" content="CosmicPaw | 실용 점성술 가이드">
+    <meta property="og:description" content="별자리와 천체의 상징을 관계·일·돈·생활 계획에 현실적으로 적용하는 실용 점성술 가이드.">
     <meta property="og:url" content="https://cosmicpaw.net/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Cosmic Fortune">
     <meta property="og:locale" content="ko_KR">
     <meta property="og:image" content="https://cosmicpaw.net/assets/images/wTNr9ANj.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="우주 운세 - Cosmic Fortune">
-    <meta name="twitter:description" content="오늘의 우주 운세, 별자리, 궁합, 그리고 펫 타로까지. 당신의 하루를 우주의 기운으로 채워보세요.">
+    <meta name="twitter:title" content="CosmicPaw | 실용 점성술 가이드">
+    <meta name="twitter:description" content="별자리와 천체의 상징을 관계·일·돈·생활 계획에 현실적으로 적용하는 실용 점성술 가이드.">
     <meta name="twitter:image" content="https://cosmicpaw.net/assets/images/wTNr9ANj.jpg">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Cosmic Fortune", "url": "https://cosmicpaw.net/", "inLanguage": "ko", "publisher": {"@type": "Organization", "name": "Cosmic Fortune", "url": "https://cosmicpaw.net/", "logo": {"@type": "ImageObject", "url": "https://cosmicpaw.net/favicon.svg"}}}</script>
 </head>
@@ -107,10 +107,13 @@
     <!-- Header & Navigation -->
     <header id="main-header">
         <div class="header-container">
-            <div class="logo" onclick="location.href='index.html'">Cosmic</div>
+            <div class="header-brand-row">
+                <div class="logo" onclick="location.href='index.html'">Cosmic</div>
+                <button type="button" class="header-lang-btn" id="lang-btn" aria-label="Switch language">English</button>
+            </div>
             <nav>
                 <div class="nav-links">
-                    <a href="#section-fortune" class="nav-link" onclick="return window.handleNavSection('fortune')" id="nav-fortune">오늘의 운세</a>
+                    <a href="#section-fortune" class="nav-link" onclick="return window.handleNavSection('fortune')" id="nav-fortune">홈</a>
                     <a href="#section-zodiac" class="nav-link" onclick="return window.handleNavSection('zodiac')" id="nav-zodiac">별자리</a>
                     <a href="#section-chemistry" class="nav-link" onclick="return window.handleNavSection('chemistry')" id="nav-chemistry">궁합</a>
                     <a href="#section-pet-tarot" class="nav-link" onclick="return window.handleNavSection('pet-tarot')" id="nav-pet-tarot">펫 타로</a>
@@ -126,28 +129,56 @@
     </div>
 
     <main id="main-content">
-        <h1 class="visually-hidden">우주 운세, 별자리, 궁합, 펫 타로 - Cosmic Fortune</h1>
-        <!-- Section 1: Daily Fortune -->
-        <section id="section-fortune" class="content-section">
-            <cosmic-oracle></cosmic-oracle>
-            <p id="quote-of-the-day"></p>
+        <h1 class="visually-hidden">CosmicPaw 실용 점성술 가이드</h1>
+        <!-- Section 1: Practical Astrology Home -->
+        <section id="section-fortune" class="content-section home-overview">
+            <div class="home-hero-panel">
+                <div class="home-identity">
+                <p class="home-eyebrow" id="home-eyebrow">별자리 운세와 생활 가이드</p>
+                <h1 id="home-identity-title">다음 주 별자리 운세, 미리 보고 준비해요</h1>
+                <p id="home-identity-desc">별자리별 운세와 금전운을 읽고, 다음 주에 무엇을 해보면 좋을지 간단하게 정리해보세요.</p>
+                <div class="home-weekly-anchor">
+                    <span class="anchor-fact-label" id="home-anchor-fact-label">다음 주 참고 날짜</span>
+                    <strong id="home-anchor-fact">8월 19일 상현달 · 8월 23일 처서</strong>
+                    <p id="home-anchor-reading"><span>생활에 적용하기</span> 다음 주에는 계획 하나를 직접 시작해 보세요. 잘 안 되는 부분은 조금씩 고치고, 주말에는 계속할 일과 그만둘 일을 나눠보면 좋습니다.</p>
+                </div>
+                </div>
+                <div class="home-hero-visual">
+                    <picture>
+                        <source srcset="assets/images/cosmicpaw-home-hero.webp" type="image/webp">
+                        <img src="assets/images/cosmicpaw-home-hero.png" width="1360" height="768" alt="달과 별자리, 주간 계획 노트가 놓인 밤하늘 일러스트">
+                    </picture>
+                </div>
+            </div>
             <div class="hero-cta hero-featured-links">
-                <p id="home-cta-text">오늘 점수를 확인했다면, 보름달과 월초 전환의 확인·정리 흐름도 바로 확인해보세요.</p>
+                <div class="home-section-heading">
+                    <p class="home-eyebrow" id="home-weekly-eyebrow">다음 주 · 8월 17–23일</p>
+                    <h2 id="home-weekly-title">8월 17–23일 운세 미리보기</h2>
+                    <p id="home-cta-text">별자리 운세와 금전운 중 궁금한 글부터 읽어보세요.</p>
+                </div>
                 <div class="hero-cta-cards">
                     <a class="hero-link-card hero-link-card-weekly" id="home-cta-weekly-link" href="blog_posts/weekly-keywords.html">
-                        <div class="hero-link-badge" id="home-cta-weekly-badge">08.10 - 08.16</div>
+                        <div class="hero-link-badge" id="home-cta-weekly-badge">08.17 - 08.23</div>
                         <h3 id="home-cta-weekly-title">이번 주 운세 키워드</h3>
-                        <p id="home-cta-weekly-desc">8월 12일 신월을 기준으로 마감, 재설정, 작은 시작의 포인트를 확인해보세요.</p>
+                        <p id="home-cta-weekly-desc">다음 주에 별자리별로 챙길 일과 피하면 좋은 행동을 정리했어요.</p>
                         <span class="hero-link-cta" id="home-cta-weekly">이번 주 운세 보기 →</span>
                     </a>
-                    <a class="hero-link-card hero-link-card-money" id="home-cta-money-link" href="blog_posts/weekly-money-zodiac-08-10-08-16.html">
-                        <div class="hero-link-badge" id="home-cta-money-badge">08.10 - 08.16</div>
+                    <a class="hero-link-card hero-link-card-money" id="home-cta-money-link" href="blog_posts/weekly-money-zodiac-08-17-08-23.html">
+                        <div class="hero-link-badge" id="home-cta-money-badge">08.17 - 08.23</div>
                         <h3 id="home-cta-money-title">주간 금전운</h3>
-                        <p id="home-cta-money-desc">자동결제 정리, 예산 기준 재설정, 현금 여유분을 점검하는 다음 주 금전운입니다.</p>
+                        <p id="home-cta-money-desc">계획 지출, 결제 시점, 예비비를 점검하는 다음 주 금전운입니다.</p>
                         <span class="hero-link-cta" id="home-cta-money">금전운 보기 →</span>
                     </a>
                 </div>
             </div>
+            <div class="daily-check-divider" aria-hidden="true"></div>
+            <div class="daily-check-heading">
+                <p class="home-eyebrow" id="daily-check-eyebrow">오늘의 운세</p>
+                <h2 id="daily-check-title">오늘 운세도 가볍게 확인해보세요</h2>
+                <p id="daily-check-desc">아래 결과는 재미로 보는 무작위 운세예요. 중요한 일은 실제 상황과 정보를 먼저 확인하세요.</p>
+            </div>
+            <cosmic-oracle></cosmic-oracle>
+            <p id="quote-of-the-day"></p>
         </section>
 
         <!-- Section 2: Zodiac -->
@@ -296,6 +327,6 @@
     </div>
 
     <!-- Main Script -->
-    <script src="main.v4.js?v=2026-08-05-1"></script>
+    <script src="main.v4.js?v=2026-08-12-7"></script>
 </body>
 </html>
