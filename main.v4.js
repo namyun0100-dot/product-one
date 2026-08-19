@@ -73,6 +73,10 @@ const translations = {
         msgWait: "Press the button to see your forecast.",
         msgFinancial: "Press the button to see your financial forecast.",
         msgRelationship: "Press the button to see your relationship forecast.",
+        dailyWhyLabel: "TODAY’S RHYTHM",
+        dailyActionLabel: "TRY THIS",
+        dailyAvoidLabel: "GO EASY ON",
+        dailyRandomNote: "A light, randomized check-in for today",
         homeEyebrow: "ZODIAC FORECASTS & LIFE GUIDES",
         homeIdentityTitle: "See next week’s zodiac forecast and plan ahead",
         homeIdentityDesc: "Read your weekly zodiac and money outlook, then pick one useful action for relationships, work, spending, or daily life.",
@@ -97,11 +101,11 @@ const translations = {
         homeCtaMoneyBadge: "August 24 - 30",
         homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-08-24-08-30-en.html",
         fortunes: {
-            81: "🌟 <strong>Cosmic alignment!</strong> A universe of opportunities awaits!",
-            61: "✨ <strong>Starlight favor!</strong> Good vibes are flowing your way.",
-            41: "☀️ <strong>Neutral space.</strong> Your path is your own to forge.",
-            21: "☁️ <strong>Minor nebula.</strong> Navigate with care and intention.",
-            0: "☄️ <strong>Asteroid field!</strong> Keep your head up and stay positive."
+            81: "<strong>Momentum is clear.</strong> Use it on one meaningful priority.",
+            61: "<strong>A steady opening.</strong> Small, direct action should travel well today.",
+            41: "<strong>A balanced pace.</strong> Check the facts before choosing where to push.",
+            21: "<strong>A slower rhythm.</strong> Reduce pressure and handle one thing at a time.",
+            0: "<strong>Protect your energy.</strong> Pause before adding promises or expenses."
         },
         contactTitle: "Cosmic Collaboration Inquiry",
         labelName: "Your Name:",
@@ -374,6 +378,10 @@ const translations = {
         msgWait: "버튼을 눌러 오늘의 운세를 확인하세요.",
         msgFinancial: "버튼을 눌러 금전운을 확인하세요.",
         msgRelationship: "버튼을 눌러 인연운을 확인하세요.",
+        dailyWhyLabel: "오늘의 리듬",
+        dailyActionLabel: "오늘 해볼 일",
+        dailyAvoidLabel: "피하면 좋은 반응",
+        dailyRandomNote: "오늘 하루 가볍게 참고하는 무작위 결과",
         homeEyebrow: "별자리 운세와 생활 가이드",
         homeIdentityTitle: "다음 주 별자리 운세, 미리 보고 준비해요",
         homeIdentityDesc: "별자리별 운세와 금전운을 읽고, 다음 주에 무엇을 해보면 좋을지 간단하게 정리해보세요.",
@@ -398,11 +406,11 @@ const translations = {
         homeCtaMoneyBadge: "08.24 - 08.30",
         homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-08-24-08-30.html",
         fortunes: {
-            81: "🌟 <strong>우주의 축복!</strong> 엄청난 기회가 기다리고 있어요!",
-            61: "✨ <strong>별빛의 가호!</strong> 좋은 기운이 흐르고 있네요!",
-            41: "☀️ <strong>고요한 우주.</strong> 당신이 길을 개척할 시간입니다.",
-            21: "☁️ <strong>작은 성운.</strong> 신중하게 나아가는 게 좋겠어요.",
-            0: "☄️ <strong>소행성 주의!</strong> 긍정적인 마음을 잃지 마세요!"
+            81: "<strong>움직일 힘이 충분해요.</strong> 중요한 한 가지에 집중해보세요.",
+            61: "<strong>무리 없이 나아갈 수 있어요.</strong> 작고 분명한 행동부터 시작해보세요.",
+            41: "<strong>속도를 조절하기 좋은 날이에요.</strong> 사실을 확인한 뒤 힘쓸 곳을 고르세요.",
+            21: "<strong>조금 천천히 가도 괜찮아요.</strong> 부담을 줄이고 한 번에 하나씩 처리하세요.",
+            0: "<strong>에너지를 아껴야 해요.</strong> 새 약속이나 지출을 더하기 전에 잠시 멈추세요."
         },
         contactTitle: "우주 협력 문의",
         labelName: "이름:",
@@ -803,12 +811,12 @@ class CosmicOracle extends HTMLElement {
     const style = document.createElement('style');
     style.textContent = `
       :host {
-        --font-main: 'Orbitron', sans-serif;
+        --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         --text-color-dark: #edf2f7;
-        --card-bg-dark: rgba(26, 32, 44, 0.7);
-        --primary-glow-dark: #f04a75;
+        --card-bg-dark: linear-gradient(145deg, rgba(18, 28, 47, 0.96), rgba(25, 39, 61, 0.9));
+        --primary-glow-dark: #7dd3fc;
         --text-color-light: #1a202c;
-        --card-bg-light: rgba(255, 255, 255, 0.6);
+        --card-bg-light: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(240, 249, 255, 0.94));
         --primary-glow-light: #667eea;
         --card-bg: var(--card-bg-dark);
         --text-color: var(--text-color-dark);
@@ -825,12 +833,12 @@ class CosmicOracle extends HTMLElement {
       .fortune-card {
         background: var(--card-bg);
         color: var(--text-color);
-        padding: 2rem 2.5rem;
-        border-radius: 20px;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        padding: clamp(1.25rem, 3vw, 2rem);
+        border-radius: 24px;
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
         border: 1px solid var(--border-color);
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), 0 0 12px var(--glow-color);
+        box-shadow: 0 18px 48px rgba(2, 8, 23, 0.24);
         text-align: center;
         transition: all 0.5s ease;
         width: 100%;
@@ -841,23 +849,40 @@ class CosmicOracle extends HTMLElement {
         .fortune-card { padding: 1.2rem 1rem; border-radius: 15px; }
         h1 { font-size: 1.5rem !important; margin-bottom: 1rem !important; }
         .score-value { font-size: 2rem !important; }
-        .scores-container { flex-direction: column; gap: 0.8rem !important; margin: 1rem 0 !important; }
-        .score-section { padding: 1rem !important; min-width: auto; width: 100%; }
-        .score-section h2 { font-size: 1.2rem !important; margin-bottom: 0.5rem !important; }
+        .scores-container { grid-template-columns: 1fr; gap: 0.8rem !important; margin: 1rem 0 !important; }
+        .score-section { padding: 1rem !important; min-width: 0; width: 100%; }
+        .score-section h2 { font-size: 1rem !important; }
         button { padding: 0.8rem 2rem !important; font-size: 1rem !important; margin-top: 0.5rem !important; }
       }
       h1 {
-        font-family: var(--font-main); font-size: 2.2rem; font-weight: 700;
-        text-shadow: 0 0 5px var(--glow-color), 0 0 10px var(--glow-color);
-        margin-bottom: 1.5rem; margin-top: 0.5rem;
+        font-family: var(--font-main);
+        font-size: clamp(1.35rem, 3vw, 1.75rem);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin: 0.15rem 0 0.35rem;
       }
-      .scores-container { display: flex; justify-content: space-around; gap: 1.5rem; margin: 2rem 0; flex-wrap: wrap; }
-      .score-section { flex: 1; min-width: 150px; padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 15px; transition: all 0.3s ease; }
-      .score-section h2 { font-family: var(--font-main); font-size: 1.5rem; font-weight: 400; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 0; margin-bottom: 1rem; color: var(--text-color); white-space: nowrap; }
-      .score-value { font-family: var(--font-main); font-size: 3.5rem; font-weight: 700; margin: 0; color: var(--glow-color); text-shadow: 0 0 8px var(--glow-color); }
-      .score-message { margin-top: 1rem; min-height: 2.5em; font-size: 0.9rem; opacity: 0.8; }
-      button { background: linear-gradient(45deg, var(--glow-color), #4e54c8); color: white; padding: 0.95rem 1.6rem; min-height: 48px; min-width: 220px; border: none; border-radius: 999px; cursor: pointer; font-family: var(--font-main); font-size: 1.05rem; font-weight: 800; transition: all 0.3s ease; box-shadow: 0 0 10px var(--glow-color); margin-top: 1rem; }
-      button:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 0 15px var(--glow-color); }
+      .scores-container { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1.35rem 0; }
+      .score-section { min-width: 0; padding: 1.25rem; border: 1px solid var(--border-color); border-radius: 18px; background: rgba(148, 163, 184, 0.07); text-align: left; transition: border-color 0.25s ease, background 0.25s ease; }
+      .score-section h2 { font-family: var(--font-main); font-size: 1.15rem; font-weight: 850; display: flex; align-items: center; gap: 0.5rem; margin: 0; color: var(--text-color); }
+      .score-section h2 > span:last-child { display: inline-flex; align-items: center; padding: 0.32rem 0.68rem; border-radius: 999px; letter-spacing: -0.01em; }
+      .wealth-card h2 > span:last-child { color: #7dd3fc; background: rgba(56, 189, 248, 0.13); }
+      .bonds-card h2 > span:last-child { color: #f9a8d4; background: rgba(244, 114, 182, 0.13); }
+      :host([data-theme="light"]) .wealth-card h2 > span:last-child { color: #0369a1; background: rgba(14, 165, 233, 0.12); }
+      :host([data-theme="light"]) .bonds-card h2 > span:last-child { color: #be185d; background: rgba(236, 72, 153, 0.1); }
+      .score-value { font-family: var(--font-main); font-size: clamp(2.25rem, 6vw, 3.4rem); line-height: 1; font-weight: 800; margin: 0.8rem 0 0; color: var(--glow-color); letter-spacing: -0.04em; }
+      .score-message { margin: 0.85rem 0 0; min-height: 3em; font-size: 0.92rem; line-height: 1.55; opacity: 0.9; }
+      .oracle-note { margin: 0; font-size: 0.8rem; opacity: 0.66; }
+      .guidance-list { display: grid; gap: 0.65rem; margin-top: 1rem; }
+      .guidance-item { display: grid; grid-template-columns: 1fr; gap: 0.3rem; align-items: start; padding-top: 0.7rem; border-top: 1px solid var(--border-color); }
+      .guidance-label { color: var(--glow-color); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+      .guidance-text { display: block; width: 100%; max-width: 100%; min-width: 0; font-size: 0.9rem; line-height: 1.6; opacity: 0.9; white-space: normal; word-break: normal; overflow-wrap: anywhere; }
+      .score-section, .score-reading, .guidance-list, .guidance-item { min-width: 0; max-width: 100%; }
+      .score-message { white-space: normal; word-break: normal; overflow-wrap: anywhere; }
+      button { max-width: 100%; white-space: normal; }
+      .guidance-list[hidden] { display: none; }
+      :host([data-theme="light"]) .score-section { background: rgba(14, 116, 144, 0.045); }
+      button { background: linear-gradient(45deg, var(--glow-color), #4e54c8); color: white; padding: 0.95rem 1.6rem; min-height: 48px; min-width: 220px; border: none; border-radius: 999px; cursor: pointer; font-family: var(--font-main); font-size: 1.05rem; font-weight: 800; transition: all 0.3s ease; box-shadow: 0 8px 22px rgba(78, 84, 200, 0.22); margin-top: 1rem; }
+      button:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(78, 84, 200, 0.3); }
       button:disabled { background: #555; cursor: not-allowed; box-shadow: none; opacity: 0.6; }
       .controls-container { display: flex; justify-content: flex-end; align-items: center; gap: 10px; width: 100%; margin-bottom: 0.5rem; position: relative; }
       @media (max-width: 600px) { .controls-container { justify-content: center; margin-bottom: 1rem; } }
@@ -878,16 +903,25 @@ class CosmicOracle extends HTMLElement {
         </label>
       </div>
       <h1 id="title"></h1>
+      <p class="oracle-note" id="oracle-note"></p>
       <div class="scores-container">
-        <div class="score-section">
+        <div class="score-section wealth-card">
           <h2><span role="img" aria-label="money">💰</span> <span id="label-wealth"></span></h2>
           <p class="score-value" id="financial-score">--</p>
-          <p class="score-message" id="financial-message"></p>
+          <div class="score-reading"><span class="guidance-label" id="financial-why-label"></span><p class="score-message" id="financial-message"></p></div>
+          <div class="guidance-list" id="financial-guidance" hidden>
+            <div class="guidance-item"><span class="guidance-label" id="financial-action-label"></span><span class="guidance-text" id="financial-action"></span></div>
+            <div class="guidance-item"><span class="guidance-label" id="financial-avoid-label"></span><span class="guidance-text" id="financial-avoid"></span></div>
+          </div>
         </div>
-        <div class="score-section">
+        <div class="score-section bonds-card">
           <h2><span role="img" aria-label="people">🤝</span> <span id="label-bonds"></span></h2>
           <p class="score-value" id="relationship-score">--</p>
-          <p class="score-message" id="relationship-message"></p>
+          <div class="score-reading"><span class="guidance-label" id="relationship-why-label"></span><p class="score-message" id="relationship-message"></p></div>
+          <div class="guidance-list" id="relationship-guidance" hidden>
+            <div class="guidance-item"><span class="guidance-label" id="relationship-action-label"></span><span class="guidance-text" id="relationship-action"></span></div>
+            <div class="guidance-item"><span class="guidance-label" id="relationship-avoid-label"></span><span class="guidance-text" id="relationship-avoid"></span></div>
+          </div>
         </div>
       </div>
       <button id="fortune-button"></button>
@@ -898,6 +932,19 @@ class CosmicOracle extends HTMLElement {
     this.titleDisplay = this.shadowRoot.getElementById('title');
     this.labelWealth = this.shadowRoot.getElementById('label-wealth');
     this.labelBonds = this.shadowRoot.getElementById('label-bonds');
+    this.oracleNote = this.shadowRoot.getElementById('oracle-note');
+    this.financialWhyLabel = this.shadowRoot.getElementById('financial-why-label');
+    this.relationshipWhyLabel = this.shadowRoot.getElementById('relationship-why-label');
+    this.financialActionLabel = this.shadowRoot.getElementById('financial-action-label');
+    this.relationshipActionLabel = this.shadowRoot.getElementById('relationship-action-label');
+    this.financialAvoidLabel = this.shadowRoot.getElementById('financial-avoid-label');
+    this.relationshipAvoidLabel = this.shadowRoot.getElementById('relationship-avoid-label');
+    this.financialGuidance = this.shadowRoot.getElementById('financial-guidance');
+    this.relationshipGuidance = this.shadowRoot.getElementById('relationship-guidance');
+    this.financialAction = this.shadowRoot.getElementById('financial-action');
+    this.relationshipAction = this.shadowRoot.getElementById('relationship-action');
+    this.financialAvoid = this.shadowRoot.getElementById('financial-avoid');
+    this.relationshipAvoid = this.shadowRoot.getElementById('relationship-avoid');
     this.financialScoreDisplay = this.shadowRoot.getElementById('financial-score');
     this.relationshipScoreDisplay = this.shadowRoot.getElementById('relationship-score');
     this.financialMessageDisplay = this.shadowRoot.getElementById('financial-message');
@@ -933,6 +980,13 @@ class CosmicOracle extends HTMLElement {
       this.titleDisplay.textContent = t.title;
       this.labelWealth.textContent = t.wealth;
       this.labelBonds.textContent = t.bonds;
+      this.oracleNote.textContent = t.dailyRandomNote;
+      this.financialWhyLabel.textContent = t.dailyWhyLabel;
+      this.relationshipWhyLabel.textContent = t.dailyWhyLabel;
+      this.financialActionLabel.textContent = t.dailyActionLabel;
+      this.relationshipActionLabel.textContent = t.dailyActionLabel;
+      this.financialAvoidLabel.textContent = t.dailyAvoidLabel;
+      this.relationshipAvoidLabel.textContent = t.dailyAvoidLabel;
       this.checkFortuneAvailability();
   }
   getFortune() {
@@ -965,10 +1019,73 @@ class CosmicOracle extends HTMLElement {
     if (score >= 21) return t[21];
     return t[0];
   }
+  getFortuneGuidance(type, score) {
+    const band = score >= 81 ? 4 : score >= 61 ? 3 : score >= 41 ? 2 : score >= 21 ? 1 : 0;
+    const guidance = {
+      ko: {
+        wealth: [
+          { action: "오늘 쓸 수 있는 금액을 먼저 적어두세요.", avoid: "기분을 바꾸기 위한 즉흥 결제" },
+          { action: "자동결제나 예정 지출 한 건을 확인하세요.", avoid: "잔액을 보지 않고 약속부터 잡기" },
+          { action: "필요한 지출과 미뤄도 되는 지출을 나누세요.", avoid: "할인율만 보고 구매 결정하기" },
+          { action: "미뤄둔 정산이나 환불 요청 하나를 처리하세요.", avoid: "여유가 생겼다고 지출 한도를 바로 늘리기" },
+          { action: "가장 가치 있는 한 곳에 예산을 집중하세요.", avoid: "좋은 흐름을 근거로 계획 밖 지출 늘리기" }
+        ],
+        bonds: [
+          { action: "답하기 전에 내 감정을 한 문장으로 적어보세요.", avoid: "피곤할 때 관계의 결론 내리기" },
+          { action: "부담 없는 안부 한마디부터 건네세요.", avoid: "상대의 침묵을 거절로 단정하기" },
+          { action: "확인이 필요한 말을 직접 질문하세요.", avoid: "모두에게 맞추느라 내 일정 미루기" },
+          { action: "미뤄둔 답장이나 약속 하나를 정리하세요.", avoid: "좋은 분위기만 믿고 경계를 흐리기" },
+          { action: "고마운 사람에게 구체적인 마음을 표현하세요.", avoid: "반응을 기대하며 너무 많은 약속 하기" }
+        ]
+      },
+      en: {
+        wealth: [
+          { action: "Write down today’s available spending amount first.", avoid: "Impulse spending to change your mood" },
+          { action: "Check one autopay or expected expense.", avoid: "Making plans before checking the balance" },
+          { action: "Separate necessary spending from what can wait.", avoid: "Buying based on the discount alone" },
+          { action: "Handle one delayed reimbursement or refund request.", avoid: "Raising the limit as soon as room appears" },
+          { action: "Direct the budget toward one high-value priority.", avoid: "Using a good score to justify unplanned spending" }
+        ],
+        bonds: [
+          { action: "Name your feeling in one sentence before replying.", avoid: "Making relationship decisions while exhausted" },
+          { action: "Start with a low-pressure check-in.", avoid: "Treating silence as rejection" },
+          { action: "Ask directly for the information you need.", avoid: "Moving your schedule to please everyone" },
+          { action: "Close one delayed reply or plan.", avoid: "Letting a good mood erase boundaries" },
+          { action: "Express specific appreciation to someone.", avoid: "Making too many promises for a response" }
+        ]
+      }
+    };
+    return guidance[this.lang][type][band];
+  }
+  showFortuneGuidance(type, score) {
+    const item = this.getFortuneGuidance(type, score);
+    const isWealth = type === "wealth";
+    const container = isWealth ? this.financialGuidance : this.relationshipGuidance;
+    const action = isWealth ? this.financialAction : this.relationshipAction;
+    const avoid = isWealth ? this.financialAvoid : this.relationshipAvoid;
+    action.textContent = item.action;
+    avoid.textContent = item.avoid;
+    container.hidden = false;
+  }
+  hideFortuneGuidance() {
+    this.financialGuidance.hidden = true;
+    this.relationshipGuidance.hidden = true;
+  }
   checkFortuneAvailability(isAfterClick = false) {
+    const t = translations[this.lang];
+    const previewClosed = (location.hostname === "game1-fdda5.web.app" || location.hostname === "localhost") && new URLSearchParams(location.search).get("fortunePreview") === "closed";
+    if (previewClosed) {
+      this.fortuneButton.disabled = false;
+      this.fortuneButton.textContent = t.btnReveal;
+      this.financialScoreDisplay.textContent = "--";
+      this.relationshipScoreDisplay.textContent = "--";
+      this.financialMessageDisplay.textContent = t.msgFinancial;
+      this.relationshipMessageDisplay.textContent = t.msgRelationship;
+      this.hideFortuneGuidance();
+      return false;
+    }
     const today = new Date().toDateString();
     const lastFortuneDate = localStorage.getItem('lastFortuneDate');
-    const t = translations[this.lang];
     if (lastFortuneDate === today) {
       this.fortuneButton.disabled = true;
       this.fortuneButton.textContent = t.btnRevealed;
@@ -980,6 +1097,8 @@ class CosmicOracle extends HTMLElement {
                 this.relationshipScoreDisplay.textContent = data.relationshipScore;
                 this.financialMessageDisplay.innerHTML = this.getFortuneMessage(data.financialScore);
                 this.relationshipMessageDisplay.innerHTML = this.getFortuneMessage(data.relationshipScore);
+                this.showFortuneGuidance("wealth", data.financialScore);
+                this.showFortuneGuidance("bonds", data.relationshipScore);
             } catch (e) {
                 localStorage.removeItem('fortuneData');
                 localStorage.removeItem('lastFortuneDate');
@@ -994,6 +1113,7 @@ class CosmicOracle extends HTMLElement {
         this.relationshipScoreDisplay.textContent = '--';
         this.financialMessageDisplay.textContent = t.msgFinancial;
         this.relationshipMessageDisplay.textContent = t.msgRelationship;
+        this.hideFortuneGuidance();
       }
       return true;
     }
