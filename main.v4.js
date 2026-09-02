@@ -82,9 +82,9 @@ const translations = {
         homeIdentityDesc: "Read your weekly zodiac and money outlook, then pick one useful action for relationships, work, spending, or daily life.",
         homeHeroAlt: "Night-sky illustration with a moon, constellations, and a weekly planner",
         homeAnchorFactLabel: "Dates to note next week",
-        homeAnchorFact: "Last Quarter Moon, September 4 · Month-start reset",
+        homeAnchorFact: "New Moon, September 11 · One sustainable restart",
         homeAnchorReading: "Try this: start one plan, make a small fix if it feels difficult, and decide over the weekend what you want to continue.",
-        homeWeeklyEyebrow: "NEXT WEEK · AUGUST 31–SEPTEMBER 6",
+        homeWeeklyEyebrow: "NEXT WEEK · SEPTEMBER 7–13",
         homeWeeklyTitle: "Next Week’s Forecast Preview",
         dailyCheckEyebrow: "TODAY’S FORTUNE",
         dailyCheckTitle: "Check today’s fortune for fun",
@@ -93,13 +93,13 @@ const translations = {
         homeCtaWeekly: "Open Weekly Horoscope →",
         homeCtaWeeklyTitle: "Weekly Horoscope Keywords",
         homeCtaWeeklyDesc: "See what each zodiac sign can focus on and what may be better avoided next week.",
-        homeCtaWeeklyBadge: "August 31 - September 6",
+        homeCtaWeeklyBadge: "September 7 - 13",
         homeCtaWeeklyUrl: "blog_posts/weekly-keywords-en.html",
         homeCtaMoney: "Open Money Outlook →",
         homeCtaMoneyTitle: "Weekly Money Outlook",
-        homeCtaMoneyDesc: "Gather receipts, handle refund deadlines, and protect September’s first fixed payments.",
-        homeCtaMoneyBadge: "August 31 - September 6",
-        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-08-31-09-06-en.html",
+        homeCtaMoneyDesc: "Review recurring charges, write one spending rule, and protect a small buffer before the next fixed payment.",
+        homeCtaMoneyBadge: "September 7 - 13",
+        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-09-07-09-13-en.html",
         fortunes: {
             81: "<strong>Momentum is clear.</strong> Use it on one meaningful priority.",
             61: "<strong>A steady opening.</strong> Small, direct action should travel well today.",
@@ -123,19 +123,19 @@ const translations = {
         navBlogLink: "Blog Home",
         wisdomTitle: "This Week at a Glance",
         wisdomSubtitle: "Go straight to the weekly horoscope and money outlook people check most.",
-        homeWisdom1Badge: "August 31 - September 6",
+        homeWisdom1Badge: "September 7 - 13",
         homeWisdom1Title: "Weekly Horoscope Keywords",
-        homeWisdom1Desc: "Use the Last Quarter Moon week to review results, close one open loop, and protect recovery time.",
+        homeWisdom1Desc: "Use the September 11 New Moon as a calendar marker for closing one old loop and starting one sustainable standard.",
         homeWisdom1Cta: "Open Weekly Horoscope →",
         homeWisdom1Url: "blog_posts/weekly-keywords-en.html",
-        homeWisdom2Badge: "August 31 - September 6",
+        homeWisdom2Badge: "September 7 - 13",
         homeWisdom2Title: "Weekly Money Outlook",
-        homeWisdom2Desc: "Gather receipts, handle refund deadlines, and protect September’s first fixed payments.",
+        homeWisdom2Desc: "Review recurring charges, write one spending rule, and protect a small buffer before the next fixed payment.",
         homeWisdom2Cta: "Open Money Outlook →",
-        homeWisdom2Url: "blog_posts/weekly-money-zodiac-08-31-09-06-en.html",
+        homeWisdom2Url: "blog_posts/weekly-money-zodiac-09-07-09-13-en.html",
         readMore: "Browse All Posts →",
         navDailyFortune: "Home",
-        navZodiac: "Zodiac",
+        navZodiac: "Learn Astrology",
         navChemistry: "Chemistry",
         navPetTarot: "Pet Tarot",
         navBlog: "Blog",
@@ -193,18 +193,27 @@ const translations = {
             linkUrl: "blog_posts/feb-money-zodiac-en.html"
         },
         article11: {
-            title: "🧭 Zodiac Weekly Fortune Points (August 31–September 6)",
-            meta: "August 31–September 6, 2026 | Cosmic Insight",
-            p1: "A Last Quarter Moon week for reviewing results, closing one open loop, and protecting recovery time.",
-            linkText: "📖 Read Weekly Fortune Guide (Click Here) →",
+            title: "🧭 Zodiac Weekly Fortune Points (September 7–13)",
+            meta: "September 7–13, 2026 | Cosmic Insight",
+            p1: "Use the September 11 New Moon as a review marker, then begin one standard you can maintain.",
+            linkText: "📖 Read Weekly Fortune Guide →",
             linkUrl: "blog_posts/weekly-keywords-en.html"
         },
         article17: {
-            title: "💸 Weekly Money Outlook (August 31–September 6)",
-            meta: "August 31–September 6, 2026 | Cosmic Insight",
-            p1: "A month-end money check for receipts, refund deadlines, and September’s first fixed payments.",
-            linkText: "📖 Read Weekly Money Outlook (Click Here) →",
-            linkUrl: "blog_posts/weekly-money-zodiac-08-31-09-06-en.html"
+            title: "💸 Weekly Money Outlook (September 7–13)",
+            meta: "September 7–13, 2026 | Cosmic Insight",
+            p1: "Review recurring charges, write one spending rule, and protect a small buffer before the next fixed payment.",
+            linkText: "📖 Read Weekly Money Outlook →",
+            linkUrl: "blog_posts/weekly-money-zodiac-09-07-09-13-en.html"
+        },
+        article31: {
+            title: "📚 Learn Astrology from the Beginning", meta: "September 2, 2026 | Learning Hub", p1: "Follow a clear path from Sun, Moon, and rising signs through elements, modalities, and deep guides.", linkText: "📖 Open the Learning Hub →", linkUrl: "blog_posts/astrology-basics-en.html"
+        },
+        article29: {
+            title: "🧭 Cardinal, Fixed, and Mutable Signs", meta: "September 2, 2026 | Astrology Foundations", p1: "Learn how the twelve signs start, sustain, and adapt through a practical element-by-modality map.", linkText: "📖 Learn the Three Modalities →", linkUrl: "blog_posts/zodiac-modalities-guide-en.html"
+        },
+        article30: {
+            title: "🦁 Leo Deep Guide", meta: "September 2, 2026 | Sign Deep Dive", p1: "Explore fixed fire across close relationships, teamwork, money, stress, recovery, and growth.", linkText: "📖 Read the Leo Guide →", linkUrl: "blog_posts/leo-deep-guide-en.html"
         },
         article18: {
             title: "✨ 2026 Rhythm Guide by Zodiac Elements",
@@ -394,24 +403,24 @@ const translations = {
         homeIdentityDesc: "별자리별 운세와 금전운을 읽고, 다음 주에 무엇을 해보면 좋을지 간단하게 정리해보세요.",
         homeHeroAlt: "달과 별자리, 주간 계획 노트가 놓인 밤하늘 일러스트",
         homeAnchorFactLabel: "다음 주 참고 날짜",
-        homeAnchorFact: "9월 4일 하현달 · 9월의 첫 주",
+        homeAnchorFact: "9월 11일 신월 · 9월의 둘째 주",
         homeAnchorReading: "생활에 적용하기: 다음 주에는 계획 하나를 직접 시작해 보세요. 잘 안 되는 부분은 조금씩 고치고, 주말에는 계속할 일과 그만둘 일을 나눠보면 좋습니다.",
-        homeWeeklyEyebrow: "다음 주 · 8월 31일–9월 6일",
+        homeWeeklyEyebrow: "다음 주 · 9월 7–13일",
         homeWeeklyTitle: "다음 주 운세 미리보기",
         dailyCheckEyebrow: "오늘의 운세",
         dailyCheckTitle: "오늘 운세도 가볍게 확인해보세요",
         dailyCheckDesc: "아래 결과는 재미로 보는 무작위 운세예요. 중요한 일은 실제 상황과 정보를 먼저 확인하세요.",
         homeCtaText: "별자리 운세와 금전운 중 궁금한 글부터 읽어보세요.",
-        homeCtaWeekly: "이번 주 운세 보기 →",
-        homeCtaWeeklyTitle: "이번 주 운세 키워드",
+        homeCtaWeekly: "다음 주 운세 보기 →",
+        homeCtaWeeklyTitle: "다음 주 운세 키워드",
         homeCtaWeeklyDesc: "다음 주에 별자리별로 챙길 일과 피하면 좋은 행동을 정리했어요.",
-        homeCtaWeeklyBadge: "08.31 - 09.06",
+        homeCtaWeeklyBadge: "09.07 - 09.13",
         homeCtaWeeklyUrl: "blog_posts/weekly-keywords.html",
         homeCtaMoney: "금전운 보기 →",
         homeCtaMoneyTitle: "주간 금전운",
-        homeCtaMoneyDesc: "지출 증빙, 환불·정산 기한, 9월 첫 고정비를 점검하는 금전운입니다.",
-        homeCtaMoneyBadge: "08.31 - 09.06",
-        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-08-31-09-06.html",
+        homeCtaMoneyDesc: "반복 결제를 정리하고 소비 기준 한 문장과 다음 결제 전 완충액을 만드는 금전운입니다.",
+        homeCtaMoneyBadge: "09.07 - 09.13",
+        homeCtaMoneyUrl: "blog_posts/weekly-money-zodiac-09-07-09-13.html",
         fortunes: {
             81: "<strong>움직일 힘이 충분해요.</strong> 중요한 한 가지에 집중해보세요.",
             61: "<strong>무리 없이 나아갈 수 있어요.</strong> 작고 분명한 행동부터 시작해보세요.",
@@ -435,19 +444,19 @@ const translations = {
         navBlogLink: "블로그 홈",
         wisdomTitle: "이번 주 바로 보기",
         wisdomSubtitle: "지금 가장 자주 찾는 주간 운세와 금전운을 바로 확인해보세요.",
-        homeWisdom1Badge: "08.31 - 09.06",
-        homeWisdom1Title: "이번 주 운세 키워드",
-        homeWisdom1Desc: "하현달 주간의 선별, 재배치, 회복 포인트를 별자리별로 확인해보세요.",
+        homeWisdom1Badge: "09.07 - 09.13",
+        homeWisdom1Title: "다음 주 운세 키워드",
+        homeWisdom1Desc: "9월 11일 신월을 달력 표지로 삼아 정리할 일과 새로 시작할 기준을 확인해보세요.",
         homeWisdom1Cta: "바로 보기 →",
         homeWisdom1Url: "blog_posts/weekly-keywords.html",
-        homeWisdom2Badge: "08.31 - 09.06",
+        homeWisdom2Badge: "09.07 - 09.13",
         homeWisdom2Title: "주간 금전운",
-        homeWisdom2Desc: "지출 증빙, 환불 기한, 9월 예비비 확보를 중심으로 정리했습니다.",
+        homeWisdom2Desc: "반복 결제, 소비 기준, 다음 필수 결제 전 완충액을 중심으로 정리했습니다.",
         homeWisdom2Cta: "금전운 보기 →",
-        homeWisdom2Url: "blog_posts/weekly-money-zodiac-08-31-09-06.html",
+        homeWisdom2Url: "blog_posts/weekly-money-zodiac-09-07-09-13.html",
         readMore: "전체 글 보기 →",
         navDailyFortune: "홈",
-        navZodiac: "별자리",
+        navZodiac: "별자리 공부",
         navChemistry: "궁합",
         navPetTarot: "펫 타로",
         navBlog: "블로그",
@@ -504,22 +513,31 @@ const translations = {
             title: "💸 2월 1–10일 별자리 금전운 요약",
             meta: "2026년 2월 1–10일 | 우주의 통찰",
             p1: "키워드, 포인트, 주의점을 한 줄씩 정리한 금전운 요약입니다. 2월 1–10일 흐름을 가볍게 체크해요.",
-            linkText: "📖 요약 보기 (클릭) →",
+            linkText: "📖 요약 보기 →",
             linkUrl: "blog_posts/feb-money-zodiac.html"
         },
         article11: {
-            title: "🧭 별자리별 이번 주 운세 포인트 (8월 31일–9월 6일)",
-            meta: "2026년 8월 31일–9월 6일 | 우주의 통찰",
-            p1: "9월 4일 하현달을 기준으로 정돈, 확인, 마무리의 12별자리 포인트를 정리했습니다.",
-            linkText: "📖 이번 주 운세 보기 (클릭) →",
+            title: "🧭 별자리별 다음 주 운세 포인트 (9월 7–13일)",
+            meta: "2026년 9월 7–13일 | 우주의 통찰",
+            p1: "9월 11일 신월을 정리의 마침표이자 오래 유지할 기준 하나를 시작하는 달력 표지로 활용합니다.",
+            linkText: "📖 다음 주 운세 보기 →",
             linkUrl: "blog_posts/weekly-keywords.html"
         },
         article17: {
-            title: "💸 주간 금전운 요약 (8월 31일–9월 6일)",
-            meta: "2026년 8월 31일–9월 6일 | 우주의 통찰",
-            p1: "하현달 주간의 월말 정산과 9월 첫 고정비, 환불 기한, 9월 예비비 확보를 중심으로 정리했습니다.",
+            title: "💸 주간 금전운 (9월 7–13일)",
+            meta: "2026년 9월 7–13일 | 우주의 통찰",
+            p1: "반복 결제를 정리하고 소비 기준 한 문장을 세운 뒤 다음 필수 결제 전 완충액을 확보합니다.",
             linkText: "📖 주간 금전운 읽기 →",
-            linkUrl: "blog_posts/weekly-money-zodiac-08-31-09-06.html"
+            linkUrl: "blog_posts/weekly-money-zodiac-09-07-09-13.html"
+        },
+        article31: {
+            title: "📚 별자리 공부: 처음부터 차근차근", meta: "2026년 9월 2일 | 학습 허브", p1: "태양·달·상승궁부터 네 원소, 세 양식과 별자리 심화로 이어지는 학습 경로입니다.", linkText: "📖 별자리 공부 시작하기 →", linkUrl: "blog_posts/astrology-basics.html"
+        },
+        article29: {
+            title: "🧭 활동궁·고정궁·변동궁의 차이", meta: "2026년 9월 2일 | 별자리 기초", p1: "12별자리가 시작하고, 유지하고, 조정하는 방식을 원소×양식 표와 생활 사례로 깊이 설명합니다.", linkText: "📖 세 양식 배우기 →", linkUrl: "blog_posts/zodiac-modalities-guide.html"
+        },
+        article30: {
+            title: "🦁 사자자리 심화 가이드", meta: "2026년 9월 2일 | 12별자리 심화", p1: "불 원소와 고정궁이 관계·협업·돈·스트레스·회복에서 어떻게 결합하는지 구체적으로 읽습니다.", linkText: "📖 사자자리 깊이 읽기 →", linkUrl: "blog_posts/leo-deep-guide.html"
         },
         article18: {
             title: "✨ 별자리 4원소로 읽는 2026 리듬 가이드",
@@ -1792,6 +1810,9 @@ window.updateBlogText = function(lang) {
     updateArticle('article5', t.article5);
     updateArticle('article6', t.article6);
     updateArticle('article7', t.article7);
+    updateArticle("article29", t.article29);
+    updateArticle("article30", t.article30);
+    updateArticle("article31", t.article31);
     updateArticle('article8', t.article8);
     updateArticle('article9', t.article9);
     updateArticle('article13', t.article13);
@@ -1892,11 +1913,14 @@ window.updateGlobalText = function(lang) {
     if (homeCtaMoneyDesc && t.homeCtaMoneyDesc) homeCtaMoneyDesc.textContent = t.homeCtaMoneyDesc;
     if (homeCtaMoneyBadge && t.homeCtaMoneyBadge) homeCtaMoneyBadge.textContent = t.homeCtaMoneyBadge;
     if (homeCtaMoneyLink && t.homeCtaMoneyUrl) homeCtaMoneyLink.setAttribute('href', t.homeCtaMoneyUrl);
-    const zodiacTitles = { en: { title: "Cosmic Constellations", subtitle: "Discover the secrets of the stars" }, ko: { title: "우주의 별자리", subtitle: "당신의 별이 속삭이는 비밀을 들어보세요" } };
-    const zTitle = document.getElementById('zodiac-title');
-    const zSubtitle = document.getElementById('zodiac-subtitle');
-    if (zTitle) zTitle.textContent = zodiacTitles[lang].title;
-    if (zSubtitle) zSubtitle.textContent = zodiacTitles[lang].subtitle;
+    const zodiacTitles = {
+        en: {title:"Learn Astrology",subtitle:"Foundation topics and all 12 zodiac signs in one place.",eyebrow:"ASTROLOGY NOTES",pathTitle:"Astrology Library",pathDesc:"Browse any topic that interests you.",hubTitle:"Browse All Astrology Guides",hubDesc:"View all foundation topics and in-depth zodiac guides.",big3Title:"Sun, Moon, and Rising",big3Desc:"A clear comparison of what the Sun, Moon, and rising signs describe.",elementsTitle:"Fire, Earth, Air, and Water",elementsDesc:"How the four elements differ across relationships, work, and money.",modalitiesTitle:"Cardinal, Fixed, and Mutable",modalitiesDesc:"How the twelve signs initiate, sustain, and adjust.",browserTitle:"Explore the 12 Zodiac Signs",browserDesc:"Choose a sign for a quick overview. A Sun sign is one part of a person, not the whole chart.",hubUrl:"blog_posts/astrology-basics-en.html",big3Url:"blog_posts/sun-moon-rising-sign-guide-en.html",elementsUrl:"blog_posts/zodiac-four-elements-guide-en.html",modalitiesUrl:"blog_posts/zodiac-modalities-guide-en.html"},
+        ko: {title:"별자리 공부",subtitle:"기초 개념과 12별자리 글을 한곳에 모았습니다.",eyebrow:"ASTROLOGY NOTES",pathTitle:"별자리 학습",pathDesc:"관심 있는 주제부터 편하게 살펴보세요.",hubTitle:"전체 별자리 글",hubDesc:"기초 개념과 별자리별 심화 글을 모두 확인합니다.",big3Title:"태양·달·상승궁",big3Desc:"태양·달·상승궁이 각각 무엇을 보여주는지 정리합니다.",elementsTitle:"불·흙·공기·물 4원소",elementsDesc:"네 원소가 관계·일·돈에서 드러나는 차이를 정리합니다.",modalitiesTitle:"활동궁·고정궁·변동궁",modalitiesDesc:"12별자리가 시작하고 유지하고 조정하는 방식을 살펴봅니다.",browserTitle:"12별자리 알아보기",browserDesc:"내 별자리를 눌러 기본 성향을 확인해보세요. 태양 별자리 하나가 사람 전체를 결정하지는 않습니다.",hubUrl:"blog_posts/astrology-basics.html",big3Url:"blog_posts/sun-moon-rising-sign-guide.html",elementsUrl:"blog_posts/zodiac-four-elements-guide.html",modalitiesUrl:"blog_posts/zodiac-modalities-guide.html"}
+    };
+    const z = zodiacTitles[lang];
+    const zText = {"zodiac-title":z.title,"zodiac-subtitle":z.subtitle,"learn-path-eyebrow":z.eyebrow,"learn-path-title":z.pathTitle,"learn-path-desc":z.pathDesc,"learn-card-hub-title":z.hubTitle,"learn-card-hub-desc":z.hubDesc,"learn-card-big3-title":z.big3Title,"learn-card-big3-desc":z.big3Desc,"learn-card-elements-title":z.elementsTitle,"learn-card-elements-desc":z.elementsDesc,"learn-card-modalities-title":z.modalitiesTitle,"learn-card-modalities-desc":z.modalitiesDesc,"zodiac-browser-title":z.browserTitle,"zodiac-browser-desc":z.browserDesc};
+    Object.entries(zText).forEach(([id,value])=>{const el=document.getElementById(id);if(el)el.textContent=value;});
+    [["learn-card-hub",z.hubUrl],["learn-card-big3",z.big3Url],["learn-card-elements",z.elementsUrl],["learn-card-modalities",z.modalitiesUrl]].forEach(([id,url])=>{const el=document.getElementById(id);if(el)el.href=url;});
     const chemTitles = { en: { title: "Cosmic Chemistry", subtitle: "Do your stars align?", me: "Me", partner: "Partner", btn: "Calculate Compatibility" }, ko: { title: "우주 궁합", subtitle: "우리의 별들은 얼마나 잘 맞을까요?", me: "나", partner: "상대방", btn: "궁합 확인하기" } };
     const cTitle = document.getElementById('chemistry-title');
     const cSubtitle = document.getElementById('chemistry-subtitle');

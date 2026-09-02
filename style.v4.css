@@ -386,6 +386,9 @@ cosmic-oracle {
     max-width: 500px;
 }
 
+.learn-path-panel{margin:0 0 2.2rem;padding:1.25rem;border:1px solid rgba(0,191,255,.24);border-radius:18px;background:rgba(0,191,255,.05)}
+.learn-path-heading h3,.zodiac-browser-heading h3{margin:.2rem 0 .55rem;color:var(--neon-blue);font-size:1.35rem}.learn-path-heading p,.zodiac-browser-heading p{margin:.35rem 0 1rem;line-height:1.65}.learn-path-grid{display:grid;grid-template-columns:1fr;gap:14px}.learn-path-card{display:flex;flex-direction:column;gap:.6rem;padding:1.15rem 1.2rem;border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(255,255,255,.045);color:inherit;text-decoration:none;transition:transform .2s,border-color .2s}.learn-path-card:hover{transform:translateY(-2px);border-color:var(--neon-blue)}.learn-path-card strong{color:var(--neon-blue)}.learn-path-card span{font-size:.96rem;line-height:1.65}.zodiac-browser-heading{margin:0 0 1rem}[data-theme="light"] .learn-path-panel{background:rgba(14,116,144,.06);border-color:rgba(14,116,144,.25)}[data-theme="light"] .learn-path-card{background:#fff;border-color:#cbd5e1}@media(max-width:560px){.learn-path-grid{grid-template-columns:1fr}.learn-path-panel{padding:1rem}}
+
 /* --- Zodiac Grid (3 cols x 4 rows for 500px width) --- */
 .zodiac-grid {
     display: grid;
